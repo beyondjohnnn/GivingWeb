@@ -14,8 +14,8 @@ const defaultState = {
 
 }
 
-const middleware = applyMiddleware(routerStuff, promiseMiddleware(), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+const middleware = applyMiddleware(routerStuff, promiseMiddleware())
 
-const store = createStore(rootReducer, defaultState, middleware)
+const store = createStore(rootReducer, defaultState, middleware, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
 export default store
