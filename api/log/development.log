@@ -758,3 +758,64 @@ Migrating to CreateCharities (20170918165548)
   [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5878493172211724820)[0m
   [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/v1/charities" for 127.0.0.1 at 2017-09-18 18:15:07 +0100
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by V1::CharitiesController#index as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant V1::CharitiesController::Charities):
+  
+app/controllers/v1/charities_controller.rb:3:in `index'
+Started GET "/v1/users" for 127.0.0.1 at 2017-09-18 18:15:30 +0100
+Processing by V1::UsersController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant V1::UsersController::Users):
+  
+app/controllers/v1/users_controller.rb:3:in `index'
+Started GET "/v1/users" for 127.0.0.1 at 2017-09-18 18:17:28 +0100
+Processing by V1::UsersController#index as HTML
+Completed 500 Internal Server Error in 160ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `users' for #<V1::UsersController:0x007ffa6ffc8c50>
+Did you mean?  users_url):
+  
+app/controllers/v1/users_controller.rb:3:in `index'
+Started GET "/v1/users" for 127.0.0.1 at 2017-09-18 18:18:11 +0100
+Processing by V1::UsersController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant V1::UsersController::Users):
+  
+app/controllers/v1/users_controller.rb:3:in `index'
+Started GET "/v1/users" for 127.0.0.1 at 2017-09-18 18:19:28 +0100
+Processing by V1::UsersController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant V1::UsersController::Users):
+  
+app/controllers/v1/users_controller.rb:3:in `index'
+Started GET "/v1/users" for 127.0.0.1 at 2017-09-18 18:22:15 +0100
+  
+ActionController::RoutingError (uninitialized constant Api::V1):
+  
+app/controllers/v1/users_controller.rb:1:in `<top (required)>'
+Started GET "/v1/users" for 127.0.0.1 at 2017-09-18 18:22:29 +0100
+Processing by V1::UsersController#index as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant V1::UsersController::Users):
+  
+app/controllers/v1/users_controller.rb:3:in `index'
