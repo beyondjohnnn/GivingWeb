@@ -5,6 +5,9 @@ import { render } from 'react-dom'
 // import css
 import css from './base-style.scss'
 
+// import container
+import NoAuthLandingPage from './containers/NoAuthLandingPage'
+
 // import components
 import Navigation from './components/Navigation'
 
@@ -20,6 +23,7 @@ const router = (
 		<Router history={history}>
 			<div>
 				<Route path="/" component={Navigation} />
+				<Route exact path="/" component={NoAuthLandingPage} />
 			</div>
 		</Router>
 	</Provider>
