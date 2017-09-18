@@ -6,11 +6,12 @@ import { render } from 'react-dom'
 import css from './base-style.scss'
 
 // import components
+import Navigation from './components/Navigation'
 
 // import react router dependencies
 import { Router, Route } from 'react-router'
 
-import { Provide } from 'react-redux'
+import { Provider } from 'react-redux'
 import store, { history } from './store'
 
 
