@@ -5,8 +5,9 @@ import { render } from 'react-dom'
 // import css
 import css from './base-style.scss'
 
-// import container
+// import containers
 import NoAuthLandingPage from './containers/NoAuthLandingPage'
+import UserSignup from './containers/UserSignup'
 
 // import components
 import Navigation from './components/Navigation'
@@ -24,6 +25,7 @@ const router = (
 			<div>
 				<Route path="/" component={Navigation} />
 				<Route exact path="/" component={NoAuthLandingPage} />
+				<Route path="/signup" component={UserSignup} />
 			</div>
 		</Router>
 	</Provider>
