@@ -8,6 +8,7 @@ import css from './base-style.scss'
 // import containers
 import NoAuthLandingPage from './containers/NoAuthLandingPage'
 import UserSignup from './containers/UserSignup'
+import UserLogin from './containers/UserLogin'
 
 // import components
 import Navigation from './components/Navigation'
@@ -26,6 +27,7 @@ const router = (
 				<Route path="/" component={Navigation} />
 				<Route exact path="/" component={NoAuthLandingPage} />
 				<Route path="/signup" component={UserSignup} />
+				<Route path="/login" component={UserLogin} />
 			</div>
 		</Router>
 	</Provider>
