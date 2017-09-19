@@ -13,6 +13,7 @@ import CharityPage from './containers/CharityPage'
 import AuthLandingPage from './containers/AuthLandingPage'
 import UserDashboard from './containers/UserDashboard'
 import CharityLogin from './containers/CharityLogin'
+import CharitySignup from './containers/CharitySignup'
 
 // import components
 import Navigation from './components/Navigation'
@@ -35,7 +36,7 @@ const router = (
 				<Route path="/charity-page" component={CharityPage} />
 				<Route path="/auth-landing-page" component={AuthLandingPage} />
 				<Route path="/user-dashboard" component={UserDashboard} />
-				<Route path="/charity-login" component={CharityLogin} />
+				<Route path="/charity-signup" component={CharitySignup} />
 			</div>
 		</Router>
 	</Provider>
