@@ -994,3 +994,312 @@ Processing by V1::UsersController#index as HTML
 Completed 200 OK in 42ms (Views: 2.2ms | ActiveRecord: 35.4ms)
 
 
+Started GET "/v1/charities" for 127.0.0.1 at 2017-09-19 10:46:08 +0100
+Processing by V1::CharitiesController#index as HTML
+  [1m[36mCharity Load (34.8ms)[0m  [1m[34mSELECT "charities".* FROM "charities"[0m
+Completed 200 OK in 54ms (Views: 2.0ms | ActiveRecord: 34.8ms)
+
+
+Started POST "/v1/charities" for 127.0.0.1 at 2017-09-19 10:49:14 +0100
+Processing by V1::CharitiesController#create as */*
+  Parameters: {"chaity_name"=>"StreetChange", "password"=>"[FILTERED]", "charity"=>{"chaity_name"=>"StreetChange", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 251ms (ActiveRecord: 63.3ms)
+
+
+  
+NameError (undefined local variable or method `show_params' for #<V1::CharitiesController:0x007fa451e84e30>
+Did you mean?  to_param):
+  
+app/controllers/v1/charities_controller.rb:9:in `create'
+Started GET "/v1/charities" for 127.0.0.1 at 2017-09-19 10:55:34 +0100
+Processing by V1::CharitiesController#index as HTML
+  [1m[36mCharity Load (24.4ms)[0m  [1m[34mSELECT "charities".* FROM "charities"[0m
+Completed 200 OK in 163ms (Views: 0.4ms | ActiveRecord: 144.5ms)
+
+
+Started GET "/v1/users" for 127.0.0.1 at 2017-09-19 10:55:41 +0100
+Processing by V1::UsersController#index as HTML
+  [1m[36mUser Load (14.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 44ms (Views: 4.7ms | ActiveRecord: 34.2ms)
+
+
+Started POST "/v1/charities" for 127.0.0.1 at 2017-09-19 10:59:23 +0100
+Processing by V1::CharitiesController#create as */*
+  Parameters: {"chaity_name"=>"StreetChange", "password"=>"[FILTERED]", "charity"=>{"chaity_name"=>"StreetChange", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 167ms (ActiveRecord: 71.8ms)
+
+
+  
+NameError (undefined local variable or method `show_params' for #<V1::CharitiesController:0x007fa451eccdc0>
+Did you mean?  to_param):
+  
+app/controllers/v1/charities_controller.rb:9:in `create'
+Started POST "/v1/charities" for 127.0.0.1 at 2017-09-19 11:02:35 +0100
+Processing by V1::CharitiesController#create as */*
+  Parameters: {"chaity_name"=>"StreetChange", "password"=>"[FILTERED]", "charity"=>{"chaity_name"=>"StreetChange", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 353ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `show_params' for #<V1::CharitiesController:0x007fa4550cad40>
+Did you mean?  to_param):
+  
+app/controllers/v1/charities_controller.rb:9:in `create'
+  [1m[35m (12.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (24.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["first_name", "Reece"], ["last_name", "Jones"], ["password", "123"], ["created_at", "2017-09-19 10:08:19.807516"], ["updated_at", "2017-09-19 10:08:19.807516"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Started POST "/v1/users" for 127.0.0.1 at 2017-09-19 11:09:04 +0100
+  
+AbstractController::ActionNotFound (The action 'create' could not be found for V1::UsersController):
+  
+actionpack (5.1.4) lib/abstract_controller/base.rb:119:in `process'
+actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/v1/user" for 127.0.0.1 at 2017-09-19 11:09:08 +0100
+  
+ActionController::RoutingError (No route matches [POST] "/v1/user"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/v1/charities" for 127.0.0.1 at 2017-09-19 11:09:52 +0100
+Processing by V1::CharitiesController#create as */*
+Completed 500 Internal Server Error in 184ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `show_params' for #<V1::CharitiesController:0x007fa452c3d180>
+Did you mean?  to_param):
+  
+app/controllers/v1/charities_controller.rb:9:in `create'
+Started GET "/v1/charities" for 127.0.0.1 at 2017-09-19 11:10:08 +0100
+Processing by V1::CharitiesController#index as */*
+  [1m[36mCharity Load (14.0ms)[0m  [1m[34mSELECT "charities".* FROM "charities"[0m
+Completed 200 OK in 19ms (Views: 0.3ms | ActiveRecord: 14.0ms)
+
+
+Started POST "/v1/users" for 127.0.0.1 at 2017-09-19 11:10:31 +0100
+  
+AbstractController::ActionNotFound (The action 'create' could not be found for V1::UsersController):
+  
+actionpack (5.1.4) lib/abstract_controller/base.rb:119:in `process'
+actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/v1/users" for 127.0.0.1 at 2017-09-19 11:10:58 +0100
+Processing by V1::UsersController#index as */*
+  [1m[36mUser Load (13.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 189ms (Views: 119.7ms | ActiveRecord: 57.5ms)
+
+
+Started GET "/v1/users" for 127.0.0.1 at 2017-09-19 11:11:21 +0100
+Processing by V1::UsersController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 7ms (Views: 4.6ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/v1/charities" for 127.0.0.1 at 2017-09-19 11:14:34 +0100
+Processing by V1::CharitiesController#create as */*
+  Parameters: {"charity_name"=>"StreetChange", "password"=>"[FILTERED]", "charity"=>{"password"=>"[FILTERED]"}}
+  [1m[35m (2.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (27.7ms)[0m  [1m[32mINSERT INTO "charities" ("password", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["password", "123"], ["created_at", "2017-09-19 10:14:34.924596"], ["updated_at", "2017-09-19 10:14:34.924596"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 82ms (Views: 1.0ms | ActiveRecord: 59.5ms)
+
+
+  [1m[35m (84.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (27.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (6.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5878493172211724820)[0m
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20170918165049)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (32.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "first_name" character varying, "last_name" character varying, "password" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (24.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170918165049"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCharities (20170918165548)
+  [1m[35m (6.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (17.2ms)[0m  [1m[35mCREATE TABLE "charities" ("id" bigserial primary key, "charity_name" character varying, "password" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170918165548"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-09-19 10:25:23.637652"], ["updated_at", "2017-09-19 10:25:23.637652"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(5878493172211724820)[0m
+  [1m[35m (6.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/v1/users" for 127.0.0.1 at 2017-09-19 11:26:40 +0100
+  [1m[35m (7.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by V1::UsersController#index as HTML
+  [1m[36mUser Load (5.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 13ms (Views: 1.7ms | ActiveRecord: 7.4ms)
+
+
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (6.9ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["first_name", "Reece"], ["last_name", "Jones"], ["password", "123"], ["created_at", "2017-09-19 10:27:10.276823"], ["updated_at", "2017-09-19 10:27:10.276823"]]
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/v1/users" for 127.0.0.1 at 2017-09-19 11:27:13 +0100
+Processing by V1::UsersController#index as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 31ms (Views: 18.6ms | ActiveRecord: 11.6ms)
+
+
+Started POST "/v1/charities" for 127.0.0.1 at 2017-09-19 11:27:36 +0100
+Processing by V1::CharitiesController#create as */*
+  Parameters: {"charity_name"=>"StreetChange", "password"=>"[FILTERED]", "charity"=>{"charity_name"=>"StreetChange", "password"=>"[FILTERED]"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (14.8ms)[0m  [1m[32mINSERT INTO "charities" ("charity_name", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["charity_name", "StreetChange"], ["password", "123"], ["created_at", "2017-09-19 10:27:36.557398"], ["updated_at", "2017-09-19 10:27:36.557398"]]
+  [1m[35m (9.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 79ms (Views: 3.0ms | ActiveRecord: 34.5ms)
+
+
+Started POST "/v1/users" for 127.0.0.1 at 2017-09-19 11:28:26 +0100
+Processing by V1::UsersController#create as */*
+  Parameters: {"first_name"=>"Johnny", "last_name"=>"Watson", "password"=>"[FILTERED]", "user"=>{"first_name"=>"Johnny", "last_name"=>"Watson", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 259ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `user_params' for #<V1::UsersController:0x007f9f54f3e0d0>
+Did you mean?  users_params):
+  
+app/controllers/v1/users_controller.rb:9:in `create'
+Started POST "/v1/users" for 127.0.0.1 at 2017-09-19 11:30:20 +0100
+Processing by V1::UsersController#create as */*
+  Parameters: {"first_name"=>"Johnny", "last_name"=>"Watson", "password"=>"[FILTERED]", "user"=>{"first_name"=>"Johnny", "last_name"=>"Watson", "password"=>"[FILTERED]"}}
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (9.9ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["first_name", "Johnny"], ["last_name", "Watson"], ["password", "123"], ["created_at", "2017-09-19 10:30:20.310755"], ["updated_at", "2017-09-19 10:30:20.310755"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 72ms (Views: 1.5ms | ActiveRecord: 35.3ms)
+
+
+Started POST "/v1/users" for 127.0.0.1 at 2017-09-19 11:30:48 +0100
+Processing by V1::UsersController#create as */*
+  Parameters: {"first_name"=>"Eoghan", "last_name"=>"Crowley", "password"=>"[FILTERED]", "user"=>{"first_name"=>"Eoghan", "last_name"=>"Crowley", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["first_name", "Eoghan"], ["last_name", "Crowley"], ["password", "123"], ["created_at", "2017-09-19 10:30:48.321950"], ["updated_at", "2017-09-19 10:30:48.321950"]]
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 13ms (Views: 0.8ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/v1/users" for 127.0.0.1 at 2017-09-19 11:30:58 +0100
+Processing by V1::UsersController#index as */*
+  [1m[36mUser Load (18.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 24ms (Views: 4.6ms | ActiveRecord: 18.3ms)
+
+
+Started GET "/v1/charities" for 127.0.0.1 at 2017-09-19 11:31:03 +0100
+Processing by V1::CharitiesController#index as */*
+  Parameters: {"charity"=>{}}
+  [1m[36mCharity Load (0.6ms)[0m  [1m[34mSELECT "charities".* FROM "charities"[0m
+Completed 200 OK in 18ms (Views: 0.2ms | ActiveRecord: 7.8ms)
+
+
+Started POST "/v1/charities" for 127.0.0.1 at 2017-09-19 11:31:13 +0100
+Processing by V1::CharitiesController#create as */*
+  Parameters: {"charity_name"=>"CodeForChange", "password"=>"[FILTERED]", "charity"=>{"charity_name"=>"CodeForChange", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "charities" ("charity_name", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["charity_name", "CodeForChange"], ["password", "123"], ["created_at", "2017-09-19 10:31:13.538475"], ["updated_at", "2017-09-19 10:31:13.538475"]]
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 13ms (Views: 0.6ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/v1/charities" for 127.0.0.1 at 2017-09-19 11:31:18 +0100
+Processing by V1::CharitiesController#index as */*
+  Parameters: {"charity"=>{}}
+  [1m[36mCharity Load (0.4ms)[0m  [1m[34mSELECT "charities".* FROM "charities"[0m
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
