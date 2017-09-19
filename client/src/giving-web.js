@@ -10,6 +10,7 @@ import NoAuthLandingPage from './containers/NoAuthLandingPage'
 import UserSignup from './containers/UserSignup'
 import UserLogin from './containers/UserLogin'
 import CharityPage from './containers/CharityPage'
+import AuthLandingPage from './containers/AuthLandingPage'
 
 // import components
 import Navigation from './components/Navigation'
@@ -30,6 +31,7 @@ const router = (
 				<Route path="/signup" component={UserSignup} />
 				<Route path="/login" component={UserLogin} />
 				<Route path="/charity-page" component={CharityPage} />
+				<Route path="/auth-landing-page" component={AuthLandingPage} />
 			</div>
 		</Router>
 	</Provider>
