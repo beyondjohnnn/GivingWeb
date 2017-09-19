@@ -9,6 +9,7 @@ import css from './base-style.scss'
 import NoAuthLandingPage from './containers/NoAuthLandingPage'
 import UserSignup from './containers/UserSignup'
 import UserLogin from './containers/UserLogin'
+import CharityPage from './containers/CharityPage'
 
 // import components
 import Navigation from './components/Navigation'
@@ -28,6 +29,7 @@ const router = (
 				<Route exact path="/" component={NoAuthLandingPage} />
 				<Route path="/signup" component={UserSignup} />
 				<Route path="/login" component={UserLogin} />
+				<Route path="/charity-page" component={CharityPage} />
 			</div>
 		</Router>
 	</Provider>
