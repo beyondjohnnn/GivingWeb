@@ -1,0 +1,36 @@
+.navigation {
+	width: 100%;
+	background-color: #ccc;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 60px;
+	padding: 0 10%;
+
+
+	img {
+		height:75%;
+		// width: 100%;
+	}
+
+	form {
+		width: 30%;
+
+
+		input {
+			height: 30px;
+			width: 100%;
+			padding: 0 5px;
+
+			&:focus {
+				outline: none;
+			}
+		}		
+	}
+
+	nav {
+		width: 20%;
+		display: flex;
+		justify-content: space-between;
+	}
+}
