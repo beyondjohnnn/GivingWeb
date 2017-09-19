@@ -1,7 +1,7 @@
 const config = {
 	entry: `${__dirname}/src/giving-web.js`,
 	output: {
-		path: `${__dirname}/build`,
+		path: `${__dirname}/../public`,
 		filename: 'bundle.js'
 	},
 	devtool: 'source-map',
@@ -23,10 +23,10 @@ const config = {
         use: [
 	        {
 	          loader: "style-loader" // creates style nodes from JS strings
-	        }, 
+	        },
 	        {
 	          loader: "css-loader" // translates CSS into CommonJS
-	        }, 
+	        },
 	        {
 	          loader: "sass-loader" // compiles Sass to CSS
 	        }
