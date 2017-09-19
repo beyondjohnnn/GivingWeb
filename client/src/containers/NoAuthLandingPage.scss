@@ -1,0 +1,22 @@
+
+
+
+
+.featured-members {
+	width: 100%;
+	padding: 10px 0;
+	background-color: #c48;
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+
+	h2 {
+		display: flex;
+	}
+
+	.members-list {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-around;
+	}
+}
