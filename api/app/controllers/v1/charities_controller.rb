@@ -1,7 +1,7 @@
 class V1::CharitiesController < ApplicationController
   def index
-    @charities = Charities.all
+    charities = Charities.all
 
-    render :json => @charities, status: :ok
+    render :json => charities.to_json()
   end
 end
