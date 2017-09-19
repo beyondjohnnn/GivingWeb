@@ -12,7 +12,13 @@ class V1::CharitiesController < ApplicationController
     render json: @charity, status: :created
   end
 
-  def method_name
+  def destroy
+    @charity = Charity.where( id: params[:id] ).first
+    if @charity.destroy
+      head(:ok)
+    else
+      head(:uprocessable_entity)
+    end
 
   end
 
