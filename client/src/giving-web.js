@@ -11,6 +11,7 @@ import UserSignup from './containers/UserSignup'
 import UserLogin from './containers/UserLogin'
 import CharityPage from './containers/CharityPage'
 import AuthLandingPage from './containers/AuthLandingPage'
+import UserDashboard from './containers/UserDashboard'
 
 // import components
 import Navigation from './components/Navigation'
@@ -32,6 +33,7 @@ const router = (
 				<Route path="/login" component={UserLogin} />
 				<Route path="/charity-page" component={CharityPage} />
 				<Route path="/auth-landing-page" component={AuthLandingPage} />
+				<Route path="/user-dashboard" component={UserDashboard} />
 			</div>
 		</Router>
 	</Provider>
