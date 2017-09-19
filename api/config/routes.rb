@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   # get 'users' => 'users#index'
   # get 'charities' => 'charities#index'
-
+  get 'signup' => 'signup#index'
   namespace :v1 do
     resources :users
     resources :charities
