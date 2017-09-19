@@ -95,7 +95,6 @@ $search-border-focus: 1.4px solid #6898ff;
 			}
 
 			&:focus + .search-icon{
-		  	color: #d3d3d3;
 				border: {
 					top: $search-border-focus;
 					right: $search-border-focus;
