@@ -1320,3 +1320,53 @@ Processing by V1::CharitiesController#index as */*
 Completed 200 OK in 17ms (Views: 0.3ms | ActiveRecord: 8.0ms)
 
 
+  [1m[35m (24.8ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5878493172211724820)[0m
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateDonations (20170919210405)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (224.4ms)[0m  [1m[35mCREATE TABLE "donations" ("id" bigserial primary key, "donation_from" character varying, "donation_amount" decimal, "user_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_5470822a00"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (12.3ms)[0m  [1m[35mCREATE  INDEX  "index_donations_on_user_id" ON "donations"  ("user_id")[0m
+  [1m[35mSQL (6.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170919210405"]]
+  [1m[35m (24.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (4.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5878493172211724820)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/v1/users" for 127.0.0.1 at 2017-09-19 22:15:07 +0100
+  [1m[35m (8.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by V1::UsersController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 26ms (Views: 16.5ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/v1/donations" for 127.0.0.1 at 2017-09-19 22:15:17 +0100
+Processing by V1::DonationsController#index as HTML
+  [1m[36mDonation Load (6.0ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+Completed 200 OK in 44ms (Views: 0.2ms | ActiveRecord: 30.6ms)
+
+
+Started GET "/v1/donations" for 127.0.0.1 at 2017-09-19 22:15:59 +0100
+Processing by V1::DonationsController#index as */*
+  [1m[36mDonation Load (1.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+Completed 200 OK in 23ms (Views: 1.3ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/v1/donations" for 127.0.0.1 at 2017-09-19 22:17:27 +0100
+Processing by V1::DonationsController#create as */*
+  Parameters: {"donation_from"=>"Reece", "donation_amount"=>500, "user"=>"1", "donation"=>{"donation_from"=>"Reece", "donation_amount"=>500}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (41.6ms)[0m  [1m[32mINSERT INTO "donations" ("donation_from", "donation_amount", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["donation_from", "Reece"], ["donation_amount", "500.0"], ["created_at", "2017-09-19 21:17:28.038103"], ["updated_at", "2017-09-19 21:17:28.038103"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 117ms (Views: 3.7ms | ActiveRecord: 54.8ms)
+
+
+Started GET "/v1/donations" for 127.0.0.1 at 2017-09-19 22:18:04 +0100
+Processing by V1::DonationsController#index as HTML
+  [1m[36mDonation Load (2.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+Completed 200 OK in 10ms (Views: 0.4ms | ActiveRecord: 2.4ms)
+
+
