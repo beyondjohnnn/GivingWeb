@@ -8,9 +8,7 @@ class Navigation extends React.Component {
 	render() {
 		return (
 			<div className="navigation">
-				<h1 className="banner">
-					GivingWeb
-				</h1>
+				<img src="images/givingwebgreypink.png"/>
 				<form>
 					<input type="text"/>
 				</form>
