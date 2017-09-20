@@ -1,31 +1,62 @@
+$radius-size: 4px;
+
 .hero {
 	width: 100%;
-	height: 500px;
-	padding-bottom: 50px;
-	background-color: #aaa;
+	height: 550px;
+	// padding-bottom: 20px;
+	// background-color: #aaa;
+	background: linear-gradient(360deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.2)),
+	    url('https://image.shutterstock.com/z/stock-photo-people-friendship-brainstorming-hand-teamwork-concept-436863724.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
 	display: flex;
 	justify-content: center;
 	align-items: flex-end;
 
 	.captions {
-		border: 1px solid black;
-		width: 60%;
+		// border: 1px solid black;
+		width: 80%;
 		display: flex;
 		flex-flow: column;
 		align-items: center;
 		justify-content: space-around;
-		height: 200px;
 		padding: 20px 0;
+		color: #fff;
+		margin-bottom: 30px;
+
+			h2 {
+
+			font-size: 50px;
+			font-weight: 300;
+			margin-bottom: 20px;
+
+			}
+
+			p{
+			
+			font-size: 22px;
+			margin-bottom: 30px;
+			font-weight: 100;
+			}
 
 		.call-to-action {
-			background-color: #777;
-			width: 40%;
+			background-color: #ff6200;
+			// width: 285px;
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			padding: 10px 0;
-			color: black;
+			padding: 16px 40px;
+			font-weight: 200;
+			color: #fff;
 			text-decoration: none;
+			-webkit-border: $radius-size;
+			-moz-border-radius: $radius-size;
+			border-radius: $radius-size;
+
+				& i{
+					padding-left:6px;
+				}
 		}
 	}
 }

@@ -10,7 +10,7 @@ class Navigation extends React.Component {
 			<div className="navigation">
 				<div className="content-wrapper">
 					<div className="logo-search-wrapper">
-						<img src="images/givingwebgreypink.png"/>
+						<img src="images/logopurple.png"/>
 						<form className="search-bar">
 					    <input  id="search" placeholder="Search for a city, friend, non-profit or cause..." />
 					    <button className="search-icon"><i className="fa fa-search"></i></button>
