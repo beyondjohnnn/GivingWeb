@@ -5,7 +5,7 @@ $radius-size: 4px;
 	height: 550px;
 	// padding-bottom: 20px;
 	// background-color: #aaa;
-	background: linear-gradient(360deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.2)),
+	background: linear-gradient(360deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.1)),
 	    url('https://image.shutterstock.com/z/stock-photo-people-friendship-brainstorming-hand-teamwork-concept-436863724.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -13,6 +13,8 @@ $radius-size: 4px;
 	display: flex;
 	justify-content: center;
 	align-items: flex-end;
+	z-index: 4;
+
 
 	.captions {
 		// border: 1px solid black;
@@ -53,6 +55,10 @@ $radius-size: 4px;
 			-webkit-border: $radius-size;
 			-moz-border-radius: $radius-size;
 			border-radius: $radius-size;
+
+				&:hover {
+					background-color: darken(#ff6200, 5);
+				}
 
 				& i{
 					padding-left:6px;
