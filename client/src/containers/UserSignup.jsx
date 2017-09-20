@@ -1,11 +1,61 @@
 import React from 'react'
+import {connect} from 'react-redux'
+
+import css from './UserSignup.scss'
 
 class UserSignup extends React.Component {
+
+	formSubmit() {
+		const newUserDetails = {
+			first_name: this.refs.first_name.value,
+			last_name: this.refs.last_name.value,
+			email: this.refs.email.value,
+			password: this.refs.password.value
+		}
+	}
+
+
 	render() {
 		return (
-			<div>User signup</div>
+			<div className="user-signup">
+				<form ref="signup-form" action="/" method="post" onSubmit={this.formSubmit}>
+					<h2>Sign up</h2>
+					<div>
+						<label htmlFor="email">Email</label>
+						<input ref="email" id="email" name="email" type="email" />
+					</div>
+					<div>
+						<div>
+							<label htmlFor="first_name">First name</label>
+							<input ref="first_name" id="first_name" name="first_name" type="text" />
+						</div>
+						<div>
+							<label htmlFor="last_name">Last name</label>
+							<input ref="last_name" id="last_name" name="last_name" type="text" />
+						</div>
+					</div>
+					<div>
+						<label htmlFor="password">Password</label>
+						<input ref="password" id="password" name="password" type="password" />
+					</div>
+					<input type="submit" value="Sign up" />
+				</form>
+
+				<div>
+					Already have an account?
+				</div>
+
+			</div>
 		)
 	}
 }
 
-export default UserSignup
+function mapStateToProps(state, router) {
+	return Object.assign({})
+}
+
+function mapDispatchToProps(dispatch) {
+	return bindActionCreators(actionCreators, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(UserSignup)
