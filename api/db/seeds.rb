@@ -1,7 +1,3 @@
-# [User, Charity, Donation].each do |table|
-#   ActiveRecord::Base.connection.execute("TRUNCATE #{table.table_name}")
-# end
-
 user1 = User.create({first_name: 'Reece', last_name: 'Jones', email: 'r@j.com', password: '123'})
 user2 = User.create({first_name: 'Eoghan', last_name: 'Crowley', email: 'e@c.com', password: '123'})
 user3 = User.create({first_name: 'Johnny', last_name: 'Watson', email: 'j@w.com', password: '123'})
