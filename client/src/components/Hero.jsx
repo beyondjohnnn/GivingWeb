@@ -13,7 +13,7 @@ class Hero extends React.Component {
 						Make Change Happen
 					</h2>
 					<p>
-						Support amazing organisations and people today
+						Support amazing people and charities today
 					</p>
 					<Link className="call-to-action" to="/">
 						SEE HOW IT WORKS
