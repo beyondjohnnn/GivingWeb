@@ -20,7 +20,12 @@ module Api
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
-
+    config.middleware.insert_before 0, Rack::Cors do
+      allow do
+        origins '*'
+        resource '*', :headers => :any, :methods => [:get, :patch, :put, :delete, :post, :options]
+      end
+    end #TODO: double check this isn't meant to be @ line 26    resource( '*', headers: :any, methods: [:get, :patch, :put, :delete, :post, :options]) 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
