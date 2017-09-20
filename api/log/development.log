@@ -1836,3 +1836,352 @@ Processing by V1::CharitiesController#destroy as */*
 Completed 200 OK in 14ms (ActiveRecord: 3.0ms)
 
 
+  [1m[35m (24.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5878493172211724820)[0m
+  [1m[35m (6.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateModels (20170920125425)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (119.6ms)[0m  [1m[35mCREATE TABLE "models" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_models_on_email" ON "models"  ("email")[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_models_on_reset_password_token" ON "models"  ("reset_password_token")[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170920125425"]]
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5878493172211724820)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/v1/model" for 127.0.0.1 at 2017-09-20 14:08:35 +0100
+  [1m[35m (31.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [POST] "/v1/model"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.1) lib/rack/cors.rb:93:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/v1/model" for 127.0.0.1 at 2017-09-20 14:09:19 +0100
+  [1m[35m (10.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by V1::ModelController#create as */*
+  Parameters: {"email"=>"r@j.com", "encrypted_password"=>"[FILTERED]", "model"=>{"email"=>"r@j.com", "encrypted_password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 251ms (ActiveRecord: 64.5ms)
+
+
+  
+NameError (undefined local variable or method `user_params' for #<V1::ModelController:0x007faf6fd00ae0>):
+  
+app/controllers/v1/model_controller.rb:9:in `create'
+Started POST "/v1/model" for 127.0.0.1 at 2017-09-20 14:10:37 +0100
+Processing by V1::ModelController#create as */*
+  Parameters: {"email"=>"r@j.com", "encrypted_password"=>"[FILTERED]", "model"=>{"email"=>"r@j.com", "encrypted_password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mModel Exists (79.1ms)[0m  [1m[34mSELECT  1 AS one FROM "models" WHERE "models"."email" = $1 LIMIT $2[0m  [["email", "r@j.com"], ["LIMIT", 1]]
+  [1m[35m (17.8ms)[0m  [1m[31mROLLBACK[0m
+Completed 201 Created in 338ms (Views: 1.1ms | ActiveRecord: 248.1ms)
+
+
+Started GET "/v1/donations" for 127.0.0.1 at 2017-09-20 14:14:15 +0100
+Processing by V1::DonationsController#index as */*
+  [1m[36mDonation Load (35.8ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+Completed 200 OK in 185ms (Views: 1.3ms | ActiveRecord: 68.1ms)
+
+
+Started POST "/v1/model" for 127.0.0.1 at 2017-09-20 14:15:37 +0100
+Processing by V1::ModelController#create as */*
+  Parameters: {"email"=>"r@j.com", "encrypted_password"=>"[FILTERED]", "model"=>{"email"=>"r@j.com", "encrypted_password"=>"[FILTERED]"}}
+  [1m[35m (3.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mModel Exists (7.0ms)[0m  [1m[34mSELECT  1 AS one FROM "models" WHERE "models"."email" = $1 LIMIT $2[0m  [["email", "r@j.com"], ["LIMIT", 1]]
+  [1m[35m (17.6ms)[0m  [1m[31mROLLBACK[0m
+Completed 201 Created in 74ms (Views: 5.3ms | ActiveRecord: 28.1ms)
+
+
+Started POST "/v1/users" for 127.0.0.1 at 2017-09-20 14:18:27 +0100
+Processing by V1::UsersController#create as */*
+  Parameters: {"first_name"=>"Eoghan 2", "last_name"=>"Crowley 2", "password"=>"[FILTERED]", "user"=>{"first_name"=>"Eoghan 2", "last_name"=>"Crowley 2", "password"=>"[FILTERED]"}}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (13.6ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["first_name", "Eoghan 2"], ["last_name", "Crowley 2"], ["password", "123 - 2"], ["created_at", "2017-09-20 13:18:27.515094"], ["updated_at", "2017-09-20 13:18:27.515094"]]
+  [1m[35m (4.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 62ms (Views: 2.0ms | ActiveRecord: 45.6ms)
+
+
+Started POST "/v1/model" for 127.0.0.1 at 2017-09-20 14:18:57 +0100
+Processing by V1::ModelController#create as */*
+  Parameters: {"email"=>"r@j.com", "encrypted_password"=>"[FILTERED]", "model"=>{"email"=>"r@j.com", "encrypted_password"=>"[FILTERED]"}}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mModel Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "models" WHERE "models"."email" = $1 LIMIT $2[0m  [["email", "r@j.com"], ["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[31mROLLBACK[0m
+Completed 201 Created in 27ms (Views: 2.8ms | ActiveRecord: 2.6ms)
+
+
+Started POST "/v1/model" for 127.0.0.1 at 2017-09-20 14:19:45 +0100
+Processing by V1::ModelController#create as */*
+  Parameters: {"email"=>"r@j.com", "encrypted_password"=>"[FILTERED]", "model"=>{"email"=>"r@j.com", "encrypted_password"=>"[FILTERED]"}}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mModel Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "models" WHERE "models"."email" = $1 LIMIT $2[0m  [["email", "r@j.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+Completed 201 Created in 10ms (Views: 0.8ms | ActiveRecord: 1.8ms)
+
+
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+Started POST "/v1/model" for 127.0.0.1 at 2017-09-20 14:33:36 +0100
+Processing by V1::ModelController#create as */*
+  Parameters: {"email"=>"reece@j.com", "encrypted_password"=>"[FILTERED]", "model"=>{"email"=>"reece@j.com", "encrypted_password"=>"[FILTERED]"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mModel Exists (2.4ms)[0m  [1m[34mSELECT  1 AS one FROM "models" WHERE "models"."email" = $1 LIMIT $2[0m  [["email", "reece@j.com"], ["LIMIT", 1]]
+  [1m[35m (11.9ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mModel Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "models" WHERE "models"."email" = $1 LIMIT $2[0m  [["email", "reece@j.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+Completed 201 Created in 80ms (Views: 1.8ms | ActiveRecord: 75.1ms)
+
+
+Started POST "/v1/model" for 127.0.0.1 at 2017-09-20 14:38:59 +0100
+  [1m[35m (13.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by V1::ModelController#create as */*
+  Parameters: {"email"=>"ree@j.com", "encrypted_password"=>"[FILTERED]", "model"=>{"email"=>"ree@j.com", "encrypted_password"=>"[FILTERED]"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mModel Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "models" WHERE "models"."email" = $1 LIMIT $2[0m  [["email", "ree@j.com"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mModel Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "models" WHERE "models"."email" = $1 LIMIT $2[0m  [["email", "ree@j.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 201 Created in 73ms (Views: 0.9ms | ActiveRecord: 9.4ms)
+
+
+Started POST "/v1/model" for 127.0.0.1 at 2017-09-20 14:39:56 +0100
+Processing by V1::ModelController#create as */*
+  Parameters: {"email"=>"catface@j.com", "encrypted_password"=>"[FILTERED]", "model"=>{"email"=>"catface@j.com", "encrypted_password"=>"[FILTERED]"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mModel Exists (2.0ms)[0m  [1m[34mSELECT  1 AS one FROM "models" WHERE "models"."email" = $1 LIMIT $2[0m  [["email", "catface@j.com"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+Completed 201 Created in 77ms (Views: 0.9ms | ActiveRecord: 11.6ms)
+
+
+Started POST "/v1/model" for 127.0.0.1 at 2017-09-20 14:41:16 +0100
+Processing by V1::ModelController#create as */*
+  Parameters: {"email"=>"catface@j.com", "encrypted_password"=>"[FILTERED]", "model"=>{"email"=>"catface@j.com", "encrypted_password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mModel Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "models" WHERE "models"."email" = $1 LIMIT $2[0m  [["email", "catface@j.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 201 Created in 8ms (Views: 1.1ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/v1/model" for 127.0.0.1 at 2017-09-20 14:41:52 +0100
+Processing by V1::ModelController#create as */*
+  Parameters: {"email"=>"catface@j.com", "encrypted_password"=>"[FILTERED]", "model"=>{"email"=>"catface@j.com", "encrypted_password"=>"[FILTERED]"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mModel Exists (5.2ms)[0m  [1m[34mSELECT  1 AS one FROM "models" WHERE "models"."email" = $1 LIMIT $2[0m  [["email", "catface@j.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+Completed 201 Created in 90ms (Views: 1.3ms | ActiveRecord: 26.4ms)
+
+
+Started POST "/v1/model" for 127.0.0.1 at 2017-09-20 14:44:11 +0100
+  [1m[35m (7.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by V1::ModelController#create as */*
+  Parameters: {"email"=>"caace@j.com", "encrypted_password"=>"[FILTERED]", "model"=>{"email"=>"caace@j.com", "encrypted_password"=>"[FILTERED]"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mModel Exists (2.3ms)[0m  [1m[34mSELECT  1 AS one FROM "models" WHERE "models"."email" = $1 LIMIT $2[0m  [["email", "caace@j.com"], ["LIMIT", 1]]
+  [1m[35m (4.8ms)[0m  [1m[31mROLLBACK[0m
+Completed 201 Created in 89ms (Views: 1.1ms | ActiveRecord: 14.7ms)
+
+
+Started POST "/v1/model" for 127.0.0.1 at 2017-09-20 14:47:20 +0100
+Processing by V1::ModelController#create as */*
+  Parameters: {"email"=>"caace@j.com", "encrypted_password"=>"[FILTERED]", "model"=>{"email"=>"caace@j.com", "encrypted_password"=>"[FILTERED]"}}
+  [1m[35m (3.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mModel Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "models" WHERE "models"."email" = $1 LIMIT $2[0m  [["email", "caace@j.com"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+Completed 200 OK in 104ms (Views: 0.4ms | ActiveRecord: 32.4ms)
+
+
+Started POST "/v1/model" for 127.0.0.1 at 2017-09-20 14:49:16 +0100
+Processing by V1::ModelController#create as */*
+  Parameters: {"email"=>"caace@j.com", "encrypted_password"=>"[FILTERED]", "model"=>{"email"=>"caace@j.com", "encrypted_password"=>"[FILTERED]"}}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mModel Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "models" WHERE "models"."email" = $1 LIMIT $2[0m  [["email", "caace@j.com"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mModel Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "models" WHERE "models"."email" = $1 LIMIT $2[0m  [["email", "caace@j.com"], ["LIMIT", 1]]
+  [1m[35m (1.6ms)[0m  [1m[31mROLLBACK[0m
+Completed 204 No Content in 118ms (ActiveRecord: 22.9ms)
+
+
+Started POST "/v1/model" for 127.0.0.1 at 2017-09-20 14:49:43 +0100
+Processing by V1::ModelController#create as */*
+  Parameters: {"email"=>"caace@j.com", "encrypted_password"=>"[FILTERED]", "model"=>{"email"=>"caace@j.com", "encrypted_password"=>"[FILTERED]"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mModel Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "models" WHERE "models"."email" = $1 LIMIT $2[0m  [["email", "caace@j.com"], ["LIMIT", 1]]
+  [1m[35m (2.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 204 No Content in 110ms (ActiveRecord: 42.6ms)
+
+
+Started POST "/v1/model" for 127.0.0.1 at 2017-09-20 14:52:09 +0100
+Processing by V1::ModelController#create as */*
+  Parameters: {"email"=>"caace@j.com", "encrypted_password"=>"[FILTERED]", "model"=>{"email"=>"caace@j.com", "encrypted_password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mModel Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "models" WHERE "models"."email" = $1 LIMIT $2[0m  [["email", "caace@j.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 200 OK in 34ms (Views: 0.3ms | ActiveRecord: 9.8ms)
+
+
+Started POST "/v1/model" for 127.0.0.1 at 2017-09-20 14:52:43 +0100
+Processing by V1::ModelController#create as */*
+  Parameters: {"email"=>"caace@j.com", "encrypted_password"=>"[FILTERED]", "model"=>{"email"=>"caace@j.com", "encrypted_password"=>"[FILTERED]"}}
+  [1m[35m (1.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mModel Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "models" WHERE "models"."email" = $1 LIMIT $2[0m  [["email", "caace@j.com"], ["LIMIT", 1]]
+  [1m[35m (26.9ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mModel Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "models" WHERE "models"."email" = $1 LIMIT $2[0m  [["email", "caace@j.com"], ["LIMIT", 1]]
+  [1m[35m (1.5ms)[0m  [1m[31mROLLBACK[0m
+Completed 201 Created in 103ms (Views: 1.0ms | ActiveRecord: 66.7ms)
+
+
+Started POST "/v1/model" for 127.0.0.1 at 2017-09-20 14:52:55 +0100
+Processing by V1::ModelController#create as */*
+  Parameters: {"email"=>"caace@j.com", "encrypted_password"=>"[FILTERED]", "model"=>{"email"=>"caace@j.com", "encrypted_password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mModel Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "models" WHERE "models"."email" = $1 LIMIT $2[0m  [["email", "caace@j.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mModel Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "models" WHERE "models"."email" = $1 LIMIT $2[0m  [["email", "caace@j.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 201 Created in 10ms (Views: 0.4ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/v1/model" for 127.0.0.1 at 2017-09-20 14:53:07 +0100
+Processing by V1::ModelController#create as */*
+  Parameters: {"email"=>"caacasde@j.com", "encrypted_password"=>"[FILTERED]", "model"=>{"email"=>"caacasde@j.com", "encrypted_password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mModel Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "models" WHERE "models"."email" = $1 LIMIT $2[0m  [["email", "caacasde@j.com"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mModel Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "models" WHERE "models"."email" = $1 LIMIT $2[0m  [["email", "caacasde@j.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+Completed 201 Created in 13ms (Views: 0.5ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/v1/model" for 127.0.0.1 at 2017-09-20 14:53:17 +0100
+Processing by V1::ModelController#create as */*
+  Parameters: {"email"=>"caacasde@j.com", "encrypted_password"=>"[FILTERED]", "model"=>{"email"=>"caacasde@j.com", "encrypted_password"=>"[FILTERED]"}}
+  [1m[35m (4.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mModel Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "models" WHERE "models"."email" = $1 LIMIT $2[0m  [["email", "caacasde@j.com"], ["LIMIT", 1]]
+  [1m[35m (48.7ms)[0m  [1m[31mROLLBACK[0m
+Completed 201 Created in 191ms (Views: 1.2ms | ActiveRecord: 84.8ms)
+
+
+Started POST "/v1/model" for 127.0.0.1 at 2017-09-20 14:54:09 +0100
+  [1m[35m (7.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by V1::ModelController#create as */*
+  Parameters: {"email"=>"caacasde@j.com", "encrypted_password"=>"[FILTERED]", "model"=>{"email"=>"caacasde@j.com", "encrypted_password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mModel Exists (1.6ms)[0m  [1m[34mSELECT  1 AS one FROM "models" WHERE "models"."email" = $1 LIMIT $2[0m  [["email", "caacasde@j.com"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+Completed 201 Created in 61ms (Views: 1.3ms | ActiveRecord: 12.1ms)
+
+
+Started POST "/v1/model" for 127.0.0.1 at 2017-09-20 14:54:54 +0100
+Processing by V1::ModelController#create as */*
+  Parameters: {"email"=>"caacasde@j.com", "encrypted_password"=>"[FILTERED]", "model"=>{"email"=>"caacasde@j.com", "encrypted_password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mModel Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "models" WHERE "models"."email" = $1 LIMIT $2[0m  [["email", "caacasde@j.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+Completed 201 Created in 72ms (Views: 0.8ms | ActiveRecord: 19.1ms)
+
+
+Started POST "/v1/model" for 127.0.0.1 at 2017-09-20 14:55:38 +0100
+Processing by V1::ModelController#create as */*
+  Parameters: {"email"=>"caacasde@j.com", "password"=>"[FILTERED]", "model"=>{"email"=>"caacasde@j.com"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mModel Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "models" WHERE "models"."email" = $1 LIMIT $2[0m  [["email", "caacasde@j.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+Completed 201 Created in 40ms (Views: 1.5ms | ActiveRecord: 10.2ms)
+
+
+Started POST "/v1/model" for 127.0.0.1 at 2017-09-20 14:58:38 +0100
+Processing by V1::ModelController#create as */*
+  Parameters: {"email"=>"caacasde@j.com", "encrypted_password"=>"[FILTERED]", "model"=>{"email"=>"caacasde@j.com", "encrypted_password"=>"[FILTERED]"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mModel Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "models" WHERE "models"."email" = $1 LIMIT $2[0m  [["email", "caacasde@j.com"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 36ms (ActiveRecord: 10.6ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Password can't be blank):
+  
+app/controllers/v1/model_controller.rb:10:in `create'
+Started POST "/v1/model" for 127.0.0.1 at 2017-09-20 15:03:38 +0100
+Processing by V1::ModelController#create as */*
+  Parameters: {"email"=>"caacasde@j.com", "password"=>"[FILTERED]", "encrypted_password"=>"[FILTERED]", "model"=>{"email"=>"caacasde@j.com", "encrypted_password"=>"[FILTERED]"}}
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mModel Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "models" WHERE "models"."email" = $1 LIMIT $2[0m  [["email", "caacasde@j.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 57ms (ActiveRecord: 2.1ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Password can't be blank):
+  
+app/controllers/v1/model_controller.rb:10:in `create'
+Started POST "/v1/model" for 127.0.0.1 at 2017-09-20 15:03:53 +0100
+Processing by V1::ModelController#create as */*
+  Parameters: {"email"=>"caacasde@j.com", "encrypted_password"=>"[FILTERED]", "model"=>{"email"=>"caacasde@j.com", "encrypted_password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mModel Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "models" WHERE "models"."email" = $1 LIMIT $2[0m  [["email", "caacasde@j.com"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 6ms (ActiveRecord: 1.0ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Password can't be blank):
+  
+app/controllers/v1/model_controller.rb:10:in `create'
+Started POST "/v1/model" for 127.0.0.1 at 2017-09-20 15:09:21 +0100
+Processing by V1::ModelController#create as */*
+  Parameters: {"email"=>"caacasde@j.com", "encrypted_password"=>"[FILTERED]", "created_at"=>"1234-23-23", "updated_at"=>"1234-34-34", "model"=>{"email"=>"caacasde@j.com", "encrypted_password"=>"[FILTERED]", "created_at"=>"1234-23-23", "updated_at"=>"1234-34-34"}}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mModel Exists (1.8ms)[0m  [1m[34mSELECT  1 AS one FROM "models" WHERE "models"."email" = $1 LIMIT $2[0m  [["email", "caacasde@j.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 50ms (ActiveRecord: 13.8ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Password can't be blank):
+  
+app/controllers/v1/model_controller.rb:10:in `create'
+Started POST "/v1/model" for 127.0.0.1 at 2017-09-20 15:09:39 +0100
+Processing by V1::ModelController#create as */*
+  Parameters: {"email"=>"caacasde@j.com", "encrypted_password"=>"[FILTERED]", "created_at"=>"1234-23-23", "updated_at"=>"1234-34-34", "model"=>{"email"=>"caacasde@j.com", "encrypted_password"=>"[FILTERED]", "created_at"=>"1234-23-23", "updated_at"=>"1234-34-34"}}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mModel Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "models" WHERE "models"."email" = $1 LIMIT $2[0m  [["email", "caacasde@j.com"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+Completed 201 Created in 64ms (Views: 7.8ms | ActiveRecord: 7.7ms)
+
+
+Started POST "/v1/model" for 127.0.0.1 at 2017-09-20 15:10:42 +0100
+Processing by V1::ModelController#create as */*
+  Parameters: {"email"=>"ad@j.com", "encrypted_password"=>"[FILTERED]", "created_at"=>"1986-11-11", "updated_at"=>"1934-02-03", "model"=>{"email"=>"ad@j.com", "encrypted_password"=>"[FILTERED]", "created_at"=>"1986-11-11", "updated_at"=>"1934-02-03"}}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mModel Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "models" WHERE "models"."email" = $1 LIMIT $2[0m  [["email", "ad@j.com"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+Completed 201 Created in 44ms (Views: 6.4ms | ActiveRecord: 1.9ms)
+
+
