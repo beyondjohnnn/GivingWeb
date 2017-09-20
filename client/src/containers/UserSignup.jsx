@@ -1,24 +1,30 @@
 import React from 'react'
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import * as actionCreators from '../actions/authActionCreators'
 
 import css from './UserSignup.scss'
 
 class UserSignup extends React.Component {
 
-	formSubmit() {
+	formSubmit(e) {
+		e.preventDefault()
+
 		const newUserDetails = {
 			first_name: this.refs.first_name.value,
 			last_name: this.refs.last_name.value,
 			email: this.refs.email.value,
 			password: this.refs.password.value
 		}
+
+		this.props.signup(newUserDetails)
 	}
 
 
 	render() {
 		return (
 			<div className="user-signup">
-				<form ref="signup-form" action="/" method="post" onSubmit={this.formSubmit}>
+				<form ref="signup-form" action="/" method="post" onSubmit={this.formSubmit.bind(this)}>
 					<h2>Sign up</h2>
 					<div>
 						<label htmlFor="email">Email</label>
@@ -51,7 +57,7 @@ class UserSignup extends React.Component {
 }
 
 function mapStateToProps(state, router) {
-	return Object.assign({})
+	return Object.assign({}, state.auth)
 }
 
 function mapDispatchToProps(dispatch) {

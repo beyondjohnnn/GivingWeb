@@ -11,7 +11,7 @@ const routerStuff = routerMiddleware(history)
 export { history }
 
 const defaultState = {
-
+	auth: {}
 }
 
 const middleware = applyMiddleware(routerStuff, promiseMiddleware())
