@@ -1631,3 +1631,208 @@ FOREIGN KEY ("user_id")
   [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(5878493172211724820)[0m
   [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (7.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (35.7ms)[0m  [1m[35mDROP TABLE "donations"[0m
+  [1m[35m (3.2ms)[0m  [1m[35mDROP TABLE "charities"[0m
+  [1m[35m (3.0ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (7.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key)[0m
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE TABLE "charities" ("id" bigserial primary key)[0m
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE TABLE "donations" ("id" bigserial primary key)[0m
+  [1m[35m (16.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (21.5ms)[0m  [1m[35mDROP TABLE "donations"[0m
+  [1m[35m (8.2ms)[0m  [1m[35mDROP TABLE "charities"[0m
+  [1m[35m (14.0ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (7.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key)[0m
+  [1m[35m (4.9ms)[0m  [1m[35mCREATE TABLE "charities" ("id" bigserial primary key)[0m
+  [1m[35m (4.6ms)[0m  [1m[35mCREATE TABLE "donations" ("id" bigserial primary key)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (8.4ms)[0m  [1m[35mDROP TABLE "donations"[0m
+  [1m[35m (12.5ms)[0m  [1m[35mDROP TABLE "charities"[0m
+  [1m[35m (6.8ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (8.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key)[0m
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE TABLE "charities" ("id" bigserial primary key)[0m
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE TABLE "donations" ("id" bigserial primary key)[0m
+Started GET "/v1/charities" for 127.0.0.1 at 2017-09-20 11:11:51 +0100
+  [1m[35m (8.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by V1::CharitiesController#index as */*
+  Parameters: {"charity"=>{}}
+  [1m[36mCharity Load (5.9ms)[0m  [1m[34mSELECT "charities".* FROM "charities"[0m
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 8.2ms)
+
+
+Started POST "/v1/charities" for 127.0.0.1 at 2017-09-20 11:11:56 +0100
+Processing by V1::CharitiesController#create as */*
+  Parameters: {"charity_name"=>"CodeForChange", "password"=>"[FILTERED]", "charity"=>{}}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: charity):
+  
+app/controllers/v1/charities_controller.rb:27:in `charity_params'
+app/controllers/v1/charities_controller.rb:9:in `create'
+Started POST "/v1/charities" for 127.0.0.1 at 2017-09-20 11:13:30 +0100
+Processing by V1::CharitiesController#create as */*
+  Parameters: {"charity"=>"CodeForChange", "password"=>"[FILTERED]"}
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `permit' for "CodeForChange":String):
+  
+app/controllers/v1/charities_controller.rb:27:in `charity_params'
+app/controllers/v1/charities_controller.rb:9:in `create'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5878493172211724820)[0m
+  [1m[35m (6.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5878493172211724820)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (45.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (23.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5878493172211724820)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCharities (20170920095924)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (28.7ms)[0m  [1m[35mCREATE TABLE "charities" ("id" bigserial primary key, "charity_name" character varying, "password" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170920095924"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateUsers (20170920100152)
+  [1m[35m (6.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (18.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "first_name" character varying, "last_name" character varying, "email" character varying, "password" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170920100152"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-09-20 10:17:49.256507"], ["updated_at", "2017-09-20 10:17:49.256507"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5878493172211724820)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5878493172211724820)[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateDonations (20170920095843)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (33.8ms)[0m  [1m[35mCREATE TABLE "donations" ("id" bigserial primary key, "comment" character varying, "donation_amount" decimal, "user_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_5470822a00"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE  INDEX  "index_donations_on_user_id" ON "donations"  ("user_id")[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170920095843"]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5878493172211724820)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (6.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (3.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "Reece"], ["last_name", "Jones"], ["email", "r@j.com"], ["password", "123"], ["created_at", "2017-09-20 10:25:33.635977"], ["updated_at", "2017-09-20 10:25:33.635977"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "Eoghan"], ["last_name", "Crowley"], ["email", "e@c.com"], ["password", "123"], ["created_at", "2017-09-20 10:25:33.642509"], ["updated_at", "2017-09-20 10:25:33.642509"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "Johnny"], ["last_name", "Watson"], ["email", "j@w.com"], ["password", "123"], ["created_at", "2017-09-20 10:25:33.644775"], ["updated_at", "2017-09-20 10:25:33.644775"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (13.3ms)[0m  [1m[32mINSERT INTO "charities" ("charity_name", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["charity_name", "StreetChange"], ["password", "123"], ["created_at", "2017-09-20 10:25:33.660199"], ["updated_at", "2017-09-20 10:25:33.660199"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "Reece"], ["last_name", "Jones"], ["email", "r@j.com"], ["password", "123"], ["created_at", "2017-09-20 10:25:51.264985"], ["updated_at", "2017-09-20 10:25:51.264985"]]
+  [1m[35m (5.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "Eoghan"], ["last_name", "Crowley"], ["email", "e@c.com"], ["password", "123"], ["created_at", "2017-09-20 10:25:51.273584"], ["updated_at", "2017-09-20 10:25:51.273584"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "Johnny"], ["last_name", "Watson"], ["email", "j@w.com"], ["password", "123"], ["created_at", "2017-09-20 10:25:51.276388"], ["updated_at", "2017-09-20 10:25:51.276388"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "charities" ("charity_name", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["charity_name", "StreetChange"], ["password", "123"], ["created_at", "2017-09-20 10:25:51.295800"], ["updated_at", "2017-09-20 10:25:51.295800"]]
+  [1m[35m (6.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (28.6ms)[0m  [1m[32mINSERT INTO "donations" ("comment", "donation_amount", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["comment", "Good luck mate!"], ["donation_amount", "12.5"], ["created_at", "2017-09-20 10:25:51.325148"], ["updated_at", "2017-09-20 10:25:51.325148"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "Reece"], ["last_name", "Jones"], ["email", "r@j.com"], ["password", "123"], ["created_at", "2017-09-20 10:26:05.076413"], ["updated_at", "2017-09-20 10:26:05.076413"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "Eoghan"], ["last_name", "Crowley"], ["email", "e@c.com"], ["password", "123"], ["created_at", "2017-09-20 10:26:05.080911"], ["updated_at", "2017-09-20 10:26:05.080911"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "Johnny"], ["last_name", "Watson"], ["email", "j@w.com"], ["password", "123"], ["created_at", "2017-09-20 10:26:05.083556"], ["updated_at", "2017-09-20 10:26:05.083556"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "charities" ("charity_name", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["charity_name", "StreetChange"], ["password", "123"], ["created_at", "2017-09-20 10:26:05.098413"], ["updated_at", "2017-09-20 10:26:05.098413"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "donations" ("comment", "donation_amount", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["comment", "Good luck mate!"], ["donation_amount", "12.5"], ["created_at", "2017-09-20 10:26:05.116177"], ["updated_at", "2017-09-20 10:26:05.116177"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/v1/charities" for 127.0.0.1 at 2017-09-20 11:26:28 +0100
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by V1::CharitiesController#index as */*
+  Parameters: {"charity"=>{}}
+  [1m[36mCharity Load (0.5ms)[0m  [1m[34mSELECT "charities".* FROM "charities"[0m
+Completed 200 OK in 15ms (Views: 0.3ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/v1/users" for 127.0.0.1 at 2017-09-20 11:26:47 +0100
+Processing by V1::UsersController#index as */*
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 89ms (Views: 59.6ms | ActiveRecord: 26.8ms)
+
+
+Started DELETE "/v1/charities/2" for 127.0.0.1 at 2017-09-20 11:29:30 +0100
+Processing by V1::CharitiesController#destroy as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mCharity Load (5.6ms)[0m  [1m[34mSELECT  "charities".* FROM "charities" WHERE "charities"."id" = $1 ORDER BY "charities"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[31mDELETE FROM "charities" WHERE "charities"."id" = $1[0m  [["id", 2]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 54ms (ActiveRecord: 8.6ms)
+
+
+Started DELETE "/v1/charities/3" for 127.0.0.1 at 2017-09-20 11:29:34 +0100
+Processing by V1::CharitiesController#destroy as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mCharity Load (0.7ms)[0m  [1m[34mSELECT  "charities".* FROM "charities" WHERE "charities"."id" = $1 ORDER BY "charities"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[31mDELETE FROM "charities" WHERE "charities"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 14ms (ActiveRecord: 3.0ms)
+
+
