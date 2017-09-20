@@ -10,13 +10,14 @@ class Hero extends React.Component {
 			<div className="hero">
 				<div className="captions">
 					<h2>
-						A Hero Title
+						Make Change Happen
 					</h2>
 					<p>
-						Some brief but somewhat inspiring text.
+						Support amazing organisations and people today
 					</p>
 					<Link className="call-to-action" to="/">
-						Get Started
+						SEE HOW IT WORKS
+						<i className="fa fa-chevron-down" aria-hidden="true"></i>
 					</Link>
 				</div>
 			</div>
