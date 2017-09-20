@@ -10,7 +10,8 @@ $search-border-focus: 1.4px solid #6898ff;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 55px;
+	height: 58px;
+	z-index: 5;
 
 	.content-wrapper {
 		width: 100%;
@@ -94,13 +95,13 @@ $search-border-focus: 1.4px solid #6898ff;
 				}
 			}
 
-			&:focus + .search-icon{
-				border: {
-					top: $search-border-focus;
-					right: $search-border-focus;
-					bottom: $search-border-focus;
-				}
-			}
+			// &:focus + .search-icon{
+			// 	border: {
+			// 		top: $search-border-focus;
+			// 		right: $search-border-focus;
+			// 		bottom: $search-border-focus;
+			// 	}
+			// }
 		}
 
 		.search-icon{
