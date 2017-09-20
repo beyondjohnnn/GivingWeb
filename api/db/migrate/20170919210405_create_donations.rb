@@ -9,3 +9,4 @@ class CreateDonations < ActiveRecord::Migration[5.1]
     end
   end
 end
+#TODO: take out :charity on line 6

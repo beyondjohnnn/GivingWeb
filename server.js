@@ -8,6 +8,6 @@ app.get('*', (req, res) => {
 	res.sendFile(path.join(__dirname, 'client/build/index.html'))
 })
 
-const server = app.listen(3000, () => {
-	console.log('GivingWeb is ready to go on port 3000')
+const server = app.listen(5000, () => {
+	console.log('GivingWeb is ready to go on port 5000')
 })

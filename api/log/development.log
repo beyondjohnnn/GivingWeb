@@ -1384,3 +1384,34 @@ Processing by V1::UsersController#index as HTML
 Completed 200 OK in 107ms (Views: 74.9ms | ActiveRecord: 21.9ms)
 
 
+Started GET "/v1/donations" for 127.0.0.1 at 2017-09-20 09:08:37 +0100
+  [1m[35m (12.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by V1::DonationsController#index as HTML
+  [1m[36mDonation Load (34.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+Completed 200 OK in 135ms (Views: 0.5ms | ActiveRecord: 106.1ms)
+
+
+Started GET "/v1/charities" for 127.0.0.1 at 2017-09-20 09:10:36 +0100
+Processing by V1::CharitiesController#index as HTML
+  [1m[36mCharity Load (6.8ms)[0m  [1m[34mSELECT "charities".* FROM "charities"[0m
+Completed 200 OK in 90ms (Views: 0.8ms | ActiveRecord: 28.4ms)
+
+
+Started GET "/v1/users" for 127.0.0.1 at 2017-09-20 09:10:46 +0100
+Processing by V1::UsersController#index as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 26ms (Views: 14.8ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/v1/charities" for 127.0.0.1 at 2017-09-20 10:02:53 +0100
+Processing by V1::CharitiesController#index as HTML
+  [1m[36mCharity Load (765.1ms)[0m  [1m[34mSELECT "charities".* FROM "charities"[0m
+Completed 200 OK in 862ms (Views: 4.7ms | ActiveRecord: 765.1ms)
+
+
+Started GET "/v1/donations" for 127.0.0.1 at 2017-09-20 10:03:06 +0100
+Processing by V1::DonationsController#index as HTML
+  [1m[36mDonation Load (79.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+Completed 200 OK in 150ms (Views: 0.7ms | ActiveRecord: 79.2ms)
+
+
