@@ -25,12 +25,14 @@ class UserSignup extends React.Component {
 		return (
 			<div className="user-signup">
 				<form ref="signup-form" action="/" method="post" onSubmit={this.formSubmit.bind(this)}>
-					<h2>Sign up</h2>
-					<div>
+					<div className="form-header">
+						<h2>Sign up</h2>
+					</div>
+					<div className="email-field-wrapper form-field">
 						<label htmlFor="email">Email</label>
 						<input ref="email" id="email" name="email" type="email" />
 					</div>
-					<div>
+					<div className="name-field-wrapper form-field">
 						<div>
 							<label htmlFor="first_name">First name</label>
 							<input ref="first_name" id="first_name" name="first_name" type="text" />
@@ -40,16 +42,16 @@ class UserSignup extends React.Component {
 							<input ref="last_name" id="last_name" name="last_name" type="text" />
 						</div>
 					</div>
-					<div>
+					<div className="password-field-wrapper form-field">
 						<label htmlFor="password">Password</label>
 						<input ref="password" id="password" name="password" type="password" />
 					</div>
 					<input type="submit" value="Sign up" />
+					<div className="extra-info">
+						Already have an account?
+					</div>
 				</form>
 
-				<div>
-					Already have an account?
-				</div>
 
 			</div>
 		)
