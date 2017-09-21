@@ -6,6 +6,9 @@ $search-border-focus: 1.4px solid $search-border-focus-color;
 $nav-links-size: 13px; 
 $nav-links-weight: 200;
 
+.navigation-wrapper { 
+	height:58px;
+}
 .navigation {
 	width: 100%;
 	background-color: #ffffff;

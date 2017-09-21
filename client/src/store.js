@@ -13,7 +13,7 @@ export { history }
 const defaultState = {
 	auth: {},
   navigation: {
-    dropdownVisible: true
+    dropdownVisible: false
   }
 }
 

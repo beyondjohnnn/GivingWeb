@@ -32,28 +32,30 @@ class Navigation extends React.Component {
 
 	render() {
 		return (
-			<div className="navigation">
-				<div className="content-wrapper">
-					<div className="logo-search-wrapper">
-						<Link to="/" className="logo">
-							<img src="images/logopurple.png" />
-						</Link>
-						<form className="search-bar">
-					    <input  id="search" placeholder="Search for a city, friend, non-profit or cause..." />
-					    <button className="search-icon"><i className="fa fa-search"></i></button>
-					  </form>
-					</div>		
-					<nav>
-						<Link to="/login" className="login-link nav-link">
-							Log in
-						</Link>
-						<Link to="/signup" className="signup-link nav-link">
-							Sign up
-						</Link> 
-						{this.renderMenuButton()}
-						{this.renderDropdown()}
-					</nav>
-				</div>	
+			<div className="navigation-wrapper">
+				<div className="navigation">
+					<div className="content-wrapper">
+						<div className="logo-search-wrapper">
+							<Link to="/" className="logo">
+								<img src="images/logopurple.png" />
+							</Link>
+							<form className="search-bar">
+						    <input  id="search" placeholder="Search for a city, friend, non-profit or cause..." />
+						    <button className="search-icon"><i className="fa fa-search"></i></button>
+						  </form>
+						</div>		
+						<nav>
+							<Link to="/login" className="login-link nav-link">
+								Log in
+							</Link>
+							<Link to="/signup" className="signup-link nav-link">
+								Sign up
+							</Link> 
+							{this.renderMenuButton()}
+							{this.renderDropdown()}
+						</nav>
+					</div>	
+				</div>
 			</div>
 		)
 	}
