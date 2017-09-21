@@ -1,4 +1,4 @@
-class V1::ModelController < ApplicationController
+class ModelController < ApplicationController
   def index
     @models = Model.all
 
@@ -9,7 +9,7 @@ class V1::ModelController < ApplicationController
     @model = Model.new( model_params )
     @model.save
     puts @model.encrypted_password
-    puts @model.errors.full_messages
+    puts @model.errors.details
     render json: @model, status: :created
   end
 
@@ -25,6 +25,6 @@ class V1::ModelController < ApplicationController
 
   private
   def model_params
-    params.require(:model).permit([:email, :password, :password_confirmation])
+    params.require(:model).permit([:email, :encrypted_password, :created_at, :updated_at])
   end
 end
