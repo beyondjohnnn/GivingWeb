@@ -36,7 +36,7 @@ $search-border: 1px solid $search-color;
 .menu-dropdown {
   display: flex; 
   flex-flow: column;
-  padding: 12px 22px 12px 22px;
+  padding: 12px 0px;
   // background: grey;
   width: 100%;
 
@@ -45,12 +45,13 @@ $search-border: 1px solid $search-color;
       font-weight: 200;
       text-decoration: none;
       color: #666666;
-      padding-bottom: 5px;
-      margin-top: 5px; 
+      padding: 6px 0px 6px 20px;
       // height: 100%;
 
       &:hover {
-        text-decoration: underline;
+        // text-decoration: underline;
+        background-color: #7b5dff;
+        color: #ffffff;
       }
     }
 
