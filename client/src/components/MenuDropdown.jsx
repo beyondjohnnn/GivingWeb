@@ -40,11 +40,13 @@ class MenuDropdown extends React.Component {
       <div ref="container" className={this.props.styling}>
         <div className="tooltip"></div>
         <div className="menu-dropdown"> 
-          <Link to="">I</Link>
-          <Link to="">am</Link>
-          <Link to="">a</Link>
-          <Link to="">innk</Link>
-          <Link to="">bink</Link>
+          <Link to="" className="menu-link-text">Start Fundraising</Link>
+          <Link to="" className="menu-link-text">Help Someone</Link>
+          <div/>
+          <Link to="" className="menu-link-text">For Charities</Link>
+          <div/>
+          <Link to="" className="menu-link-text">Help</Link>
+          <Link to="" className="menu-link-text">About Us</Link>
         </div>
       </div>
     )
