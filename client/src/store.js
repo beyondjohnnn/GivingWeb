@@ -11,7 +11,10 @@ const routerStuff = routerMiddleware(history)
 export { history }
 
 const defaultState = {
-	auth: {}
+	auth: {},
+  navigation: {
+    dropdownVisible: true
+  }
 }
 
 const middleware = applyMiddleware(routerStuff, promiseMiddleware())
