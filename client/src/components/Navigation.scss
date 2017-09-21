@@ -15,6 +15,13 @@ $nav-links-weight: 200;
 	align-items: center;
 	height: 58px;
 	z-index: 5;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	position: fixed;
+	top: 0;
+	
+
 
 	.content-wrapper {
 		width: 100%;
@@ -82,7 +89,7 @@ $nav-links-weight: 200;
 		  height: 30px;
 		  background: white;
 		  font-size: 10pt;
-		  color: grey;
+		  color: #5a5a5a;
 		  padding-left: 15px;
 		 
 			border: 0.5px solid $search-color;
@@ -201,10 +208,24 @@ $nav-links-weight: 200;
 			font-size: 19px;
 		}
 
-		& .down-arrow {
+		& .arrow {
 			padding-left: 6px;
 			font-size: 13px;
+			position: relative;
 		}
-	}
+
+		.down-arrow{
+			top: -3px;
+		}
+
+		.up-arrow{
+			top: 3px;
+		}
+
 	
+
+}
+	.menu-open{
+		color: darken($search-color, 30);
+	}
 }

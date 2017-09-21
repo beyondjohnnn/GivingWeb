@@ -1,10 +1,35 @@
 import React from 'react'
 import { bindActionCreators } from 'redux'
 import { Link } from 'react-router-dom'
+import {connect}  from 'react-redux'
+import * as actionCreators from '../actions/navActionCreators'
+
+import MenuDropdown from './MenuDropdown'
 
 import css from './Navigation.scss'
 
 class Navigation extends React.Component {
+
+	renderDropdown() {
+		if (this.props.dropdownVisible) {
+			return <MenuDropdown styling="menu-dropdown-wrapper visible-dropdown" />
+		} else {
+			return <MenuDropdown styling="menu-dropdown-wrapper hidden-dropdown" />
+		}
+	}
+
+	renderMenuButton() {
+		if (this.props.dropdownVisible) {
+			return <button className="menu-button menu-open" onClick={this.props.toggleDropdown}>
+							<i className="fa fa-bars menu-burger" aria-hidden="true"></i>Menu<i className="fa fa-sort-asc arrow up-arrow" aria-hidden="true"></i>
+						</button>
+		} else {
+			return <button className="menu-button" onClick={this.props.toggleDropdown}>
+							<i className="fa fa-bars menu-burger" aria-hidden="true"></i>Menu<i className="fa fa-sort-desc arrow down-arrow" aria-hidden="true"></i>
+						</button>
+		}
+	}
+
 	render() {
 		return (
 			<div className="navigation">
@@ -25,9 +50,8 @@ class Navigation extends React.Component {
 						<Link to="/signup" className="signup-link nav-link">
 							Sign up
 						</Link> 
-						<button className="menu-button">
-							<i className="fa fa-bars menu-burger" aria-hidden="true"></i>Menu<i className="fa fa-sort-desc down-arrow" aria-hidden="true"></i>
-						</button>
+						{this.renderMenuButton()}
+						{this.renderDropdown()}
 					</nav>
 				</div>	
 			</div>
@@ -35,4 +59,14 @@ class Navigation extends React.Component {
 	}
 }
 
-export default Navigation
+// this is taking the navigation portion of state and attaching it to the Navigation's props
+function mapStateToProps(state, routing) {
+  return Object.assign({}, state.navigation, routing)
+}
+
+// this is attaching our actions to the Navigation component
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators(actionCreators, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Navigation)
