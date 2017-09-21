@@ -3,6 +3,8 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import * as actionCreators from '../actions/authActionCreators'
 
+import css from './UserLogin.scss'
+
 class UserLogin extends React.Component {
 
 	submitForm(e) {
@@ -18,18 +20,23 @@ class UserLogin extends React.Component {
 
 	render() {
 		return (
-			<div>
+			<div className="user-login">
 				<form onSubmit={this.submitForm.bind(this)} >
-					<h2>Log in</h2>
-					<div>
+					<div className="form-header">
+						<h2>Log in</h2>
+					</div>
+					<div className="email-field-wrapper form-field">
 						<label htmlFor="email">Email</label>
 						<input ref="email" type="email" />
 					</div>
-					<div>
+					<div className="password-field-wrapper form-field">
 						<label htmlFor="password">Password</label>
 						<input ref="password" type="password" />
 					</div>
 					<input type="submit" value="Log in" />
+					<div className="extra-info">
+						Already have an account?
+					</div>
 				</form>
 			</div>
 		)
