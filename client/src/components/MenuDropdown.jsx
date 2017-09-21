@@ -8,7 +8,7 @@ class MenuDropdown extends React.Component {
   render() {
     return (
       <div className={this.props.styling}>
-        <span></span>
+        <div className="tooltip"></div>
         <div className="menu-dropdown"> 
           <Link to="">I</Link>
           <Link to="">am</Link>
