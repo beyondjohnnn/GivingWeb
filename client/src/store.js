@@ -14,6 +14,9 @@ const defaultState = {
 	auth: {},
   navigation: {
     dropdownVisible: false
+  },
+  howItWorks: {
+    howItWorksVisible: false
   }
 }
 
