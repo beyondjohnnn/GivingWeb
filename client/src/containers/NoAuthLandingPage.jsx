@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import css from './NoAuthLandingPage.scss'
 
 import Hero from '../components/Hero'
+import HowItWorks from '../components/HowItWorks'
 import MemberPreview from '../components/MemberPreview'
 
 class NoAuthLandingPage extends React.Component {
@@ -11,6 +12,7 @@ class NoAuthLandingPage extends React.Component {
 		return (
 			<div>
 				<Hero />
+				<HowItWorks />
 				<div className="featured-members">
 					<h2>Members</h2>
 					<div className="members-list">
