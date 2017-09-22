@@ -9,6 +9,8 @@ import css from './NoAuthLandingPage.scss'
 import Hero from '../components/Hero'
 import HowItWorks from '../components/HowItWorks'
 import MemberPreview from '../components/MemberPreview'
+import FeaturedMembers from '../components/FeaturedMembers'
+
 
 import * as actionCreators from '../actions/howItWorksActionCreators'
 
@@ -28,14 +30,7 @@ class NoAuthLandingPage extends React.Component {
 			<div>
 				<Hero />
 				{this.renderHowItWorks()}
-				<div className="featured-members">
-					<h2>Members</h2>
-					<div className="members-list">
-						<MemberPreview />
-						<MemberPreview />
-						<MemberPreview />
-					</div>
-				</div>
+				<FeaturedMembers />
 			</div>
 		)
 	}

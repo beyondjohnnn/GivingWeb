@@ -17,6 +17,7 @@ import CharitySignup from './containers/CharitySignup'
 
 // import components
 import Navigation from './components/Navigation'
+import FeaturedMembers from './components/FeaturedMembers'
 
 // import react router dependencies
 import { Router, Route } from 'react-router'
@@ -37,6 +38,7 @@ const router = (
 				<Route path="/auth-landing-page" component={AuthLandingPage} />
 				<Route path="/user-dashboard" component={UserDashboard} />
 				<Route path="/charity-signup" component={CharitySignup} />
+				<Route path="/featured-members" component={FeaturedMembers} />
 			</div>
 		</Router>
 	</Provider>
