@@ -57,6 +57,10 @@ $radius-size: 4px;
 			-webkit-border: $radius-size;
 			-moz-border-radius: $radius-size;
 			border-radius: $radius-size;
+			border: none;
+			font-size: 16px;	
+			font-family: montserrat;
+			outline: none;
 
 				&:hover {
 					background-color: darken(#ff6200, 5);
@@ -65,6 +69,10 @@ $radius-size: 4px;
 				& i{
 					padding-left:6px;
 				}
+		}
+
+		.rotateArrow {
+			text-transform: rotate(180);
 		}
 	}
 }
