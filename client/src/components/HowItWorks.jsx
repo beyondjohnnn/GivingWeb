@@ -8,7 +8,9 @@ class HowItWorks extends React.Component {
 	render() {
 		return (
 			<div className="how-it-works">
-				<button><i class="fa fa-times" aria-hidden="true"></i></button>
+				<div className="button-wrapper">
+					<button><i className="fa fa-times" aria-hidden="true"></i></button>
+				</div>
 			</div>
 		)
 	}
