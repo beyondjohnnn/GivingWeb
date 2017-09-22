@@ -16,7 +16,7 @@ const defaultState = {
     dropdownVisible: false
   },
   howItWorks: {
-    howItWorksVisible: true
+    howItWorksVisible: false
   }
 }
 
