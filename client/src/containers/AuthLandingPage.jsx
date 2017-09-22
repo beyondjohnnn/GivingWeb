@@ -12,22 +12,37 @@ class AuthLandingPage extends React.Component {
 						<img src="http://via.placeholder.com/150x150" />
 						<h2>Peter Peterson</h2>
 					</div>
+
 					<div className="user-fundraising">
-						<h3>Your fundraising</h3><Link to="">See all</Link>
-						<img src="http://via.placeholder.com/150x150" />
-						<div>
-							<p>
-								Fundraiser name
-							</p>
-							<p>
-								% achieved
-							</p>
-							<Link to="">View</Link><Link to="">Edit</Link>
+						<div className="fundraising-title">
+							<h3>Your fundraising</h3>
+							<Link to="">See all</Link>
+						</div>
+						<div className="example-fundraiser">
+							<img src="http://via.placeholder.com/150x150" />
+							<div className="fundraiser-details">
+								<h4>
+									Fundraiser name
+								</h4>
+								<p>
+									% achieved
+								</p>
+								<div className="fundraiser-links">
+									<Link to="">View</Link>
+									<Link to="">Edit</Link>
+								</div>
+							</div>
 						</div>
 						<Link to="">Start fundraiser</Link>
 					</div>
-					<div className="">
-						<h3>Recent Donations</h3><Link to="">See all</Link>
+
+					<div className="recent-donations">
+						<div className="recent-donations-title">
+							<h3>Recent Donations</h3><Link to="">See all</Link>
+						</div>
+						<div className="donations-list">
+							You have no recent donations
+						</div>
 					</div>
 				</div>
 				<div className="right-container">
