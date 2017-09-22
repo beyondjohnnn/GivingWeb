@@ -1,12 +1,114 @@
+$button-color: rgb(0, 148, 51);
+$text-color: #999;
+$title-color: #222;
+
 .member-preview {
 	width: 30%;
+	color: $text-color;
 
-	img {
+	.member-photo {
 		width: 100%;
+		border-radius: 5px;
+		margin-bottom: 10px;
+	}
+
+	.member-name {
+		color: $title-color;
+		text-transform: uppercase;
+		text-decoration: underline;
+		margin-bottom: 5px;
+	}
+
+	.member-location {
+		margin-bottom: 10px;
+		text-transform: italic;
+		font-size: 0.7em;
+	}
+
+	.member-description {
+		margin-bottom: 20px;
+		height: 55px;
+		overflow: hidden;
+  		text-overflow: ellipsis;
+	}
+
+	.member-verification {
+		margin-bottom: 10px;
+		font-size: 0.7em;
+
+		.charity-link {
+			color: $text-color;
+		}
 	}
 
 	.donation-details {
+		padding-top: 20px;
+		border-top: 1px solid $text-color;
 		display: flex;
 		justify-content: space-between;
+		flex-flow: row wrap;
+		margin-bottom: 20px;
+
+
+		.member-progress-bar {
+			width: 100%;
+			height: 10px;
+			border-radius: 5px;
+			background-color: #ddd;
+			overflow: hidden;
+			margin-bottom: 15px;
+
+			.bar-fill {
+				width: 80%;
+				height: 10px;
+				background-color: gold;
+			}
+		}
+			
+		.progress-details {
+
+			display: flex;
+			width: 50%;
+
+			.member-progress {
+
+				border-right: 1px solid $text-color;
+				width: 50%;
+
+
+				.progress-percentage {
+					color: darken(gold, 10);
+				}
+
+				.progress-label {
+
+				}
+			}
+
+			.member-goal {
+				width: 50%;
+				padding-left: 10px;
+
+
+				.goal-amount {
+					color: #222;
+				}
+
+				.goal-label {
+
+				}
+			}
+
+			
+		}
+
+		.donate-button {
+			background-color: white;
+			width: 30%;
+			border: 2px solid $button-color;
+			color: lighten($button-color, 5);
+			text-transform: uppercase;
+			justify-self: flex-end;
+		}
 	}
 }
