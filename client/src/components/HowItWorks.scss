@@ -1,0 +1,15 @@
+.how-it-works {
+	width: 100%;
+	height: 540px;
+	background-color: #aaa;
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	z-index: 4;
+
+	button {
+		position: absolute;
+		top: 0; 
+		right: 0;
+	}
+}
