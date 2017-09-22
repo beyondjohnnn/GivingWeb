@@ -4,21 +4,14 @@ import { Link } from 'react-router-dom'
 import css from './NoAuthLandingPage.scss'
 
 import Hero from '../components/Hero'
-import MemberPreview from '../components/MemberPreview'
+import FeaturedMembers from '../components/FeaturedMembers'
 
 class NoAuthLandingPage extends React.Component {
 	render() {
 		return (
 			<div>
 				<Hero />
-				<div className="featured-members">
-					<h2>Members</h2>
-					<div className="members-list">
-						<MemberPreview />
-						<MemberPreview />
-						<MemberPreview />
-					</div>
-				</div>
+				<FeaturedMembers />
 			</div>
 		)
 	}
