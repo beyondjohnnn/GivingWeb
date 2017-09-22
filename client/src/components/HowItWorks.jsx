@@ -12,7 +12,7 @@ class HowItWorks extends React.Component {
 		return (
 			<div className="how-it-works">
 				<div className="button-wrapper">
-					<button><i className="fa fa-times" aria-hidden="true"></i></button>
+					<button onClick={this.props.toggleHowItWorks}><i className="fa fa-times" aria-hidden="true"></i></button>
 				</div>
 			</div>
 		)
