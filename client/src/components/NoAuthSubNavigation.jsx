@@ -7,13 +7,20 @@ import * as actionCreators from '../actions/noAuthSubNavigationActionCreators'
 
 import css from './NoAuthSubNavigation.scss'
 class NoAuthSubNavigation extends React.Component {
+
+  whatsHappeningStyling(expectedState) {
+  	if (this.props.currentLandingPageComponent == expectedState) {
+ 			return "selected-tab"
+ 		}
+  }
+
 	render() {
 		return (
 			<div className="no-auth-sub-navigation">
 				<div className="tabs-wrapper">
-					<h3 onClick={this.props.setCurrentLandingPageComponent.bind(this, "Whats Happening")}>Happening Now</h3> 
-					<h3 onClick={this.props.setCurrentLandingPageComponent.bind(this, "Become a Hero")}>Become a Hero</h3>  
-					<h3 onClick={this.props.setCurrentLandingPageComponent.bind(this, "For Charities")}>For Charities</h3> 
+					<h3 className={this.whatsHappeningStyling("Whats Happening")} onClick={this.props.setCurrentLandingPageComponent.bind(this, "Whats Happening")}>Happening Now</h3> 
+					<h3 className={this.whatsHappeningStyling("Become a Hero")} onClick={this.props.setCurrentLandingPageComponent.bind(this, "Become a Hero")}>Become a Hero</h3>  
+					<h3 className={this.whatsHappeningStyling("For Charities")} onClick={this.props.setCurrentLandingPageComponent.bind(this, "For Charities")}>For Charities</h3> 
 				</div>
 			</div>
 		)
