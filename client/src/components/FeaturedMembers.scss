@@ -1,0 +1,23 @@
+.featured-members {
+	width: 100%;
+	padding: 30px 100px;
+	background-color: #f5f5f5;
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	// margin: 20px;
+
+	h2 {
+		display: flex;
+		color: #333333;
+		font-size: 25px;
+		margin-bottom: 40px;
+	}
+
+	.members-list {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-around;
+		margin-bottom: 40px;
+	}
+}
