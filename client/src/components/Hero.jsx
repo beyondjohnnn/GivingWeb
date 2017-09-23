@@ -1,10 +1,31 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { bindActionCreators } from 'redux'
+import {connect} from 'react-redux'
+import * as actionCreators from '../actions/howItWorksActionCreators'
 
 
 import css from './Hero.scss'
 
+//{this.renderArrowDirection}
+
 class Hero extends React.Component {
+
+	renderArrowDirection() {
+		if (this.props.howItWorksVisible){
+			return "fa fa-chevron-up"
+		} else {
+			return "fa fa-chevron-down"
+		}
+	}
+
+	smoothScrollToHowItWorks() {
+		this.props.toggleHowItWorks();
+		if (this.props.howItWorksVisible){
+			
+		}
+	}
+
 	render() {
 		return (
 			<div className="hero">
@@ -13,16 +34,26 @@ class Hero extends React.Component {
 						Make Change Happen
 					</h2>
 					<p>
-						Support amazing people and charities today
+						Directly support amazing people and charities today
 					</p>
-					<Link className="call-to-action" to="/">
+					<button className="call-to-action" onClick={this.smoothScrollToHowItWorks.bind(this)}>
 						SEE HOW IT WORKS
-						<i className="fa fa-chevron-down" aria-hidden="true"></i>
-					</Link>
+						<i className={this.renderArrowDirection()} aria-hidden="true"></i>
+					</button>
 				</div>
 			</div>
 		)
 	}
 }
 
-export default Hero
+// this is taking the howItWorks portion of state and attaching it to the Hero's props
+function mapStateToProps(state, routing) {
+  return Object.assign({}, state.howItWorks, routing)
+}
+
+// this is attaching our actions to the Hero's component
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators(actionCreators, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Hero)

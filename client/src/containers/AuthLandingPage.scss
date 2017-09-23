@@ -1,0 +1,67 @@
+.auth-landing-page {
+	padding: 20px 15%;
+	background-color: #aa3;
+	min-height: calc(100vh - 60px);
+	display: flex;
+	justify-content: space-between;
+
+
+	.user-details {
+		padding: 10px;
+		background-color: #FFF;
+		width: 25%;
+		display: flex;
+		flex-direction: column;
+		flex: 0 1 auto;
+
+		.user-photo {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: 5px 0;
+			border-bottom: 1px solid #aaa;
+
+			img {
+				width: 75px;
+				height: 75px;
+				border-radius: 50%;
+			}
+
+			h2 {
+				font-size: 1.2em;
+			}
+		}
+
+		.fundraising-title {
+			padding: 10px 0;
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.example-fundraiser {
+			display: flex;
+
+			img {
+				height: 60px;
+				width: 60px;
+			}
+
+			.fundraiser-details {
+				padding: 5px;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+
+				.fundraiser-links {
+					display: flex;
+					justify-content: space-around;
+				}
+			}
+		}
+	}
+
+	.right-container {
+		width: 70%;
+	}
+}
+

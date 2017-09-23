@@ -1,11 +1,54 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import * as actionCreators from '../actions/authActionCreators'
+
+import css from './UserLogin.scss'
 
 class UserLogin extends React.Component {
+
+	submitForm(e) {
+		e.preventDefault
+
+		const loginDetails = {
+			email: this.refs.email,
+			password: this.refs.password
+		}
+
+		this.props.login(loginDetails)
+	}
+
 	render() {
 		return (
-			<div> User loginnnnnn </div>
+			<div className="user-login">
+				<form onSubmit={this.submitForm.bind(this)} >
+					<div className="form-header">
+						<h2>Log in</h2>
+					</div>
+					<div className="email-field-wrapper form-field">
+						<label htmlFor="email">Email</label>
+						<input ref="email" type="email" />
+					</div>
+					<div className="password-field-wrapper form-field">
+						<label htmlFor="password">Password</label>
+						<input ref="password" type="password" />
+					</div>
+					<input type="submit" value="Log in" />
+					<div className="extra-info">
+						Already have an account?
+					</div>
+				</form>
+			</div>
 		)
 	}
 }
 
-export default UserLogin
+function mapStateToProps(state, router) {
+	return Object.assign({}, state.auth)
+}
+
+function mapDispatchToProps(dispatch) {
+	return bindActionCreators(actionCreators, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(UserLogin)

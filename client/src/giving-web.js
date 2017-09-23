@@ -9,9 +9,15 @@ import css from './base-style.scss'
 import NoAuthLandingPage from './containers/NoAuthLandingPage'
 import UserSignup from './containers/UserSignup'
 import UserLogin from './containers/UserLogin'
+import CharityPage from './containers/CharityPage'
+import AuthLandingPage from './containers/AuthLandingPage'
+import UserDashboard from './containers/UserDashboard'
+import CharityLogin from './containers/CharityLogin'
+import CharitySignup from './containers/CharitySignup'
 
 // import components
 import Navigation from './components/Navigation'
+import FeaturedMembers from './components/FeaturedMembers'
 
 // import react router dependencies
 import { Router, Route } from 'react-router'
@@ -28,6 +34,11 @@ const router = (
 				<Route exact path="/" component={NoAuthLandingPage} />
 				<Route path="/signup" component={UserSignup} />
 				<Route path="/login" component={UserLogin} />
+				<Route path="/charity-page" component={CharityPage} />
+				<Route path="/auth-landing-page" component={AuthLandingPage} />
+				<Route path="/user-dashboard" component={UserDashboard} />
+				<Route path="/charity-signup" component={CharitySignup} />
+				<Route path="/featured-members" component={FeaturedMembers} />
 			</div>
 		</Router>
 	</Provider>
