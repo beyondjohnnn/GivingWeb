@@ -10,7 +10,7 @@ import Hero from '../components/Hero'
 import NoAuthSubNavigation from '../components/NoAuthSubNavigation'
 import HowItWorks from '../components/HowItWorks'
 import MemberPreview from '../components/MemberPreview'
-import FeaturedMembers from '../components/FeaturedMembers'
+import WhatsHappening from '../components/WhatsHappening'
 
 
 import * as actionCreators from '../actions/howItWorksActionCreators'
@@ -25,6 +25,7 @@ class NoAuthLandingPage extends React.Component {
 			return <HowItWorks />
 		}
 	}
+	
 
 	render() {
 		return (
@@ -32,7 +33,7 @@ class NoAuthLandingPage extends React.Component {
 				<Hero />
 				{this.renderHowItWorks()}
 				<NoAuthSubNavigation />
-				<FeaturedMembers />
+				<WhatsHappening />
 			</div>
 		)
 	}
