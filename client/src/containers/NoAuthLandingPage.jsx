@@ -7,9 +7,10 @@ import { bindActionCreators } from 'redux'
 import css from './NoAuthLandingPage.scss'
 
 import Hero from '../components/Hero'
+import NoAuthSubNavigation from '../components/NoAuthSubNavigation'
 import HowItWorks from '../components/HowItWorks'
 import MemberPreview from '../components/MemberPreview'
-import FeaturedMembers from '../components/FeaturedMembers'
+import WhatsHappening from '../components/WhatsHappening'
 
 
 import * as actionCreators from '../actions/howItWorksActionCreators'
@@ -24,13 +25,15 @@ class NoAuthLandingPage extends React.Component {
 			return <HowItWorks />
 		}
 	}
+	
 
 	render() {
 		return (
 			<div>
 				<Hero />
 				{this.renderHowItWorks()}
-				<FeaturedMembers />
+				<NoAuthSubNavigation />
+				<WhatsHappening />
 			</div>
 		)
 	}

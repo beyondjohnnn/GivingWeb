@@ -17,7 +17,11 @@ const defaultState = {
   },
   howItWorks: {
     howItWorksVisible: false
+  },
+  noAuthSubNavigation: {
+    currentLandingPageComponent: "Whats Happening"
   }
+
 }
 
 const middleware = applyMiddleware(routerStuff, promiseMiddleware())
