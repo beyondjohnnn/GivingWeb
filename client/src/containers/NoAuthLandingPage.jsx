@@ -7,6 +7,7 @@ import { bindActionCreators } from 'redux'
 import css from './NoAuthLandingPage.scss'
 
 import Hero from '../components/Hero'
+import NoAuthSubNavigation from '../components/NoAuthSubNavigation'
 import HowItWorks from '../components/HowItWorks'
 import MemberPreview from '../components/MemberPreview'
 import FeaturedMembers from '../components/FeaturedMembers'
@@ -30,6 +31,7 @@ class NoAuthLandingPage extends React.Component {
 			<div>
 				<Hero />
 				{this.renderHowItWorks()}
+				<NoAuthSubNavigation />
 				<FeaturedMembers />
 			</div>
 		)
