@@ -19,7 +19,7 @@ const defaultState = {
     howItWorksVisible: false
   },
   noAuthSubNavigation: {
-    currentLandingPageComponent: ""
+    currentLandingPageComponent: "Whats Happening"
   }
 
 }

@@ -1,5 +1,6 @@
 $nav-links-size: 22px; 
 $nav-links-weight: 300;
+$selected-tab-color: #7b5dff;
 
 
 
@@ -20,17 +21,24 @@ $nav-links-weight: 300;
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
-	// border: $search-border;
 
 		h3 {
 			font-size: $nav-links-size; 
 			font-weight: $nav-links-weight;
 			color: #5a5a5a;
 			cursor: pointer;
+			height: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 200px;
 		}
 
 		.selected-tab {
-			color: blue;
+			color: $selected-tab-color;
+			border-bottom: 2.5px solid $selected-tab-color;
+			font-weight: 300;
+
 		}
 }	
 
