@@ -25,7 +25,7 @@ class MenuDropdown extends React.Component {
     
 
     if (outsideDropdown && outsideMenuButton && this.props.dropdownVisible) {
-        console.log('in hideDropdownOnClick function')
+        // console.log('in hideDropdownOnClick function')
         this.props.toggleDropdown()
     }
   }
