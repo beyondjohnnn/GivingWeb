@@ -10,6 +10,6 @@ export function signup(newUserDetails) {
 export function login(loginDetails) {
 	return {
 		type: 'LOGIN_POST',
-		payload: axios.post('http://localhost:3000/v1/users', loginDetails)
+		payload: axios.post('http://localhost:3000/sessions', loginDetails)
 	}
 }

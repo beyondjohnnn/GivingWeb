@@ -8,11 +8,11 @@ import css from './UserLogin.scss'
 class UserLogin extends React.Component {
 
 	submitForm(e) {
-		e.preventDefault
+		e.preventDefault()
 
 		const loginDetails = {
-			email: this.refs.email,
-			password: this.refs.password
+			email: this.refs.email.value,
+			password: this.refs.password.value
 		}
 
 		this.props.login(loginDetails)
