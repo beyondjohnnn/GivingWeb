@@ -39,3 +39,18 @@ Charity.create(
 	password: 'abcdef',
 	password_confirmation: 'abcdef'
 )
+
+Account.delete_all
+
+Account.create(
+	name: 'main_account',
+	amount: 150
+)
+Account.create(
+	name: 'second_account',
+	amount: 120
+)
+Account.create(
+	name: 'backup_account',
+	amount: 50
+)
