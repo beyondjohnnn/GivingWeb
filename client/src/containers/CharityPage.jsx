@@ -6,17 +6,34 @@ class CharityPage extends React.Component {
 	render() {
 		return (
 			<div className="charity-page">
-				<div className="charity-header">
-					<img src="http://via.placeholder.com/350x350" />
-					<div className="charity-summary">
-						<h2 className="charity-name">Streetwork UK</h2>
-						<p className="summary">We support people who are homeless or at risk of homelessness. We want people to find their own solutions: ‘your terms, your pace, your place’.</p>
+
+				<section>
+
+					<h2>Find someone to help</h2>
+					<p>
+						Support individuals and families who are experiencing poverty or
+						homelessness in raising money for basic needs and goals. You can
+						see first hand the positive impact of your donation when we send
+						you updates from our member once they have reach their target!
+					</p>
+					<p>
+						*Each member is verified by our trusted partner organisations and
+						is receiving assistance towards long term stability.
+					</p>
+
+				</section>
+
+				<section>
+
+					<div className="location-filter-container">
+						<span>
+							All Areas
+						</span>
+						<i className="fa fa-long-arrow-down custom-arrow" aria-hidden="true"></i>
 					</div>
-					<div className="charity-actions">
-						<button>Fundraise</button>
-						<button>Donate</button>
-					</div>
-				</div>
+
+				</section>
+
 			</div>
 		)
 	}

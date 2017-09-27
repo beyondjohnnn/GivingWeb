@@ -1,24 +1,39 @@
+$accent-color: #7b5dff;
+
 .charity-page {
 	width: 100%;
 	min-height: calc(100vh - 58px);
-	background-color: #999;
-	padding: 30px;
+	padding: 20px 100px;
 
-	.charity-header {
-		display: flex;
-		justify-content: space-around;
+	h2{
+		color: #333333;
+		font-size: 40px;
+		margin: 30px 0;
+	}
 
-		img {
-			width: 25%;
-			// height: ;
+	p{
+		font-size: 20px;
+		margin-bottom: 40px;
+		color: #686868;
+	}
+
+	.location-filter-container{
+		max-width: 270px;
+		border: 3px solid $accent-color;
+		padding: 10px;
+		color: $accent-color;
+		cursor: pointer;
+		user-select: none;
+
+		span{
+			margin-right: 150px;
+			font-weight: 500;
 		}
 
-		.charity-summary {
-			width: 40%;
-		}
-
-		.charity-actions {
-			width: 25%;
+		.custom-arrow{
+			font-weight: lighter;
+			font-size: 25px;
 		}
 	}
+
 }
