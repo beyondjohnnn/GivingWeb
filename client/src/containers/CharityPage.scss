@@ -3,7 +3,6 @@ $accent-color: #7b5dff;
 .charity-page {
 	width: 100%;
 	min-height: calc(100vh - 58px);
-	background-color: #999;
 	padding: 30px;
 
 	.charity-header {
@@ -62,6 +61,7 @@ $accent-color: #7b5dff;
 				width: 100%;
 				border: 1px solid black;
 				height: 100px;
+				padding: 10px;
 			}
 		}
 
