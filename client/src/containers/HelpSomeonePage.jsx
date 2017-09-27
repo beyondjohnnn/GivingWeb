@@ -3,7 +3,7 @@ import MemberPreview from './../components/MemberPreview'
 
 import css from './HelpSomeone.scss'
 
-class CharityPage extends React.Component {
+class HelpSomeonePage extends React.Component {
 
 	buildCategoryList(){
 		let categories = ["All", "Art Supplies", "Education",
@@ -86,4 +86,4 @@ class CharityPage extends React.Component {
 	}
 }
 
-export default CharityPage
+export default HelpSomeonePage
