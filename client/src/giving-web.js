@@ -24,6 +24,9 @@ import { Router, Route } from 'react-router'
 
 import { Provider } from 'react-redux'
 import store, { history } from './store'
+import setAuthToken from './utils/setAuthToken'
+
+setAuthToken(localStorage.getItem('token'))
 
 
 const router = (

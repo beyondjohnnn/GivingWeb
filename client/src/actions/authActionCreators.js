@@ -13,3 +13,4 @@ export function login(loginDetails) {
 		payload: axios.post('http://localhost:3000/sessions', loginDetails)
 	}
 }
+

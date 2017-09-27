@@ -7,6 +7,9 @@ import css from './UserLogin.scss'
 
 class UserLogin extends React.Component {
 
+	componentWillReceiveProps() {
+	}
+
 	submitForm(e) {
 		e.preventDefault()
 
