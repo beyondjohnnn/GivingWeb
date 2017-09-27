@@ -45,7 +45,7 @@ class HelpSomeonePage extends React.Component {
 
 	render() {
 		return (
-			<div className="charity-page">
+			<div className="help-someone-page">
 
 				<section>
 
