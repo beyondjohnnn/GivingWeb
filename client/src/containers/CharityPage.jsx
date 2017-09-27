@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import CharityTile from './../components/CharityTile'
 
 import css from './CharityPage.scss'
 
@@ -31,6 +32,7 @@ class CharityPage extends React.Component {
 
 						<section className="inner-column">
 							<section className="column-section">
+								<CharityTile />
 							</section>
 							<section className="column-section">
 							</section>
@@ -40,8 +42,10 @@ class CharityPage extends React.Component {
 					<div className="column">
 
 						<section className="inner-column">
-							<section className="column-section"></section>
-							<section className="column-section"></section>
+							<section className="column-section">
+							</section>
+							<section className="column-section">
+							</section>
 						</section>
 
 					</div>
