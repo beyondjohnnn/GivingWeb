@@ -78,9 +78,7 @@ class CharityPage extends React.Component {
 				</section>
 
 				<section>
-
 					{this.buildMemberPreviews([1,2,3,4,5])}
-
 				</section>
 
 			</div>
