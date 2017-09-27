@@ -40,10 +40,18 @@ $general-text-color: #686868;
 				background-color: $accent-color;
 			}
 
+			button:hover{
+				background-color: darken($accent-color, 5);
+			}
+
 			.monthly-dontation-link{
 				width: 100%;
 				text-align: center;
 				text-decoration: none;
+			}
+
+			.monthly-dontation-link:hover{
+				text-decoration: underline;
 			}
 		}
 	}
