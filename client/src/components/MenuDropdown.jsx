@@ -41,7 +41,7 @@ class MenuDropdown extends React.Component {
         <div className="tooltip"></div>
         <div className="menu-dropdown">
           <Link to="" className="menu-link-text">Start Fundraising</Link>
-          <Link to="/charity-page" className="menu-link-text">Help Someone</Link>
+          <Link to="/help-someone" className="menu-link-text">Help Someone</Link>
           <div/>
           <Link to="" className="menu-link-text">For Charities</Link>
           <div/>

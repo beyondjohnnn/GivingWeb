@@ -14,6 +14,7 @@ import AuthLandingPage from './containers/AuthLandingPage'
 import UserDashboard from './containers/UserDashboard'
 import CharityLogin from './containers/CharityLogin'
 import CharitySignup from './containers/CharitySignup'
+import HelpSomeonePage from './containers/HelpSomeonePage'
 
 // import components
 import Navigation from './components/Navigation'
@@ -42,6 +43,7 @@ const router = (
 				<Route path="/user-dashboard" component={UserDashboard} />
 				<Route path="/charity-signup" component={CharitySignup} />
 				<Route path="/featured-members" component={FeaturedMembers} />
+				<Route path="/help-someone" component={HelpSomeonePage} />
 			</div>
 		</Router>
 	</Provider>
