@@ -1,4 +1,5 @@
 import React from 'react'
+import MemberPreview from './../components/MemberPreview'
 
 import css from './CharityPage.scss'
 
@@ -14,6 +15,31 @@ class CharityPage extends React.Component {
 		}
 
 		return <ul>{categoryElements}</ul>
+	}
+
+	buildMemberPreviews(members){
+
+		let memberPreviews = [];
+		let previewsPerLine = 3;
+
+		let row = [];
+		for(let index in members){
+			row.push(<MemberPreview key={index} />);
+			if(row.length === previewsPerLine){
+				memberPreviews.push(
+					<div className="member-preview-row" key={index}>{row}</div>
+				);
+				row = [];
+			}
+		}
+
+		if(row.length !== 0){
+			memberPreviews.push(
+				<div className="member-preview-row" key="last-row">{row}</div>
+			);
+		}
+
+		return memberPreviews;
 	}
 
 	render() {
@@ -49,6 +75,12 @@ class CharityPage extends React.Component {
 
 				<section className="category-list-container">
 					{this.buildCategoryList()}
+				</section>
+
+				<section>
+
+					{this.buildMemberPreviews([1,2,3,4,5])}
+
 				</section>
 
 			</div>
