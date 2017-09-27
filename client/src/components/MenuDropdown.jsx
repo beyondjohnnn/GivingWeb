@@ -22,14 +22,14 @@ class MenuDropdown extends React.Component {
     const menuButtonBoundaries = document.querySelector('.menu-button').getBoundingClientRect()
     const outsideDropdown = (e.x < componentBoundaries.left || e.x > componentBoundaries.right || e.y < componentBoundaries.top || e.y > componentBoundaries.bottom)
     const outsideMenuButton = (e.x < menuButtonBoundaries.left || e.x > menuButtonBoundaries.right || e.y < menuButtonBoundaries.top || e.y > menuButtonBoundaries.bottom)
-    
+
 
     if (outsideDropdown && outsideMenuButton && this.props.dropdownVisible) {
         // console.log('in hideDropdownOnClick function')
         this.props.toggleDropdown()
     }
   }
-    
+
 
   componentWillUnmount() {
     window.removeEventListener('click', this.hideDropdownOnClick)
@@ -39,9 +39,9 @@ class MenuDropdown extends React.Component {
     return (
       <div ref="container" className={this.props.styling}>
         <div className="tooltip"></div>
-        <div className="menu-dropdown"> 
+        <div className="menu-dropdown">
           <Link to="" className="menu-link-text">Start Fundraising</Link>
-          <Link to="" className="menu-link-text">Help Someone</Link>
+          <Link to="/charity-page" className="menu-link-text">Help Someone</Link>
           <div/>
           <Link to="" className="menu-link-text">For Charities</Link>
           <div/>
