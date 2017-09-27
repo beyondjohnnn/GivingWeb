@@ -1,3 +1,5 @@
+$accent-color: #7b5dff;
+
 .charity-page {
 	width: 100%;
 	min-height: calc(100vh - 58px);
@@ -19,6 +21,27 @@
 
 		.charity-actions {
 			width: 25%;
+
+			*{
+				display: block;
+				margin-top: 20px;
+			}
+
+			button{
+				border: none;
+		    outline: none;
+				width: 100%;
+				padding: 13px 0;
+				font-size: 16px;
+				color: white;
+				background-color: $accent-color;
+			}
+
+			.monthly-dontation-link{
+				width: 100%;
+				text-align: center;
+				text-decoration: none;
+			}
 		}
 	}
 }

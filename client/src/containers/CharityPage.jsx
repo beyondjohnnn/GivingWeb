@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import css from './CharityPage.scss'
 
@@ -15,6 +16,7 @@ class CharityPage extends React.Component {
 					<div className="charity-actions">
 						<button>Fundraise</button>
 						<button>Donate</button>
+						<Link className="monthly-dontation-link" to="" ><span>Make a Monthly Donation</span></Link>
 					</div>
 				</div>
 			</div>
