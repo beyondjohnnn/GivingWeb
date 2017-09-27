@@ -3,6 +3,19 @@ import React from 'react'
 import css from './CharityPage.scss'
 
 class CharityPage extends React.Component {
+
+	buildCategoryList(){
+		let categories = ["All", "Art Supplies", "Education",
+		"Employment", "other", "other", "other", "other", "other", "other", "other"];
+
+		let categoryElements = [];
+		for(let index in categories){
+			categoryElements.push(<li key={index}><button>{categories[index]}</button></li>);
+		}
+
+		return <ul>{categoryElements}</ul>
+	}
+
 	render() {
 		return (
 			<div className="charity-page">
@@ -32,6 +45,10 @@ class CharityPage extends React.Component {
 						<i className="fa fa-long-arrow-down custom-arrow" aria-hidden="true"></i>
 					</div>
 
+				</section>
+
+				<section className="category-list-container">
+					{this.buildCategoryList()}
 				</section>
 
 			</div>

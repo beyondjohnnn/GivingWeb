@@ -4,11 +4,12 @@ $accent-color: #7b5dff;
 	width: 100%;
 	min-height: calc(100vh - 58px);
 	padding: 20px 100px;
+	background-color: #f5f5f5;
 
 	h2{
 		color: #333333;
 		font-size: 40px;
-		margin: 30px 0;
+		margin: 30px 0 50px 0;
 	}
 
 	p{
@@ -34,6 +35,31 @@ $accent-color: #7b5dff;
 			font-weight: lighter;
 			font-size: 25px;
 		}
+	}
+
+	.category-list-container{
+		margin-top: 20px;
+
+		ul{
+			list-style: none;
+			display: flex;
+		}
+
+		button{
+			border: none;
+			outline: none;
+			font-size: 15px;
+			padding: 10px;
+			margin-right: 10px;
+			background-color: #fff;
+			border: 1px solid rgba(169,169,169, 0.5);
+		}
+
+		button:hover{
+			color: white;
+			background-color: $accent-color;
+		}
+
 	}
 
 }
