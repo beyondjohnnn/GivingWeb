@@ -1,7 +1,7 @@
 import React from 'react'
 import MemberPreview from './../components/MemberPreview'
 
-import css from './HelpSomeone.scss'
+import css from './HelpSomeonePage.scss'
 
 class HelpSomeonePage extends React.Component {
 
