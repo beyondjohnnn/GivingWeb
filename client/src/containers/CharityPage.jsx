@@ -27,7 +27,17 @@ class CharityPage extends React.Component {
 					<div className="column">
 
 						<article className="title-tile">
-
+							<h3>Join the Cancer Research UK community</h3>
+							<p>
+								Cancer Research UK is the world's leading charity dedicated to
+								beating cancer through research. We are fighting cancer on all
+								fronts, finding new ways to prevent, diagnose and treat it to
+								save more lives. We are entirely funded by the public. With your
+								help, we can ensure more people beat cancer.
+							</p>
+							
+							<a href="#">www.cancerresearchuk.org</a>
+							<a href="#">supporter.services@cancer.org.uk</a>
 						</article>
 
 						<section className="inner-column">
@@ -35,6 +45,7 @@ class CharityPage extends React.Component {
 								<CharityTile />
 							</section>
 							<section className="column-section">
+								<CharityTile />
 							</section>
 						</section>
 
@@ -43,8 +54,11 @@ class CharityPage extends React.Component {
 
 						<section className="inner-column">
 							<section className="column-section">
+								<CharityTile />
+								<CharityTile />
 							</section>
 							<section className="column-section">
+								<CharityTile />
 							</section>
 						</section>
 
