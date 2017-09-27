@@ -1,4 +1,5 @@
 import React from 'react'
+import CategoryList from './../components/CategoryList'
 import MemberPreview from './../components/MemberPreview'
 
 import css from './HelpSomeonePage.scss'
@@ -73,9 +74,7 @@ class HelpSomeonePage extends React.Component {
 
 				</section>
 
-				<section className="category-list-container">
-					{this.buildCategoryList()}
-				</section>
+			<CategoryList />
 
 				<section>
 					{this.buildMemberPreviews([1,2,3,4,5])}
