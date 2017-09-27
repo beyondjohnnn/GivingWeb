@@ -54,6 +54,17 @@ $accent-color: #7b5dff;
 			padding: 15px;
 		}
 
+		.inner-column{
+			display: flex;
+			width: 100%;
+
+			.column-section{
+				width: 100%;
+				border: 1px solid black;
+				height: 100px;
+			}
+		}
+
 		.title-tile{
 			background-color: #fff;
 			height: 100px;

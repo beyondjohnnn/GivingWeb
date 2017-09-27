@@ -29,12 +29,20 @@ class CharityPage extends React.Component {
 
 						</article>
 
-
+						<section className="inner-column">
+							<section className="column-section">
+							</section>
+							<section className="column-section">
+							</section>
+						</section>
 
 					</div>
 					<div className="column">
 
-						
+						<section className="inner-column">
+							<section className="column-section"></section>
+							<section className="column-section"></section>
+						</section>
 
 					</div>
 
