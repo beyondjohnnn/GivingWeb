@@ -44,4 +44,19 @@ $accent-color: #7b5dff;
 			}
 		}
 	}
+
+	.charity-container{
+		display: flex;
+		padding: 15px;
+
+		.column{
+			flex: 1;
+			padding: 15px;
+		}
+
+		.title-tile{
+			background-color: #fff;
+			height: 100px;
+		}
+	}
 }

@@ -7,6 +7,7 @@ class CharityPage extends React.Component {
 	render() {
 		return (
 			<div className="charity-page">
+
 				<div className="charity-header">
 					<img src="http://via.placeholder.com/350x350" />
 					<div className="charity-summary">
@@ -19,6 +20,26 @@ class CharityPage extends React.Component {
 						<Link className="monthly-dontation-link" to="" ><span>Make a Monthly Donation</span></Link>
 					</div>
 				</div>
+
+				<section className="charity-container">
+
+					<div className="column">
+
+						<article className="title-tile">
+
+						</article>
+
+
+
+					</div>
+					<div className="column">
+
+						
+
+					</div>
+
+				</section>
+
 			</div>
 		)
 	}
