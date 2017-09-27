@@ -24,7 +24,7 @@ class HelpSomeonePage extends React.Component {
 
 		let row = [];
 		for(let index in members){
-			row.push(<MemberPreview key={index} />);
+			row.push(<MemberPreview className="member-preview" key={index} />);
 			if(row.length === previewsPerLine){
 				memberPreviews.push(
 					<div className="member-preview-row" key={index}>{row}</div>
