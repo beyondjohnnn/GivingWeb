@@ -1,2 +1,0 @@
-class Donation < ApplicationRecord
-end
