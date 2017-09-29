@@ -4,12 +4,27 @@ import {Link} from 'react-router-dom'
 import css from './MemberPreview.scss'
 
 class MemberPreview extends React.Component {
+
+	devMember(){
+		return {
+			name: "John Smith",
+			location: "North Pole",
+			snippet: "Please send help I'm cold",
+			"goal": 10000,
+		}
+	}
+
 	render() {
-		console.log(this.props.member)
-		let member = this.props.member
+		let member = this.props.member ? this.props.member : this.devMember()
+		let imgUrl = "./images/" + member.name + ".png"
+		console.log(imgUrl);
+		let placeholder = "http://via.placeholder.com/350x350"
+
 		return (
 			<div className="member-preview">
-				<img className="member-photo" src="http://via.placeholder.com/350x350" />
+				<div className="member-photo-container">
+					<img className="member-photo" src={imgUrl} />
+				</div>
 				<h3 className="member-name">{member.name}</h3>
 				<h4 className="member-location"><i className="fa fa-map-marker"></i>{member.location}</h4>
 				<p className="member-description">{member.snippet}</p>
