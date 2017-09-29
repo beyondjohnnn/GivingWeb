@@ -21,13 +21,15 @@ class HelpSomeonePage extends React.Component {
 		return <ul>{categoryElements}</ul>
 	}
 
-	buildMemberPreviews(){
+	buildMemberPreviews(members){
+
+		console.log(members)
 
 		let memberPreviews = [];
 		let previewsPerLine = 3;
 
 		let row = [];
-		for(let index in this.props.members){
+		for(let index in members){
 			row.push(<MemberPreview className="member-preview" key={index} />);
 
 			if(row.length === previewsPerLine){
@@ -85,7 +87,7 @@ class HelpSomeonePage extends React.Component {
 			<CategoryList />
 
 				<section>
-					{this.buildMemberPreviews([1,2,3,4,5])}
+					{this.buildMemberPreviews(this.props.members)}
 				</section>
 
 			</div>
