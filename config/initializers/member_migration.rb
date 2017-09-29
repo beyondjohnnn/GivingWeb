@@ -1,0 +1,1 @@
+require 'member_migration'
