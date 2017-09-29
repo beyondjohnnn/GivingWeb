@@ -19,6 +19,7 @@ import HelpSomeonePage from './containers/HelpSomeonePage'
 // import components
 import Navigation from './components/Navigation'
 import FeaturedMembers from './components/FeaturedMembers'
+import Footer from './components/Footer'
 
 // import react router dependencies
 import { Router, Route } from 'react-router'
@@ -34,7 +35,7 @@ const router = (
 	<Provider store={store}>
 		<Router history={history}>
 			<div>
-				<Route path="/" component={Navigation} />
+				<Navigation />
 				<Route exact path="/" component={NoAuthLandingPage} />
 				<Route path="/signup" component={UserSignup} />
 				<Route path="/login" component={UserLogin} />
@@ -44,6 +45,7 @@ const router = (
 				<Route path="/charity-signup" component={CharitySignup} />
 				<Route path="/featured-members" component={FeaturedMembers} />
 				<Route path="/help-someone" component={HelpSomeonePage} />
+				<Footer />
 			</div>
 		</Router>
 	</Provider>
