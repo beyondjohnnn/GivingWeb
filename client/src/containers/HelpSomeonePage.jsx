@@ -24,13 +24,12 @@ class HelpSomeonePage extends React.Component {
 	buildMemberPreviews(members){
 
 		console.log(members)
-
 		let memberPreviews = [];
 		let previewsPerLine = 3;
 
 		let row = [];
 		for(let index in members){
-			row.push(<MemberPreview className="member-preview" key={index} />);
+			row.push(<MemberPreview className="member-preview" key={index}  member={members[index]} />);
 
 			if(row.length === previewsPerLine){
 				memberPreviews.push(
