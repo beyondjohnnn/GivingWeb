@@ -3,7 +3,6 @@ import { routerMiddleware } from 'react-router-redux'
 import promiseMiddleware from 'redux-promise-middleware'
 import createHistory from 'history/createBrowserHistory'
 
-
 import rootReducer from './reducers/index'
 const history = createHistory()
 const routerStuff = routerMiddleware(history)
@@ -20,8 +19,10 @@ const defaultState = {
   },
   noAuthSubNavigation: {
     currentLandingPageComponent: "Whats Happening"
-  }
-
+  },
+	helpSomeone: {
+		members: []
+	}
 }
 
 const middleware = applyMiddleware(routerStuff, promiseMiddleware())

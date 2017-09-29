@@ -1,6 +1,9 @@
 import React from 'react'
 import CategoryList from './../components/CategoryList'
 import MemberPreview from './../components/MemberPreview'
+import { bindActionCreators } from 'redux'
+import {connect} from 'react-redux'
+import * as actionCreators from '../actions/helpSomeoneActionCreator'
 
 import css from './HelpSomeonePage.scss'
 
@@ -18,14 +21,15 @@ class HelpSomeonePage extends React.Component {
 		return <ul>{categoryElements}</ul>
 	}
 
-	buildMemberPreviews(members){
+	buildMemberPreviews(){
 
 		let memberPreviews = [];
 		let previewsPerLine = 3;
 
 		let row = [];
-		for(let index in members){
+		for(let index in this.props.members){
 			row.push(<MemberPreview className="member-preview" key={index} />);
+
 			if(row.length === previewsPerLine){
 				memberPreviews.push(
 					<div className="member-preview-row" key={index}>{row}</div>
@@ -41,6 +45,10 @@ class HelpSomeonePage extends React.Component {
 		}
 
 		return memberPreviews;
+	}
+
+	componentDidMount(){
+		this.props.getMembers()
 	}
 
 	render() {
@@ -85,4 +93,14 @@ class HelpSomeonePage extends React.Component {
 	}
 }
 
-export default HelpSomeonePage
+// this is taking the howItWorks portion of state and attaching it to the HowItWork's props
+function mapStateToProps(state, routing) {
+  return Object.assign({}, state.helpSomeone, routing)
+}
+
+// this is attaching our actions to the HowItWork's component
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators(actionCreators, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(HelpSomeonePage)
