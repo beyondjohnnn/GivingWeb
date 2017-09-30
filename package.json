@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "cd client && webpack-dev-server --open --config webpack.dev.js",
+    "start": "node server.js",
+    "dev": "cd client && webpack-dev-server --open --config webpack.dev.js",
     "build": "cd client && webpack --config webpack.prod.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
