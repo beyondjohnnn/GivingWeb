@@ -6,5 +6,5 @@ app.bundle.js
 app.bundle.js.map
 app.css
 app.css.map
-client/build/index.html
+build/index.html
 
