@@ -2,8 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { bindActionCreators } from 'redux'
 import {connect} from 'react-redux'
-import * as actionCreators from '../actions/howItWorksActionCreators'
 
+import * as actionCreators from '../../actions/howItWorksActionCreators'
 
 import css from './HowItWorks.scss'
 

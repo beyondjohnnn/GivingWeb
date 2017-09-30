@@ -1,7 +1,8 @@
 import React from 'react'
-import MemberPreview from './../components/MemberPreview'
 
 import css from './CategoryList.scss'
+
+import MemberPreview from '../MemberPreview'
 
 class CategoryList extends React.Component {
 

@@ -1,7 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import * as actionCreators from '../actions/authActionCreators'
+
+import * as actionCreators from '../../actions/authActionCreators'
 
 import css from './UserSignup.scss'
 

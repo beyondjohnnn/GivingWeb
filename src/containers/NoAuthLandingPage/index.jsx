@@ -3,20 +3,15 @@ import { Link } from 'react-router-dom'
 import {connect}  from 'react-redux'
 import { bindActionCreators } from 'redux'
 
+import * as actionCreators from '../../actions/howItWorksActionCreators'
 
 import css from './NoAuthLandingPage.scss'
 
-import Hero from '../components/Hero'
-import NoAuthSubNavigation from '../components/NoAuthSubNavigation'
-import HowItWorks from '../components/HowItWorks'
-import MemberPreview from '../components/MemberPreview'
-import WhatsHappening from '../components/WhatsHappening'
-
-
-import * as actionCreators from '../actions/howItWorksActionCreators'
-
-
-
+import Hero from '../../components/Hero'
+import NoAuthSubNavigation from '../../components/NoAuthSubNavigation'
+import HowItWorks from '../../components/HowItWorks'
+import MemberPreview from '../../components/MemberPreview'
+import WhatsHappening from '../../components/WhatsHappening'
 
 class NoAuthLandingPage extends React.Component {
 

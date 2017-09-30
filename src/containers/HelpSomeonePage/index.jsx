@@ -1,8 +1,9 @@
 import React from 'react'
-import CategoryList from './../components/CategoryList'
-import MemberPreview from './../components/MemberPreview'
 
 import css from './HelpSomeonePage.scss'
+
+import CategoryList from '../../components/CategoryList'
+import MemberPreview from '../../components/MemberPreview'
 
 class HelpSomeonePage extends React.Component {
 

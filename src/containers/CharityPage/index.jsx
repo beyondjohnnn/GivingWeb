@@ -1,8 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import CharityTile from './../components/CharityTile'
 
 import css from './CharityPage.scss'
+
+import CharityTile from '../../components/CharityTile'
 
 class CharityPage extends React.Component {
 	render() {

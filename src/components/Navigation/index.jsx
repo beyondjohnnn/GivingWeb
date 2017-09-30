@@ -2,11 +2,12 @@ import React from 'react'
 import { bindActionCreators } from 'redux'
 import { Link } from 'react-router-dom'
 import {connect}  from 'react-redux'
-import * as actionCreators from '../actions/navActionCreators'
 
-import MenuDropdown from './MenuDropdown'
+import * as actionCreators from '../../actions/navActionCreators'
 
 import css from './Navigation.scss'
+
+import MenuDropdown from '../MenuDropdown'
 
 class Navigation extends React.Component {
 

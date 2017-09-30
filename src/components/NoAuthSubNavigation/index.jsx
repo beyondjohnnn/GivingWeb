@@ -1,11 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { bindActionCreators } from 'redux'
-import {connect} from 'react-redux'
-import * as actionCreators from '../actions/noAuthSubNavigationActionCreators'
+import { connect } from 'react-redux'
 
+import * as actionCreators from '../../actions/noAuthSubNavigationActionCreators'
 
 import css from './NoAuthSubNavigation.scss'
+
 class NoAuthSubNavigation extends React.Component {
 
   whatsHappeningStyling(expectedState) {

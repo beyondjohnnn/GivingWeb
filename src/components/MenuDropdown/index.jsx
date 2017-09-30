@@ -2,7 +2,8 @@ import React from 'react'
 import { bindActionCreators } from 'redux'
 import { Link } from 'react-router-dom'
 import {connect}  from 'react-redux'
-import * as actionCreators from '../actions/navActionCreators'
+
+import * as actionCreators from '../../actions/navActionCreators'
 
 import css from './MenuDropdown.scss'
 

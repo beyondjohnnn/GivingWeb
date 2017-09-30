@@ -2,7 +2,7 @@ import React from 'react'
 
 import css from './FeaturedMembers.scss'
 
-import MemberPreview from '../components/MemberPreview'
+import MemberPreview from '../MemberPreview'
 
 
 class FeaturedMembers extends React.Component {

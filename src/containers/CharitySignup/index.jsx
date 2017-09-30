@@ -1,6 +1,6 @@
 import React from 'react'
 
-import css from './CharitySignup'
+import css from './CharitySignup.scss'
 
 class CharitySignup extends React.Component {
 	render() {
