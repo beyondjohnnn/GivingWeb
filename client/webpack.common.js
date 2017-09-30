@@ -1,13 +1,25 @@
+const path = require("path");
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 const config = {
-	entry: `${__dirname}/src/giving-web.js`,
+	entry: { app: `${__dirname}/src/giving-web.js` },
 	output: {
 		path: `${__dirname}/build`,
-		filename: 'bundle.js'
+		filename: '[name].bundle.js'
 	},
-	devtool: 'source-map',
 	resolve: {
 		extensions: ['.js', '.jsx']
 	},
+	plugins: [
+    // new CleanWebpackPlugin(['build']),
+    new HtmlWebpackPlugin({
+      template: 'src/index.html',
+      hash: true,
+      inject: 'body',
+      filename: 'index.html'
+    })
+  ],
 	module: {
 		rules: [
 			{
@@ -18,21 +30,6 @@ const config = {
 					presets: ['react', 'es2015']
 				}
 			},
-			{
-        test: /\.scss$/,
-        use: [
-	        {
-	          loader: "style-loader" // creates style nodes from JS strings
-	        }, 
-	        {
-	          loader: "css-loader" // translates CSS into CommonJS
-	        }, 
-	        {
-	          loader: "sass-loader" // compiles Sass to CSS
-	        }
-
-        ]
-      },
       {
         test: /\.(png|jpg|ttf)$/,
         use: [
