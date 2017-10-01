@@ -12,3 +12,6 @@ app.bundle.js.map
 app.css
 app.css.map
 client/build/index.html
+
+#test
+test-coverage
