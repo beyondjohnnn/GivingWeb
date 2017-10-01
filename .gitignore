@@ -2,11 +2,17 @@
 node_modules
 npm-debug.log
 
-test-coverage
+# updated for webpack server and testing
+client/build/bundle.js
+client/build/bundle.js.map
+package-lock.json
 
 app.bundle.js
 app.bundle.js.map
 app.css
 app.css.map
 build/index.html
+client/build/index.html
 
+
+test-coverage
