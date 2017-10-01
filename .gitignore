@@ -2,9 +2,13 @@
 node_modules
 npm-debug.log
 
+# updated for webpack server and testing
+client/build/bundle.js
+client/build/bundle.js.map
+package-lock.json
+
 app.bundle.js
 app.bundle.js.map
 app.css
 app.css.map
 client/build/index.html
-
