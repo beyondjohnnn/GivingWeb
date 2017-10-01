@@ -13,7 +13,7 @@ gem 'pg', '~> 0.18'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 
-# TODO: remove after migration of old db
+# and mysql2 for legacy, TODO: remove after migration of old db
 gem 'mysql2'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -27,13 +27,13 @@ gem 'mysql2'
 # gem 'capistrano-rails', group: :development
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
-# gem 'rack-cors'
 gem 'rack-cors', :require => 'rack/cors'
 
+# devise for auth TODO: not currrently in use
 gem 'devise'
-
+# Request responders for rails to dry up code
 gem 'responders'
-
+# JSON Web Tokens to provide Auth between front and back end
 gem 'jwt'
 
 group :development, :test do
