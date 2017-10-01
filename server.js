@@ -5,7 +5,7 @@ const path = require('path')
 app.use(express.static('./client/build'))
 
 app.get('*', (req, res) => {
-	res.sendFile(path.join(__dirname, 'client/build/index.html'))
+	res.sendFile(path.join(__dirname, 'build/index.html'))
 })
 
 const server = app.listen(5000, () => {
