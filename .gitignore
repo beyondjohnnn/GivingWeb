@@ -11,6 +11,7 @@ app.bundle.js
 app.bundle.js.map
 app.css
 app.css.map
+build/index.html
 client/build/index.html
 
 #test
