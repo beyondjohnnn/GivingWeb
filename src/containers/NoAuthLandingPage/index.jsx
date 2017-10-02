@@ -10,6 +10,8 @@ import css from './NoAuthLandingPage.scss'
 
 import Hero from '../../components/Hero'
 import NoAuthSubNavigation from '../../components/NoAuthSubNavigation'
+import BeAHero from '../../components/BeAHero'
+import ForCharities from '../../components/ForCharities'
 import HowItWorks from '../../components/HowItWorks'
 import MemberPreview from '../../components/MemberPreview'
 import WhatsHappening from '../../components/WhatsHappening'
@@ -25,6 +27,10 @@ class NoAuthLandingPage extends React.Component {
 	renderSubNavigationSelection() {
 		if (this.props.currentLandingPageComponent == "Whats Happening") {
 			return <WhatsHappening />
+		} else if (this.props.currentLandingPageComponent == "Be A Hero") {
+			return <BeAHero />
+		} else if (this.props.currentLandingPageComponent == "For Charities") {
+			return <ForCharities />
 		}
 	}
 	
