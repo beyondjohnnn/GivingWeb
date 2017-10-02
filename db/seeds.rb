@@ -55,6 +55,7 @@
 # 	amount: 50
 # )
 
+Member.delete_all
 # puts MemberMigration.build_member_hashes
 members = MemberMigration.build_member_hashes
 
