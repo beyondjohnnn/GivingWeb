@@ -1,11 +1,12 @@
 const webpack = require('webpack')
 const merge = require('webpack-merge')
 const common = require('./webpack.common.js')
+const { join } = require('path')
 
 module.exports = merge(common, {
 	devtool: 'inline-source-map',
 	devServer: {
-    contentBase: './build',
+    contentBase: join(__dirname, 'build'),
     hot: true
   },
   module: {
@@ -22,5 +23,10 @@ module.exports = merge(common, {
   },
   plugins: [
   	new webpack.HotModuleReplacementPlugin(),
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify('development')
+      }
+    })
   ]
 })

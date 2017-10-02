@@ -1,14 +1,13 @@
 import React from 'react'
-import { shallow, configure } from 'enzyme'
-import Adapter from 'enzyme-adapter-react-15'
+import { shallow } from 'enzyme'
+import toJson from 'enzyme-to-json'
+import CharityTile from './index'
 
-import CharityTile from './index.jsx'
+describe('CharityTile', () => {
 
-configure({ adapter: new Adapter() })
-
-describe('first test', () => {
-	it('works', () => {
-		const component = shallow(<CharityTile />)
-		console.log(component)
+	it('should render correctly', () => {
+		const wrapper = shallow(<CharityTile />)
+		expect(toJson(wrapper)).toMatchSnapshot()
 	})
+
 })

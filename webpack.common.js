@@ -1,6 +1,7 @@
 const path = require("path");
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+var DashboardPlugin = require('webpack-dashboard/plugin');
 
 const config = {
 	entry: { app: `${__dirname}/src/giving-web.js` },
@@ -18,7 +19,8 @@ const config = {
       hash: true,
       inject: 'body',
       filename: 'index.html'
-    })
+    }),
+    new DashboardPlugin()
   ],
 	module: {
 		rules: [

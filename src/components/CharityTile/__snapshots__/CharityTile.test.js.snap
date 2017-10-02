@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CharityTile should render correctly 1`] = `
+<div
+  className="charity-tile"
+>
+  <section
+    className="tile-header"
+  >
+    <img
+      alt="user icon"
+      className="user-icon_img"
+      src="http://via.placeholder.com/50x50"
+    />
+    <div>
+      <h3>
+        User Name
+      </h3>
+    </div>
+  </section>
+</div>
+`;
