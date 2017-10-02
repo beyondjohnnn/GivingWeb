@@ -18,11 +18,11 @@ $title-color: #222;
 			height: 100%;
 			object-fit: cover;
 			object-position: 50% 50%;
-		}
 
-		.member-photo:hover {
-			transition: 0.5s ease;
-			transform: scale(1.3);
+			&:hover {
+				transition: 0.5s ease;
+				transform: scale(1.3);
+			}
 		}
 	}
 
