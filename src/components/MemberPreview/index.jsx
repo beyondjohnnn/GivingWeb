@@ -12,18 +12,21 @@ class MemberPreview extends React.Component {
 				name: "John Smith",
 				location: "North Pole",
 				snippet: "Please send help I'm cold",
-				"donations": 9550,
-				"goal": 10000
+				"donations": 95.5,
+				"goal": 100
 			}
 		}
 
 		if(!member.donations){
-			member.donations = 9550;
+			member.donations = 95.5;
 		}
 	}
 
 	calcDonationPercentage(member){
-		return (member.donations / member.goal) * 100;
+		let donationPercent = (member.donations / member.goal) * 100;
+		if(donationPercent > 100) return 100;
+		if(donationPercent < 99) return Math.ceil(donationPercent);
+		return Math.floor(donationPercent);
 	}
 
 	getDonationBarColour(percentage){
@@ -38,7 +41,7 @@ class MemberPreview extends React.Component {
 		console.log(imgUrl);
 		let placeholder = "http://via.placeholder.com/350x350"
 
-		const percentage = Math.round((this.calcDonationPercentage(member).toString())*10)/10 + "%";
+		const percentage = this.calcDonationPercentage(member).toString() + "%";
 		const donationBarColour = this.getDonationBarColour(percentage);
 		const donationBarStyles = {
 			width: percentage,
