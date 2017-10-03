@@ -12,13 +12,13 @@ class MemberPreview extends React.Component {
 				name: "John Smith",
 				location: "North Pole",
 				snippet: "Please send help I'm cold",
-				"donations": 5000,
+				"donations": 8000,
 				"goal": 10000
 			}
 		}
 
 		if(!member.donations){
-			member.donations = 5000;
+			member.donations = 8000;
 		}
 
 	}
@@ -27,13 +27,24 @@ class MemberPreview extends React.Component {
 		return (member.donations / member.goal) * 100;
 	}
 
+	buildDonationStyles(member){
+		let percentage = this.calcDonationPercentage(member);
+		let color = "";
+		if(percentage <= 33) color = "#FBAC3D";
+		else if(percentage > 33 && percentage <= 66) color = "#00CB9B";
+		else color = "#00862C";
+
+		return {
+			width: percentage.toString() + "%",
+			"background-color": color
+		}
+	}
+
 	render() {
 		let member = this.devMember(this.props.member)
 		let imgUrl = "./images/" + member.name + ".png"
 		console.log(imgUrl);
 		let placeholder = "http://via.placeholder.com/350x350"
-
-		const donationPercantage = this.calcDonationPercentage(member).toString() + "%";
 
 		return (
 			<div className="member-preview">
@@ -49,7 +60,7 @@ class MemberPreview extends React.Component {
 				</h4>
 				<div className="donation-details">
 					<div className="member-progress-bar">
-						<div className="bar-fill" style={{width: donationPercantage}}></div>
+						<div className="bar-fill" style={this.buildDonationStyles(member)}></div>
 					</div>
 					<div className="progress-details">
 						<div className="member-progress">
