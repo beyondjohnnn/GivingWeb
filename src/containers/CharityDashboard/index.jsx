@@ -11,7 +11,9 @@ class CharityDashboard extends React.Component {
 				<div className="main-section">
 					<CharitySidebarNav />
 					<div className="dashboard-current-page">
-						<div className="breadcrumbs"></div>
+						<div className="breadcrumbs">
+							<i className="fa fa-home"></i> HOME
+						</div>
 					</div>
 				</div>
 

@@ -3,5 +3,18 @@
 exports[`CharityDashboard should render correctly 1`] = `
 <div
   className="charity-dashboard"
-/>
+>
+  <div
+    className="main-section"
+  >
+    <CharitySidebarNav />
+    <div
+      className="dashboard-current-page"
+    >
+      <div
+        className="breadcrumbs"
+      />
+    </div>
+  </div>
+</div>
 `;
