@@ -7,12 +7,13 @@ $height: calc(100vh - (58px));
 
 	.main-section {
 		min-height: $height;
-		width: 90%;
+		width:100vw ;
+		max-width: 1220px;
 		display: flex;
 
-		.dashboard-current-page {
+		.charity-dashboard-content {
 			height: $height;
-			width: 80%;
+			width: 70%;
 			background-color: red;
 			
 			.breadcrumbs {

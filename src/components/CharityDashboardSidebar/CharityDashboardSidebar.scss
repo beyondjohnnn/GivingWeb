@@ -1,0 +1,9 @@
+$height: calc(100vh - (58px));
+
+.charity-dashboard-sidebar {
+	height: $height;
+	width: 30%;
+	background-color: blue;
+	display: flex;
+	justify-content: center;
+	}
