@@ -31,6 +31,27 @@ class Navigation extends React.Component {
 		}
 	}
 
+	renderNavLinks() {
+		if (this.props.location.pathname === "/charities") {
+			return (
+				<Link to="/charities-login" className="login-link nav-link">
+					Log in
+				</Link>
+			)
+		} else {
+			return (
+				<div>
+					<Link to="/login" className="login-link nav-link">
+						Log in
+					</Link>
+					<Link to="/signup" className="signup-link nav-link">
+						Sign up
+					</Link>
+				</div>
+			)
+		}
+	}
+
 	render() {
 		return (
 			<div className="navigation-wrapper">
@@ -46,12 +67,7 @@ class Navigation extends React.Component {
 						  </form>
 						</div>		
 						<nav>
-							<Link to="/login" className="login-link nav-link">
-								Log in
-							</Link>
-							<Link to="/signup" className="signup-link nav-link">
-								Sign up
-							</Link> 
+							{this.renderNavLinks()}
 							{this.renderMenuButton()}
 							{this.renderDropdown()}
 						</nav>
