@@ -1,7 +1,6 @@
-const path = require("path");
-const CleanWebpackPlugin = require('clean-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-var DashboardPlugin = require('webpack-dashboard/plugin');
+const path = require("path")
+const CleanWebpackPlugin = require('clean-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const config = {
 	entry: { app: `${__dirname}/src/giving-web.js` },
