@@ -5,20 +5,35 @@ import css from './MemberPreview.scss'
 
 class MemberPreview extends React.Component {
 
-	devMember(){
-		return {
-			name: "John Smith",
-			location: "North Pole",
-			snippet: "Please send help I'm cold",
-			"goal": 10000,
+	devMember(member){
+
+		if(!member){
+			return {
+				name: "John Smith",
+				location: "North Pole",
+				snippet: "Please send help I'm cold",
+				"donations": 5000,
+				"goal": 10000
+			}
 		}
+
+		if(!member.donations){
+			member.donations = 5000;
+		}
+
+	}
+
+	calcDonationPercentage(member){
+		return (member.donations / member.goal) * 100;
 	}
 
 	render() {
-		let member = this.props.member ? this.props.member : this.devMember()
+		let member = this.devMember(this.props.member)
 		let imgUrl = "./images/" + member.name + ".png"
 		console.log(imgUrl);
 		let placeholder = "http://via.placeholder.com/350x350"
+
+		const donationPercantage = this.calcDonationPercentage(member).toString() + "%";
 
 		return (
 			<div className="member-preview">
@@ -34,7 +49,7 @@ class MemberPreview extends React.Component {
 				</h4>
 				<div className="donation-details">
 					<div className="member-progress-bar">
-						<div className="bar-fill"></div>
+						<div className="bar-fill" style={{width: donationPercantage}}></div>
 					</div>
 					<div className="progress-details">
 						<div className="member-progress">
