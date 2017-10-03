@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node server.js",
     "dev": "webpack-dashboard -- webpack-dev-server --open --config webpack.dev.js",
-    "build": "webpack-dashboard -- webpack --config webpack.prod.js",
+    "build": "webpack --config webpack.prod.js",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",

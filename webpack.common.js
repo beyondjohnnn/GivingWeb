@@ -19,8 +19,7 @@ const config = {
       hash: true,
       inject: 'body',
       filename: 'index.html'
-    }),
-    new DashboardPlugin()
+    })
   ],
 	module: {
 		rules: [

@@ -28,6 +28,7 @@ module.exports = merge(common, {
       'process.env': {
         'NODE_ENV': JSON.stringify('development')
       }
-    })
+    }),
+    new DashboardPlugin()
   ]
 })
