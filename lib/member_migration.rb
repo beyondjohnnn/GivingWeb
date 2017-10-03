@@ -59,14 +59,17 @@ class MemberMigration
     memberdata.each do |member|
 
       hash = {
-        name: member['post_title'],
-        info: member['post_content'],
-        post_date: member['post_date'],
-        snippet: member['post_excerpt'],
-        location: member['location'],
-        goal: member['goal'],
-        title: member['title'],
-        meta_description: member['meta_description']
+        legacy_sql_id: member['ID'],
+        member_data: {
+          name: member['post_title'],
+          info: member['post_content'],
+          post_date: member['post_date'],
+          snippet: member['post_excerpt'],
+          location: member['location'],
+          goal: member['goal'],
+          title: member['title'],
+          meta_description: member['meta_description']
+        }
       }
 
       hashes.push(hash)

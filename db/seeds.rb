@@ -56,9 +56,11 @@
 # )
 
 Member.delete_all
+Legacy.delete_all
 # puts MemberMigration.build_member_hashes
 members = MemberMigration.build_member_hashes
 
 members.each do |member|
-	Member.create(member)
+	dbMember = Member.create(member[:member_data])
+	Legacy.create({member_id: dbMember.id, legacy_sql_id: member[:legacy_sql_id]})
 end
