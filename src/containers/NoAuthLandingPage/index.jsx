@@ -5,10 +5,13 @@ import { bindActionCreators } from 'redux'
 
 import * as actionCreators from '../../actions/howItWorksActionCreators'
 
+
 import css from './NoAuthLandingPage.scss'
 
 import Hero from '../../components/Hero'
 import NoAuthSubNavigation from '../../components/NoAuthSubNavigation'
+import BeAHero from '../../components/BeAHero'
+import ForCharities from '../../components/ForCharities'
 import HowItWorks from '../../components/HowItWorks'
 import MemberPreview from '../../components/MemberPreview'
 import WhatsHappening from '../../components/WhatsHappening'
@@ -20,6 +23,16 @@ class NoAuthLandingPage extends React.Component {
 			return <HowItWorks />
 		}
 	}
+
+	renderSubNavigationSelection() {
+		if (this.props.currentLandingPageComponent == "Whats Happening") {
+			return <WhatsHappening />
+		} else if (this.props.currentLandingPageComponent == "Be A Hero") {
+			return <BeAHero />
+		} else if (this.props.currentLandingPageComponent == "For Charities") {
+			return <ForCharities />
+		}
+	}
 	
 
 	render() {
@@ -28,7 +41,7 @@ class NoAuthLandingPage extends React.Component {
 				<Hero />
 				{this.renderHowItWorks()}
 				<NoAuthSubNavigation />
-				<WhatsHappening />
+				{this.renderSubNavigationSelection()}
 			</div>
 		)
 	}
@@ -36,7 +49,7 @@ class NoAuthLandingPage extends React.Component {
 
 // this is taking the howItWorks portion of state and attaching it to the NoAuthLandingPage props
 function mapStateToProps(state, routing) {
-  return Object.assign({}, state.howItWorks, routing)
+  return Object.assign({}, state.howItWorks, state.noAuthSubNavigation, routing)
 }
 
 // this is attaching our actions to the NoAuthLandingPage component

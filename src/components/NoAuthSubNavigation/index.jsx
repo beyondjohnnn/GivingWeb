@@ -20,7 +20,7 @@ class NoAuthSubNavigation extends React.Component {
 			<div className="no-auth-sub-navigation">
 				<div className="tabs-wrapper">
 					<h3 className={this.whatsHappeningStyling("Whats Happening")} onClick={this.props.setCurrentLandingPageComponent.bind(this, "Whats Happening")}>Happening Now</h3> 
-					<h3 className={this.whatsHappeningStyling("Become a Hero")} onClick={this.props.setCurrentLandingPageComponent.bind(this, "Become a Hero")}>Become a Hero</h3>  
+					<h3 className={this.whatsHappeningStyling("Be A Hero")} onClick={this.props.setCurrentLandingPageComponent.bind(this, "Be A Hero")}>Be a Hero</h3>  
 					<h3 className={this.whatsHappeningStyling("For Charities")} onClick={this.props.setCurrentLandingPageComponent.bind(this, "For Charities")}>For Charities</h3> 
 				</div>
 			</div>
