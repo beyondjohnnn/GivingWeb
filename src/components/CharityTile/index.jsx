@@ -18,4 +18,4 @@ class CharityTile extends React.Component {
 	}
 }
 
-export default CharityTile;
+export default CharityTile

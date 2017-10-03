@@ -2,13 +2,15 @@ import React from 'react'
 
 import css from './CharityDashboardContent.scss'
 
+import CharityDashboardCampaign from '../CharityDashboardCampaign'
+import CharityDashboardBreadcrumbs from '../CharityDashboardBreadcrumbs'
+
 class CharityDashboardContent extends React.Component {
   render() {
     return (
       <div className="charity-dashboard-content">
-        <div className="breadcrumbs">
-          <i className="fa fa-home"></i> HOME
-        </div>
+        <CharityDashboardBreadcrumbs />
+        <CharityDashboardCampaign />
       </div>
     )
   }
