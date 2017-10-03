@@ -15,6 +15,7 @@ import UserDashboard from './containers/UserDashboard'
 import CharityLogin from './containers/CharityLogin'
 import CharitySignup from './containers/CharitySignup'
 import HelpSomeonePage from './containers/HelpSomeonePage'
+import CharityLandingPage from './containers/CharityLandingPage'
 
 // import components
 import Navigation from './components/Navigation'
@@ -35,7 +36,7 @@ const router = (
 	<Provider store={store}>
 		<Router history={history}>
 			<div>
-				<Navigation />
+				<Route path="/" component={Navigation} />
 				<Route exact path="/" component={NoAuthLandingPage} />
 				<Route path="/signup" component={UserSignup} />
 				<Route path="/login" component={UserLogin} />
@@ -45,6 +46,7 @@ const router = (
 				<Route path="/charity-signup" component={CharitySignup} />
 				<Route path="/featured-members" component={FeaturedMembers} />
 				<Route path="/help-someone" component={HelpSomeonePage} />
+				<Route path="/charities" component={CharityLandingPage} />
 				<Footer />
 			</div>
 		</Router>
