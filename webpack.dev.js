@@ -2,6 +2,7 @@ const webpack = require('webpack')
 const merge = require('webpack-merge')
 const common = require('./webpack.common.js')
 const { join } = require('path')
+var DashboardPlugin = require('webpack-dashboard/plugin')
 
 module.exports = merge(common, {
 	devtool: 'inline-source-map',
@@ -17,6 +18,7 @@ module.exports = merge(common, {
         use: [
         	'style-loader',
         	'css-loader',
+          'postcss-loader',
         	'sass-loader'
         ]
       }
@@ -28,6 +30,7 @@ module.exports = merge(common, {
       'process.env': {
         'NODE_ENV': JSON.stringify('development')
       }
-    })
+    }),
+    new DashboardPlugin()
   ]
 })
