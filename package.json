@@ -71,6 +71,6 @@
       "!**/node_modules/**",
       "!**/vendor/**"
     ],
-    "coverageDirectory": "./test-coverage"
+    "coverageDirectory": "./test/coverage"
   }
 }
