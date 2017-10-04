@@ -20,6 +20,8 @@ class MemberPreview extends React.Component {
 		if(!member.donations){
 			member.donations = 95.5;
 		}
+
+		return member
 	}
 
 	calcDonationPercentage(member){
@@ -38,14 +40,13 @@ class MemberPreview extends React.Component {
 	render() {
 		let member = this.devMember(this.props.member)
 		let imgUrl = "./images/" + member.name + ".png"
-		console.log(imgUrl);
 		let placeholder = "http://via.placeholder.com/350x350"
 
 		const percentage = this.calcDonationPercentage(member).toString() + "%";
 		const donationBarColour = this.getDonationBarColour(percentage);
 		const donationBarStyles = {
 			width: percentage,
-			"background-color": donationBarColour
+			backgroundColor: donationBarColour
 		}
 
 		return (
