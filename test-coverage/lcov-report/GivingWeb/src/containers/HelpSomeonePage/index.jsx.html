@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for GivingWeb/src/containers/HelpSomeonePage/index.jsx</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">All files</a> / <a href="index.html">GivingWeb/src/containers/HelpSomeonePage</a> index.jsx
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/75</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/45</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/16</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/31</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110</td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React <span class="cstat-no" title="statement not covered" >from 'react'<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>
+import { bind<span class="cstat-no" title="statement not covered" >ActionCreators } </span>from 'redux'
+import {connect} f<span class="cstat-no" title="statement not covered" >rom 'react-redux'</span>
+&nbsp;
+import * as actionCreators from <span class="cstat-no" title="statement not covered" >'../../actions/helpSomeoneActionCreator'<span class="cstat-no" title="statement not covered" ></span></span>
+&nbsp;
+import css from './Help<span class="cstat-no" title="statement not covered" >SomeonePage.scss'<span class="cstat-no" title="statement not covered" ></span></span>
+&nbsp;
+import CategoryList <span class="cstat-no" title="statement not covered" >from '../../components/CategoryList'<span class="cstat-no" title="statement not covered" ></span></span>
+import MemberPreview <span class="cstat-no" title="statement not covered" >from '../../components/MemberPreview'<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>
+&nbsp;
+class HelpSomeoneP<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >ag</span>e extends React.Component {<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ></span></span></span></span></span></span></span>
+&nbsp;
+	buildCategoryList(){
+		let categories = [<span class="cstat-no" title="statement not covered" >"All", "Art Supplies", "Education",</span>
+		"Employment", "other", "other", "other", "other", "other", "other", "other"];
+&nbsp;
+		let categoryElements = [<span class="cstat-no" title="statement not covered" >];</span>
+		f<span class="cstat-no" title="statement not covered" >or(let index in categories){</span>
+			c<span class="cstat-no" title="statement not covered" >ategoryElements.push(&lt;li key={index}&gt;&lt;button&gt;{categories[index]}&lt;/button&gt;&lt;/li&gt;);</span>
+		}
+&nbsp;
+		r<span class="cstat-no" title="statement not covered" >eturn &lt;ul&gt;{categoryElements}&lt;/ul&gt;</span>
+	}<span class="fstat-no" title="function not covered" ></span>
+&nbsp;
+	buildMemberPreviews(members){
+&nbsp;
+		c<span class="cstat-no" title="statement not covered" >onsole.log(members)</span>
+		let memberPreviews = [<span class="cstat-no" title="statement not covered" >];</span>
+		let previewsPerLine = 3<span class="cstat-no" title="statement not covered" >;</span>
+&nbsp;
+		let row = [<span class="cstat-no" title="statement not covered" >];</span>
+		f<span class="cstat-no" title="statement not covered" >or(let index in members){</span>
+			r<span class="cstat-no" title="statement not covered" >ow.push(&lt;MemberPreview className="member-preview" key={index}  member={members[index]} /&gt;);</span>
+&nbsp;
+			i<span class="cstat-no" title="statement not covered" >f(row.length === previewsPerLine){</span>
+				m<span class="cstat-no" title="statement not covered" >emberPreviews.push(</span>
+					&lt;div className="member-preview-row" key={index}&gt;{row}&lt;/div&gt;
+				);
+				r<span class="cstat-no" title="statement not covered" >ow = [];</span>
+			}
+		}
+&nbsp;
+		i<span class="cstat-no" title="statement not covered" >f(row.length !== 0){</span>
+			m<span class="cstat-no" title="statement not covered" >emberPreviews.push(</span>
+				&lt;div className="member-preview-row" key="last-row"&gt;{row}&lt;/div&gt;
+			);
+		}
+&nbsp;
+		r<span class="cstat-no" title="statement not covered" >eturn memberPreviews;</span>
+	}<span class="fstat-no" title="function not covered" ></span>
+&nbsp;
+	componentDidMount(){
+		t<span class="cstat-no" title="statement not covered" >his.props.getMembers()</span>
+	}<span class="fstat-no" title="function not covered" ></span>
+&nbsp;
+	render() {
+		r<span class="cstat-no" title="statement not covered" >eturn (</span>
+			&lt;div className="help-someone-page"&gt;
+&nbsp;
+				&lt;section&gt;
+&nbsp;
+					&lt;h2&gt;Find someone to help&lt;/h2&gt;
+					&lt;p&gt;
+						Support individuals and families who are experiencing poverty or
+						homelessness in raising money for basic needs and goals. You can
+						see first hand the positive impact of your donation when we send
+						you updates from our member once they have reach their target!
+					&lt;/p&gt;
+					&lt;p&gt;
+						*Each member is verified by our trusted partner organisations and
+						is receiving assistance towards long term stability.
+					&lt;/p&gt;
+&nbsp;
+				&lt;/section&gt;
+&nbsp;
+				&lt;section&gt;
+&nbsp;
+					&lt;div className="location-filter-container"&gt;
+						&lt;span&gt;
+							All Areas
+						&lt;/span&gt;
+						&lt;i className="fa fa-long-arrow-down custom-arrow" aria-hidden="true"&gt;&lt;/i&gt;
+					&lt;/div&gt;
+&nbsp;
+				&lt;/section&gt;
+&nbsp;
+			&lt;CategoryList /&gt;
+&nbsp;
+				&lt;section&gt;
+					{this.buildMemberPreviews(this.props.members)}
+				&lt;/section&gt;
+&nbsp;
+			&lt;/div&gt;
+		)
+	}<span class="cstat-no" title="statement not covered" ></span>
+}
+&nbsp;
+// this is taking the howItWorks portion of state and attaching it to the HowItWork's props
+function <span class="fstat-no" title="function not covered" >mapStateToProps(</span>state, routing) {
+<span class="cstat-no" title="statement not covered" >  return Object.assign({}, state.helpSomeone, routing)</span>
+}
+&nbsp;
+// this is attaching our actions to the HowItWork's component
+function <span class="fstat-no" title="function not covered" >mapDispatchToProps(</span>dispatch) {
+<span class="cstat-no" title="statement not covered" >  return bindActionCreators(actionCreators, dispatch)</span>
+}<span class="cstat-no" title="statement not covered" ></span>
+&nbsp;
+export default connect(mapStateToProps, mapDispatchToProps)(HelpSomeonePage)
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Oct 02 2017 10:37:17 GMT+0100 (BST)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

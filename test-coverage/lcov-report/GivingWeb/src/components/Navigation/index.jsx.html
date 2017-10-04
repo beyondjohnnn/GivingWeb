@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for GivingWeb/src/components/Navigation/index.jsx</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">All files</a> / <a href="index.html">GivingWeb/src/components/Navigation</a> index.jsx
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/62</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/45</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/15</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/19</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75</td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React <span class="cstat-no" title="statement not covered" >from 'react'<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>
+import { bind<span class="cstat-no" title="statement not covered" >ActionCreators } </span>from 'redux'
+import { Link } from '<span class="cstat-no" title="statement not covered" >react-router-dom'</span>
+import {connect}  <span class="cstat-no" title="statement not covered" >from 'react-redux'</span>
+&nbsp;
+import * as actionCreator<span class="cstat-no" title="statement not covered" >s from '../../actions/navActionCreators'<span class="cstat-no" title="statement not covered" ></span></span>
+&nbsp;
+import css from '.<span class="cstat-no" title="statement not covered" >/Navigation.scss'<span class="cstat-no" title="statement not covered" ></span></span>
+&nbsp;
+import MenuDropdown <span class="cstat-no" title="statement not covered" >from '../MenuDropdown'<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>
+&nbsp;
+class Navigat<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >io</span>n extends React.Component {<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ></span></span></span></span></span></span></span>
+&nbsp;
+	renderDropdown() {
+		i<span class="cstat-no" title="statement not covered" >f (this.props.dropdownVisible) {</span>
+			r<span class="cstat-no" title="statement not covered" >eturn &lt;MenuDropdown styling="menu-dropdown-wrapper visible-dropdown" /&gt;</span>
+		} else {
+			r<span class="cstat-no" title="statement not covered" >eturn &lt;MenuDropdown styling="menu-dropdown-wrapper hidden-dropdown" /&gt;</span>
+		}
+	}<span class="fstat-no" title="function not covered" ></span>
+&nbsp;
+	renderMenuButton() {
+		i<span class="cstat-no" title="statement not covered" >f (this.props.dropdownVisible) {</span>
+			r<span class="cstat-no" title="statement not covered" >eturn &lt;button className="menu-button menu-open" onClick={this.props.toggleDropdown}&gt;</span>
+							&lt;i className="fa fa-bars menu-burger" aria-hidden="true"&gt;&lt;/i&gt;Menu&lt;i className="fa fa-sort-asc arrow up-arrow" aria-hidden="true"&gt;&lt;/i&gt;
+						&lt;/button&gt;
+		} else {
+			r<span class="cstat-no" title="statement not covered" >eturn &lt;button className="menu-button" onClick={this.props.toggleDropdown}&gt;</span>
+							&lt;i className="fa fa-bars menu-burger" aria-hidden="true"&gt;&lt;/i&gt;Menu&lt;i className="fa fa-sort-desc arrow down-arrow" aria-hidden="true"&gt;&lt;/i&gt;
+						&lt;/button&gt;
+		}
+	}<span class="fstat-no" title="function not covered" ></span>
+&nbsp;
+	render() {
+		r<span class="cstat-no" title="statement not covered" >eturn (</span>
+			&lt;div className="navigation-wrapper"&gt;
+				&lt;div className="navigation"&gt;
+					&lt;div className="content-wrapper"&gt;
+						&lt;div className="logo-search-wrapper"&gt;
+							&lt;Link to="/" className="logo"&gt;
+								&lt;img src="images/logopurple.png" /&gt;
+							&lt;/Link&gt;
+							&lt;form className="search-bar"&gt;
+						    &lt;input  id="search" placeholder="Search for a city, friend, non-profit or cause..." /&gt;
+						    &lt;button className="search-icon"&gt;&lt;i className="fa fa-search"&gt;&lt;/i&gt;&lt;/button&gt;
+						  &lt;/form&gt;
+						&lt;/div&gt;		
+						&lt;nav&gt;
+							&lt;Link to="/login" className="login-link nav-link"&gt;
+								Log in
+							&lt;/Link&gt;
+							&lt;Link to="/signup" className="signup-link nav-link"&gt;
+								Sign up
+							&lt;/Link&gt; 
+							{this.renderMenuButton()}
+							{this.renderDropdown()}
+						&lt;/nav&gt;
+					&lt;/div&gt;	
+				&lt;/div&gt;
+			&lt;/div&gt;
+		)
+	}<span class="cstat-no" title="statement not covered" ></span>
+}
+&nbsp;
+// this is taking the navigation portion of state and attaching it to the Navigation's props
+function <span class="fstat-no" title="function not covered" >mapStateToProps(</span>state, routing) {
+<span class="cstat-no" title="statement not covered" >  return Object.assign({}, state.navigation, routing)</span>
+}
+&nbsp;
+// this is attaching our actions to the Navigation component
+function <span class="fstat-no" title="function not covered" >mapDispatchToProps(</span>dispatch) {
+<span class="cstat-no" title="statement not covered" >  return bindActionCreators(actionCreators, dispatch)</span>
+}<span class="cstat-no" title="statement not covered" ></span>
+&nbsp;
+export default connect(mapStateToProps, mapDispatchToProps)(Navigation)</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Oct 02 2017 10:37:17 GMT+0100 (BST)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>
