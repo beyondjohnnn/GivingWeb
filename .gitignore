@@ -4,6 +4,7 @@ npm-debug.log
 
 # updated for webpack server and testing
 package-lock.json
+.DS_Store
 
 app.bundle.js
 app.bundle.js.map

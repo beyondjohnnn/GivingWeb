@@ -37,7 +37,7 @@ class NoAuthLandingPage extends React.Component {
 			return <ForCharities />
 		}
 	}
-	
+
 
 	render() {
 		return (

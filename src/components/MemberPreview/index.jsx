@@ -47,7 +47,7 @@ class MemberPreview extends React.Component {
 		const donationBarColour = this.getDonationBarColour(percentage);
 		const donationBarStyles = {
 			"width": textPercentage,
-			"background-color": donationBarColour
+			"backgroundColor": donationBarColour
 		}
 
 		return (
