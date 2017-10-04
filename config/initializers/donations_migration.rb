@@ -1,0 +1,1 @@
+require 'donations_migration'

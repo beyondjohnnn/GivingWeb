@@ -64,3 +64,5 @@ members.each do |member|
 	dbMember = Member.create(member[:member_data])
 	Legacy.create({member_id: dbMember.id, legacy_sql_id: member[:legacy_sql_id]})
 end
+
+p donation_migration.run()
