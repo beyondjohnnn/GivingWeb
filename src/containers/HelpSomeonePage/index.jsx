@@ -29,7 +29,7 @@ class HelpSomeonePage extends React.Component {
 
 		let row = [];
 		for(let index in members){
-			row.push(<MemberPreview className="member-preview" key={index}  member={members[index]} />);
+			row.push(<MemberPreview className="member-preview" key={index} member={members[index]} />);
 
 			if(row.length === previewsPerLine){
 				memberPreviews.push(
