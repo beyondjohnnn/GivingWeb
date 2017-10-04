@@ -4,9 +4,8 @@
 	justify-content: center;
 	align-items: center;
 	width: 100%;
-	padding: 40px;
-
-	background-color: #999;
+	padding: 30px 90px;
+	background-color: #ffffff;
 
 	.sitemap {
 		width: 80%;
@@ -18,9 +17,13 @@
 
 		ul {
 			list-style: none;
+			font-weight: 200;
+
 			
 			li {
 				margin-bottom: 10px;
+				font-weight: 300;
+
 			}			
 		}
 
