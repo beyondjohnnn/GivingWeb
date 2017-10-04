@@ -48,24 +48,30 @@
 			justify-content: flex-start;
 			height: 59px;
 
-			li {
-				display: flex;
-				width: 160px;
-				height: 60px;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				text-transform: uppercase;
-				letter-spacing: 3px;
-				font-weight: 600;
-				font-size: 1.2em;
-				color: #bbb;
+			.navtab-link {
+				text-decoration: none;
 
-				&.selected {
-					color: tomato;
-					border-bottom: 4px solid tomato;
+				li {
+					display: flex;
+					width: 160px;
+					height: 60px;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					text-transform: uppercase;
+					letter-spacing: 3px;
+					font-weight: 600;
+					font-size: 1.2em;
+					color: #bbb;
+
+					&.selected {
+						color: tomato;
+						border-bottom: 4px solid tomato;
+					}
 				}
+				
 			}
+
 		}
 	}
 }

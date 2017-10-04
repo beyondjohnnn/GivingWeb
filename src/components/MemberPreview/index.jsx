@@ -8,11 +8,11 @@ class MemberPreview extends React.Component {
 	devMember(member){
 
 		if(!member){
-			return {
+			member = {
 				name: "John Smith",
 				location: "North Pole",
 				snippet: "Please send help I'm cold",
-				"donations": 95.5,
+				"donations": 99.9,
 				"goal": 100
 			}
 		}
@@ -26,15 +26,15 @@ class MemberPreview extends React.Component {
 
 	calcDonationPercentage(member){
 		let donationPercent = (member.donations / member.goal) * 100;
-		if(donationPercent > 100) return 100;
+		if(donationPercent >= 100) return 100;
 		if(donationPercent < 99) return Math.ceil(donationPercent);
-		return Math.floor(donationPercent);
+		else return 99;
 	}
 
 	getDonationBarColour(percentage){
 		if(percentage <= 33) return "#FBAC3D";
-		else if(percentage > 33 && percentage <= 66) return "#00CB9B";
-		return "#00862C";
+		else if(percentage <= 66) return "#00CB9B";
+		else return "#00862C";
 	}
 
 	render() {
@@ -43,10 +43,11 @@ class MemberPreview extends React.Component {
 		let placeholder = "http://via.placeholder.com/350x350"
 
 		const percentage = this.calcDonationPercentage(member);
+		const textPercentage = percentage.toString() + "%";
 		const donationBarColour = this.getDonationBarColour(percentage);
 		const donationBarStyles = {
-			width: percentage + '%',
-			backgroundColor: donationBarColour
+			"width": textPercentage,
+			"background-color": donationBarColour
 		}
 
 		return (
@@ -67,7 +68,7 @@ class MemberPreview extends React.Component {
 					</div>
 					<div className="progress-details">
 						<div className="member-progress">
-							<p className="progress-percentage">{percentage}</p>
+							<p className="progress-percentage">{textPercentage}</p>
 							<p className="progress-label">RAISED</p>
 						</div>
 						<div className="member-goal">
