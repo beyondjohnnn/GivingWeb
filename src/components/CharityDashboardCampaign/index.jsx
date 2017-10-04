@@ -13,10 +13,10 @@ class CharityDashboardCampaign extends React.Component {
 				</div>
 				<div className="cd-current-campaigns">
 					<ul className="campaign-nav-tabs">
-						<Link className="navtab-link" to=""><li className="selected">Live (0)</li></Link>
-						<Link className="navtab-link" to=""><li>Draft (0)</li></Link>
-						<Link className="navtab-link" to=""><li>Review (0)</li></Link>
-						<Link className="navtab-link" to=""><li>Success (0)</li></Link>
+						<Link className="navtab-link" to="/charity-dashboard"><li className="selected">Live (0)</li></Link>
+						<Link className="navtab-link" to="/charity-dashboard"><li>Draft (0)</li></Link>
+						<Link className="navtab-link" to="/charity-dashboard"><li>Review (0)</li></Link>
+						<Link className="navtab-link" to="/charity-dashboard"><li>Success (0)</li></Link>
 					</ul>
 				</div>
 			</div>
