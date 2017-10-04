@@ -21,7 +21,7 @@ $title-color: #222;
 
  			&:hover {
  				transition: 0.5s ease;
- 				transform: scale(1.3);
+ 				transform: scale(1.2);
  			}
  		}
 	}
@@ -40,10 +40,9 @@ $title-color: #222;
 	}
 
 	.member-description {
-		margin-bottom: 20px;
-		height: 55px;
+		height: 45px;
 		overflow: hidden;
-  		text-overflow: ellipsis;
+  	text-overflow: ellipsis;
 	}
 
 	.member-verification {
