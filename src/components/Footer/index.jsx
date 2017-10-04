@@ -9,26 +9,32 @@ class Footer extends React.Component {
 				<div className="sitemap">
 					<div className="get-to-know-us">
 						<ul>
-							<li><h4>Get to know us</h4></li>
+							<li className="header">Get to know us</li>
+							<li>About Us</li>
 							<li>Read our blog</li>
 							<li>Meet our team</li>
+							<li>Terms & Privacy</li>
+							<li>Cookies</li>
 						</ul>
 					</div>
 					<div className="connect">
 						<ul>
-							<li><h4>Connect</h4></li>
-							<li>Contact us</li>
+							<li>Donors & Fundraisers</li>
+							<li>How it works</li>
+							<li>Help Someone</li>
+							<li>Campaigns</li>
+							<li>Start Fundraising</li>
 						</ul>
 					</div>
 					<div className="get-involved">
 						<ul>
-							<li><h4>Get involved</h4></li>
+							<li>Get involved</li>
 							<li>Become a partner</li>
 						</ul>
 					</div>
 					<div className="donate-to-us">
 						<ul>
-							<li><h4>Donate to us</h4></li>
+							<li>Donate to us</li>
 							<li>Help Someone</li>
 							<li>The community fund</li>
 						</ul>
@@ -36,9 +42,9 @@ class Footer extends React.Component {
 				</div>
 				<div className="other-info">
 					<div className="terms">
-						<div className="copyright">© 2016 StreetChange | All rights reserved.</div>
+						<div className="copyright">© 2016 GivingWeb | All rights reserved.</div>
 						<div className="made-with-love">Made with <i className="fa fa-heart"></i> in Edinburgh.</div>
-						<div className="ts-n-cs">Terms and Privacy | Cookie Policy</div>
+						<div className="ts-n-cs">GivingWeb is a © 2017 StreetChange Platform</div>
 					</div>
 					<div className="social-media">
 						<i className="fa fa-facebook"></i>
