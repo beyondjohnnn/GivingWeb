@@ -1,5 +1,7 @@
 @import './fonts';
 
+$main-text-color: #444444;
+
 * {
 	margin: 0;
 	padding: 0;
@@ -7,5 +9,6 @@
 }
 
 body {
-	font-family: $main-font;
+  font-family: $main-font;
+  color: $main-text-color;
 }
