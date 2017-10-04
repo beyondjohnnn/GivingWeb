@@ -24,8 +24,6 @@ class HelpSomeonePage extends React.Component {
 	}
 
 	buildMemberPreviews(members){
-
-		console.log(members)
 		let memberPreviews = [];
 		let previewsPerLine = 3;
 

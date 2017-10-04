@@ -8,7 +8,7 @@ class MemberPreview extends React.Component {
 	devMember(member){
 
 		if(!member){
-			return {
+			member = {
 				name: "John Smith",
 				location: "North Pole",
 				snippet: "Please send help I'm cold",
@@ -19,8 +19,9 @@ class MemberPreview extends React.Component {
 
 		if(!member.donations){
 			member.donations = 95.5;
-			return member;
 		}
+
+		return member
 	}
 
 	calcDonationPercentage(member){
@@ -39,7 +40,6 @@ class MemberPreview extends React.Component {
 	render() {
 		let member = this.devMember(this.props.member)
 		let imgUrl = "./images/" + member.name + ".png"
-		console.log(imgUrl);
 		let placeholder = "http://via.placeholder.com/350x350"
 
 		const percentage = this.calcDonationPercentage(member);
