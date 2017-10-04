@@ -3,3 +3,9 @@ export function toggleHowItWorks() {
     type: 'TOGGLE_HOWITWORKS'
   }
 }
+
+export function scrollToHowItWorks() {
+  return {
+    type: 'SCROLLTO_HOWITWORKS'
+  }
+}

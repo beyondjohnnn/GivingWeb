@@ -18,10 +18,7 @@ class Hero extends React.Component {
 	}
 
 	smoothScrollToHowItWorks() {
-		this.props.toggleHowItWorks();
-		if (this.props.howItWorksVisible){
-			
-		}
+		this.props.toggleHowItWorks()
 	}
 
 	render() {
