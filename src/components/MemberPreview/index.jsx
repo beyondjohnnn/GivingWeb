@@ -19,6 +19,7 @@ class MemberPreview extends React.Component {
 
 		if(!member.donations){
 			member.donations = 95.5;
+			return member;
 		}
 	}
 
