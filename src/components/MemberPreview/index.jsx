@@ -42,10 +42,10 @@ class MemberPreview extends React.Component {
 		let imgUrl = "./images/" + member.name + ".png"
 		let placeholder = "http://via.placeholder.com/350x350"
 
-		const percentage = this.calcDonationPercentage(member).toString() + "%";
+		const percentage = this.calcDonationPercentage(member);
 		const donationBarColour = this.getDonationBarColour(percentage);
 		const donationBarStyles = {
-			width: percentage,
+			width: percentage + '%',
 			backgroundColor: donationBarColour
 		}
 
