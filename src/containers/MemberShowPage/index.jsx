@@ -2,8 +2,17 @@ import React from 'react'
 
 import css from './MemberShowPage.scss'
 
+import Comment from '../../components/Comment'
+
 class MemberShowPage extends React.Component {
 	render() {
+		const testComment = {
+			comment_author: 'Mark',
+			comment_date: new Date(),
+			comment_content: 'Hope you make it home Tomas! I hope you get a chance to have a lovely dinner with your family too.',
+			donation_amount: 'made a £10 donation.'
+		}
+
 		return (
 			<div className="member-show-page">
 				<div className="header">
@@ -37,7 +46,11 @@ class MemberShowPage extends React.Component {
 						<label htmlFor="comment-box">Send a message</label>
 						<textarea id="comment-box" ref="comment-box" className="comment-box" />
 						<button className="post-button">Post</button>
+						<div className="comment-list">
+							<Comment comment={testComment} />
+						</div>
 					</div>
+					
 				</div>
 				<div className="right-section">
 					<div className="donation-section">
