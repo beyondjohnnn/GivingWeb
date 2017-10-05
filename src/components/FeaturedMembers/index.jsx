@@ -10,18 +10,33 @@ import MemberPreview from '../MemberPreview'
 
 class FeaturedMembers extends React.Component {
 
-	componentDidMount(){
-		this.props.getMembers()
+	constructor(props){
+		super(props);
+	}
+
+	componentWillMount(){
+		this.props.getMembers();
+	}
+
+	prepareMembers(){
+		let members = [this.props.members[0], this.props.members[1], this.props.members[4]];
+		let memberElements = [];
+
+		for(let index in members){
+			if(!members[index]) members[index] = {donations: []};
+			memberElements.push(<MemberPreview key={index} member={members[index]} />)
+		}
+
+		return memberElements
 	}
 
 	render() {
+
 		return (
 			<div className="featured-members">
 				<h2>Members</h2>
 				<div className="members-list">
-					<MemberPreview member={this.props.members[0]} />
-					<MemberPreview member={this.props.members[1]} />
-					<MemberPreview member={this.props.members[4]} />
+					{this.prepareMembers()}
 				</div>
 			</div>
 		)

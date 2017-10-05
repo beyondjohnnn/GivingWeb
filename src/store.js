@@ -4,6 +4,8 @@ import promiseMiddleware from 'redux-promise-middleware'
 import createHistory from 'history/createBrowserHistory'
 import { createScrollMiddleware } from 'react-redux-scroll'
 
+import { getMembers } from './actions/helpSomeoneActionCreator'
+
 import rootReducer from './reducers/index'
 const history = createHistory()
 const routerStuff = routerMiddleware(history)
