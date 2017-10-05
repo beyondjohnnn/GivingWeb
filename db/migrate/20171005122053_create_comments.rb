@@ -7,7 +7,6 @@ class CreateComments < ActiveRecord::Migration[5.1]
       t.string :donation_amount
       t.datetime :comment_date
 
-
       t.timestamps
     end
   end
