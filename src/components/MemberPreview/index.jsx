@@ -43,6 +43,11 @@ class MemberPreview extends React.Component {
 	}
 
 	render() {
+
+		let previewStyle = this.props.style
+		if(!previewStyle) previewStyle = {}
+		console.log(previewStyle);
+
 		let member = this.devMember(this.props.member)
 		let imgUrl = "images/" + member.name + ".png"
 		let placeholder = "http://via.placeholder.com/350x350"
@@ -56,7 +61,7 @@ class MemberPreview extends React.Component {
 		}
 
 		return (
-			<div className="member-preview">
+			<div className="member-preview" style={previewStyle}>
 				<div className="member-photo-container">
 					<Link className="member-link" to={`/member?member_id=${member.id}`}><img className="member-photo" src={imgUrl} /></Link>
 				</div>
