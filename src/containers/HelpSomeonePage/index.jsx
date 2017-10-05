@@ -8,41 +8,9 @@ import css from './HelpSomeonePage.scss'
 
 import CategoryList from '../../components/CategoryList'
 import MemberPreview from '../../components/MemberPreview'
+import MemberPreviewBuilder from '../../components/MemberPreviewBuilder'
 
 class HelpSomeonePage extends React.Component {
-
-	buildMemberPreviews(members){
-		let memberPreviews = [];
-		let previewsPerLine = 3;
-
-		let row = [];
-		for(let index in members){
-			let previewStyle = null;
-			if(index % 3 === 0) previewStyle = {"marginRight": "4.5%"}
-			else if(index % 3 === 2) previewStyle = {"marginLeft": "4.5%"}
-			row.push(<MemberPreview
-				className="member-preview"
-				key={index}
-				style={previewStyle}
-				member={members[index]} />
-			);
-
-			if(row.length === previewsPerLine){
-				memberPreviews.push(
-					<div className="member-preview-row" key={index}>{row}</div>
-				);
-				row = [];
-			}
-		}
-
-		if(row.length !== 0){
-			memberPreviews.push(
-				<div className="member-preview-row" key="last-row">{row}</div>
-			);
-		}
-
-		return memberPreviews;
-	}
 
 	componentDidMount(){
 		this.props.getMembers()
@@ -55,13 +23,13 @@ class HelpSomeonePage extends React.Component {
 				<section>
 
 					<h2>Find someone to help</h2>
-					<p>
+					<p className="intro-paragraph">
 						Support individuals and families who are experiencing poverty or
 						homelessness in raising money for basic needs and goals. You can
 						see first hand the positive impact of your donation when we send
 						you updates from our member once they have reach their target!
 					</p>
-					<p>
+					<p className="intro-paragraph">
 						*Each member is verified by our trusted partner organisations and
 						is receiving assistance towards long term stability.
 					</p>
@@ -82,7 +50,7 @@ class HelpSomeonePage extends React.Component {
 				<CategoryList />
 
 				<section>
-					{this.buildMemberPreviews(this.props.members)}
+					<MemberPreviewBuilder members={this.props.members} previewsPerLine={3}/>
 				</section>
 
 			</div>

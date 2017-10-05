@@ -6,7 +6,7 @@ import * as actionCreators from '../../actions/helpSomeoneActionCreators'
 
 import css from './FeaturedMembers.scss'
 
-import MemberPreview from '../MemberPreview'
+import MemberPreviewBuilder from '../../components/MemberPreviewBuilder'
 
 class FeaturedMembers extends React.Component {
 
@@ -20,23 +20,18 @@ class FeaturedMembers extends React.Component {
 
 	prepareMembers(){
 		let members = [this.props.members[0], this.props.members[1], this.props.members[4]];
-		let memberElements = [];
-
 		for(let index in members){
 			if(!members[index]) members[index] = {donations: []};
-			memberElements.push(<MemberPreview key={index} member={members[index]} />)
 		}
-
-		return memberElements
+		return members
 	}
 
 	render() {
-
 		return (
 			<div className="featured-members">
 				<h2>Members</h2>
 				<div className="members-list">
-					{this.prepareMembers()}
+					<MemberPreviewBuilder members={this.prepareMembers()} previewsPerLine={3}/>
 				</div>
 			</div>
 		)
