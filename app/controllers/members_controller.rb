@@ -2,7 +2,7 @@ class MembersController < ApplicationController
 
     def index
       render json: Member.all.as_json({
-        include: :donations
+        include: [:donations, :comments]
         })
 
       # members = Member.all
