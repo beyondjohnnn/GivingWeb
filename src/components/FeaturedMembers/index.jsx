@@ -17,7 +17,7 @@ class FeaturedMembers extends React.Component {
 	render() {
 		return (
 			<div className="featured-members">
-				<h2>Members</h2>
+				<h2>Featured Members</h2>
 				<div className="members-list">
 					<MemberPreview member={this.props.members[0]} />
 					<MemberPreview member={this.props.members[1]} />
