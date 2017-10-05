@@ -38,6 +38,7 @@
 Member.delete_all
 Donation.delete_all
 Legacy.delete_all
+Comment.delete_all
 
 members = MemberMigration.build_member_hashes
 comments = CommentMigration.run()
@@ -51,15 +52,18 @@ members.each do |member|
 	end
 
 	related_comments.each do |comment|
+		comment.delete('comment_post_ID')
+		comment.delete('comment_ID')
 		comment['member_id'] = dbMember.id
+		Comment.create(comment)
 	end
-
+	pp related_comments
 end
 
 donations = DonationMigration.run()
 
 donations.each do |donation|
-	pp donation
+	# pp donation
 	donation.delete("post_id")
 	donation.delete("name")
 	Donation.create(donation)
