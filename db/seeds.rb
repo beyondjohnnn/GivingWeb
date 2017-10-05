@@ -40,6 +40,7 @@ Donation.delete_all
 Legacy.delete_all
 
 members = MemberMigration.build_member_hashes
+comments = CommentMigration.run()
 
 members.each do |member|
 	dbMember = Member.create(member[:member_data])
