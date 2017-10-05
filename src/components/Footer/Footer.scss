@@ -1,4 +1,4 @@
-$social-color: #6d6d6d;
+$footer-color: #848484;
 
 .footer {
 	display: flex;
@@ -24,12 +24,19 @@ $social-color: #6d6d6d;
 			flex-direction: column;
 			font-weight: 200;
 
+			p {
+				margin-bottom: 3px;
+				color: #848484;
+
+			}
+
 			
 			.footer-link {
-				margin-top: 10px;
+				margin-top: 7px;
 				font-weight: 300;
 				text-decoration: none;
 				color: #444444;
+				height: 20px;
 				
 				&:hover {
 					color: #7663F6;
@@ -59,6 +66,8 @@ $social-color: #6d6d6d;
 				width: 33%;
 				justify-content: center;
 				font-weight: 300;
+				color: $footer-color;
+
 
 				i {
 					padding: 0px 5px;
@@ -75,13 +84,15 @@ $social-color: #6d6d6d;
 			align-items: center;
 			height: 80px;
 			width: 30%;
-			font-size: 2em;
+			font-size: 1.75em;
 			color: #6d6d6d;
+			color: $footer-color;
+			
 
 
 			.fa-facebook {
 			
-			color: $social-color;
+			color: $footer-color;
 
 				&:hover {
 				color: #4a68ac;
