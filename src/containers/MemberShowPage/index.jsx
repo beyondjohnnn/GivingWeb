@@ -1,10 +1,30 @@
 import React from 'react'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+
+import * as actionCreators from '../../actions/helpSomeoneActionCreators'
 
 import css from './MemberShowPage.scss'
 
 import Comment from '../../components/Comment'
 
 class MemberShowPage extends React.Component {
+
+	constructor(props) {
+		super(props)
+	}
+
+	componentDidMount() {
+		const member_id = parseInt(this.props.location.search.split('=')[1])
+		const { members } = this.props
+		if (members.length == 0) {
+			this.props.getSingleMember(member_id)
+		} else {
+			current_member = members.find((member) => { member.id == member_id })
+			this.props.setCurrentMember(current_member)
+		}
+	}
+
 	render() {
 		const testComment = {
 			comment_author: 'Mark',
@@ -94,4 +114,12 @@ class MemberShowPage extends React.Component {
 	}
 }
 
-export default MemberShowPage
+function mapStateToProps(state, routing) {
+	return Object.assign({}, state.helpSomeone, routing)
+}
+
+function mapDispatchToProps(dispatch) {
+	return bindActionCreators(actionCreators, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(MemberShowPage)

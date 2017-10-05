@@ -2,7 +2,7 @@ import React from 'react'
 import { bindActionCreators } from 'redux'
 import {connect} from 'react-redux'
 
-import * as actionCreators from '../../actions/helpSomeoneActionCreator'
+import * as actionCreators from '../../actions/helpSomeoneActionCreators'
 
 import css from './FeaturedMembers.scss'
 
