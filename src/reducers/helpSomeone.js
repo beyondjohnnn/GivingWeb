@@ -1,5 +1,4 @@
 function helpSomeone(state = [], action) {
-
 	switch(action.type) {
     case 'GET_MEMBERS_PENDING':
   		return Object.assign({}, state, { fetching: true })
