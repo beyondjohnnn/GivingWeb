@@ -34,7 +34,7 @@ class MemberShowPage extends React.Component {
 					</div>
 					<div className="make-comment">
 						<h3>Post a comment</h3>
-						<label for="comment-box">Send a message</label>
+						<label htmlFor="comment-box">Send a message</label>
 						<textarea id="comment-box" ref="comment-box" className="comment-box" />
 						<button className="post-button">Post</button>
 					</div>
@@ -62,15 +62,15 @@ class MemberShowPage extends React.Component {
 							</select>
 							<div className="support-checkbox">
 								<input id="checkbox" type="checkbox" />
-								<label for="checkbox">Add £3 to help support GivingWeb</label>
+								<label htmlFor="checkbox">Add £3 to help support GivingWeb</label>
 							</div>
 						</div>
 						<div className="message-controls">
-							<label for="message">Send a message</label>
+							<label htmlFor="message">Send a message</label>
 							<textarea className="message-text" />
 							<div className="name-hide">
 								<input id="checkbox-hidename" type="checkbox" />
-								<label for="checkbox-hidename">Hide my name</label>
+								<label htmlFor="checkbox-hidename">Hide my name</label>
 							</div>
 						</div>
 						<button className="donate-button">DONATE NOW</button>
