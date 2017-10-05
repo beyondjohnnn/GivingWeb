@@ -11,25 +11,21 @@ import MemberPreview from '../../components/MemberPreview'
 
 class HelpSomeonePage extends React.Component {
 
-	buildCategoryList(){
-		let categories = ["All", "Art Supplies", "Education",
-		"Employment", "other", "other", "other", "other", "other", "other", "other"];
-
-		let categoryElements = [];
-		for(let index in categories){
-			categoryElements.push(<li key={index}><button>{categories[index]}</button></li>);
-		}
-
-		return <ul>{categoryElements}</ul>
-	}
-
 	buildMemberPreviews(members){
 		let memberPreviews = [];
 		let previewsPerLine = 3;
 
 		let row = [];
 		for(let index in members){
-			row.push(<MemberPreview className="member-preview" key={index} member={members[index]} />);
+			let previewStyle = null;
+			if(index % 3 === 0) previewStyle = {"marginRight": "4.5%"}
+			else if(index % 3 === 2) previewStyle = {"marginLeft": "4.5%"}
+			row.push(<MemberPreview
+				className="member-preview"
+				key={index}
+				style={previewStyle}
+				member={members[index]} />
+			);
 
 			if(row.length === previewsPerLine){
 				memberPreviews.push(
@@ -83,7 +79,7 @@ class HelpSomeonePage extends React.Component {
 
 				</section>
 
-			<CategoryList />
+				<CategoryList />
 
 				<section>
 					{this.buildMemberPreviews(this.props.members)}
