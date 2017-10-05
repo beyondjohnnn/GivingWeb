@@ -11,18 +11,6 @@ import MemberPreview from '../../components/MemberPreview'
 
 class HelpSomeonePage extends React.Component {
 
-	buildCategoryList(){
-		let categories = ["All", "Art Supplies", "Education",
-		"Employment", "other", "other", "other", "other", "other", "other", "other"];
-
-		let categoryElements = [];
-		for(let index in categories){
-			categoryElements.push(<li key={index}><button>{categories[index]}</button></li>);
-		}
-
-		return <ul>{categoryElements}</ul>
-	}
-
 	buildMemberPreviews(members){
 		let memberPreviews = [];
 		let previewsPerLine = 3;
