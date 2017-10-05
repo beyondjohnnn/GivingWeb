@@ -11,4 +11,4 @@ namespace :db_tasks do
 end
 
 
-# use with great sicression ```bundle exec rake db_tasks:rebuild```
+# use with great discretion ```bundle exec rake db_tasks:rebuild```
