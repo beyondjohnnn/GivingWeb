@@ -6,6 +6,10 @@ $title-color: #222;
 	width: 30%;
 	color: $text-color;
 
+	.member-link {
+		text-decoration: none;
+	}
+
 	.member-photo-container{
 		width: 100%;
 		border-radius: 5px;
