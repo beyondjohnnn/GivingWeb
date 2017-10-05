@@ -83,7 +83,7 @@ class HelpSomeonePage extends React.Component {
 
 				</section>
 
-			<CategoryList />
+				<CategoryList />
 
 				<section>
 					{this.buildMemberPreviews(this.props.members)}
