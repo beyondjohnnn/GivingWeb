@@ -31,7 +31,7 @@ class MemberPreview extends React.Component {
 			return a + b
 		}, 0)
 		let donationPercent = (donations / member.goal) * 100;
-		if(donationPercent >= 100) return 100;
+		if(donationPercent >= 100) return Math.floor(donationPercent);
 		if(donationPercent < 99) return Math.ceil(donationPercent);
 		else return 99;
 	}
