@@ -1,9 +1,38 @@
 import React from 'react'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+
+import * as actionCreators from '../../actions/helpSomeoneActionCreators'
 
 import css from './MemberShowPage.scss'
 
+import Comment from '../../components/Comment'
+
 class MemberShowPage extends React.Component {
+
+	constructor(props) {
+		super(props)
+	}
+
+	componentDidMount() {
+		const member_id = parseInt(this.props.location.search.split('=')[1])
+		const { members } = this.props
+		if (members.length == 0) {
+			this.props.getSingleMember(member_id)
+		} else {
+			current_member = members.find((member) => { member.id == member_id })
+			this.props.setCurrentMember(current_member)
+		}
+	}
+
 	render() {
+		const testComment = {
+			comment_author: 'Mark',
+			comment_date: new Date(),
+			comment_content: 'Hope you make it home Tomas! I hope you get a chance to have a lovely dinner with your family too.',
+			donation_amount: 'made a £10 donation.'
+		}
+
 		return (
 			<div className="member-show-page">
 				<div className="header">
@@ -34,10 +63,14 @@ class MemberShowPage extends React.Component {
 					</div>
 					<div className="make-comment">
 						<h3>Post a comment</h3>
-						<label for="comment-box">Send a message</label>
+						<label htmlFor="comment-box">Send a message</label>
 						<textarea id="comment-box" ref="comment-box" className="comment-box" />
 						<button className="post-button">Post</button>
+						<div className="comment-list">
+							<Comment comment={testComment} />
+						</div>
 					</div>
+					
 				</div>
 				<div className="right-section">
 					<div className="donation-section">
@@ -62,15 +95,15 @@ class MemberShowPage extends React.Component {
 							</select>
 							<div className="support-checkbox">
 								<input id="checkbox" type="checkbox" />
-								<label for="checkbox">Add £3 to help support GivingWeb</label>
+								<label htmlFor="checkbox">Add £3 to help support GivingWeb</label>
 							</div>
 						</div>
 						<div className="message-controls">
-							<label for="message">Send a message</label>
+							<label htmlFor="message">Send a message</label>
 							<textarea className="message-text" />
 							<div className="name-hide">
 								<input id="checkbox-hidename" type="checkbox" />
-								<label for="checkbox-hidename">Hide my name</label>
+								<label htmlFor="checkbox-hidename">Hide my name</label>
 							</div>
 						</div>
 						<button className="donate-button">DONATE NOW</button>
@@ -81,4 +114,12 @@ class MemberShowPage extends React.Component {
 	}
 }
 
-export default MemberShowPage
+function mapStateToProps(state, routing) {
+	return Object.assign({}, state.helpSomeone, routing)
+}
+
+function mapDispatchToProps(dispatch) {
+	return bindActionCreators(actionCreators, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(MemberShowPage)

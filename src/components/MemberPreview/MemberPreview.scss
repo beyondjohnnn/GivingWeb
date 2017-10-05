@@ -6,6 +6,10 @@ $title-color: #222;
 	width: 30%;
 	color: $text-color;
 
+	.member-link {
+		text-decoration: none;
+	}
+
 	.member-photo-container{
 		width: 100%;
 		border-radius: 5px;
@@ -20,8 +24,8 @@ $title-color: #222;
  			object-position: 50% 50%;
 
  			&:hover {
- 				transition: 0.5s ease;
- 				transform: scale(1.2);
+ 				transition: 0.3s ease;
+ 				transform: scale(1.1);
  			}
  		}
 	}

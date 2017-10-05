@@ -25,8 +25,13 @@ class MemberPreview extends React.Component {
 	}
 
 	calcDonationPercentage(member){
-		let donationPercent = (member.donations / member.goal) * 100;
-		if(donationPercent >= 100) return 100;
+		const donations = member.donations.map((donation) => {
+			return donation.total
+		}).reduce((a, b) => {
+			return a + b
+		}, 0)
+		let donationPercent = (donations / member.goal) * 100;
+		if(donationPercent >= 100) return Math.floor(donationPercent);
 		if(donationPercent < 99) return Math.ceil(donationPercent);
 		else return 99;
 	}
@@ -38,24 +43,29 @@ class MemberPreview extends React.Component {
 	}
 
 	render() {
+
+		let previewStyle = this.props.style
+		if(!previewStyle) previewStyle = {}
+		console.log(previewStyle);
+
 		let member = this.devMember(this.props.member)
-		let imgUrl = "./images/" + member.name + ".png"
+		let imgUrl = "images/" + member.name + ".png"
 		let placeholder = "http://via.placeholder.com/350x350"
 
-		const percentage = this.calcDonationPercentage(member);
-		const textPercentage = percentage.toString() + "%";
-		const donationBarColour = this.getDonationBarColour(percentage);
+		const percentage = this.calcDonationPercentage(member)
+		const textPercentage = percentage.toString() + "%"
+		const donationBarColour = this.getDonationBarColour(percentage)
 		const donationBarStyles = {
 			"width": textPercentage,
 			"backgroundColor": donationBarColour
 		}
 
 		return (
-			<div className="member-preview">
+			<div className="member-preview" style={previewStyle}>
 				<div className="member-photo-container">
-					<img className="member-photo" src={imgUrl} />
+					<Link className="member-link" to={`/member?member_id=${member.id}`}><img className="member-photo" src={imgUrl} /></Link>
 				</div>
-				<h3 className="member-name">{member.name}</h3>
+				<Link className="member-link" to={`/member?member_id=${member.id}`}><h3 className="member-name">{member.name}</h3></Link>
 				<h4 className="member-location"><i className="fa fa-map-marker"></i>{member.location}</h4>
 				<p className="member-description">{member.snippet}</p>
 				<h4 className="member-verification">
