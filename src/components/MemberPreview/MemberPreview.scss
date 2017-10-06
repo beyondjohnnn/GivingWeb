@@ -43,8 +43,8 @@ $button-color: #7663f6;
  			object-position: 50% 50%;
 
  			&:hover {
- 				transition: 0.3s ease;
- 				transform: scale(1.1);
+ 				transition: 0.4s ease;
+ 				transform: scale(1.05);
  			}
  		}
 	}
@@ -192,6 +192,8 @@ $button-color: #7663f6;
 			font-size: 0.8em;
 			padding: 9px 15px;
 			text-transform: uppercase;
+			transition-duration: 0.2s;
+
 
 			&:hover {
 				background-color: $button-color;
