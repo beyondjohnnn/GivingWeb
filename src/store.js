@@ -22,7 +22,10 @@ const defaultState = {
     currentLandingPageComponent: "Whats Happening"
   },
 	helpSomeone: {
-		members: []
+		members: [],
+    current_member: {
+      donations: []
+    }
 	}
 }
 
