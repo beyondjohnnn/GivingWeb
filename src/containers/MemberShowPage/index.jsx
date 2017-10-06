@@ -1,6 +1,7 @@
 import React from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
+import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser'
 
 import * as actionCreators from '../../actions/helpSomeoneActionCreators'
 
@@ -40,15 +41,15 @@ class MemberShowPage extends React.Component {
 	calcDonationPercentage(member){
 		const donations = this.calcTotalDonations(member)
 		let donationPercent = (donations / member.goal) * 100;
-		if(donationPercent >= 100) return 100;
-		if(donationPercent < 99) return Math.ceil(donationPercent);
+		if(donationPercent >= 100) return 100
+		if(donationPercent < 99) return Math.ceil(donationPercent)
 		else return 99;
 	}
 
 	getDonationBarColour(percentage){
-		if(percentage <= 33) return "#FBAC3D";
-		else if(percentage <= 66) return "#00CB9B";
-		else return "#00862C";
+		if(percentage <= 33) return "#FBAC3D"
+		else if(percentage <= 66) return "#00CB9B"
+		else return "#00862C"
 	}
 
 	createComments() {
@@ -91,7 +92,7 @@ class MemberShowPage extends React.Component {
 							<button>share</button>
 						</div>
 						<div className="loaded-story">
-							{current_member.info}
+							{ReactHtmlParser(current_member.info.replace('&#039;', '\''))}
 						</div>
 					</div>
 					<div className="make-comment">
