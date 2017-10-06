@@ -1,10 +1,9 @@
-$button-color: rgb(0, 148, 51);
-$text-color: #999;
-$title-color: #222;
+$button-color: #7663f6;
 
 .member-preview {
 	width: 30%;
-	color: $text-color;
+	background-color: #fff;
+	border-radius: 7px;
 
 	.member-link {
 		text-decoration: none;
@@ -12,8 +11,8 @@ $title-color: #222;
 
 	.member-photo-container{
 		width: 100%;
-		border-radius: 5px;
-		margin-bottom: 10px;
+		border-top-left-radius: 7px;
+		border-top-right-radius: 7px;
 		height: 300px;
 		overflow: hidden;
 
@@ -30,41 +29,78 @@ $title-color: #222;
  		}
 	}
 
+	.member-information {
+		padding: 25px;
+	}
+
+	.member-link {
+			
+			color: #333333;
+		}
 	.member-name {
-		color: $title-color;
-		text-transform: uppercase;
-		text-decoration: underline;
+
+		text-decoration: none;
 		margin-bottom: 5px;
+		font-weight: 400;
+		font-size: 20px;
+
 	}
 
 	.member-location {
 		margin-bottom: 10px;
 		text-transform: italic;
-		font-size: 0.7em;
+		font-size: 0.8em;
+		font-weight: 300;
+		color: #999;
+
+		i {
+			margin-right:4px;
+		}
 	}
 
 	.member-description {
 		height: 45px;
+		font-size: 1em;
 		overflow: hidden;
+		font-weight: 300;
   	text-overflow: ellipsis;
+  	color: #686868;
+  	margin-bottom: 25px;
 	}
 
 	.member-verification {
-		margin-bottom: 10px;
+		// margin-bottom: 5px;
 		font-size: 0.7em;
+		// margin-bottom: 5px;
+		text-transform: italic;
+		font-size: 0.8em;
+		font-weight: 300;
+		color: #999;
 
 		.charity-link {
-			color: $text-color;
+			color: #999;
+			text-decoration: none;
+				
+				&:hover {
+					text-decoration: underline;
+				}
+		}
+
+		i {
+			margin-right: 4px;
+			font-size: 1.1em;
 		}
 	}
 
 	.donation-details {
 		padding-top: 20px;
-		border-top: 1px solid $text-color;
+		// border-top: 1px solid $text-color;
 		display: flex;
 		justify-content: space-between;
 		flex-flow: row wrap;
 		margin-bottom: 20px;
+  	color: #686868;
+
 
 
 		.member-progress-bar {
@@ -85,34 +121,44 @@ $title-color: #222;
 		.progress-details {
 
 			display: flex;
-			width: 50%;
+			font-weight: 300;
+			// width: 40%;
 
 			.member-progress {
 
-				border-right: 1px solid $text-color;
+				// border-right: 1px solid $text-color;
 				width: 50%;
+				padding-right: 25px;
 
 
 				.progress-percentage {
-					color: darken(gold, 10);
+					// color: darken(gold, 10);
 				}
 
 				.progress-label {
-
+					font-size: 0.55em;
+					font-weight: 300;
 				}
 			}
 
 			.member-goal {
 				width: 50%;
+				// padding-left: 10px;
+				border-left: solid 1px #7b5dff;
 				padding-left: 10px;
+
+				
 
 
 				.goal-amount {
-					color: #222;
+
 				}
 
 				.goal-label {
+					font-size: 0.55em;
+					font-weight: 300;
 
+					
 				}
 			}
 
@@ -120,12 +166,25 @@ $title-color: #222;
 		}
 
 		.donate-button {
-			background-color: white;
+			background-color: #fff;
 			width: 30%;
-			border: 2px solid $button-color;
-			color: lighten($button-color, 5);
+			border: 1px solid $button-color;
+			color: $button-color;
+			font-size: 0.8em;
+			padding: 9px 15px;
 			text-transform: uppercase;
 			justify-self: flex-end;
+
+			&:hover {
+				background-color: $button-color;
+				color: #fff; 
+				cursor: pointer;
+
+			}  
 		}
+
 	}
+		.member-donations {
+				font-weight: 300;
+		}
 }
