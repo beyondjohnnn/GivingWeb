@@ -35,7 +35,8 @@ const defaultState = {
     current_member: {
       donations: [],
       comments: [],
-      info: ''
+      info: '',
+      name: 'Charlie'
     }
 	}
 }
