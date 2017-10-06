@@ -1,6 +1,7 @@
 import React from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
+import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser'
 
 import * as actionCreators from '../../actions/helpSomeoneActionCreators'
 
@@ -91,7 +92,7 @@ class MemberShowPage extends React.Component {
 							<button>share</button>
 						</div>
 						<div className="loaded-story">
-							{current_member.info}
+							{ReactHtmlParser(current_member.info)}
 						</div>
 					</div>
 					<div className="make-comment">
