@@ -12,6 +12,12 @@ class MemberPreview extends React.Component {
 		}
 	}
 
+	createDonateButton(percentage) {
+		if (percentage < 100) {
+			return <button className="donate-button">Donate</button>
+		}
+	}
+
 	render() {
 		let previewStyle = this.props.style
 		if(!previewStyle) previewStyle = {}
@@ -53,7 +59,7 @@ class MemberPreview extends React.Component {
 								<p className="goal-label">GOAL</p>
 							</div>
 						</div>
-						<button className="donate-button">Donate</button>
+						{this.createDonateButton(percentage)}
 					</div>
 					<div className="member-donations">Donations</div>
 				</div>
