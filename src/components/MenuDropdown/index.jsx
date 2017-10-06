@@ -21,13 +21,10 @@ class MenuDropdown extends React.Component {
   hideDropdownOnClick(e) {
     const componentBoundaries = this.refs.container.getBoundingClientRect()
     const menuButtonBoundaries = document.querySelector('.menu-button').getBoundingClientRect()
-    const outsideDropdown = (e.x < componentBoundaries.left || e.x > componentBoundaries.right || e.y < componentBoundaries.top || e.y > componentBoundaries.bottom)
     const outsideMenuButton = (e.x < menuButtonBoundaries.left || e.x > menuButtonBoundaries.right || e.y < menuButtonBoundaries.top || e.y > menuButtonBoundaries.bottom)
 
-
-    if (outsideDropdown && outsideMenuButton && this.props.dropdownVisible) {
-        // console.log('in hideDropdownOnClick function')
-        this.props.toggleDropdown()
+    if (outsideMenuButton && this.props.dropdownVisible) {
+      this.props.toggleDropdown()
     }
   }
 
