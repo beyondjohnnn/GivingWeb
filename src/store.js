@@ -24,7 +24,8 @@ const defaultState = {
 	helpSomeone: {
 		members: [],
     current_member: {
-      donations: []
+      donations: [],
+      comments: []
     }
 	}
 }

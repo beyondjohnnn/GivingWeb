@@ -53,6 +53,17 @@ class MemberShowPage extends React.Component {
 		else return "#00862C";
 	}
 
+	createComments() {
+		const { current_member } = this.props
+		if (current_member) {
+			return current_member.comments.map((comment) => {
+				return <Comment comment={comment} />
+			})
+		} else {
+			return []
+		}
+	}
+
 	render() {
 		const testComment = {
 			comment_author: 'Mark',
@@ -96,7 +107,7 @@ class MemberShowPage extends React.Component {
 						<textarea id="comment-box" ref="comment-box" className="comment-box" />
 						<button className="post-button">Post</button>
 						<div className="comment-list">
-							<Comment comment={testComment} />
+							{this.createComments()}
 						</div>
 					</div>
 					
