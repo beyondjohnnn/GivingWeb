@@ -14,7 +14,7 @@ class Comment extends React.Component {
 						<p>{comment.comment_date.toString()}</p>
 					</div>
 				</div>
-				<div className="comment-content">{comment.comment_content}</div>
+				<div className="comment-content">{comment.comment_content.replace('&#039;', '\'')}</div>
 			</div>
 		)
 	}

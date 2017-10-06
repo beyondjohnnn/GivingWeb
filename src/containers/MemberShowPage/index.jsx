@@ -92,7 +92,7 @@ class MemberShowPage extends React.Component {
 							<button>share</button>
 						</div>
 						<div className="loaded-story">
-							{ReactHtmlParser(current_member.info)}
+							{ReactHtmlParser(current_member.info.replace('&#039;', '\''))}
 						</div>
 					</div>
 					<div className="make-comment">

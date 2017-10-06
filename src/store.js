@@ -25,7 +25,8 @@ const defaultState = {
 		members: [],
     current_member: {
       donations: [],
-      comments: []
+      comments: [],
+      info: ''
     }
 	}
 }
