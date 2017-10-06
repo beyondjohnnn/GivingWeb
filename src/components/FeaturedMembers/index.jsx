@@ -21,7 +21,7 @@ class FeaturedMembers extends React.Component {
 	prepareMembers(){
 		let members = [this.props.members[0], this.props.members[1], this.props.members[4]];
 		for(let index in members){
-			if(!members[index]) members[index] = {donations: []};
+			if(!members[index]) return [];
 		}
 		return members
 	}
