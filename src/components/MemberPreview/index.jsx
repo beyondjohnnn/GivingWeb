@@ -42,6 +42,12 @@ class MemberPreview extends React.Component {
 		else return "#00862C";
 	}
 
+	createCompletedBanner(percentage) {
+		if (percentage >= 100) {
+			return <div className="completed-banner">Completed!</div>
+		}
+	}
+
 	render() {
 
 		let previewStyle = this.props.style
@@ -62,7 +68,9 @@ class MemberPreview extends React.Component {
 		return (
 			<div className="member-preview" style={previewStyle}>
 				<div className="member-photo-container">
+					{this.createCompletedBanner(percentage)}
 					<Link className="member-link" to={`/member?member_id=${member.id}`}><img className="member-photo" src={imgUrl} /></Link>
+					}
 				</div>
 				<Link className="member-link" to={`/member?member_id=${member.id}`}><h3 className="member-name">{member.name}</h3></Link>
 				<h4 className="member-location"><i className="fa fa-map-marker"></i>{member.location}</h4>
