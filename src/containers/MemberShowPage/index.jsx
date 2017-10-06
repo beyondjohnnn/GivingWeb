@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser'
@@ -22,7 +23,7 @@ class MemberShowPage extends React.Component {
 			this.props.getSingleMember(member_id)
 		} else {
 			const current_member = members.find((member) => {
-				return member.id == member_id 
+				return member.id == member_id
 			})
 			this.props.setCurrentMember(current_member)
 		}
@@ -77,6 +78,20 @@ class MemberShowPage extends React.Component {
 			backgroundColor: donationBarColour
 		}
 
+		const photoStyle = {
+			backgroundImage: `linear-gradient(360deg, rgba(10, 10, 10, 0.75), rgba(250, 250, 250, 0)),
+					url("images/${current_member.name}.png")`,
+			backgroundRepeat: "no-repeat",
+			backgroundSize: "cover",
+			backgroundPosition: "center"
+		}
+
+		const tags = []
+		if(!current_member.tags) current_member.tags = ["music", "food", "art"]
+		for(let tagText of current_member.tags){
+			tags.push(<Link to=""><p className="member-tag">tagText</p></Link>)
+		}
+
 		return (
 			<div className="member-show-page">
 				<div className="header">
@@ -85,7 +100,18 @@ class MemberShowPage extends React.Component {
 				</div>
 				<div className="left-section">
 					<div className="member-details">
-						<img src={`images/${current_member.name}.png`} />
+						<div className="member-photo" style={photoStyle}></div>
+						<div className="member-photo-text-container">
+							<h3>{current_member.name}</h3>
+							<p>
+								<i className="fa-icon fa fa-map-marker" aria-hidden="true"></i>
+								 {current_member.location}
+							</p>
+							<div className="member-tags">
+								<i className="fa-icon fa fa-tags" aria-hidden="true"></i>
+								{tags}
+							</div>
+						</div>
 						<div className="social-media">
 							<button>share</button>
 							<button>tweet</button>
@@ -104,7 +130,7 @@ class MemberShowPage extends React.Component {
 							{this.createComments()}
 						</div>
 					</div>
-					
+
 				</div>
 				<div className="right-section">
 					<div className="donation-section">

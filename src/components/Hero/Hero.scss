@@ -15,9 +15,6 @@ $radius-size: 4px;
 	align-items: flex-end;
 	z-index: 4;
 
-	
-
-
 	.captions {
 		// border: 1px solid black;
 		width: 80%;
@@ -38,7 +35,7 @@ $radius-size: 4px;
 			}
 
 			p{
-			
+
 			font-size: 23px;
 			margin-bottom: 30px;
 			font-weight: 100;
@@ -58,11 +55,11 @@ $radius-size: 4px;
 			-moz-border-radius: $radius-size;
 			border-radius: $radius-size;
 			border: none;
-			font-size: 16px;	
+			font-size: 16px;
 			font-family: montserrat;
 			outline: none;
 			cursor: pointer;
-	
+
 
 				&:hover {
 					background-color: darken(#ff6200, 5);
