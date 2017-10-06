@@ -46,9 +46,9 @@ class Footer extends React.Component {
 					</div>
 					<div className="social-media">
 						<a href="https://www.facebook.com/StreetChange1/" target="_blank"><i className="fa fa-facebook"></i></a>
-						<i className="fa fa-twitter"></i>
-						<i className="fa fa-instagram"></i>
-						<i className="fa fa-youtube"></i>
+						<a href="https://twitter.com/StreetChangeUK" target="_blank"><i className="fa fa-twitter"></i></a>
+						<a href="https://www.instagram.com/streetchangeuk/" target="_blank"><i className="fa fa-instagram"></i></a>
+						<a href="https://www.youtube.com/channel/UCt6GV2-HVPzhysqnHQVNYdA" target="_blank"><i className="fa fa-youtube"></i></a>
 					</div>
 				</div>
 			</div>
