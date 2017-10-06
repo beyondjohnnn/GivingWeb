@@ -1,3 +1,33 @@
 .comment {
-	background-color: red;
+
+	.comment-header {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-between;
+		margin-bottom: 20px;
+
+
+		img {
+			width: 80px;
+			height: 80px;
+			border-radius: 50%;
+		}
+
+		.header-details {
+			width: 70%;
+			height: 80px;
+			display: flex;
+			align-items: space-around;
+			flex-wrap: wrap;
+
+			h4 {
+				width: 100%;
+			}
+
+			p {
+				width: 100%;
+			}
+		}
+		
+	}
 }

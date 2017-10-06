@@ -13,12 +13,12 @@ class CategoryList extends React.Component {
 
 		let categoryElements = [];
 		for(let index in categories){
-			categoryElements.push(<li key={index}><button>{categories[index]}</button></li>);
+			categoryElements.push(<button className="category-buttons" key={index}>{categories[index]}</button>);
 		}
 
 		return (
       <div className="category-list-container">
-        <ul>{categoryElements}</ul>
+        {categoryElements}
       </div>
 
 		)

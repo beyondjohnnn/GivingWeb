@@ -2,26 +2,36 @@ import React from 'react'
 import { bindActionCreators } from 'redux'
 import {connect} from 'react-redux'
 
-import * as actionCreators from '../../actions/helpSomeoneActionCreator'
+import * as actionCreators from '../../actions/helpSomeoneActionCreators'
 
 import css from './FeaturedMembers.scss'
 
-import MemberPreview from '../MemberPreview'
+import MemberPreviewBuilder from '../../components/MemberPreviewBuilder'
 
 class FeaturedMembers extends React.Component {
 
-	componentDidMount(){
-		this.props.getMembers()
+	constructor(props){
+		super(props);
+	}
+
+	componentWillMount(){
+		this.props.getMembers();
+	}
+
+	prepareMembers(){
+		let members = [this.props.members[20], this.props.members[4], this.props.members[19]];
+		for(let index in members){
+			if(!members[index]) return [];
+		}
+		return members
 	}
 
 	render() {
 		return (
 			<div className="featured-members">
-				<h2>Members</h2>
+				<h2>Featured Members</h2>
 				<div className="members-list">
-					<MemberPreview member={this.props.members[0]} />
-					<MemberPreview member={this.props.members[1]} />
-					<MemberPreview member={this.props.members[4]} />
+					<MemberPreviewBuilder members={this.prepareMembers()} previewsPerLine={3}/>
 				</div>
 			</div>
 		)
