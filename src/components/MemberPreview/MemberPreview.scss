@@ -1,4 +1,6 @@
 $button-color: #7663f6;
+// $button-color: #925ebc;
+
 
 .member-preview {
 	width: 30%;
@@ -25,7 +27,7 @@ $button-color: #7663f6;
 			text-transform: uppercase;
 			top: 25px;
 			left: -60px;
-			background-color: #8853D1;
+			background-color: $button-color;
 			transform: rotate(-45deg);
 			color: #fff;
 			display: flex;
@@ -161,7 +163,6 @@ $button-color: #7663f6;
 
 			.member-goal {
 				width: 50%;
-				// padding-left: 10px;
 				border-left: solid 1px #7b5dff;
 				padding-left: 10px;
 
@@ -191,7 +192,6 @@ $button-color: #7663f6;
 			font-size: 0.8em;
 			padding: 9px 15px;
 			text-transform: uppercase;
-			justify-self: flex-end;
 
 			&:hover {
 				background-color: $button-color;
