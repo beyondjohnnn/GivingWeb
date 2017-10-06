@@ -5,4 +5,10 @@ class MembersController < ApplicationController
         include: [:donations, :comments]
         })
     end
+
+    def show
+    	render json: Member.find(params[:id]).as_json({
+        include: [:donations, :comments]
+        })
+    end
  end
