@@ -2,7 +2,6 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import {connect}  from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { scrollToWhen } from 'react-redux-scroll'
 
 import * as actionCreators from '../../actions/howItWorksActionCreators'
 
@@ -16,14 +15,14 @@ import HowItWorks from '../../components/HowItWorks'
 import MemberPreview from '../../components/MemberPreview'
 import WhatsHappening from '../../components/WhatsHappening'
 
-const scrollOptions = { duration: 1000, transitionTimingFunction: 'LINEAR' }
-const ScrollableHowItWorks = scrollToWhen('SCROLLTO_HOWITWORKS', null, scrollOptions)(HowItWorks)
+import { smoothScrollVertical } from './../../utils/smoothScroll'
 
 class NoAuthLandingPage extends React.Component {
 
 	renderHowItWorks() {
 		if (this.props.howItWorksVisible) {
-			return (<ScrollableHowItWorks />)
+			smoothScrollVertical(540)
+			return (<HowItWorks />)
 		}
 	}
 
