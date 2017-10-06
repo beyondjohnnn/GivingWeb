@@ -1,7 +1,9 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser'
+import { calcDonationPercentage, getDonationBarColour, calcTotalDonations } from '../../utils/donations'
 
 import * as actionCreators from '../../actions/helpSomeoneActionCreators'
 
@@ -22,34 +24,10 @@ class MemberShowPage extends React.Component {
 			this.props.getSingleMember(member_id)
 		} else {
 			const current_member = members.find((member) => {
-				return member.id == member_id 
+				return member.id == member_id
 			})
 			this.props.setCurrentMember(current_member)
 		}
-	}
-
-	calcTotalDonations(member) {
-		const donations = member.donations.map((donation) => {
-				return donation.total
-			}).reduce((a, b) => {
-				return a + b
-			}, 0)
-
-		return donations > member.goal ? member.goal : donations
-	}
-
-	calcDonationPercentage(member){
-		const donations = this.calcTotalDonations(member)
-		let donationPercent = (donations / member.goal) * 100;
-		if(donationPercent >= 100) return 100
-		if(donationPercent < 99) return Math.ceil(donationPercent)
-		else return 99;
-	}
-
-	getDonationBarColour(percentage){
-		if(percentage <= 33) return "#FBAC3D"
-		else if(percentage <= 66) return "#00CB9B"
-		else return "#00862C"
 	}
 
 	createComments() {
@@ -59,22 +37,30 @@ class MemberShowPage extends React.Component {
 		})
 	}
 
-	render() {
-		const testComment = {
-			comment_author: 'Mark',
-			comment_date: new Date(),
-			comment_content: 'Hope you make it home Tomas! I hope you get a chance to have a lovely dinner with your family too.',
-			donation_amount: 'made a £10 donation.'
-		}
+	createTags(member) {
+		if(!member.tags) member.tags = ["music", "food", "art"]
+		return member.tags.map((tag, id) => {
+			return <Link key={id} to=""><p className="member-tag">{tag}</p></Link>
+		})
+	}
 
+	render() {
 		const { current_member } = this.props
-		const totalDonations = this.calcTotalDonations(current_member)
-		const donationPercentage = this.calcDonationPercentage(current_member)
+		const totalDonations = calcTotalDonations(current_member)
+		const donationPercentage = calcDonationPercentage(current_member)
 		const textPercentage = donationPercentage + '%'
-		const donationBarColour = this.getDonationBarColour(donationPercentage)
+		const donationBarColour = getDonationBarColour(donationPercentage)
 		const donationBarStyles = {
 			width: textPercentage,
 			backgroundColor: donationBarColour
+		}
+
+		const photoStyle = {
+			backgroundImage: `linear-gradient(360deg, rgba(10, 10, 10, 0.75), rgba(250, 250, 250, 0)),
+					url("images/${current_member.name}.png")`,
+			backgroundRepeat: "no-repeat",
+			backgroundSize: "cover",
+			backgroundPosition: "center"
 		}
 
 		return (
@@ -85,7 +71,18 @@ class MemberShowPage extends React.Component {
 				</div>
 				<div className="left-section">
 					<div className="member-details">
-						<img src={`images/${current_member.name}.png`} />
+						<div className="member-photo" style={photoStyle}></div>
+						<div className="member-photo-text-container">
+							<h3>{current_member.name}</h3>
+							<p>
+								<i className="fa-icon fa fa-map-marker" aria-hidden="true"></i>
+								 {current_member.location}
+							</p>
+							<div className="member-tags">
+								<i className="fa-icon fa fa-tags" aria-hidden="true"></i>
+								{this.createTags(current_member)}
+							</div>
+						</div>
 						<div className="social-media">
 							<button>share</button>
 							<button>tweet</button>
@@ -104,7 +101,7 @@ class MemberShowPage extends React.Component {
 							{this.createComments()}
 						</div>
 					</div>
-					
+
 				</div>
 				<div className="right-section">
 					<div className="donation-section">
