@@ -6,7 +6,6 @@ import { scrollToWhen } from 'react-redux-scroll'
 
 import * as actionCreators from '../../actions/howItWorksActionCreators'
 
-
 import css from './NoAuthLandingPage.scss'
 
 import Hero from '../../components/Hero'
