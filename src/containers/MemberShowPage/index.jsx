@@ -23,7 +23,6 @@ class MemberShowPage extends React.Component {
 			const current_member = members.find((member) => {
 				return member.id == member_id 
 			})
-			console.log(current_member)
 			this.props.setCurrentMember(current_member)
 		}
 	}
@@ -40,7 +39,6 @@ class MemberShowPage extends React.Component {
 
 	calcDonationPercentage(member){
 		const donations = this.calcTotalDonations(member)
-		console.log('donations', donations)
 		let donationPercent = (donations / member.goal) * 100;
 		if(donationPercent >= 100) return 100;
 		if(donationPercent < 99) return Math.ceil(donationPercent);
@@ -55,13 +53,9 @@ class MemberShowPage extends React.Component {
 
 	createComments() {
 		const { current_member } = this.props
-		if (current_member) {
-			return current_member.comments.map((comment) => {
-				return <Comment comment={comment} />
-			})
-		} else {
-			return []
-		}
+		return current_member.comments.map((comment, id) => {
+			return <Comment key={id} comment={comment} />
+		})
 	}
 
 	render() {
@@ -76,7 +70,6 @@ class MemberShowPage extends React.Component {
 		const totalDonations = this.calcTotalDonations(current_member)
 		const donationPercentage = this.calcDonationPercentage(current_member)
 		const textPercentage = donationPercentage + '%'
-		console.log(textPercentage)
 		const donationBarColour = this.getDonationBarColour(donationPercentage)
 		const donationBarStyles = {
 			width: textPercentage,
