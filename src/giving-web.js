@@ -37,7 +37,7 @@ setAuthToken(localStorage.getItem('token'))
 
 const router = (
 	<Provider store={store}>
-		<Router history={history}>
+		<Router onUpdate={() => {window.scrollTo(0, 0)}} history={history}>
 			<div>
 				<Route path="/" component={Navigation} />
 				<Route exact path="/" component={NoAuthLandingPage} />
