@@ -1,6 +1,7 @@
 import React from 'react'
 import { bindActionCreators } from 'redux'
 import {connect} from 'react-redux'
+import {Link} from 'react-router-dom'
 
 import * as actionCreators from '../../actions/helpSomeoneActionCreators'
 
@@ -33,6 +34,7 @@ class FeaturedMembers extends React.Component {
 				<div className="members-list">
 					<MemberPreviewBuilder members={this.prepareMembers()} previewsPerLine={3}/>
 				</div>
+				<Link to="/help-someone" className="see-more-link">See more members</Link>
 			</div>
 		)
 	}
