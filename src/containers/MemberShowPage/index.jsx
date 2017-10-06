@@ -1,4 +1,12 @@
 import React from 'react'
+<<<<<<< Updated upstream
+=======
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser'
+
+import * as actionCreators from '../../actions/helpSomeoneActionCreators'
+>>>>>>> Stashed changes
 
 import css from './MemberShowPage.scss'
 
@@ -28,6 +36,7 @@ class MemberShowPage extends React.Component {
 							<button>share</button>
 						</div>
 						<div className="loaded-story">
+<<<<<<< Updated upstream
 							<h3>Why I’m using StreetChange for a Laptop</h3>
 
 							<p>Having a laptop at home will allow me to continue my course work and give me more opportunities with further training. It will also allow me to keep in touch with people and build up relationships.</p>
@@ -39,6 +48,9 @@ class MemberShowPage extends React.Component {
 							<h3>My goals moving forward</h3>
 
 							<p>I would like to move into volunteering with addiction support and help others who are going through what I went through.</p>
+=======
+							{ReactHtmlParser(current_member.info)}
+>>>>>>> Stashed changes
 						</div>
 					</div>
 					<div className="make-comment">
