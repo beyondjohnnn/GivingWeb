@@ -13,8 +13,8 @@ class Comment extends React.Component {
 						<h4><span>{comment.comment_author}</span> {comment.donation_amount}</h4>
 						<p>{comment.comment_date.toString()}</p>
 					</div>
-					<div className="comment-content">{comment.comment_content}</div>
 				</div>
+				<div className="comment-content">{comment.comment_content}</div>
 			</div>
 		)
 	}

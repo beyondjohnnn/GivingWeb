@@ -46,7 +46,6 @@ class MemberPreview extends React.Component {
 
 		let previewStyle = this.props.style
 		if(!previewStyle) previewStyle = {}
-		console.log(previewStyle);
 
 		let member = this.devMember(this.props.member)
 		let imgUrl = "images/" + member.name + ".png"

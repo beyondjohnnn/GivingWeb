@@ -17,6 +17,6 @@ export function getSingleMember(id) {
 export function setCurrentMember(member) {
 	return {
 		type: 'SET_CURRENT_MEMBER',
-		member
+		member: member
 	}
 }

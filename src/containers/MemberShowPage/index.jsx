@@ -20,9 +20,42 @@ class MemberShowPage extends React.Component {
 		if (members.length == 0) {
 			this.props.getSingleMember(member_id)
 		} else {
-			current_member = members.find((member) => { member.id == member_id })
+			const current_member = members.find((member) => {
+				return member.id == member_id 
+			})
 			this.props.setCurrentMember(current_member)
 		}
+	}
+
+	calcTotalDonations(member) {
+		const donations = member.donations.map((donation) => {
+				return donation.total
+			}).reduce((a, b) => {
+				return a + b
+			}, 0)
+
+		return donations > member.goal ? member.goal : donations
+	}
+
+	calcDonationPercentage(member){
+		const donations = this.calcTotalDonations(member)
+		let donationPercent = (donations / member.goal) * 100;
+		if(donationPercent >= 100) return 100;
+		if(donationPercent < 99) return Math.ceil(donationPercent);
+		else return 99;
+	}
+
+	getDonationBarColour(percentage){
+		if(percentage <= 33) return "#FBAC3D";
+		else if(percentage <= 66) return "#00CB9B";
+		else return "#00862C";
+	}
+
+	createComments() {
+		const { current_member } = this.props
+		return current_member.comments.map((comment, id) => {
+			return <Comment key={id} comment={comment} />
+		})
 	}
 
 	render() {
@@ -33,32 +66,32 @@ class MemberShowPage extends React.Component {
 			donation_amount: 'made a £10 donation.'
 		}
 
+		const { current_member } = this.props
+		const totalDonations = this.calcTotalDonations(current_member)
+		const donationPercentage = this.calcDonationPercentage(current_member)
+		const textPercentage = donationPercentage + '%'
+		const donationBarColour = this.getDonationBarColour(donationPercentage)
+		const donationBarStyles = {
+			width: textPercentage,
+			backgroundColor: donationBarColour
+		}
+
 		return (
 			<div className="member-show-page">
 				<div className="header">
-					<h2>I'm raising money for a laptop</h2>
+					<h2>{current_member.snippet}</h2>
 					<h3><i className="fa fa-check-square-o square-o" />Verified by Streetwork</h3>
 				</div>
 				<div className="left-section">
 					<div className="member-details">
-						<img src="http://placehold.it/350x350" />
+						<img src={`images/${current_member.name}.png`} />
 						<div className="social-media">
 							<button>share</button>
 							<button>tweet</button>
 							<button>share</button>
 						</div>
 						<div className="loaded-story">
-							<h3>Why I’m using StreetChange for a Laptop</h3>
-
-							<p>Having a laptop at home will allow me to continue my course work and give me more opportunities with further training. It will also allow me to keep in touch with people and build up relationships.</p>
-
-							<h3>My Story</h3>
-
-							<p>I was drinking 7 days a week and my relationships with friends and family broke down. I got a wake up call from my Doctor when I was told that I wouldn’t see my next birthday, and realised that I needed to stop drinking. I went and got help and have now been sober for 17 months. I am now doing a peer-to peer course on addiction to help me improve my confidence and skills, and work with others.</p>
-
-							<h3>My goals moving forward</h3>
-
-							<p>I would like to move into volunteering with addiction support and help others who are going through what I went through.</p>
+							{current_member.info}
 						</div>
 					</div>
 					<div className="make-comment">
@@ -67,21 +100,21 @@ class MemberShowPage extends React.Component {
 						<textarea id="comment-box" ref="comment-box" className="comment-box" />
 						<button className="post-button">Post</button>
 						<div className="comment-list">
-							<Comment comment={testComment} />
+							{this.createComments()}
 						</div>
 					</div>
 					
 				</div>
 				<div className="right-section">
 					<div className="donation-section">
-						<h4>£0</h4>
-						<p>raised of £300 goal</p>
+						<h4>£{totalDonations}</h4>
+						<p>raised of £{current_member.goal} goal</p>
 						<div className="member-progress-bar">
-							<div className="bar-fill"></div>
+							<div className="bar-fill" style={donationBarStyles}></div>
 						</div>
 						<div className="progress-summary">
-							<p>£300 still needed</p>
-							<p>0 supporters</p>
+							<p>£{current_member.goal - totalDonations} still needed</p>
+							<p>{current_member.donations.length} supporters</p>
 						</div>
 						<div className="donation-controls">
 							<h4>
