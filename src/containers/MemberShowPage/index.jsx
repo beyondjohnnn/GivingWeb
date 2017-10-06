@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser'
@@ -77,8 +78,18 @@ class MemberShowPage extends React.Component {
 			backgroundColor: donationBarColour
 		}
 
-		const memberPhoto = {
-			backgroundImage: `images/${current_member.name}.png`
+		const photoStyle = {
+			backgroundImage: `linear-gradient(360deg, rgba(10, 10, 10, 0.75), rgba(250, 250, 250, 0)),
+					url("images/${current_member.name}.png")`,
+			backgroundRepeat: "no-repeat",
+			backgroundSize: "cover",
+			backgroundPosition: "center"
+		}
+
+		const tags = []
+		if(!current_member.tags) current_member.tags = ["music", "food", "art"]
+		for(let tagText of current_member.tags){
+			tags.push(<Link to=""><p className="member-tag">tagText</p></Link>)
 		}
 
 		return (
@@ -89,8 +100,17 @@ class MemberShowPage extends React.Component {
 				</div>
 				<div className="left-section">
 					<div className="member-details">
-						<div className="member-photo" style={memberPhoto}>
-
+						<div className="member-photo" style={photoStyle}></div>
+						<div className="member-photo-text-container">
+							<h3>{current_member.name}</h3>
+							<p>
+								<i className="fa-icon fa fa-map-marker" aria-hidden="true"></i>
+								 {current_member.location}
+							</p>
+							<div className="member-tags">
+								<i className="fa-icon fa fa-tags" aria-hidden="true"></i>
+								{tags}
+							</div>
 						</div>
 						<div className="social-media">
 							<button>share</button>
