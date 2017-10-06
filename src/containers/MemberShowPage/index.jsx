@@ -22,7 +22,7 @@ class MemberShowPage extends React.Component {
 			this.props.getSingleMember(member_id)
 		} else {
 			const current_member = members.find((member) => {
-				return member.id == member_id 
+				return member.id == member_id
 			})
 			this.props.setCurrentMember(current_member)
 		}
@@ -77,6 +77,10 @@ class MemberShowPage extends React.Component {
 			backgroundColor: donationBarColour
 		}
 
+		const memberPhoto = {
+			backgroundImage: `images/${current_member.name}.png`
+		}
+
 		return (
 			<div className="member-show-page">
 				<div className="header">
@@ -85,7 +89,9 @@ class MemberShowPage extends React.Component {
 				</div>
 				<div className="left-section">
 					<div className="member-details">
-						<img src={`images/${current_member.name}.png`} />
+						<div className="member-photo" style={memberPhoto}>
+
+						</div>
 						<div className="social-media">
 							<button>share</button>
 							<button>tweet</button>
@@ -104,7 +110,7 @@ class MemberShowPage extends React.Component {
 							{this.createComments()}
 						</div>
 					</div>
-					
+
 				</div>
 				<div className="right-section">
 					<div className="donation-section">
