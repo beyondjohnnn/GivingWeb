@@ -1,36 +1,53 @@
+$footer-color: #848484;
+
 .footer {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	width: 100%;
-	padding: 30px 90px;
+	padding: 0px 90px;
 	background-color: #ffffff;
+	font-size: 14px;
+
 
 	.sitemap {
 		width: 80%;
 		display: flex;
 		flex-flow: row nowrap;
 		justify-content: space-between;
-		padding: 20px;
-		border-bottom: 1px solid black;
+		padding: 40px;
+		border-bottom: 1px solid #9b9b9b;
 
-		ul {
-			list-style: none;
+		.footer-text-column {
+			display: flex;
+			flex-direction: column;
 			font-weight: 200;
 
-			
-			li {
-				margin-bottom: 10px;
-				font-weight: 300;
+			p {
+				margin-bottom: 3px;
+				color: #848484;
 
+			}
+
+			
+			.footer-link {
+				margin-top: 7px;
+				font-weight: 300;
+				text-decoration: none;
+				color: #444444;
+				height: 20px;
+				
+				&:hover {
+					color: #7663F6;
+				}
 			}			
 		}
 
 	}
 
 	.other-info {
-		padding: 20px;
+		padding: 10px;
 		width: 80%;
 		display: flex;
 		flex-direction: column;
@@ -42,17 +59,72 @@
 			justify-content: space-between;
 			align-items: center;
 			width: 100%;
-			height: 60px;
+			height: 40px;
+
+			.terms-text {
+				display: flex; 
+				width: 33%;
+				justify-content: center;
+				font-weight: 300;
+				color: $footer-color;
+
+
+				i {
+					padding: 0px 5px;
+					color: #7e6bd6;
+					// color: #d61717;
+				}
+			}
 		}
 
 		.social-media {
 			display: flex;
 			flex-flow: row nowrap;
-			justify-content: space-around;
+			justify-content: space-evenly;
 			align-items: center;
 			height: 80px;
 			width: 30%;
-			font-size: 2em;
+			font-size: 1.75em;
+			color: #6d6d6d;
+			color: $footer-color;
+		
+
+
+			.fa-facebook {
+			
+			color: $footer-color;
+
+				&:hover {
+				color: #4a68ac;
+				}
+			}
+
+			.fa-twitter {
+			
+			color: $footer-color;
+
+				&:hover {
+				color: #4CA0EC;
+				}
+			}
+
+			.fa-instagram {
+			
+			color: $footer-color;
+
+				&:hover {
+				color: #003569;
+				}
+			}
+
+			.fa-youtube {
+			
+			color: $footer-color;
+
+				&:hover {
+				color: #EA3323;
+				}
+			}
 		}
 	}
 }
