@@ -17,10 +17,6 @@ class Hero extends React.Component {
 		}
 	}
 
-	smoothScrollToHowItWorks() {
-		this.props.toggleHowItWorks()
-	}
-
 	render() {
 		return (
 			<div className="hero">
@@ -31,7 +27,7 @@ class Hero extends React.Component {
 					<p>
 						Directly support amazing people and charities today
 					</p>
-					<button className="call-to-action" onClick={this.smoothScrollToHowItWorks.bind(this)}>
+					<button className="call-to-action" onClick={this.props.scroll}>
 						SEE HOW IT WORKS
 						<i className={this.renderArrowDirection()} aria-hidden="true"></i>
 					</button>
