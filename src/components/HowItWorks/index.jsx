@@ -10,11 +10,6 @@ import css from './HowItWorks.scss'
 class HowItWorks extends React.Component {
 
 	render() {
-
-		const visibility = {
-			display: this.props.howItWorksVisible ? "block" : "none"
-		}
-
 		return (
 			<div className="how-it-works" id="how-it-works">
 				<div className="button-wrapper">
