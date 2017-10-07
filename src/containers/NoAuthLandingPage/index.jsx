@@ -31,7 +31,7 @@ class NoAuthLandingPage extends React.Component {
 		* location.hash = "" clears the current hash on page reload to ensure this
 		* 	does not happen.
 		*/
-		location.hash = ""
+		location.hash = ''
 	}
 
 	renderHowItWorks() {
@@ -41,19 +41,21 @@ class NoAuthLandingPage extends React.Component {
 	}
 
 	renderSubNavigationSelection() {
-		if (this.props.currentLandingPageComponent == "Whats Happening") {
-			return <WhatsHappening />
-		} else if (this.props.currentLandingPageComponent == "Be A Hero") {
-			return <BeAHero />
-		} else if (this.props.currentLandingPageComponent == "For Charities") {
-			return <ForCharities />
+		switch (this.props.currentLandingPageComponent) {
+			case 'Whats Happening':
+				return <WhatsHappening />
+			case 'Be A Hero':
+				return <BeAHero />
+			case 'For Charities':
+				return <ForCharities />
+			default:
 		}
 	}
 
 	scrollToHowItWorks(){
 		this.props.toggleHowItWorks()
 		if(!this.props.howItWorksVisible){
-			goToAnchor("howItWorksAnchor")
+			goToAnchor('howItWorksAnchor')
 		}
 	}
 
