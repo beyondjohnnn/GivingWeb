@@ -15,13 +15,10 @@ import HowItWorks from '../../components/HowItWorks'
 import MemberPreview from '../../components/MemberPreview'
 import WhatsHappening from '../../components/WhatsHappening'
 
-import { smoothScrollVertical } from './../../utils/smoothScroll'
-
 class NoAuthLandingPage extends React.Component {
 
 	renderHowItWorks() {
 		if (this.props.howItWorksVisible) {
-			smoothScrollVertical(540)
 			return (<HowItWorks />)
 		}
 	}
