@@ -18,6 +18,15 @@ class MemberPreview extends React.Component {
 		}
 	}
 
+	// generateRandomBear() {
+	// 	const bearImages = ["images/bear-blue.png", "images/bear-red.png", "images/bear-green.png", "images/bear-yellow.png"]
+	// 	console.log(bearImages[Math.floor(Math.random() * 4)]);		
+	// }
+
+	// renderMembersImages() {
+	// 	console.log({member.donations.count})
+	// }
+
 	render() {
 		let previewStyle = this.props.style
 		if(!previewStyle) previewStyle = {}
@@ -62,6 +71,14 @@ class MemberPreview extends React.Component {
 						{this.createDonateButton(percentage)}
 					</div>
 					<div className="member-donations">Donations</div>
+						<div className="member-images">
+							<img src="images/bear-blue.png"></img> 
+							<img src="images/bear-green.png"></img> 
+							<img src="images/bear-red.png"></img> 
+							<img src="images/bear-yellow.png"></img> 
+							<img src="images/bear-green.png"></img>
+							<p>+3</p> 
+						</div>
 				</div>
 			</div>	
 		)
