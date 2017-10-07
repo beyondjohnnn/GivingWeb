@@ -58,8 +58,12 @@ class Navigation extends React.Component {
 				<div className="navigation">
 					<div className="content-wrapper">
 						<div className="logo-search-wrapper">
-							<Link to="/" className="logo">
-								<img src="images/logopurple.png" />
+							<Link to="/" className="logo-text">
+								<div className="logo-wrapper">
+									<img src="images/heartlogo.png" className="logo" />
+									<p className="giving-text">Giving</p>
+									<p className="web-text">Web</p>
+								</div> 
 							</Link>
 							<form className="search-bar">
 						    <input  id="search" placeholder="Search for a city, friend, non-profit or cause..." />

@@ -39,7 +39,7 @@ $nav-links-weight: 200;
 		max-width: 800px;
 		height: 100%;
 		display: flex;
-		justify-content: space-evenly;
+		// justify-content: space-evenly;
 		align-items: center;
 		// border: $search-border;
 	}	
@@ -51,20 +51,38 @@ $nav-links-weight: 200;
 	  background: white;
   }
 
-	.logo {
+  .logo-text {
+  	text-decoration: none;
+  	font-size: 25px;
+  	font-weight: 500;
+
+  }
+
+	.logo-wrapper {
 		height:100%;
 		display: flex;
 		align-items: center;
 		justify-content: center; 
+  	text-decoration: none;
+  	padding-right: 10%;
+
 		
 		img {
-			height:65%;
+			height:30px;
+			// width: 65%;
 			padding: {
 				left: 2%;
-				right: 2%;
+				right: 1%;
 				} 
 			}
 
+		.giving-text {
+			color: #5a5a5a;
+		}
+		
+		.web-text{
+			color: #7267EE;
+		}
 		}
 
 
