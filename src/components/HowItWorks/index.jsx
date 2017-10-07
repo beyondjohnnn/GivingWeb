@@ -9,13 +9,6 @@ import css from './HowItWorks.scss'
 
 class HowItWorks extends React.Component {
 
-	componentDidMount() {
-		if (this.props.howItWorksVisible) {
-			this.props.scrollToHowItWorks()
-		}
-	}
-
-
 	render() {
 		return (
 			<div className="how-it-works" id="how-it-works">
@@ -38,14 +31,14 @@ class HowItWorks extends React.Component {
 						<div className="step-container">
 							<i className="fa fa-universal-access" aria-hidden="true"></i>
 							<p className="step-description">Charities Use Donations</p>
-						</div> 
+						</div>
 					</div>
 					<div className="learn-more-container">
 						<p>Still have questions?</p>
 						<Link to="" className="learn-more-link">Learn more.</Link>
 					</div>
 
-				</div> 
+				</div>
 			</div>
 		)
 	}
