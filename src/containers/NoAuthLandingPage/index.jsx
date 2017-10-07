@@ -2,6 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import {connect}  from 'react-redux'
 import { bindActionCreators } from 'redux'
+import ScrollableAnchor from 'react-scrollable-anchor'
+import { goToAnchor } from 'react-scrollable-anchor'
 
 import * as actionCreators from '../../actions/howItWorksActionCreators'
 
@@ -17,10 +19,9 @@ import WhatsHappening from '../../components/WhatsHappening'
 
 class NoAuthLandingPage extends React.Component {
 
-	renderHowItWorks() {
-		if (this.props.howItWorksVisible) {
-			return (<HowItWorks />)
-		}
+	constructor(props){
+		super(props)
+		this.scrollToHowItWorks = this.scrollToHowItWorks.bind(this)
 	}
 
 	renderSubNavigationSelection() {
@@ -33,12 +34,20 @@ class NoAuthLandingPage extends React.Component {
 		}
 	}
 
+	scrollToHowItWorks(){
+		this.props.toggleHowItWorks()
+		if(this.props.howItWorksVisible){
+			goToAnchor("howItWorksAnchor")
+		}
+	}
 
 	render() {
 		return (
 			<div>
-				<Hero />
-				{this.renderHowItWorks()}
+				<Hero scroll={this.scrollToHowItWorks}/>
+				<ScrollableAnchor id={'howItWorksAnchor'}>
+					<HowItWorks/>
+				</ScrollableAnchor>
 				<NoAuthSubNavigation />
 				{this.renderSubNavigationSelection()}
 			</div>
