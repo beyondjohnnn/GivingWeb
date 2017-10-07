@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import {connect}  from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { goToAnchor } from 'react-scrollable-anchor'
+import { goToTop, goToAnchor, configureAnchors } from 'react-scrollable-anchor'
 
 import * as actionCreators from '../../actions/howItWorksActionCreators'
 
@@ -17,11 +17,21 @@ import MemberPreview from '../../components/MemberPreview'
 import WhatsHappening from '../../components/WhatsHappening'
 import ExtendedScrollAnchor from '../../components/ExtendedScrollAnchor'
 
+configureAnchors({offset: 0, scrollDuration: 600})
+
 class NoAuthLandingPage extends React.Component {
 
 	constructor(props){
 		super(props)
 		this.scrollToHowItWorks = this.scrollToHowItWorks.bind(this)
+
+		/*
+		* If how it works is open and the page is reloaded the hash will remain
+		* 	in the url and the page will jump down.
+		* location.hash = "" clears the current hash on page reload to ensure this
+		* 	does not happen.
+		*/
+		location.hash = ""
 	}
 
 	renderHowItWorks() {
