@@ -24,6 +24,12 @@ class NoAuthLandingPage extends React.Component {
 		this.scrollToHowItWorks = this.scrollToHowItWorks.bind(this)
 	}
 
+	renderHowItWorks() {
+		if (this.props.howItWorksVisible) {
+			return (<HowItWorks />)
+		}
+	}
+
 	renderSubNavigationSelection() {
 		if (this.props.currentLandingPageComponent == "Whats Happening") {
 			return <WhatsHappening />
@@ -36,7 +42,7 @@ class NoAuthLandingPage extends React.Component {
 
 	scrollToHowItWorks(){
 		this.props.toggleHowItWorks()
-		if(this.props.howItWorksVisible){
+		if(!this.props.howItWorksVisible){
 			goToAnchor("howItWorksAnchor")
 		}
 	}
@@ -46,7 +52,7 @@ class NoAuthLandingPage extends React.Component {
 			<div>
 				<Hero scroll={this.scrollToHowItWorks}/>
 				<ScrollableAnchor id={'howItWorksAnchor'}>
-					<HowItWorks/>
+					<div>{this.renderHowItWorks()}</div>
 				</ScrollableAnchor>
 				<NoAuthSubNavigation />
 				{this.renderSubNavigationSelection()}
