@@ -29,7 +29,14 @@
 			height: 50px;
 			width: 260px;
 			color: white;
-			background-color: DarkSlateBlue;
+			background-color: #7267EE;
+			transition-duration: 0.2s;
+			border: solid 1.5px #7663f6;
+
+			&:hover {
+				background-color: #fff;
+				color: #7663f6;
+			}
 		}
 	}
 
