@@ -80,15 +80,13 @@ class DonationMigration
 
     array.each do |user|
       legacies.each do |legacy|
-         if user['member_id'] == legacy["legacy_sql_id"].to_i
-           user['member_id'] = legacy["member_id"].to_i
-         end
-       end
+        if user['member_id'] == legacy["legacy_sql_id"].to_i
+          user['member_id'] = legacy["member_id"].to_i
+        end
+      end
     end
 
     return array
   end
 
 end
-
-pp DonationMigration.run()
