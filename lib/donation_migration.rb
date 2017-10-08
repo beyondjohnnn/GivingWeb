@@ -62,11 +62,13 @@ class DonationMigration
         users.push(current_user) if(current_user)
         current_user = {"post_id" => current_id}
       end
+
       key = row.keys[1]
-      if(key == "total" || key == "Campaign")
-        row[key] = row[key].to_i
+      if(key == "total")
+        current_user["total"] = row["total"].to_i
+      elsif(key == "Campaign")
+        current_user["member_id"] = row["Campaign"].to_i
       end
-      current_user[key] = row[key]
     end
 
     return users
@@ -78,9 +80,8 @@ class DonationMigration
 
     array.each do |user|
       legacies.each do |legacy|
-         if user['Campaign'] == legacy["legacy_sql_id"].to_i
+         if user['member_id'] == legacy["legacy_sql_id"].to_i
            user['member_id'] = legacy["member_id"].to_i
-           user.delete('Campaign')
          end
        end
     end
