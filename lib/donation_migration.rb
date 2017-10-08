@@ -18,7 +18,7 @@ class DonationMigration
 
     postmeta_filtered = database.access_db do |client|
       return client.query(
-        "SELECT post_meta.post_id, post_meta.meta_key, post_meta.meta_value, posts.post_status
+        "SELECT post_meta.post_id, post_meta.meta_key, post_meta.meta_value
         FROM wp_QsCYs3zex3pv_postmeta AS post_meta
         INNER JOIN wp_QsCYs3zex3pv_posts AS posts
         ON post_meta.post_id = posts.ID
@@ -41,7 +41,6 @@ class DonationMigration
 
       row.delete("meta_key")
       row.delete("meta_value")
-      row.delete("post_status")
 
       row
     end
