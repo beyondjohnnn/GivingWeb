@@ -69,5 +69,3 @@ class MemberMigration
     return hashes
   end
 end
-
-MemberMigration.build_member_hashes()
