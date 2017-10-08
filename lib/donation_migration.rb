@@ -18,8 +18,8 @@ class DonationMigration
   end
 
   def self.query_database()
-    database = MySqlClient.new_local_client()
-    
+    database = MySqlClient.new_local_access()
+
     postmeta_filtered = database.access_db do |client|
       return client.query(
         "SELECT post_meta.post_id, post_meta.meta_key, post_meta.meta_value, posts.post_status

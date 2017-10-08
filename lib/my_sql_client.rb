@@ -6,7 +6,7 @@ class MySqlClient
     @client = Mysql2::Client.new(options)
   end
 
-  def self.new_local_client()
+  def self.new_local_access()
     return MySqlClient.new(
       host: 'localhost',
       username: 'root',

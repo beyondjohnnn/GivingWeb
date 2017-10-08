@@ -8,7 +8,7 @@ class MemberMigration
 
   def self.extract_members_from_posts()
 
-    database = MySqlClient.new_local_client()
+    database = MySqlClient.new_local_access()
 
     # this query takes in a member id from posts table to get related meta_data
     metaposts = database.access_db do |client|
