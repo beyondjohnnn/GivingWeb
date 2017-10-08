@@ -40,7 +40,10 @@ $height: calc(100vh - (58px));
       border-left: solid 4px #7b5dff;
 
       &:hover {
-      border-left: solid 4px #f5f5f5;
+      // border-left: solid 4px #f5f5f5;
+      background-color: darken(#f5f5f5, 10%);
+      border-left: solid 4px #7b5dff;
+      color: #666666;
 
       }
     }

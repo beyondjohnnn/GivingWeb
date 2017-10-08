@@ -5,6 +5,7 @@ import navigation from './navigation'
 import auth from './auth'
 import howItWorks from './howItWorks'
 import noAuthSubNavigation from './noAuthSubNavigation'
+import charityDashboardSidebar from './charityDashboardSidebar'
 import helpSomeone from './helpSomeone'
 
 const rootReducer = combineReducers({
@@ -12,6 +13,7 @@ const rootReducer = combineReducers({
 	navigation,
   howItWorks,
   noAuthSubNavigation,
+  charityDashboardSidebar,
 	helpSomeone,
 	routing: routerReducer
 })

@@ -30,6 +30,9 @@ const defaultState = {
   noAuthSubNavigation: {
     currentLandingPageComponent: "Whats Happening"
   },
+  charityDashboardSidebar: {
+    currentCharityDashboardSidebarTab: "Members"
+  },
 	helpSomeone: {
 		members: [],
     current_member: {
