@@ -5,7 +5,14 @@ import css from './CharityPage.scss'
 
 import CharityTile from '../../components/CharityTile'
 
+import FeaturedMembers from '../../components/FeaturedMembers'
+
+
+	     
+
+
 class CharityPage extends React.Component {
+
 	render() {
 		return (
 			<div className="charity-page">
@@ -31,9 +38,9 @@ class CharityPage extends React.Component {
 	        		</div>
 	        	</div> 
 		      </div>
+				</div>
 
-
-					</div>
+				<FeaturedMembers />
 	     
 			</div>
 
