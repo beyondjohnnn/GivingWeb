@@ -14,7 +14,7 @@ $close-button-color:#9b9b9b;
 
 	> div {
 		opacity: 0;
-		transition: opacity 1s ease-out;
+		transition: opacity 1s ease-in;
 	}
 
 	&.visible {
@@ -25,8 +25,6 @@ $close-button-color:#9b9b9b;
 		}
 	}
 
-
-
 	.button-wrapper {
 		width: 100%;
 		max-width: 1300px;
@@ -35,8 +33,6 @@ $close-button-color:#9b9b9b;
 		justify-content: flex-end;
 		position: absolute;
 		top:0;
-
-		// border: $search-border;
 	}	
 
 	button {
@@ -61,14 +57,12 @@ $close-button-color:#9b9b9b;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-evenly;
-		align-items: center; 
-		// background-color: yellow;
+		align-items: center;
 
 		h3 {
 			font-size: 34px;
 			font-weight: 500;
 			margin-bottom: 25px;
-
 		}
 
 		i {
@@ -95,7 +89,6 @@ $close-button-color:#9b9b9b;
 
 		i {
 			font-size: 130px;
-			// color: #7b5dff;
 			color: #7e6bd6;
 		}
 
@@ -118,7 +111,6 @@ $close-button-color:#9b9b9b;
 		padding-top: 60px;
 		font-weight: 300;
 
-
 		p {
 			font-size: 20px;
 		}
@@ -129,12 +121,8 @@ $close-button-color:#9b9b9b;
 			text-decoration: none;
 			font-size: 20px;
 
-
-
-
 			&:hover {
 				text-decoration: underline;
-
 			}
 		} 
 	}

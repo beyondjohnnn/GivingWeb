@@ -37,12 +37,10 @@ class Hero extends React.Component {
 	}
 }
 
-// this is taking the howItWorks portion of state and attaching it to the Hero's props
 function mapStateToProps(state, routing) {
-  return Object.assign({}, state.howItWorks, routing)
+  return { ...state.howItWorks, ...routing }
 }
 
-// this is attaching our actions to the Hero's component
 function mapDispatchToProps(dispatch) {
   return bindActionCreators(actionCreators, dispatch)
 }
