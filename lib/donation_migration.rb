@@ -39,29 +39,33 @@ class DonationMigration
     end
   end
 
-  def self.run()
+  def self.merge_values_by_id(array)
 
-    postmeta_filtered = DonationMigration.query_database()
-
-    temp = DonationMigration.match_key_value_pairs(postmeta_filtered)
-
-    current_id = 0;
-    current_user = {}
+    current_id = 0
+    current_user = nil
     users = []
-    temp.each do |row|
+    array.each do |row|
       if(current_id != row["post_id"])
         current_id = row["post_id"]
-        users.push(current_user)
-        current_user = {}
-        current_user["post_id"] = current_id
+        users.push(current_user) if(current_user)
+        current_user = {"post_id" => current_id}
       end
       key = row.keys[1]
-      row[key] = row[key].to_i if(key == "total")
-      row[key] = row[key].to_i if(key == "Campaign")
+      if(key == "total" || key == "Campaign")
+        row[key] = row[key].to_i
+      end
       current_user[key] = row[key]
     end
 
-    users.delete_at(0)
+    return users
+
+  end
+
+  def self.run()
+
+    postmeta_filtered = self.query_database()
+    postmeta_filtered = self.match_key_value_pairs(postmeta_filtered)
+    users = self.merge_values_by_id(postmeta_filtered)
 
     legacies = SqlRunner.run("SELECT * FROM legacies;")
 
@@ -85,4 +89,4 @@ class DonationMigration
 
 end
 
-# pp DonationMigration.test()
+# pp DonationMigration.run()
