@@ -7,7 +7,7 @@ class CharityDashboardOrganisationDetails extends React.Component {
 		return (
 			<div className="charity-dashboard-organisation-details">
 				<img src="images/streetwork.jpg" />
-				<h3>Charity Name</h3>
+				<h3>Streetwork</h3>
 			</div>
 		)
 	}
