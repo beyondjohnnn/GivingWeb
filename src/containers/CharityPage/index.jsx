@@ -25,6 +25,10 @@ class CharityPage extends React.Component {
 	        	</div>
 	        	<div className="support-wrapper">
 	        		<button><i className="fa fa-heart-o"></i>Care</button>
+	        		<div className="care-count-wrapper">
+	        			<div className="care-count-square"></div>
+	        			<p>222</p>
+	        		</div>
 	        	</div> 
 		      </div>
 
