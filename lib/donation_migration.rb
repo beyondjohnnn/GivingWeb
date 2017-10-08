@@ -32,8 +32,8 @@ class DonationMigration
     return postmeta_filtered.to_a
   end
 
-  def self.match_key_value_pairs(array)
-    return array.map do |row|
+  def self.match_key_value_pairs(rows)
+    return rows.map do |row|
       key = row["meta_key"]
       value = row["meta_value"]
 
@@ -47,12 +47,12 @@ class DonationMigration
     end
   end
 
-  def self.merge_values_by_id(array)
+  def self.merge_values_by_id(rows)
 
     current_id = 0
     current_user = nil
     users = []
-    array.each do |row|
+    rows.each do |row|
       if(current_id != row["post_id"])
         current_id = row["post_id"]
         users.push(current_user) if(current_user)
