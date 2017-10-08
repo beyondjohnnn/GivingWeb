@@ -13,15 +13,15 @@ $close-button-color:#9b9b9b;
 	transition: height 0.5s ease-in-out;
 
 	> div {
-		visibility: hidden;
-		transition: visibility 2s ease-out;
+		opacity: 0;
+		transition: opacity 1s ease-out;
 	}
 
 	&.visible {
 		height: 540px;
 
 		> div {
-			visibility: visible;
+			opacity: 1;
 		}
 	}
 
