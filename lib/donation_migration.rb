@@ -1,38 +1,39 @@
-require 'mysql2'
+require_relative './my_sql_client'
 require 'pp'
 require_relative './sql_runner'
-
 
 class DonationMigration
 
   def self.run()
-    client = Mysql2::Client.new(
-      host: 'localhost',
-      username: 'root',
-      database: 'streetchangedata',
-    )
+    postmeta_filtered = self.query_database()
+    postmeta_filtered = self.match_key_value_pairs(postmeta_filtered)
+    users = self.merge_values_by_id(postmeta_filtered)
+    users = self.update_member_id(users)
 
-    postmeta_filtered = client.query(
-      "SELECT post_meta.post_id, post_meta.meta_key, post_meta.meta_value, posts.post_status
-      FROM wp_QsCYs3zex3pv_postmeta AS post_meta
-      INNER JOIN wp_QsCYs3zex3pv_posts AS posts
-      ON post_meta.post_id = posts.ID
-      WHERE post_meta.meta_key = 'name' OR post_meta.meta_key = 'total' OR post_meta.meta_key = 'campaign'
-      ORDER BY post_meta.post_id;")
+    return users
+  end
 
-    postmeta_filtered = postmeta_filtered.find_all do |row|
-      row["post_status"] == "processing"
+  def self.query_database()
+    database = MySqlClient.new_local_access()
+
+    postmeta_filtered = database.access_db do |client|
+      return client.query(
+        "SELECT post_meta.post_id, post_meta.meta_key, post_meta.meta_value
+        FROM wp_QsCYs3zex3pv_postmeta AS post_meta
+        INNER JOIN wp_QsCYs3zex3pv_posts AS posts
+        ON post_meta.post_id = posts.ID
+        WHERE
+          posts.post_status = 'processing' AND
+          (post_meta.meta_key = 'total' OR post_meta.meta_key = 'campaign')
+        ORDER BY post_meta.post_id;"
+      )
     end
 
-    postmeta_filtered = postmeta_filtered.to_a
+    return postmeta_filtered.to_a
+  end
 
-    # all perfect to this point
-
-    index = 0
-    output = []
-
-    temp = []
-    postmeta_filtered.each do |row|
+  def self.match_key_value_pairs(rows)
+    return rows.map do |row|
       key = row["meta_key"]
       value = row["meta_value"]
 
@@ -40,44 +41,53 @@ class DonationMigration
 
       row.delete("meta_key")
       row.delete("meta_value")
-      row.delete("post_status")
 
-      temp.push(row)
+      row
     end
+  end
 
-    current_id = 0;
-    current_user = {}
+  def self.merge_values_by_id(rows)
+
+    current_id = 0
+    current_user = nil
     users = []
-    temp.each do |row|
+    rows.each do |row|
       if(current_id != row["post_id"])
         current_id = row["post_id"]
-        users.push(current_user)
-        current_user = {}
-        current_user["post_id"] = current_id
+        users.push(current_user) if(current_user)
+        current_user = {"post_id" => current_id}
       end
+
       key = row.keys[1]
-      row[key] = row[key].to_i if(key == "total")
-      row[key] = row[key].to_i if(key == "Campaign")
-      current_user[key] = row[key]
+      if(key == "total")
+        current_user["total"] = row["total"].to_i
+      elsif(key == "Campaign")
+        current_user["member_id"] = row["Campaign"].to_i
+      end
     end
 
-    users.delete_at(0)
+    return users
 
-    legacies = SqlRunner.run("SELECT * FROM legacies;")
+  end
 
-    users.each do |user|
-      # puts user
-      legacies.each do |legacy|
-         if user['Campaign'] == legacy["legacy_sql_id"].to_i
-           user['member_id'] = legacy["member_id"].to_i
-           user.delete('Campaign')
-          #  pp user
-         end
-       end
-    end
+  def self.update_member_id(users)
+    legacies = SqlRunner.run("SELECT * FROM legacies;").to_a
 
-    users = users.find_all do |user|
-      !user.has_key?("Campaign")
+    index = users.length - 1
+    while index >= 0
+      user = users[index]
+
+      legacy = legacies.find do |legacy|
+        legacy["legacy_sql_id"].to_i == user['member_id'].to_i
+      end
+
+      if(legacy)
+        user["member_id"] = legacy["member_id"]
+      else
+        users.delete_at(index)
+      end
+
+      index -= 1
     end
 
     return users

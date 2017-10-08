@@ -1,4 +1,4 @@
-require 'mysql2'
+require_relative './my_sql_client'
 require 'pp'
 
 class MemberMigration
@@ -8,23 +8,26 @@ class MemberMigration
 
   def self.extract_members_from_posts()
 
-    client = Mysql2::Client.new(
-        host: 'localhost',
-        username: 'root',
-        database: 'streetchangedata',
-    )
+    database = MySqlClient.new_local_access()
 
     # this query takes in a member id from posts table to get related meta_data
-    metaposts = client.prepare("select * from wp_QsCYs3zex3pv_postmeta where post_id = ?;")
-
+    metaposts = database.access_db do |client|
+      client.prepare(
+        "SELECT * FROM wp_QsCYs3zex3pv_postmeta WHERE post_id = ?
+        AND (
+          meta_key = 'goal' OR meta_key = 'title' OR
+          meta_key = 'meta_description' OR meta_key = 'location'
+        );"
+      )
+    end
 
     # this query grabs all the members from posts table
-    posts = client.query("
-    	SELECT ID, post_title, post_content, comment_count, post_date, post_excerpt
-    	FROM wp_QsCYs3zex3pv_posts
-      WHERE EXISTS (SELECT * FROM wp_QsCYs3zex3pv_postmeta WHERE wp_QsCYs3zex3pv_posts.ID = wp_QsCYs3zex3pv_postmeta.post_id)
-      and wp_QsCYs3zex3pv_posts.post_type = 'campaign'
-      and	post_status = 'publish';")
+    posts = database.access_db do |client|
+      client.query(
+        "SELECT ID, post_title AS name, post_content AS info,
+        post_date, post_excerpt AS snippet
+    	  FROM wp_QsCYs3zex3pv_posts WHERE post_type = 'campaign' AND	post_status = 'publish';")
+    end
 
   	# create empty array to hold new data
   	data = []
@@ -37,9 +40,7 @@ class MemberMigration
 
   		# loop through metadata and extract key-value pair which we attach to current row
   		metadata.each do |metarow|
-  			if (!(/^_/.match(metarow['meta_key']))) then
-  				row[metarow['meta_key']] = metarow['meta_value']
-  			end
+  			row[metarow['meta_key']] = metarow['meta_value']
   		end
 
   		# push current row with attached meta_data into data array
@@ -57,21 +58,12 @@ class MemberMigration
     hashes = []
 
     memberdata.each do |member|
-
+      member_id = member['ID']
+      member.delete("ID")
       hash = {
-        legacy_sql_id: member['ID'],
-        member_data: {
-          name: member['post_title'],
-          info: member['post_content'],
-          post_date: member['post_date'],
-          snippet: member['post_excerpt'],
-          location: member['location'],
-          goal: member['goal'],
-          title: member['title'],
-          meta_description: member['meta_description']
-        }
+        legacy_sql_id: member_id,
+        member_data: member
       }
-
       hashes.push(hash)
     end
     return hashes
