@@ -17,12 +17,10 @@ class DonationMigration
       FROM wp_QsCYs3zex3pv_postmeta AS post_meta
       INNER JOIN wp_QsCYs3zex3pv_posts AS posts
       ON post_meta.post_id = posts.ID
-      WHERE post_meta.meta_key = 'name' OR post_meta.meta_key = 'total' OR post_meta.meta_key = 'campaign'
+      WHERE
+        posts.post_status = 'processing' AND
+        (post_meta.meta_key = 'name' OR post_meta.meta_key = 'total' OR post_meta.meta_key = 'campaign')
       ORDER BY post_meta.post_id;")
-
-    postmeta_filtered = postmeta_filtered.find_all do |row|
-      row["post_status"] == "processing"
-    end
 
     postmeta_filtered = postmeta_filtered.to_a
 
