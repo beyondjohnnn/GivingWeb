@@ -20,10 +20,7 @@ class MemberMigration
     posts = database.access_db do |client|
       client.query("
     	SELECT ID, post_title, post_content, comment_count, post_date, post_excerpt
-    	FROM wp_QsCYs3zex3pv_posts
-      WHERE EXISTS (SELECT * FROM wp_QsCYs3zex3pv_postmeta WHERE wp_QsCYs3zex3pv_posts.ID = wp_QsCYs3zex3pv_postmeta.post_id)
-      and wp_QsCYs3zex3pv_posts.post_type = 'campaign'
-      and	post_status = 'publish';")
+    	FROM wp_QsCYs3zex3pv_posts post_type = 'campaign' AND	post_status = 'publish';")
     end
 
   	# create empty array to hold new data
