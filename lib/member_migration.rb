@@ -24,8 +24,9 @@ class MemberMigration
     # this query grabs all the members from posts table
     posts = database.access_db do |client|
       client.query(
-        "SELECT ID, post_title, post_content, comment_count, post_date, post_excerpt
-    	   FROM wp_QsCYs3zex3pv_posts WHERE post_type = 'campaign' AND	post_status = 'publish';")
+        "SELECT ID, post_title AS name, post_content AS info,
+        post_date, post_excerpt AS snippet
+    	  FROM wp_QsCYs3zex3pv_posts WHERE post_type = 'campaign' AND	post_status = 'publish';")
     end
 
   	# create empty array to hold new data
@@ -57,20 +58,12 @@ class MemberMigration
     hashes = []
 
     memberdata.each do |member|
+      member_id = member['ID']
+      member.delete("ID")
       hash = {
-        legacy_sql_id: member['ID'],
-        member_data: {
-          name: member['post_title'],
-          info: member['post_content'],
-          post_date: member['post_date'],
-          snippet: member['post_excerpt'],
-          location: member['location'],
-          goal: member['goal'],
-          title: member['title'],
-          meta_description: member['meta_description']
-        }
+        legacy_sql_id: member_id,
+        member_data: member
       }
-
       hashes.push(hash)
     end
     return hashes
