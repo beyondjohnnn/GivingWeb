@@ -1,4 +1,4 @@
-require 'mysql2'
+require_relative './my_sql_client'
 require 'pp'
 
 class MemberMigration
@@ -8,23 +8,23 @@ class MemberMigration
 
   def self.extract_members_from_posts()
 
-    client = Mysql2::Client.new(
-        host: 'localhost',
-        username: 'root',
-        database: 'streetchangedata',
-    )
+    database = MySqlClient.new_local_client()
 
     # this query takes in a member id from posts table to get related meta_data
-    metaposts = client.prepare("select * from wp_QsCYs3zex3pv_postmeta where post_id = ?;")
+    metaposts = database.access_db do |client|
+      client.prepare("select * from wp_QsCYs3zex3pv_postmeta where post_id = ?;")
+    end
 
 
     # this query grabs all the members from posts table
-    posts = client.query("
+    posts = database.access_db do |client|
+      client.query("
     	SELECT ID, post_title, post_content, comment_count, post_date, post_excerpt
     	FROM wp_QsCYs3zex3pv_posts
       WHERE EXISTS (SELECT * FROM wp_QsCYs3zex3pv_postmeta WHERE wp_QsCYs3zex3pv_posts.ID = wp_QsCYs3zex3pv_postmeta.post_id)
       and wp_QsCYs3zex3pv_posts.post_type = 'campaign'
       and	post_status = 'publish';")
+    end
 
   	# create empty array to hold new data
   	data = []
