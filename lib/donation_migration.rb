@@ -10,10 +10,6 @@ class DonationMigration
     users = self.merge_values_by_id(postmeta_filtered)
     users = self.update_member_id(users)
 
-    users = users.find_all do |user|
-      !user.has_key?("Campaign")
-    end
-
     return users
   end
 
@@ -75,18 +71,27 @@ class DonationMigration
 
   end
 
-  def self.update_member_id(array)
-    legacies = SqlRunner.run("SELECT * FROM legacies;")
+  def self.update_member_id(users)
+    legacies = SqlRunner.run("SELECT * FROM legacies;").to_a
 
-    array.each do |user|
-      legacies.each do |legacy|
-        if user['member_id'] == legacy["legacy_sql_id"].to_i
-          user['member_id'] = legacy["member_id"].to_i
-        end
+    index = users.length - 1
+    while index >= 0
+      user = users[index]
+
+      legacy = legacies.find do |legacy|
+        legacy["legacy_sql_id"].to_i == user['member_id'].to_i
       end
+
+      if(legacy)
+        user["member_id"] = legacy["member_id"]
+      else
+        users.delete_at(index)
+      end
+
+      index -= 1
     end
 
-    return array
+    return users
   end
 
 end
