@@ -2,7 +2,6 @@ require 'mysql2'
 require 'pp'
 require_relative './sql_runner'
 
-
 class DonationMigration
 
   def self.query_database()
@@ -25,17 +24,8 @@ class DonationMigration
     return postmeta_filtered.to_a
   end
 
-  def self.run()
-
-    postmeta_filtered = DonationMigration.query_database()
-
-    # all perfect to this point
-
-    index = 0
-    output = []
-
-    temp = []
-    postmeta_filtered.each do |row|
+  def self.match_key_value_pairs(array)
+    return array.map do |row|
       key = row["meta_key"]
       value = row["meta_value"]
 
@@ -45,8 +35,15 @@ class DonationMigration
       row.delete("meta_value")
       row.delete("post_status")
 
-      temp.push(row)
+      row
     end
+  end
+
+  def self.run()
+
+    postmeta_filtered = DonationMigration.query_database()
+
+    temp = DonationMigration.match_key_value_pairs(postmeta_filtered)
 
     current_id = 0;
     current_user = {}
@@ -87,3 +84,5 @@ class DonationMigration
   end
 
 end
+
+# pp DonationMigration.test()
