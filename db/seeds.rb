@@ -64,6 +64,5 @@ donations = DonationMigration.run()
 
 donations.each do |donation|
 	donation.delete("post_id")
-	donation.delete("name")
 	Donation.create(donation)
 end

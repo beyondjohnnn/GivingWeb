@@ -28,7 +28,7 @@ class DonationMigration
         ON post_meta.post_id = posts.ID
         WHERE
           posts.post_status = 'processing' AND
-          (post_meta.meta_key = 'name' OR post_meta.meta_key = 'total' OR post_meta.meta_key = 'campaign')
+          (post_meta.meta_key = 'total' OR post_meta.meta_key = 'campaign')
         ORDER BY post_meta.post_id;"
       )
     end
