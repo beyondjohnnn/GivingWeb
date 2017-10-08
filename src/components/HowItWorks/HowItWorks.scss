@@ -2,13 +2,29 @@ $close-button-color:#9b9b9b;
 
 .how-it-works {
 	width: 100%;
-	height: 540px;
+	height: 0;
 	background-color: #ffffff;
 	display: flex;
 	justify-content: center;
 	z-index: 4;
 	position: relative;
+	overflow: hidden;
 	align-items: center;
+	transition: height 0.5s ease-in-out;
+
+	> div {
+		opacity: 0;
+		transition: opacity 1s ease-out;
+	}
+
+	&.visible {
+		height: 540px;
+
+		> div {
+			opacity: 1;
+		}
+	}
+
 
 
 	.button-wrapper {
