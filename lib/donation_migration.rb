@@ -4,6 +4,20 @@ require_relative './sql_runner'
 
 class DonationMigration
 
+  def self.run()
+
+    postmeta_filtered = self.query_database()
+    postmeta_filtered = self.match_key_value_pairs(postmeta_filtered)
+    users = self.merge_values_by_id(postmeta_filtered)
+    users = self.update_member_id(users)
+
+    users = users.find_all do |user|
+      !user.has_key?("Campaign")
+    end
+
+    return users
+  end
+
   def self.query_database()
     client = Mysql2::Client.new(
       host: 'localhost',
@@ -74,20 +88,6 @@ class DonationMigration
     end
 
     return array
-  end
-
-  def self.run()
-
-    postmeta_filtered = self.query_database()
-    postmeta_filtered = self.match_key_value_pairs(postmeta_filtered)
-    users = self.merge_values_by_id(postmeta_filtered)
-    users = self.update_member_id(users)
-
-    users = users.find_all do |user|
-      !user.has_key?("Campaign")
-    end
-
-    return users
   end
 
 end
