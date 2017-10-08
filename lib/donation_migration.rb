@@ -5,7 +5,7 @@ require_relative './sql_runner'
 
 class DonationMigration
 
-  def self.run()
+  def self.query_database()
     client = Mysql2::Client.new(
       host: 'localhost',
       username: 'root',
@@ -22,7 +22,12 @@ class DonationMigration
         (post_meta.meta_key = 'name' OR post_meta.meta_key = 'total' OR post_meta.meta_key = 'campaign')
       ORDER BY post_meta.post_id;")
 
-    postmeta_filtered = postmeta_filtered.to_a
+    return postmeta_filtered.to_a
+  end
+
+  def self.run()
+
+    postmeta_filtered = DonationMigration.query_database()
 
     # all perfect to this point
 
