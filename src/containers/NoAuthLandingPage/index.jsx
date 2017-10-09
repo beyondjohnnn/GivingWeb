@@ -64,7 +64,7 @@ class NoAuthLandingPage extends React.Component {
 			<div>
 				<Hero scroll={this.scrollToHowItWorks}/>
 				<ExtendedScrollAnchor anchor={'howItWorksAnchor'}>
-				<HowItWorks />
+					<HowItWorks />
 				</ExtendedScrollAnchor>
 				<NoAuthSubNavigation />
 				{this.renderSubNavigationSelection()}
