@@ -28,4 +28,35 @@ describe('CharityTile', () => {
 		defaultState.fetching = true
 		expect(result).toMatchObject(defaultState)
 	})
+
+	it(`should add property fetching and error, with error set to the payload given,
+			when passed GET_MEMBERS_REJECTED`, () => {
+		const errorPayload = {error: "returned object"}
+		const action = {
+			type: "GET_MEMBERS_REJECTED",
+			payload: errorPayload
+		}
+
+		const result = helpSomeoneReducer(defaultState, action)
+		defaultState.fetching = true
+		defaultState.error = {error: "returned object"}
+		expect(result).toMatchObject(defaultState)
+	})
+
+	it(`When passed action type GET_MEMBERS_FULFILLED should: add property
+			fetching and fetched. Also should set property members
+		 	to payload.data`, () => {
+		const payload = {data: ["member1", "member2"]}
+		const action = {
+			type: "GET_MEMBERS_FULFILLED",
+			payload: payload
+		}
+
+		const result = helpSomeoneReducer(defaultState, action)
+		let state = defaultState
+		state.fetching = true
+		state.fetched = true
+		state.members = payload.data
+		expect(result).toMatchObject(state)
+	})
 })
