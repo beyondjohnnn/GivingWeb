@@ -1,5 +1,5 @@
-export function showTooltip() {
+export function toggleTooltip() {
   return {
-    type: 'SHOW_TOOLTIP'
+    type: 'TOGGLE_TOOLTIP'
   }
 }

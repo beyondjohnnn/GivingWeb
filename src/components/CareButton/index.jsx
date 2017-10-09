@@ -20,7 +20,7 @@ class CareButton extends React.Component {
 	render() {
 		return (
 			<div className="care-button">
-				<button onMouseEnter={this.props.showTooltip}>
+				<button onMouseEnter={this.props.toggleTooltip} onMouseLeave={this.props.toggleTooltip}>
 					{this.renderTooltip()}
 					<i className="fa fa-heart-o"></i>
 					Care
