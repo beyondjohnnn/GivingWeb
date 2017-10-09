@@ -11,7 +11,7 @@ export function calcTotalDonations(member) {
 export function calcDonationPercentage(member){
 	const donations = calcTotalDonations(member)
 	let donationPercent = (donations / member.goal) * 100;
-	if(donationPercent >= 100) return Math.floor(donationPercent);
+	if(donationPercent >= 100) return 100;
 	if(donationPercent < 99) return Math.ceil(donationPercent);
 	else return 99;
 }
