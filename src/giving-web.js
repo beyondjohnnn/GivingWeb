@@ -24,6 +24,8 @@ import Navigation from './components/Navigation'
 import FeaturedMembers from './components/FeaturedMembers'
 import Footer from './components/Footer'
 import Comment from './components/Comment'
+import TermsAndPrivacy from './components/TermsAndPrivacy'
+import CookieInfo from './components/CookieInfo'
 
 // import react router dependencies
 import { Router, Route } from 'react-router'
@@ -53,6 +55,8 @@ const router = (
 				<Route path="/charity-dashboard" component={CharityDashboard} />
 				<Route path="/member" component={MemberShowPage} />
 				<Route path="/comment" component={Comment} />
+				<Route path="/terms" component={TermsAndPrivacy} />
+				<Route path="/cookie-info" component={CookieInfo} />
 				<Footer />
 			</div>
 		</Router>
