@@ -9,19 +9,15 @@ import css from './CareButton.scss'
 
 class CareButton extends React.Component {
 
-	renderTooltip() {
-		if (this.props.tooltipVisible) {
-			return <Tooltip style="tooltip care-button-tooltip" text="Click here to follow the charities progress" /> 
-		} else {
-			return <Tooltip style="tooltip care-button-tooltip hidden" text="Click here to follow the charities progress"/>
-		}
+	createTooltipStyle() {
+		return this.props.tooltipVisible ? "tooltip care-button-tooltip" : "tooltip care-button-tooltip hidden"
 	}
 
 	render() {
 		return (
 			<div className="care-button">
 				<button onMouseEnter={this.props.toggleTooltip} onMouseLeave={this.props.toggleTooltip}>
-					{this.renderTooltip()}
+					<Tooltip style={this.createTooltipStyle()} text="Click here to follow the charities progress" />
 					<i className="fa fa-heart-o"></i>
 					Care
 				</button>	
@@ -35,10 +31,9 @@ class CareButton extends React.Component {
 }
 
 function mapStateToProps(state, routing) {
-  return Object.assign({}, state.careButton, routing)
+  return { ...state.careButton, ...routing }
 }
 
-// this is attaching our actions to the Navigation component
 function mapDispatchToProps(dispatch) {
   return bindActionCreators(actionCreators, dispatch)
 }
