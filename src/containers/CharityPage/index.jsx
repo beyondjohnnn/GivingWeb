@@ -59,7 +59,6 @@ class CharityPage extends React.Component {
 				</div> 
 
 				<FeaturedMembers />
-				<FeaturedMembers />
 
 			</div>
 
