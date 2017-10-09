@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import css from './CharityPage.scss'
 
 import CharityTile from '../../components/CharityTile'
+import CareButton from '../../components/CareButton'
 
 import FeaturedMembers from '../../components/FeaturedMembers'
 
@@ -30,15 +31,11 @@ class CharityPage extends React.Component {
 	        		<a href="https://www.facebook.com/StreetChange1/" target="_blank"><i className="fa fa-twitter"></i></a>
 	        		<a href="https://www.facebook.com/StreetChange1/" target="_blank"><i className="fa fa-globe"></i></a>
 	        	</div>
-	        	<div className="support-wrapper">
-	        		<button><i className="fa fa-heart-o"></i>Care</button>
-	        		<div className="care-count-wrapper">
-	        			<div className="care-count-square"></div>
-	        			<p>222</p>
-	        		</div>
-	        	</div> 
+	        	 
+		      <CareButton />
 		      </div>
 				</div>
+
 
 				<FeaturedMembers />
 	     

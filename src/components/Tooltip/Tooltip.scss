@@ -1,0 +1,52 @@
+.tooltip {
+  
+  background-color: #ffffff;
+  position: absolute;
+  // margin-top: 67px;
+  -webkit-transition: visibility 0.1s ease-in-out, margin-top 0.3s ease-in-out;
+  transition: visibility 0.1s ease-in-out, margin-top 0.3s ease-in-out;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.1), 0 3px 6px 0 rgba(0, 0, 0, 0.09); 
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  
+  p {
+    margin: 6px;
+    z-index: 6;
+
+  }
+}
+
+.hidden {
+  visibility: hidden;
+  // margin-top: 72px;
+}
+
+.care-button-tooltip {
+
+  width: 116px;
+  top: 0;
+  margin-top: -59px;
+  left:0;
+  color: #5a5a5a;
+  font-size: 0.7em;
+
+  
+  .tooltip-arrow {
+      height: 10px;
+      width: 10px;
+      transform: rotate(45deg); 
+      background-color: #ffffff;
+      position: absolute;
+      bottom: 0;
+      // left: 0;
+      margin-bottom: -4px;
+      // z-index: 5;
+
+    }
+}
+
+
+    
+
+
