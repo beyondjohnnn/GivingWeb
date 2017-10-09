@@ -11,12 +11,14 @@ class MeetTheTeam extends React.Component {
 		return (
 			<div className="meet-the-team">
         <img className="team-photo" src="images/team_placeholder.png"></img>
+				<div className="about-the-team">
+					<div className="narrow">
+						<h2>About our team</h2>
+						<p>Since spinning out from a winning hackathon in late 2015, Johnny decided to push forward with StreetChange fundraising and got on his way to find a scaling partner and some funding to get the project off the ground.  We’ve since built a strong relationship with Streetwork, received grant funding from the Scottish Government and are reaching the end of a daring, new public sector accelerator in CodeBase.  With a broad range of skills and knowledge and growing support in Edinburgh and beyond, the team can’t wait to drive the project forward to success in 2017.
+						</p>
+					</div>
+				</div>
         <div className="text-body">
-          <div className="mission">
-            <h2>About our team</h2>
-            <p>Since spinning out from a winning hackathon in late 2015, Johnny decided to push forward with StreetChange fundraising and got on his way to find a scaling partner and some funding to get the project off the ground.  We’ve since built a strong relationship with Streetwork, received grant funding from the Scottish Government and are reaching the end of a daring, new public sector accelerator in CodeBase.  With a broad range of skills and knowledge and growing support in Edinburgh and beyond, the team can’t wait to drive the project forward to success in 2017.
-            </p>
-          </div>
           <div className="team-member">
             <div className="profile">
               <img width="833" height="826" src="https://streetchange.org.uk/wp-content/uploads/2016/12/J.jpg" ></img>
