@@ -5,11 +5,11 @@
 // import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser'
 //
 //
-// import TermsAndPrivacy from '../../components/TermsAndPrivacy'
+// import CookieInfo from '../../components/CookieInfo'
 //
-// import css from './TermsAndPrivacyPage.scss'
+// import css from './CookiePage.scss'
 //
-// class TermsAndPrivacyPage extends React.Component {
+// class CookiePage extends React.Component {
 //
 // 	componentDidMount() {
 // 	}
@@ -20,11 +20,11 @@
 // 	render() {
 //
 // 		return (
-// 			<div className="terms-and-privacy-page">
-//         {TermsAndPrivacy}
+// 			<div className="cookie-page">
+//         {CookieInfo}
 // 			</div>
 // 		)
 // 	}
 // }
 //
-// export default
+// export default CookiePage
