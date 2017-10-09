@@ -99,4 +99,17 @@ describe('CharityTile', () => {
 		state.current_member = payload.data
 		expect(result).toMatchObject(state)
 	})
+
+	it(`Should set current_member to the value of action.member when the action
+			type is SET_CURRENT_MEMBER`, () => {
+		const action = {
+			type: "SET_CURRENT_MEMBER",
+			member: "current_member"
+		}
+
+		const result = helpSomeoneReducer(defaultState, action)
+		let state = defaultState
+		state.current_member = "current_member"
+		expect(result).toMatchObject(state)
+	})
 })
