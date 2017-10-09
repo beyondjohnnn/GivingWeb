@@ -14,7 +14,7 @@ class Footer extends React.Component {
 						<p>Get to know us</p>
 						<Link to="/" className="footer-link">About Us</Link>
 						<Link to="/" className="footer-link">Read our blog</Link>
-						<Link to="/" className="footer-link">Meet our team</Link>
+						<Link to="/meet-the-team" className="footer-link">Meet our team</Link>
 						<Link to="/terms" className="footer-link">Terms & Privacy</Link>
 						<Link to="/cookie-info" className="footer-link">Cookies</Link>
 					</div>
