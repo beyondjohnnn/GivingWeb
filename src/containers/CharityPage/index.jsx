@@ -33,12 +33,34 @@ class CharityPage extends React.Component {
 	        	</div>
 	        	 
 		      <CareButton />
+		      <button className="about-us-scroller">About Us<i class="fa fa-angle-double-down" aria-hidden="true"></i></button> 
 		      </div>
 				</div>
 
 
-				<FeaturedMembers />
+
 	     
+				<div className="charity-info-container">
+					<div className="charity-image-total-wrapper">
+		        
+						<div className="banner-image"></div>
+		        <h3>Streetwork</h3>
+						<p className="charity-number">Registered charity number SC017802</p>
+		        <p className="amount-raised">£3,300</p>
+						<p className="amount-raised-text">Total Raised</p>
+						<button className="donate-button">Make a Donation</button>
+						<button className="fundraise-button">Fundraise for Us</button>
+					</div> 
+					<div className="charity-description-wrapper">
+						<h3>About the Charity</h3>
+						<p>Streetwork is about enabling a life off the streets. We focus on where people are most in need and at risk - on the streets.</p>
+						<p>We don't wait for people to find us; we find them, with outreach teams spending at least 84hrs each week on the streets of Edinburgh helping the most vulnerable people.</p>
+					</div> 
+				</div> 
+
+				<FeaturedMembers />
+				<FeaturedMembers />
+
 			</div>
 
 		)
@@ -49,6 +71,29 @@ export default CharityPage
 
 
 				{/* 
+				<div className="giving-levels-container">
+					<div className="giving-card">
+						<p className="giving-card-description">A £5 pays for someone to have a hot shower and access to our laundry.</p>
+						<p className="giving-card-support"><i className="fa fa-heart"></i>Be the first supporter!</p>
+						<h3 className="giving-card-support">£5</h3>
+					</div>
+					<div className="giving-card">
+						<p className="giving-card-description">A £5 pays for someone to have a hot shower and access to our laundry.</p>
+						<p className="giving-card-support"><i className="fa fa-heart"></i>Be the first supporter!</p>
+						<h3 className="giving-card-support">£5</h3>
+					</div> 
+					<div className="giving-card">
+						<p className="giving-card-description">A £5 pays for someone to have a hot shower and access to our laundry.</p>
+						<p className="giving-card-support"><i className="fa fa-heart"></i>Be the first supporter!</p>
+						<h3 className="giving-card-support">£5</h3>
+					</div> 
+					<div className="giving-card">
+						<p className="giving-card-description">A £5 pays for someone to have a hot shower and access to our laundry.</p>
+						<p className="giving-card-support"><i className="fa fa-heart"></i>Be the first supporter!</p>
+						<h3 className="giving-card-support">£5</h3>
+					</div> 
+
+				</div>  
 				<div className="charity-header">
 					<img src="http://via.placeholder.com/350x350" />
 					<div className="charity-summary">
