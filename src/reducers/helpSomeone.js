@@ -1,4 +1,15 @@
-function helpSomeone(state = [], action) {
+
+const defaultState = {
+	members: [],
+	current_member: {
+		donations: [],
+		comments: [],
+		info: '',
+		name: 'Charlie'
+	}
+}
+
+function helpSomeone(state = defaultState, action) {
 	switch(action.type) {
     case 'GET_MEMBERS_PENDING':
       return {...state, fetching: true}

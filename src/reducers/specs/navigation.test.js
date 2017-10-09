@@ -1,8 +1,6 @@
 import navigationReducer from './../navigation'
 
-
-
-describe('CharityTile', () => {
+describe('Navigation Reducer', () => {
 	let defaultState
 
 	beforeEach(() => {
