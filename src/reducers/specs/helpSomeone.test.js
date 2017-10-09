@@ -1,4 +1,4 @@
-import navigationReducer from './../helpSomeone'
+import helpSomeoneReducer from './../helpSomeone'
 
 describe('CharityTile', () => {
 	let defaultState
@@ -16,8 +16,16 @@ describe('CharityTile', () => {
 	});
 
 	it('should return default state when passed undefined and no action type', () => {
-		const result = navigationReducer(undefined, {})
-		const expected = defaultState
-		expect(result).toMatchObject(expected)
+		const result = helpSomeoneReducer(undefined, {})
+		expect(result).toMatchObject(defaultState)
+	})
+
+	it('should add property fetching when passed action GET_MEMBERS_PENDING', () => {
+		const action = {
+			type: "GET_MEMBERS_PENDING"
+		}
+		const result = helpSomeoneReducer(defaultState, action)
+		defaultState.fetching = true
+		expect(result).toMatchObject(defaultState)
 	})
 })
