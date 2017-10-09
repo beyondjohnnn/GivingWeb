@@ -1,3 +1,5 @@
+import math from 'mathjs'
+
 export function calcTotalDonations(member) {
 	const donations = member.donations.map((donation) => {
 		return donation.total
@@ -9,8 +11,11 @@ export function calcTotalDonations(member) {
 }
 
 export function calcDonationPercentage(member){
-	const donations = calcTotalDonations(member)
-	let donationPercent = (donations / member.goal) * 100;
+	const donations = math.bignumber(calcTotalDonations(member))
+	const goal = math.bignumber(member.goal)
+	const multiplier = math.bignumber(100)
+
+	let donationPercent = math.multiply( math.divide(donations, goal), multiplier );
 	if(donationPercent >= 100) return 100;
 	if(donationPercent < 99) return Math.ceil(donationPercent);
 	else return 99;
