@@ -23,4 +23,14 @@ describe('donation functions', () => {
 		const expected = 20
 		expect(result).toBe(expected)
 	})
+
+	it('should return the value of the goal if donations exceed it', () => {
+		for(let j=0; j<5; j++){
+			member.donations.push({total: 9})
+		}
+
+		const result = calcTotalDonations(member)
+		const expected = 50
+		expect(result).toBe(expected)
+	})
 })
