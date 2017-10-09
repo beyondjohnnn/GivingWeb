@@ -39,7 +39,8 @@ const defaultState = {
       donations: [],
       comments: [],
       info: '',
-      name: 'Charlie'
+      name: 'Charlie',
+      goal: 0
     }
 	},
   careButton: {
