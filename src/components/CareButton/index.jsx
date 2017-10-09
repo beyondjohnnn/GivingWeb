@@ -10,7 +10,6 @@ import css from './CareButton.scss'
 class CareButton extends React.Component {
 
 	renderTooltip() {
-		console.log({ tooltipVisible: this.props.tooltipVisible})
 		if (this.props.tooltipVisible) {
 			return <Tooltip style="tooltip care-button-tooltip" text="Click here to follow the charities progress" /> 
 		} else {
