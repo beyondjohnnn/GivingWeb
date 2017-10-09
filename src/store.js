@@ -43,7 +43,7 @@ const defaultState = {
     }
 	},
   careButton: {
-    tooltipVisable: false
+    tooltipVisible: false
   }
 }
 

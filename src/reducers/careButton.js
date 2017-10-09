@@ -1,7 +1,7 @@
 function careButton(state = [], action) {
   switch(action.type) {
     case 'SHOW_TOOLTIP':
-      return {...state, tooltipVisable: !state.tooltipVisible}
+      return {...state, tooltipVisible: !state.tooltipVisible}
     default:
       return state
 
