@@ -71,4 +71,39 @@ describe('calcDonationPercentage', () => {
 		result = calcDonationPercentage(member)
 		expect(result).toBe(expected)
 	})
+
+	it('should return 100 if donations exceed 100%', () => {
+		for(let j=0; j<3; j++){
+			member.donations.push({total: 10})
+		}
+
+		for(let j=0; j<100; j++){
+			member.donations.push({total: 25.375})
+			let result = calcDonationPercentage(member)
+			let expected = 100
+			expect(result).toBe(expected)
+		}
+	})
+})
+
+describe('getDonationBarColour', () => {
+
+	beforeEach(() => {
+		member = defaultMember()
+	});
+
+	it('should return #FBAC3D at a donationPercent of less than 50', () => {
+		for(let j=0; j<50; j++){
+			let result = getDonationBarColour(j)
+			expect(result).toBe("#FBAC3D")
+		}
+	})
+
+	it('should return #00CB9B at a donationPercent greater than or equal to 50', () => {
+		for(let j=50; j<101; j++){
+			let result = getDonationBarColour(j)
+			expect(result).toBe("#00CB9B")
+		}
+	})
+
 })
