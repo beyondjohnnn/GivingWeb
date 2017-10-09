@@ -41,7 +41,10 @@ const defaultState = {
       info: '',
       name: 'Charlie'
     }
-	}
+	},
+  careButton: {
+    tooltipVisable: false
+  }
 }
 
 const middleware = applyMiddleware(routerStuff, promiseMiddleware(), createScrollMiddleware())
