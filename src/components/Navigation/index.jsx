@@ -83,7 +83,7 @@ class Navigation extends React.Component {
 }
 
 function mapStateToProps(state, routing) {
-  return { ..state.navigation, ...routing }
+  return { ...state.navigation, ...routing }
 }
 
 function mapDispatchToProps(dispatch) {

@@ -10,7 +10,9 @@ class CharityDashboardContent extends React.Component {
     return (
       <div className="charity-dashboard-content">
         <CharityDashboardBreadcrumbs />
-        <CharityDashboardCampaign />
+        <CharityDashboardCampaign>
+        	{ this.props.children }
+        </CharityDashboardCampaign>
       </div>
     )
   }
