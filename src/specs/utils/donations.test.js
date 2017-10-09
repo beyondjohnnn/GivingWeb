@@ -52,24 +52,22 @@ describe('calcDonationPercentage', () => {
 	})
 
 	it('should always round up if donation percentage is less than 99', () => {
-		let result = calcDonationPercentage(member)
-		let expected = 41
+		let result
+		let expected
 
-		member.donations.push({total: 0.125})
-		result = calcDonationPercentage(member)
-		expect(result).toBe(expected)
+		member.donations = []
 
-		member.donations.pop()
+		let currentPercent = 0
+		for(let j=0; j<196; j++){
+			currentPercent += 0.25
+			member.donations.push({total: 0.125})
 
-		member.donations.push({total: 0.25})
-		result = calcDonationPercentage(member)
-		expect(result).toBe(expected)
+			result = calcDonationPercentage(member)
+			expected = Math.ceil(currentPercent)
 
-		member.donations.pop()
+			expect(result).toBe(expected)
+		}
 
-		member.donations.push({total: 0.375})
-		result = calcDonationPercentage(member)
-		expect(result).toBe(expected)
 	})
 
 	it('should return 100 if donations exceed 100%', () => {
