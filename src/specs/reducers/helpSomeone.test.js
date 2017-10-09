@@ -15,11 +15,6 @@ describe('CharityTile', () => {
 		}
 	});
 
-	it('should return default state when passed undefined and no action type', () => {
-		const result = helpSomeoneReducer(undefined, {})
-		expect(result).toMatchObject(defaultState)
-	})
-
 	it('should add property fetching when passed action GET_MEMBERS_PENDING', () => {
 		const action = {
 			type: "GET_MEMBERS_PENDING"

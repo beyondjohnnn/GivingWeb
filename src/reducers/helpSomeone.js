@@ -1,15 +1,5 @@
 
-const defaultState = {
-	members: [],
-	current_member: {
-		donations: [],
-		comments: [],
-		info: '',
-		name: 'Charlie'
-	}
-}
-
-function helpSomeone(state = defaultState, action) {
+function helpSomeone(state = [], action) {
 	switch(action.type) {
     case 'GET_MEMBERS_PENDING':
       return {...state, fetching: true}

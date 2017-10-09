@@ -7,14 +7,6 @@ describe('Navigation Reducer', () => {
 		defaultState = {dropdownVisible: false}
 	});
 
-	it('should return default state when passed undefined and no action type', () => {
-		const result = navigationReducer(undefined, {})
-		const expected = {
-			dropdownVisible: false
-		}
-		expect(result).toMatchObject(expected)
-	})
-
 	it('should toggle value of "dropdownVisible" when action "TOGGLE_DROPDOWN" is passed', () => {
 		const action = {
 			type: "TOGGLE_DROPDOWN"
