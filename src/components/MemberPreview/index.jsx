@@ -28,8 +28,7 @@ class MemberPreview extends React.Component {
 	// }
 
 	render() {
-		let previewStyle = this.props.style
-		if(!previewStyle) previewStyle = {}
+		let previewStyle = this.props.style || {}
 		const {member} = this.props
 		const percentage = calcDonationPercentage(member)
 		const textPercentage = percentage.toString() + "%"

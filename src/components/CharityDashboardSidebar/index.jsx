@@ -49,7 +49,7 @@ class CharityDashboardSidebar extends React.Component {
 }
 
 function mapStateToProps(state, routing) {
-  return Object.assign({}, state.charityDashboardSidebar, routing)
+  return { ...state.charityDashboardSidebar, ...routing }
 }
 
 function mapDispatchToProps(dispatch) {
