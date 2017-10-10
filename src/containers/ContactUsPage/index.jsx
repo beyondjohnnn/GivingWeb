@@ -25,7 +25,9 @@ class ContactUsPage extends React.Component {
 		return (
 			<div className="contact-us-page">
 				<ContactUs />
-				<GoogleMapComponent />
+				<div className="map">
+					<GoogleMapComponent />
+				</div>
 			</div>
 		)
 	}

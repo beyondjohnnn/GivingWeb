@@ -11,8 +11,8 @@ import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-map
 const GoogleMaper = compose(
   withProps({
     googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyBxB0T4GfkMjt_VV9yKDqYvhK3DizksacI&callback&libraries=geometry,drawing,places",
-    loadingElement: <div style={{ height: `100%` }} />,
-    containerElement: <div style={{ height: `300px` }} />,
+    loadingElement: <div style={{ height: `80%` }} />,
+    containerElement: <div style={{ width: `100%`, height: `400px` }} />,
     mapElement: <div style={{ height: `100%` }} />,
   }),
   withScriptjs,
@@ -20,9 +20,9 @@ const GoogleMaper = compose(
 )((props) =>(
   <GoogleMap
     defaultZoom={15}
-    defaultCenter={{ lat: 55.947, lng: -3.201 }}
+    defaultCenter={{ lat: 55.9471883, lng: -3.2018061 }}
   >
-  <Marker position={{ lat: 55.947, lng: -3.201 }} />
+  <Marker position={{ lat: 55.9471883, lng: -3.2018061 }} style={{ height: `#8834b5` }}/>
   </GoogleMap>
 ))
 
