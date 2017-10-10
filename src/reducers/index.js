@@ -9,6 +9,7 @@ import charityDashboardSidebar from './charityDashboardSidebar'
 import helpSomeone from './helpSomeone'
 import careButton from './careButton'
 import newMemberProcess from './newMemberProcess'
+import charityPage from './charityPage'
 
 const rootReducer = combineReducers({
 	auth,
@@ -18,7 +19,8 @@ const rootReducer = combineReducers({
   charityDashboardSidebar,
   helpSomeone,
 	careButton,
-	newMemberProcess,
+  newMemberProcess,
+	charityPage,
 	routing: routerReducer
 })
 

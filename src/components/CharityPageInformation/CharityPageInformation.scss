@@ -11,7 +11,7 @@
   .charity-image-total-wrapper {
     display: flex;
     flex-direction:column;
-    width: 33%;
+    width: 30%;
   }
 }
 
@@ -66,7 +66,7 @@
   .charity-image-total-wrapper {
     display: flex;
     flex-direction:column;
-    width: 33%;
+    width: 30%;
     justify-content: flex-start;
     align-items: center;
 
@@ -174,6 +174,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     font-weight: 300;
     text-decoration: none;
     border-radius: 4px;
@@ -181,7 +182,7 @@
     font-family: montserrat;
     outline: none;
     cursor: pointer;
-    width: 33%;
+    width: 40%;
     background-color: lighten(#f5f5f5, 0.5);
     margin-top: 5px;
     position: relative;
@@ -195,11 +196,19 @@
     //  width: 40%;
     // }
 
+
     .charity-description {
       height: 220px;
       overflow: hidden;
+      width: 100%;
       text-overflow: ellipsis;
       position: relative;
+      transition: height 2s ease-in-out;
+      // display: flex;
+      // flex-direction: column;
+      // align-items: center;
+      // justify-content: center;
+
       
       .linear-gradient-fade {
         position: absolute;
@@ -208,8 +217,15 @@
         bottom: 0;
         background: linear-gradient(360deg, rgba(246, 246, 246, 1), rgba(246, 246, 246, 0.3));
       }
+
+      .removed {
+        background: none;
+      }
     }
 
+    .open {
+      height: auto;
+    }
 
     button {
       text-decoration: none;
@@ -247,6 +263,7 @@
       margin-bottom: 18px;
       // margin-top: 10px;
       font-size: 1.2em;
+      text-align: center;
 
     }
 
@@ -260,6 +277,8 @@
       display: flex;
       justify-content: center;
       display: flex;
+      text-align: center;
+
     }
   }
 
