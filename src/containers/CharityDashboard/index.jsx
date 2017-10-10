@@ -13,17 +13,11 @@ import CharityDashboardCampaignSuccess from '../../components/CharityDashboardCa
 
 class CharityDashboard extends React.Component {
 	render() {
-		console.log(this.props.match)
 		return (
 			<div className="charity-dashboard">
 				<div className="main-section">
 					<CharityDashboardSidebar />
-					<CharityDashboardContent>
-						<Route path={this.props.match.url + '/live'} component={CharityDashboardCampaignLive} />
-						<Route path={this.props.match.url + '/draft'} component={CharityDashboardCampaignDraft} />
-						<Route path={this.props.match.url + '/review'} component={CharityDashboardCampaignReview} />
-						<Route path={this.props.match.url + '/success'} component={CharityDashboardCampaignSuccess} />
-					</CharityDashboardContent>
+					<CharityDashboardContent />
 				</div>
 
 			</div>
@@ -31,5 +25,6 @@ class CharityDashboard extends React.Component {
 	}
 }
 
+			
 
 export default CharityDashboard
