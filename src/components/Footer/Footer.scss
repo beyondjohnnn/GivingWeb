@@ -10,7 +10,6 @@ $footer-color: #848484;
 	background-color: #ffffff;
 	font-size: 14px;
 
-
 	.sitemap {
 		width: 80%;
 		display: flex;
@@ -29,8 +28,7 @@ $footer-color: #848484;
 				color: #848484;
 
 			}
-
-			
+	
 			.footer-link {
 				margin-top: 7px;
 				font-weight: 300;
@@ -72,7 +70,6 @@ $footer-color: #848484;
 				i {
 					padding: 0px 5px;
 					color: #7e6bd6;
-					// color: #d61717;
 				}
 			}
 		}
@@ -88,41 +85,35 @@ $footer-color: #848484;
 			color: #6d6d6d;
 			color: $footer-color;
 		
-
-
-			.fa-facebook {
-			
-			color: $footer-color;
+			.fa-facebook {	
+				color: $footer-color;
 
 				&:hover {
-				color: #4a68ac;
+					color: #4a68ac;
 				}
 			}
 
 			.fa-twitter {
-			
-			color: $footer-color;
+				color: $footer-color;
 
 				&:hover {
-				color: #4CA0EC;
+					color: #4CA0EC;
 				}
 			}
 
-			.fa-instagram {
-			
-			color: $footer-color;
+			.fa-instagram {			
+				color: $footer-color;
 
 				&:hover {
-				color: #003569;
+					color: #003569;
 				}
 			}
 
 			.fa-youtube {
-			
-			color: $footer-color;
+				color: $footer-color;
 
 				&:hover {
-				color: #EA3323;
+					color: #EA3323;
 				}
 			}
 		}

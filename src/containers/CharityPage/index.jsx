@@ -4,8 +4,16 @@ import { Link } from 'react-router-dom'
 import css from './CharityPage.scss'
 
 import CharityTile from '../../components/CharityTile'
+import CareButton from '../../components/CareButton'
+
+import FeaturedMembers from '../../components/FeaturedMembers'
+
+
+	     
+
 
 class CharityPage extends React.Component {
+
 	render() {
 		return (
 			<div className="charity-page">
@@ -23,17 +31,8 @@ class CharityPage extends React.Component {
 	        		<a href="https://www.facebook.com/StreetChange1/" target="_blank"><i className="fa fa-twitter"></i></a>
 	        		<a href="https://www.facebook.com/StreetChange1/" target="_blank"><i className="fa fa-globe"></i></a>
 	        	</div>
-
-	        	<div className="support-wrapper">
-	        		<button><i className="fa fa-heart-o"></i>Care</button>
-	        		<div className="care-count-wrapper">
-	        			<div className="care-count-square"></div>
-	        			<p>222</p>
-	        		</div>
-	        	</div> 
 		      <CareButton />
 		      </div>
-					</div>
 	     
 				<div className="charity-info-container">
 					<div className="charity-description-wrapper">
@@ -60,6 +59,8 @@ class CharityPage extends React.Component {
 							<i class="fa fa-circle" aria-hidden="true"></i>
 						</div>
 					</div>  
+
+	        	 
 					<div className="charity-image-total-wrapper">
 		        
 						<div className="banner-image"></div>
@@ -69,12 +70,13 @@ class CharityPage extends React.Component {
 						<p className="amount-raised-text">Total Raised</p>
 						<button className="donate-button">Make a Donation</button>
 						<button className="fundraise-button">Fundraise for Us</button>
-					</div> 
+					</div>
 				</div> 
 
 				<FeaturedMembers />
 
 			</div>
+		</div>
 
 		)
 	}
@@ -84,9 +86,12 @@ export default CharityPage
 
 
 				{/* 
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
 		      <button className="about-us-scroller">About Us<i class="fa fa-angle-double-down" aria-hidden="true"></i></button> 
+=======
+>>>>>>> development
 				<div className="giving-levels-container">
 					<div className="giving-card">
 						<p className="giving-card-description">A £5 pays for someone to have a hot shower and access to our laundry.</p>
@@ -110,7 +115,10 @@ export default CharityPage
 					</div> 
 
 				</div>  
+<<<<<<< HEAD
 >>>>>>> Stashed changes
+=======
+>>>>>>> development
 				<div className="charity-header">
 					<img src="http://via.placeholder.com/350x350" />
 					<div className="charity-summary">

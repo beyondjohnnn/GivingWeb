@@ -4,7 +4,7 @@ import css from './Comment.scss'
 
 class Comment extends React.Component {
 	render() {
-		const comment = this.props.comment
+		const { comment } = this.props
 		return (
 			<div className="comment">
 				<div className="comment-header">

@@ -1,3 +1,4 @@
+
 function navigation(state = [], action) {
 	switch(action.type) {
 		case 'TOGGLE_DROPDOWN':
