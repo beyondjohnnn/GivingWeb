@@ -5,6 +5,7 @@ import css from './CharityDashboardContent.scss'
 
 import CharityDashboardBreadcrumbs from '../CharityDashboardBreadcrumbs'
 import CharityDashboardCampaign from '../CharityDashboardCampaign'
+import CharityDashboardMembers from '../CharityDashboardMembers'
 import CharityDashboardCampaignNew from '../CharityDashboardCampaignNew'
 
 class CharityDashboardContent extends React.Component {
@@ -13,6 +14,7 @@ class CharityDashboardContent extends React.Component {
       <div className="charity-dashboard-content">
         <CharityDashboardBreadcrumbs />
         <Route path="/charity-dashboard/campaigns" component={CharityDashboardCampaign} />
+        <Route path="/charity-dashboard/members" component={CharityDashboardMembers} />
       </div>
     )
   }
