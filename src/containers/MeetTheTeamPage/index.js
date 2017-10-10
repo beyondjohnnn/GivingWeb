@@ -5,11 +5,11 @@ import { connect } from 'react-redux'
 import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser'
 
 
-import TermsAndPrivacy from '../../components/TermsAndPrivacy'
+import MeetTheTeam from '../../components/MeetTheTeam'
 
-import css from './TermsAndPrivacyPage.scss'
+import css from './MeetTheTeamPage.scss'
 
-class TermsAndPrivacyPage extends React.Component {
+class MeetTheTeamPage extends React.Component {
 
 	componentDidMount() {
 	}
@@ -20,11 +20,11 @@ class TermsAndPrivacyPage extends React.Component {
 	render() {
 
 		return (
-			<div className="terms-and-privacy-page">
-        <TermsAndPrivacy />
+			<div className="meet-the-team-page">
+        <MeetTheTeam />
 			</div>
 		)
 	}
 }
 
-export default TermsAndPrivacyPage
+export default MeetTheTeamPage
