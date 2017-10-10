@@ -1,0 +1,22 @@
+.new-member-form-cover-photo {
+	padding: 20px;
+	display: flex;
+	justify-content: space-around;
+
+	img {
+
+	}
+
+	.controls {
+		display: flex;
+		width: 40%;
+
+		* {
+			flex-shrink: 1;
+		}
+
+		p {
+			width: 100%;
+		}
+	}
+}
