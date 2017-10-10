@@ -15,7 +15,7 @@ class CharityDashboardMembers extends React.Component {
 			<div className="cd-members">
 				<div className="header">
 					<h2>Members</h2>
-					<Link to="" className="create-member-link">Create a new member</Link>
+					<Link to="/charity-dashboard/members/new" className="create-member-link">Create a new member</Link>
 				</div>
 				<div className="cd-current-members">
 					<ul className="members-nav-tabs">
