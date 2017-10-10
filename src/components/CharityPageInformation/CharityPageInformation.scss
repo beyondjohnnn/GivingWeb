@@ -1,0 +1,382 @@
+.charity-page-information {
+  display:flex;
+  width: 100%;
+  max-width: 1300px;
+  background-color: #f5f5f5;
+  margin-top: 40px;
+  margin-bottom: 30px;
+  align-items: space-evenly;
+  justify-content: space-evenly;
+
+  .charity-image-total-wrapper {
+    display: flex;
+    flex-direction:column;
+    width: 30%;
+  }
+}
+
+.about-us-scroller {
+  
+  background-color: rgba(15, 15, 15, 0.2);
+  color: darken(#f5f5f5, 15);
+  font-weight: 300;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-family: montserrat;
+  outline: none;
+  cursor: pointer;
+  border: solid 1px rgba(255, 255, 255, 0);
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin: 15px 20px;
+  height: 33px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 130px;
+
+  &:hover {
+    
+  // color: #7267ee;
+  // background-color: #f5f5f5;
+  background-color: rgba(5, 5, 5, 0.3);
+  border: solid 1px #4b4b4d;
+
+  }
+
+   i {
+    font-size: 1.5em;
+    // padding-left: 5px;
+    padding-left: 5px;
+   }
+
+
+}
+
+
+.charity-info-container {
+  display:flex;
+  width: 100%;
+  max-width: 1300px;
+  background-color: #f5f5f5;
+  margin-top: 40px;
+
+  .charity-image-total-wrapper {
+    display: flex;
+    flex-direction:column;
+    width: 30%;
+    justify-content: flex-start;
+    align-items: center;
+
+
+
+    .care-count-wrapper{
+      
+      position:relative;
+    }
+
+    img {
+      width: 110px;
+      height: 110px;
+      // border-radius: 50%;
+      border: solid 2px #fff;
+      box-shadow: 0.5px 1px 4px 0.25px #888888;
+      z-index: 1;
+      // margin: 5px;
+     }
+
+    h3 {
+      font-size: 1.15em;
+      font-weight: 300;
+      // color: darken(#fff, 10);
+      // text-transform: uppercase;
+      padding-bottom:4px;
+      // padding-top:3px;
+      width: 95%;
+      display: flex; 
+      align-items: center;
+      justify-content: center;
+    }
+
+    p {
+      
+      &.charity-number {
+        font-size: 0.8em;
+        font-weight: 300;
+        padding-bottom: 5px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-bottom: 0.5px solid darken(#f5f5f5, 3%);
+        
+      }
+      &.amount-raised {
+        color: #7267EE;
+        font-size: 2em;
+        font-weight: 300;
+        padding-top: 6px;
+      }
+
+      &.amount-raised-text {
+        font-size: 0.8em;
+        font-weight: 300;
+        padding-bottom: 15px;
+        
+      }
+
+    }
+
+    button {
+      text-decoration: none;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 280px;
+      height: 42px;
+      text-transform: uppercase;
+      font-weight: 300; 
+      margin-bottom: 15px;
+      transition-duration: 0.2s;
+      font-size: 1em;
+      font-family: Montserrat;
+      cursor: pointer;
+      outline: none;
+
+    }
+
+    .fundraise-button {
+      
+      background-color: #619fe6;
+      border: solid 1.5px #619fe6;
+
+      &:hover {
+        background-color: darken(#619fe6,5);
+
+      }
+    }
+
+    .donate-button {
+      
+      background-color: #7663f6;
+      border: solid 1.5px #7663f6;
+
+      &:hover {
+        background-color: darken(#7663f6,4);
+      }
+    }
+  }
+
+  .charity-description-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: 300;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-family: montserrat;
+    outline: none;
+    cursor: pointer;
+    width: 40%;
+    background-color: lighten(#f5f5f5, 0.5);
+    margin-top: 5px;
+    position: relative;
+    // border: solid 1px black;
+    // box-shadow: 1px 1px 1px 3px rgba(163,163,163,0.7);
+
+    // &:hover {
+      
+    //  color: #7267ee;
+    //  background-color: #f5f5f5;
+    //  width: 40%;
+    // }
+
+
+    .charity-description {
+      height: 220px;
+      overflow: hidden;
+      width: 100%;
+      text-overflow: ellipsis;
+      position: relative;
+      transition: height 2s ease-in-out;
+      // display: flex;
+      // flex-direction: column;
+      // align-items: center;
+      // justify-content: center;
+
+      
+      .linear-gradient-fade {
+        position: absolute;
+        width: 100%;
+        height: 30px;
+        bottom: 0;
+        background: linear-gradient(360deg, rgba(246, 246, 246, 1), rgba(246, 246, 246, 0.3));
+      }
+
+      .removed {
+        background: none;
+      }
+    }
+
+    .open {
+      height: auto;
+    }
+
+    button {
+      text-decoration: none;
+      // color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100px;
+      height: 35px;
+      text-transform: uppercase;
+      font-weight: 300; 
+      margin-top: 8px;
+      transition-duration: 0.2s;
+      font-size: 0.8em;
+      font-family: Montserrat;
+      cursor: pointer;
+      border: solid 2px darken(#fafafa, 10);
+      background-color: #fafafa;
+      border-radius: 1px;
+      outline: none;
+
+      &:hover {
+        background-color: darken(#fafafa, 10);
+        border:solid 2px darken(#fafafa, 20);
+
+      }
+    }
+
+
+    h3 {
+      padding-left: 8px;
+      padding-right: 8px;
+      font-weight: 400;
+      width: 100%;
+      margin-bottom: 18px;
+      // margin-top: 10px;
+      font-size: 1.2em;
+      text-align: center;
+
+    }
+
+    p {
+      padding-left: 8px;
+      padding-right: 8px;
+      font-size: 1em;
+      margin-top: 8px;
+      font-weight: 300;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      display: flex;
+      text-align: center;
+
+    }
+  }
+
+  .giving-level-tile { 
+    display: flex;
+    flex-direction: column;
+    width: 33.5%;
+    height: 220px;
+    align-items: center;
+    justify-content: flex-start;
+    // border: solid 1px black;
+
+    .arrows-card-wrapper {
+      width: 90%;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      height: 100%;
+      // background-color: red;
+
+      > i {
+        font-size: 1.3em;
+        color: #7f7f7f;
+        cursor: pointer;
+
+        &:hover {
+          color: #7267ee;
+        }
+
+      }
+
+    }
+
+    .circle-wrapper {
+      display: flex;
+      height: 20px;
+      // background-color: green;
+
+      i {
+        font-size: 0.6em;
+        margin: 2px;
+        color: #7f7f7f;
+        cursor: pointer;
+      
+        &.selected-circle {
+          color: #7267ee;
+        }
+
+      }
+
+
+    }
+
+
+    h3 {
+      font-size: 1.3em;
+      font-weight: 400;
+      // margin-top: 10px;
+    }
+
+    .giving-card {
+
+      height: 135px;
+      width: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: space-evenly;
+      background-color: #e5e3fc;
+      // background-color: #d9d3ff;
+      border-radius: 5px;
+      position: relative;
+      cursor: pointer;
+
+      &:hover {
+        background-color: darken(#e5e3fc, 4)
+      }
+
+      p {
+        padding: 15px;
+        font-weight: 300;
+
+        i {
+          padding-right: 5px;
+          font-size: 1em;
+        }
+
+      }
+
+      h3 {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        margin: 12px;
+        font-size: 4.5em;
+        color: darken(#e5e3fc, 4)
+      }
+    }
+
+  }
+}

@@ -10,7 +10,7 @@ import css from './CareButton.scss'
 class CareButton extends React.Component {
 
 	createTooltipStyle() {
-		return this.props.tooltipVisible ? "tooltip care-button-tooltip" : "tooltip care-button-tooltip hidden"
+		return this.props.tooltipVisible ? "tooltip-component care-button-tooltip" : "tooltip-component care-button-tooltip hidden"
 	}
 
 	render() {

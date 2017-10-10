@@ -30,7 +30,7 @@ class Footer extends React.Component {
 						<p>Help</p>
 						<Link to="/" className="footer-link">FAQ</Link>
 						<Link to="/" className="footer-link">Developer Tools</Link>
-						<Link to="/" className="footer-link">Contact Us</Link>
+						<Link to="/contact-us" className="footer-link">Contact Us</Link>
 					</div>
 					<div className="footer-text-column">
 						<p>Charities</p>
