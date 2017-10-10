@@ -22,7 +22,7 @@ class CharityPageInformation extends React.Component {
           <div className="arrows-card-wrapper"> 
             <i className="fa fa-chevron-left" aria-hidden="true"></i>
             <div className="giving-card">
-              <p className="giving-card-description">A £5 pays for someone to have a hot shower and access to our laundry.</p>
+              <p className="giving-card-description">A £5 donation pays for someone to have a hot shower and access to our laundry.</p>
               <p className="giving-card-support"><i className="fa fa-heart"></i>Be the first supporter!</p>
               <h3 className="giving-card-support">£5</h3>
             </div>
