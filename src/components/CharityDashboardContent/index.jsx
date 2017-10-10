@@ -1,16 +1,24 @@
 import React from 'react'
+import { Route, Switch } from 'react-router'
 
 import css from './CharityDashboardContent.scss'
 
-import CharityDashboardCampaign from '../CharityDashboardCampaign'
 import CharityDashboardBreadcrumbs from '../CharityDashboardBreadcrumbs'
+import CharityDashboardCampaign from '../CharityDashboardCampaign'
+import CharityDashboardMembers from '../CharityDashboardMembers'
+import CharityDashboardMembersNew from '../CharityDashboardMembersNew'
+import CharityDashboardCampaignNew from '../CharityDashboardCampaignNew'
 
 class CharityDashboardContent extends React.Component {
   render() {
     return (
       <div className="charity-dashboard-content">
         <CharityDashboardBreadcrumbs />
-        <CharityDashboardCampaign />
+        <Switch>
+	        <Route path="/charity-dashboard/campaigns" component={CharityDashboardCampaign} />
+	        <Route path="/charity-dashboard/members/new" component={CharityDashboardMembersNew} />
+	        <Route path="/charity-dashboard/members" component={CharityDashboardMembers} />
+        </Switch>
       </div>
     )
   }

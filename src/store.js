@@ -45,6 +45,9 @@ const defaultState = {
 	},
   careButton: {
     tooltipVisible: false
+  },
+  newMemberProcess: {
+    tab: 'basics'
   }
 }
 
