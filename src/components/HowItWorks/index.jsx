@@ -9,9 +9,17 @@ import css from './HowItWorks.scss'
 
 class HowItWorks extends React.Component {
 
+	transitionClassName() {
+		if (this.props.howItWorksVisible) {
+			return "how-it-works visible"
+		} else {
+			return "how-it-works"
+		}
+	}
+
 	render() {
 		return (
-			<div className="how-it-works" id="how-it-works">
+			<div className={this.transitionClassName()} id="how-it-works">
 				<div className="button-wrapper">
 					<button onClick={this.props.toggleHowItWorks}><i className="fa fa-times" aria-hidden="true"></i></button>
 				</div>
@@ -44,13 +52,10 @@ class HowItWorks extends React.Component {
 	}
 }
 
-
-// this is taking the howItWorks portion of state and attaching it to the HowItWork's props
 function mapStateToProps(state, routing) {
-  return Object.assign({}, state.howItWorks, routing)
+  return { ...state.howItWorks, ...routing }
 }
 
-// this is attaching our actions to the HowItWork's component
 function mapDispatchToProps(dispatch) {
   return bindActionCreators(actionCreators, dispatch)
 }

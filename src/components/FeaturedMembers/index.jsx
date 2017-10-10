@@ -40,12 +40,10 @@ class FeaturedMembers extends React.Component {
 	}
 }
 
-// this is taking the helpSomeone portion of state and attaching it to the NoAuthLandingPage props
 function mapStateToProps(state, routing) {
-  return Object.assign({}, state.helpSomeone, routing)
+  return { ...state.helpSomeone, ...routing}
 }
 
-// this is attaching our actions to the NoAuthLandingPage component
 function mapDispatchToProps(dispatch) {
   return bindActionCreators(actionCreators, dispatch)
 }

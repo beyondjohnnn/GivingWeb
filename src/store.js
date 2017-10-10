@@ -39,9 +39,13 @@ const defaultState = {
       donations: [],
       comments: [],
       info: '',
-      name: 'Charlie'
+      name: 'Charlie',
+      goal: 0
     }
-	}
+	},
+  careButton: {
+    tooltipVisible: false
+  }
 }
 
 const middleware = applyMiddleware(routerStuff, promiseMiddleware(), createScrollMiddleware())
