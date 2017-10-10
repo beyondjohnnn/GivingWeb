@@ -2,6 +2,16 @@
   flex-direction: column;
   max-width: 40%;
   float: left;
+
+}
+
+button {
+  position: relative;
+  color: rgb(255, 255, 255);
+  display: inline-block;
+  background: rgb(40, 194, 186);
+  padding: 10px 25px;
+  text-decoration: none;
 }
 
 .col-2 {
