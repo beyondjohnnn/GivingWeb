@@ -44,10 +44,10 @@ class CharityDashboardMembersNew extends React.Component {
 					<span className="draft-tab">DRAFT</span>
 				</div>
 				<div className="new-member-nav">
-					<div className={this.selectedNavTabStyling('basics')} onClick={this.props.setCurrentTab.bind(null, 'basics')}>Basics</div>
-					<div className={this.selectedNavTabStyling('story')} onClick={this.props.setCurrentTab.bind(null, 'story')}>Story</div>
-					<div className={this.selectedNavTabStyling('cover-photo')} onClick={this.props.setCurrentTab.bind(null, 'cover-photo')}>Cover Photo</div>
-					<div className={this.selectedNavTabStyling('review-launch')} onClick={this.props.setCurrentTab.bind(null, 'review-launch')}>Review & Launch</div>
+					<div className={this.selectedNavTabStyling('basics')} onClick={this.props.setCurrentTab.bind(null, 'basics')}><span>Basics</span></div>
+					<div className={this.selectedNavTabStyling('story')} onClick={this.props.setCurrentTab.bind(null, 'story')}><span>Story</span></div>
+					<div className={this.selectedNavTabStyling('cover-photo')} onClick={this.props.setCurrentTab.bind(null, 'cover-photo')}><span>Cover Photo</span></div>
+					<div className={this.selectedNavTabStyling('review-launch')} onClick={this.props.setCurrentTab.bind(null, 'review-launch')}><span>Review & Launch</span></div>
 				</div>
 				{this.createNewMemberForm()}
 			</div>
