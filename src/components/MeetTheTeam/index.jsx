@@ -26,6 +26,7 @@ class MeetTheTeam extends React.Component {
             <div className="bio">
               <h3>Johnny Watson</h3>
               <h5>Founder &amp; CEO</h5>
+							<hr className="member-heading-break"></hr>
               <p className="team-member-box">Johnny likes thinking big and is passionate about how collaboration and technology can be used to create meaningful change. This is true for the lives of those in need, the communities we all live in and for the charitable giving process as a whole. &nbsp;Johnny is determined that by pushing innovation within the third sector, we can create a more transparent and rewarding experience for donors whilst increasing social impact. With experience in civil engineering, events management and sales/marketing, his background really is varied. However he has been fully committed since 2015 to learning the issues surrounding homelessness, and embarked on a unique opportunity to drive StreetChange forward on the CivTech accelerator full time in Autumn 2016.</p>
             </div>
           </div>
@@ -36,6 +37,7 @@ class MeetTheTeam extends React.Component {
             <div className="bio">
               <h3>Bella Combest</h3>
               <h5>Content Lead &amp; COO</h5>
+							<hr className="member-heading-break"></hr>
               <p className="team-member-box">Bella focuses on maintaining the integrity of our core values while ensuring the highest, positive community impact. She heads our community engagement efforts and raises awareness of our mission in the digital world. Prior to StreetChange, Bella worked on a variety of social justice projects, including immigrant defense, human rights advocacy, and food sustainability. She culminated her efforts with a published research dissertation titled “The Dark Side of Compassion: How We Hurt Those We Help”. Bella graduated with honors from the University of CO Boulder with a B.A. in The Philosophy of Values and Social Policy.</p>
             </div>
           </div>
@@ -46,7 +48,8 @@ class MeetTheTeam extends React.Component {
             <div className="bio">
               <h3>Eoghan Crowley</h3>
               <h5>Lead Developer</h5>
-              <p className="team-member-box">did somethings...</p>
+							<hr className="member-heading-break"></hr>
+              <p className="team-member-box">Eoghan works hard to insure that the site is running at it's best, weather by updating spec, upgrading systems or writing whole new features.</p>
             </div>
           </div>
           <div className="team-member">
@@ -56,7 +59,8 @@ class MeetTheTeam extends React.Component {
             <div className="bio">
               <h3>Reece Jones</h3>
               <h5>Developer</h5>
-              <p className="team-member-box">did lots of things...</p>
+							<hr className="member-heading-break"></hr>
+              <p className="team-member-box">Basiclly Reece sits around looking cute and not doing much, he's very cute!</p>
             </div>
           </div>
 

@@ -33,44 +33,43 @@
 
 .narrow {
   max-width: 980px;
-
   margin: 0 auto;
-}
-
-.values {
-  border-top-style: solid;
-  border-top-color: #444;
-  margin: 19px;
-  padding-top: 10px;
-  flex: auto;
-  color: #999;
-}
-
-.values strong {
-  color: #444;
+  width: 80%;
 }
 
 .team-member {
+  padding: 1em;
+  justify-content: center;
+  display: inline-flex;
   height: 240px;
-
   padding-bottom: 3em;
   box-sizing: border-box;
-
-  border-top-style: solid;
-  border-top-color: #444;
   margin: 19px;
   padding-top: 10px;
 
   .profile img {
-    width: 20%;
-    height: 20%;
+    margin-left: 25px;
+    width: 180px;
+    height: 180px;
     float: left;
     border-radius: 50%;
     overflow: hidden;
   }
 
+  .bio {
+    padding-left: 5%;
+    width: 80%;
+    max-height: 180px;
+  }
+
   .team-member-box {
+    color: #686868;
     padding-top: 7px;
+
+  }
+
+  .member-heading-break {
+    margin-top: 1em;
 
   }
 }
