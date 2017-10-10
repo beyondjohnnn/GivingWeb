@@ -22,34 +22,18 @@ const GoogleMaper = compose(
     defaultZoom={15}
     defaultCenter={{ lat: 55.947, lng: -3.201 }}
   >
-  <Marker position={{ lat: 55.947, lng: -3.201 }} style={{ color: #9021d1 }} />
+  <Marker position={{ lat: 55.947, lng: -3.201 }} />
   </GoogleMap>
 ))
 
 class GoogleMapComponent extends React.PureComponent {
-constructor(props){
-  super(props)
-  state = {
-    isMarkerShown : false
-  }
-}
 
   componentDidMount() {
-    // this.delayedShowMarker()
   }
-
-  // delayedShowMarker = () => {
-  //   setTimeout(() => {
-  //     this.setState({ isMarkerShown: true })
-  //   }, 3000)
-  // }
 
   render() {
     return (
-      <GoogleMaper
-
-
-      />
+      <GoogleMaper />
     )
   }
 }
