@@ -21,6 +21,7 @@ import MemberShowPage from './containers/MemberShowPage'
 import CookieInfoPage from './containers/CookieInfoPage'
 import MeetTheTeamPage from './containers/MeetTheTeamPage'
 import TermsAndPrivacyPage from './containers/TermsAndPrivacyPage'
+import ContactUsPage from './containers/ContactUsPage'
 
 // import components
 import Navigation from './components/Navigation'
@@ -59,6 +60,7 @@ const router = (
 				<Route path="/terms" component={TermsAndPrivacyPage} />
 				<Route path="/cookie-info" component={CookieInfoPage} />
 				<Route path="/meet-the-team" component={MeetTheTeamPage} />
+				<Route path="/contact-us" component={ContactUsPage} />
 				<Footer />
 			</div>
 		</Router>
