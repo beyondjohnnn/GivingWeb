@@ -7,9 +7,14 @@ class CharityPageInformation extends React.Component {
 		return (
       <div className="charity-info-container">
         <div className="charity-description-wrapper">
-          <h3>About the Charity</h3>
-          <p>Streetwork is about enabling a life off the streets. We focus on where people are most in need and at risk - on the streets.</p>
-          <p>We don't wait for people to find us; we find them, with outreach teams spending at least 84hrs each week on the streets of Edinburgh helping the most vulnerable people.</p>
+          <div className="charity-description">
+            <h3>About the Charity</h3>
+            <p>Streetwork is about enabling a life off the streets. We focus on where people are most in need and at risk - on the streets.</p>
+            <p>We don't wait for people to find us; we find them, with outreach teams spending at least 84hrs each week on the streets of Edinburgh helping the most vulnerable people.</p>
+            <p>We don't wait for people to find us; we find them, with outreach teams spending at least 84hrs each week on the streets of Edinburgh helping the most vulnerable people.</p>
+            <div className="linear-gradient-fade"></div> 
+          </div> 
+          <button className="read-more-button">Read More</button>
         </div>
         
         <div className="giving-level-tile">
@@ -34,7 +39,6 @@ class CharityPageInformation extends React.Component {
 
            
         <div className="charity-image-total-wrapper">
-          
           <div className="banner-image"></div>
           <h3>Streetwork</h3>
           <p className="charity-number">Registered charity number SC017802</p>
@@ -43,6 +47,7 @@ class CharityPageInformation extends React.Component {
           <button className="donate-button">Make a Donation</button>
           <button className="fundraise-button">Fundraise for Us</button>
         </div>
+
       </div>    
 		)
 	}
