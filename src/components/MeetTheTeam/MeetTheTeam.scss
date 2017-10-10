@@ -38,6 +38,7 @@
 }
 
 .team-member {
+  min-width: 100%;
   padding: 1em;
   justify-content: center;
   display: inline-flex;
@@ -70,6 +71,6 @@
 
   .member-heading-break {
     margin-top: 1em;
-
+    max-width: 80%;
   }
 }
