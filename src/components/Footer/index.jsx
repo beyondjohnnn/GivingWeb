@@ -34,8 +34,8 @@ class Footer extends React.Component {
 					</div>
 					<div className="footer-text-column">
 						<p>Charities</p>
-						<Link to="/" className="footer-link">Sign up to GivingWeb</Link>
-						<Link to="/" className="footer-link">Log in to Dashboard</Link>
+						<Link to="/charity-signup" className="footer-link">Sign up to GivingWeb</Link>
+						<Link to="/charity-login" className="footer-link">Log in to Dashboard</Link>
 						<Link to="/partners" className="footer-link">Partners</Link>
 					</div>
 				</div>

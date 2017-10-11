@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
+import { Link } from 'react-router-dom'
 
 import * as actionCreators from '../../actions/authActionCreators'
 
@@ -39,7 +40,7 @@ class UserLogin extends React.Component {
 					</div>
 					<input type="submit" value="Log in" />
 					<div className="extra-info">
-						Already have an account?
+						<p>Are you working for a charity? <Link to="/charity-login">Login here</Link></p>
 					</div>
 				</form>
 			</div>

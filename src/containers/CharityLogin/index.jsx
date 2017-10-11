@@ -30,7 +30,7 @@ class CharityLogin extends React.Component {
 			<div className="charity-login">
 				<form onSubmit={this.submitForm.bind(this)} >
 					<div className="form-header">
-						<h2>Log in</h2>
+						<h2>Charity Log in</h2>
 					</div>
 					<div className="email-field-wrapper form-field">
 						<label htmlFor="email">Email</label>
