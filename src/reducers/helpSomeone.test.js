@@ -1,4 +1,4 @@
-import helpSomeoneReducer from './../../reducers/helpSomeone'
+import helpSomeoneReducer from './helpSomeone'
 
 describe('CharityTile', () => {
 	let defaultState

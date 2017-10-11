@@ -1,4 +1,4 @@
-import navigationReducer from './../../reducers/navigation'
+import navigationReducer from './navigation'
 
 describe('Navigation Reducer', () => {
 	let defaultState

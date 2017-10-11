@@ -1,4 +1,4 @@
-import { calcTotalDonations, calcDonationPercentage, getDonationBarColour } from './../../utils/donations'
+import { calcTotalDonations, calcDonationPercentage, getDonationBarColour } from './donations'
 
 let member
 function defaultMember(){
