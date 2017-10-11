@@ -21,6 +21,16 @@ class HelpSomeonePage extends React.Component {
 		this.props.getMembers()
 	}
 
+	renderLoadMoreButton(){
+		if(this.props.membersToShow < this.props.members.length){
+			return (
+				<section className="load-members-button-container">
+					<button onClick={this.onClickLoadMore}>+ Load More</button>
+				</section>
+			)
+		}
+	}
+
 	getMembersToDisplay(){
 		const allMembers = this.props.members
 		const membersToShow = this.props.membersToShow
@@ -69,9 +79,7 @@ class HelpSomeonePage extends React.Component {
 					<MemberPreviewBuilder members={this.getMembersToDisplay()} previewsPerLine={3}/>
 				</section>
 
-				<section className="load-members-button-container">
-					<button onClick={this.onClickLoadMore}>+ Load More</button>
-				</section>
+				{this.renderLoadMoreButton()}
 
 			</div>
 		)
