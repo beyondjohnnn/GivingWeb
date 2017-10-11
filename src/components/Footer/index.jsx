@@ -12,7 +12,7 @@ class Footer extends React.Component {
 				<div className="sitemap">
 					<div className="footer-text-column">
 						<p>Get to know us</p>
-						<Link to="/" className="footer-link">About Us</Link>
+						<Link to="/about-us" className="footer-link">About Us</Link>
 						<Link to="/" className="footer-link">Read our blog</Link>
 						<Link to="/meet-the-team" className="footer-link">Meet our team</Link>
 						<Link to="/terms" className="footer-link">Terms & Privacy</Link>
@@ -36,7 +36,7 @@ class Footer extends React.Component {
 						<p>Charities</p>
 						<Link to="/" className="footer-link">Sign up to GivingWeb</Link>
 						<Link to="/" className="footer-link">Log in to Dashboard</Link>
-						<Link to="/" className="footer-link">Partners</Link>
+						<Link to="/partners" className="footer-link">Partners</Link>
 					</div>
 				</div>
 				<div className="other-info">
