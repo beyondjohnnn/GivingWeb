@@ -12,7 +12,7 @@ class NewMemberFormBasics extends React.Component {
 		e.preventDefault()
 
 		const newMemberDetailsBasics = {
-			member_name: this.refs.member_name.value,
+			name: this.refs.member_name.value,
 			goal: this.refs.goal.value,
 			location: this.refs.location.value
 		}
@@ -29,8 +29,8 @@ class NewMemberFormBasics extends React.Component {
 						<input id="member_name" ref="member_name" type="text" className="member-name" name="member_name" />
 					</div>
 					<div className="form-field">
-						<label htmlFor="goal">Fundraising Goal</label>
-						<input id="goal" ref="goal" type="text" className="goal" name="goal" />
+						<label htmlFor="goal">Fundraising Goal (£)</label>
+						<input id="goal" ref="goal" type="number" min="0" step="1" className="goal" name="goal" />
 					</div>
 					<div className="form-field">
 						<label htmlFor="location">Location</label>

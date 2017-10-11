@@ -1,4 +1,8 @@
 import React from 'react'
+import {bindActionCreators} from 'redux'
+import {connect} from 'react-redux'
+
+import * as actionCreators from '../../actions/newMemberProcess'
 
 import css from './NewMemberFormStory.scss'
 
@@ -8,12 +12,12 @@ class NewMemberFormStory extends React.Component {
 		e.preventDefault()
 
 		const newMemberDetailsStory = {
-			member_name: this.refs.member_name.value,
-			goal: this.refs.goal.value,
-			location: this.refs.location.value
+			reasonForUse: this.refs.reason_for_use.value,
+			story: this.refs.story.value,
+			futureGoals: this.refs.future_goals.value
 		}
 
-		this.props.submitNewMemberStory(newMemberDetailsStory)
+		this.props.submitNewMemberStory({ story: newMemberDetailsStory })
 	}
 
 	render() {
@@ -39,4 +43,12 @@ class NewMemberFormStory extends React.Component {
 	}
 }
 
-export default NewMemberFormStory
+function mapStateToProps(state, routing) {
+	return { ...state.newMemberProcess, ...routing}
+}
+
+function mapDispatchToProps(dispatch) {
+	return bindActionCreators(actionCreators, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(NewMemberFormStory)

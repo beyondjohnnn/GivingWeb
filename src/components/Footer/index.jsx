@@ -21,7 +21,7 @@ class Footer extends React.Component {
 					<div className="footer-text-column">
 						<p>Donors & Fundraisers</p>
 						<Link to="/" className="footer-link">How it works</Link>
-						<Link to="/" className="footer-link">Help Someone</Link>
+						<Link to="/help-someone" className="footer-link">Help Someone</Link>
 						<Link to="/" className="footer-link">Campaigns</Link>
 						<Link to="/" className="footer-link">Start Fundraising</Link>
 						<Link to="/" className="footer-link">Donate to GivingWeb</Link>

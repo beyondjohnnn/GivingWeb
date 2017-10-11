@@ -11,6 +11,9 @@ const config = {
 	resolve: {
 		extensions: ['.js', '.jsx']
 	},
+	node: {
+		fs: "empty"
+	},
 	plugins: [
     // new CleanWebpackPlugin(['build']),
     new HtmlWebpackPlugin({
