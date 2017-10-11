@@ -19,11 +19,7 @@ class NewMemberFormReviewLaunch extends React.Component {
 	}
 
 	saveImage(){
-		cloudinary.config({
-		  cloud_name: 'givingweb',
-		  api_key: '797396724361621',
-		  api_secret: 'mYMv2UuFcMqr31H2o633PJikfl4'
-		});
+		cloudinary.config(cloudinaryEvn);
 		cloudinary.uploader.upload(this.props.imagePreviewUrl, function(result) {
 		  console.log(result)
 		});
