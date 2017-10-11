@@ -6,10 +6,29 @@ import * as actionCreators from '../../actions/newMemberProcess'
 
 import css from './NewMemberFormReviewLaunch.scss'
 
+import { isStringValid, isMonetaryValueValid } from "./../../utils/validator"
+
 class NewMemberFormReviewLaunch extends React.Component {
 
+	constructor(props){
+		super(props)
+		this.onClickSubmit = this.onClickSubmit.bind(this)
+	}
+
 	onClickSubmit(){
-		
+
+		if(isStringValid(this.props.memberName) &&
+			isMonetaryValueValid(this.props.goal) &&
+			isStringValid(this.props.location) &&
+			isStringValid(this.props.story.reasonForUse) &&
+			isStringValid(this.props.story.story) &&
+			isStringValid(this.props.story.futureGoals)
+		){
+			console.log("your cool");
+		}else{
+			console.log("invalid input");
+		}
+
 	}
 
 	render() {
@@ -37,7 +56,7 @@ class NewMemberFormReviewLaunch extends React.Component {
 				<h3>Future goals</h3>
 				<p>{this.props.story.futureGoals}</p>
 
-				<button className="submit-button">Submit</button>
+				<button className="submit-button" onClick={this.onClickSubmit}>Submit</button>
 			</div>
 		)
 	}
