@@ -8,6 +8,12 @@ import css from './CharityLogin.scss'
 
 class CharityLogin extends React.Component {
 
+	componentWillMount() {
+		if (this.props.charity) {
+			this.props.history.push('/charity-dashboard')
+		}
+	}
+
 	componentWillReceiveProps(nextProps) {
 		if (nextProps.charity) {
 			this.props.history.push('/charity-dashboard')
