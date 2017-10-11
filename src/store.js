@@ -55,8 +55,7 @@ const defaultState = {
   },
   charityPage: {
     aboutUsVisible: false,
-
-
+    story: {}
   }
 }
 
