@@ -12,6 +12,11 @@ import MemberPreviewBuilder from '../../components/MemberPreviewBuilder'
 
 class HelpSomeonePage extends React.Component {
 
+	constructor(props){
+		super(props)
+		this.onClickLoadMore = this.onClickLoadMore.bind(this)
+	}
+
 	componentDidMount(){
 		this.props.getMembers()
 	}
@@ -20,6 +25,11 @@ class HelpSomeonePage extends React.Component {
 		const allMembers = this.props.members
 		const membersToShow = this.props.membersToShow
 		return allMembers.slice(0, membersToShow)
+	}
+
+	onClickLoadMore(){
+		let membersToShow = this.props.membersToShow + 6
+		this.props.setMembersShown(membersToShow)
 	}
 
 	render() {
@@ -60,7 +70,7 @@ class HelpSomeonePage extends React.Component {
 				</section>
 
 				<section className="load-members-button-container">
-					<button>+ Load More</button>
+					<button onClick={this.onClickLoadMore}>+ Load More</button>
 				</section>
 
 			</div>
