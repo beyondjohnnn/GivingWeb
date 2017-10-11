@@ -1,5 +1,12 @@
 import axios from 'axios'
 
+export function setMembersShown(count) {
+	return {
+		type: 'SET_MEMBERS_COUNT',
+		payload: count
+	}
+}
+
 export function getMembers() {
 	return {
 		type: 'GET_MEMBERS',
