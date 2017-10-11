@@ -36,7 +36,7 @@ class Footer extends React.Component {
 						<p>Charities</p>
 						<Link to="/" className="footer-link">Sign up to GivingWeb</Link>
 						<Link to="/" className="footer-link">Log in to Dashboard</Link>
-						<Link to="/" className="footer-link">Partners</Link>
+						<Link to="/partners" className="footer-link">Partners</Link>
 					</div>
 				</div>
 				<div className="other-info">
