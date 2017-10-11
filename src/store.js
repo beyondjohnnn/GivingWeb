@@ -47,7 +47,9 @@ const defaultState = {
     tooltipVisible: false
   },
   newMemberProcess: {
-    tab: 'basics'
+    tab: 'basics',
+    file: '',
+    imagePreviewUrl: ''
   }
 }
 
