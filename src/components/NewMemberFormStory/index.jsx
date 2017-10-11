@@ -10,10 +10,10 @@ class NewMemberFormStory extends React.Component {
 
 	constructor(props){
 		super(props)
+		this.handleFormSubmit = this.handleFormSubmit.bind(this)
 		this.onEditReasonForUse = this.onEditReasonForUse.bind(this)
 		this.onEditStory = this.onEditStory.bind(this)
 		this.onEditFutureGoals = this.onEditFutureGoals.bind(this)
-		this.toCoverPhotoTab = this.toCoverPhotoTab.bind(this)
 	}
 
 	onEditReasonForUse(event){
@@ -28,14 +28,15 @@ class NewMemberFormStory extends React.Component {
 		this.props.editNewMemberFutureGoals(event.target.value)
 	}
 
-	toCoverPhotoTab(){
+	handleFormSubmit(event){
+		event.preventDefault()
 		this.props.moveToCoverPhotoTab()
 	}
 
 	render() {
 		return (
 			<div className="new-member-form-story">
-				<section className="story-form">
+				<form className="story-form" action="/" method="post" onSubmit={this.handleFormSubmit}>
 					<div className="form-field">
 						<label htmlFor="reason_for_use">Reason For Using GivingWeb</label>
 						<textarea id="reason_for_use" ref="reason_for_use" className="reason-for-use" name="reason_for_use"
@@ -55,7 +56,7 @@ class NewMemberFormStory extends React.Component {
 						/>
 					</div>
 					<input type="submit" value="Next" onClick={this.toCoverPhotoTab}/>
-				</section>
+				</form>
 			</div>
 		)
 	}

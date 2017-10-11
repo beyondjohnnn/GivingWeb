@@ -10,10 +10,10 @@ class NewMemberFormBasics extends React.Component {
 
 	constructor(props){
 		super(props)
+		this.handleFormSubmit = this.handleFormSubmit.bind(this)
 		this.onEditName = this.onEditName.bind(this)
 		this.onEditGoal = this.onEditGoal.bind(this)
 		this.onEditLocation = this.onEditLocation.bind(this)
-		this.toStoryTab = this.toStoryTab.bind(this)
 	}
 
 	onEditName(event){
@@ -28,14 +28,15 @@ class NewMemberFormBasics extends React.Component {
 		this.props.editNewMemberLocation(event.target.value)
 	}
 
-	toStoryTab(){
+	handleFormSubmit(event){
+		event.preventDefault()
 		this.props.moveToStoryTab()
 	}
 
 	render() {
 		return (
 			<div className="new-member-form-basics">
-				<section className="basics-form">
+				<form className="basics-form" action="/" method="post" onSubmit={this.handleFormSubmit}>
 					<div className="form-field">
 						<label htmlFor="member_name">Name</label>
 						<input id="member_name" ref="member_name" type="text"
@@ -55,8 +56,8 @@ class NewMemberFormBasics extends React.Component {
 							onChange={this.onEditLocation} value={this.props.location}
 						/>
 					</div>
-					<input type="submit" value="Next" onClick={this.toStoryTab}/>
-				</section>
+					<input type="submit" value="Next"/>
+				</form>
 			</div>
 		)
 	}
