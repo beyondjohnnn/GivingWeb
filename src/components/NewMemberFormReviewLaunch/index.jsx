@@ -7,6 +7,11 @@ import * as actionCreators from '../../actions/newMemberProcess'
 import css from './NewMemberFormReviewLaunch.scss'
 
 class NewMemberFormReviewLaunch extends React.Component {
+
+	onClickSubmit(){
+		
+	}
+
 	render() {
 		return (
 			<div className="new-member-form-review-launch">
