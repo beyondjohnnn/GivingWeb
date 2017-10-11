@@ -17,32 +17,37 @@ class NewMemberFormReviewLaunch extends React.Component {
 
 	onClickSubmit(){
 
-		if(isStringValid(this.props.memberName) &&
+		if(isStringValid(this.props.name) &&
 			isMonetaryValueValid(this.props.goal) &&
 			isStringValid(this.props.location) &&
 			isStringValid(this.props.story.reasonForUse) &&
 			isStringValid(this.props.story.story) &&
 			isStringValid(this.props.story.futureGoals)
 		){
-			this.props.submitNewMember(this.props)
+			this.props.submitNewMember({
+				name: this.props.name,
+				goal: this.props.goal,
+				location: this.props.location,
+				info: this.makeMemberStory(this.props.story)
+			})
 		}else{
 			console.log("invalid input");
 		}
 
 	}
 
-	makeMemberStory(why, story, future_goal) {
-	  temp_obj = [
+	makeMemberStory(story) {
+	  const tempObj = [
 	    "<h3> Why I'am Using GivingWeb </h3>",
-	    "<p>", why, "</p>",
+	    "<p>", story.reasonForUse, "</p>",
 	    "<h3> My Story </h3>",
-	    "<p>", story, "</p>",
+	    "<p>", story.story, "</p>",
 	    "<h3> My Future Goals </h3>",
-	    "<p>", future_goal, "</p>"
+	    "<p>", story.futureGoals, "</p>"
 	  ]
 
-	  html_string = temp_obj.join("")
-	  return html_string
+	  const htmlString = tempObj.join("")
+	  return htmlString
 	}
 
 	render() {

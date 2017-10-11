@@ -52,7 +52,7 @@ const defaultState = {
     tab: 'basics',
     file: '',
     imagePreviewUrl: '',
-    memberName: '',
+    name: '',
     goal: '',
     location: '',
     story: {
