@@ -12,4 +12,13 @@ class MembersController < ApplicationController
         include: [:donations, :comments]
         })
     end
+
+    def create
+      member = Member.new(name: params[:name], info: params[:info], snippet: params[:snippet], location: params[:location], goal: params[:goal])
+      if member.save
+        render json: member
+      else
+        render json: {errors: ['Invalid member profile']}
+      end
+    end
  end
