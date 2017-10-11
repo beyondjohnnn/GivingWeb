@@ -20,6 +20,7 @@ class RegistrationsController < ApplicationController
       render json: {response: "charity exists"}
     else
       charity = Charity.create({
+        name: params[:name],
         first_name: params[:first_name],
         last_name: params[:last_name],
         email: params[:email],
