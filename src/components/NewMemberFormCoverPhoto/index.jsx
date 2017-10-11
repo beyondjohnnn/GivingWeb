@@ -9,14 +9,16 @@ import css from './NewMemberFormCoverPhoto.scss'
 class NewMemberFormCoverPhoto extends React.Component {
 
 	handleSubmit(e) {
+		e.preventDefault()
 
+		this.props.setCurrentTab('review-launch')
 	}
 
 	handleImageChange(e) {
-		e.preventDefault();
+		e.preventDefault()
 
-    let reader = new FileReader();
-    let file = e.target.files[0];
+    let reader = new FileReader()
+    let file = e.target.files[0]
 
     reader.onloadend = () => {
       this.props.readFile(file, reader.result)
@@ -38,7 +40,7 @@ class NewMemberFormCoverPhoto extends React.Component {
 				{$imagePreview}
 				<div className="controls">
 					<p>Please pick a nice photo. This will be the photo that potential doners will see.</p>
-					<form onSubmit={this.handleSubmit}>
+					<form onSubmit={this.handleSubmit.bind(this)}>
 	          <input className="file-input" type="file" onChange={this.handleImageChange.bind(this)} />
 	          <input className="submit-button" type="submit" value="Next" />
 	        </form>
