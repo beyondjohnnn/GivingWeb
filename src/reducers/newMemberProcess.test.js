@@ -90,4 +90,13 @@ describe('New member process', () => {
 		defaultState.tab = "story"
 		expect(result).toEqual(defaultState)
 	})
+
+	it('TO_PHOTO_TAB: should change tab property to cover photo', () => {
+		const action = {
+			type: "TO_PHOTO_TAB",
+		}
+		const result = newMemberProcessReducer(defaultState, action)
+		defaultState.tab = "cover-photo"
+		expect(result).toEqual(defaultState)
+	})
 })

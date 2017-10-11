@@ -70,6 +70,12 @@ export function moveToStoryTab() {
 	}
 }
 
+export function moveToCoverPhotoTab() {
+	return {
+		type: 'TO_PHOTO_TAB',
+	}
+}
+
 export function submitNewMemberStory(details) {
 	return {
 		type: 'SUBMIT_NEW_MEMBER_STORY',

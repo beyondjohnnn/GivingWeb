@@ -25,6 +25,8 @@ function newMemberProcess(state = [], action) {
 
 		case 'TO_STORY_TAB':
 			return { ...state, tab: "story"}
+		case 'TO_PHOTO_TAB':
+			return { ...state, tab: "cover-photo"}
 
     case 'SUBMIT_NEW_MEMBER_STORY':
     	return { ...state, ...action.details, tab: 'cover-photo'}

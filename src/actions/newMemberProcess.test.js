@@ -70,9 +70,18 @@ describe('New member process action creators', () => {
 
 	it(`moveToStoryTab: returns an object with properties type (set to TO_STORY_TAB)`, () => {
 
-		const result = actions.moveToStoryTab("Riften")
+		const result = actions.moveToStoryTab()
 		const expected = {
 			type: "TO_STORY_TAB"
+		}
+		expect(result).toEqual(expected);
+	})
+
+	it(`moveToCoverPhotoTab: returns an object with properties type (set to TO_PHOTO_TAB)`, () => {
+
+		const result = actions.moveToCoverPhotoTab()
+		const expected = {
+			type: "TO_PHOTO_TAB"
 		}
 		expect(result).toEqual(expected);
 	})
