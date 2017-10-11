@@ -13,4 +13,15 @@ describe('New member process action creators', () => {
 		expect(result).toEqual(expected);
 	})
 
+	it(`editGoalAmount: returns an object with properties action (set to
+		EDIT_NEW_MEMBER_GOAL) and amount (set to given argument)`, () => {
+
+		const result = actions.editNewMemberGoal(100)
+		const expected = {
+			type: "EDIT_NEW_MEMBER_GOAL",
+			amount: 100
+		}
+		expect(result).toEqual(expected);
+	})
+
 })
