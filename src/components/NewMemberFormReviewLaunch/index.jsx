@@ -10,6 +10,8 @@ class NewMemberFormReviewLaunch extends React.Component {
 	render() {
 		return (
 			<div className="new-member-form-review-launch">
+				<p>Please review the details below and when you're happy, click submit.</p>
+
 				<img src={this.props.imagePreviewUrl} />
 
 				<h3>Name</h3>
@@ -29,6 +31,8 @@ class NewMemberFormReviewLaunch extends React.Component {
 
 				<h3>Future goals</h3>
 				<p>{this.props.story.future_goals}</p>
+
+				<button className="submit-button">Submit</button>
 			</div>
 		)
 	}
