@@ -52,10 +52,13 @@ const defaultState = {
     tab: 'basics',
     file: '',
     imagePreviewUrl: '',
+    memberName: '',
+    goal: '',
+    location: '',
     story: {
-      reason_for_use: '',
+      reasonForUse: '',
       story: '',
-      goal: ''
+      futureGoals: ''
     }
   },
   charityPage: {

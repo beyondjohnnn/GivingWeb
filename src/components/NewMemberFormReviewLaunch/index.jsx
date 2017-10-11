@@ -15,7 +15,7 @@ class NewMemberFormReviewLaunch extends React.Component {
 				<img src={this.props.imagePreviewUrl} />
 
 				<h3>Name</h3>
-				<p>{this.props.member_name}</p>
+				<p>{this.props.memberName}</p>
 
 				<h3>Fundraising Goal</h3>
 				<p>£ {this.props.goal}</p>
@@ -24,13 +24,13 @@ class NewMemberFormReviewLaunch extends React.Component {
 				<p>{this.props.location}</p>
 
 				<h3>Reason for use</h3>
-				<p>{this.props.story.reason_for_use}</p>
+				<p>{this.props.story.reasonForUse}</p>
 
 				<h3>Story</h3>
 				<p>{this.props.story.story}</p>
 
 				<h3>Future goals</h3>
-				<p>{this.props.story.future_goals}</p>
+				<p>{this.props.story.futureGoals}</p>
 
 				<button className="submit-button">Submit</button>
 			</div>
