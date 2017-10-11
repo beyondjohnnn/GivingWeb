@@ -31,6 +31,20 @@ class NewMemberFormReviewLaunch extends React.Component {
 
 	}
 
+	makeMemberStory(why, story, future_goal) {
+	  temp_obj = [
+	    "<h3> Why I'am Using GivingWeb </h3>",
+	    "<p>", why, "</p>",
+	    "<h3> My Story </h3>",
+	    "<p>", story, "</p>",
+	    "<h3> My Future Goals </h3>",
+	    "<p>", future_goal, "</p>"
+	  ]
+
+	  html_string = temp_obj.join("")
+	  return html_string
+	}
+
 	render() {
 		return (
 			<div className="new-member-form-review-launch">
