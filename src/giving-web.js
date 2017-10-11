@@ -22,6 +22,7 @@ import CookieInfoPage from './containers/CookieInfoPage'
 import MeetTheTeamPage from './containers/MeetTheTeamPage'
 import TermsAndPrivacyPage from './containers/TermsAndPrivacyPage'
 import ContactUsPage from './containers/ContactUsPage'
+import PartnersPage from './containers/PartnersPage'
 
 // import components
 import Navigation from './components/Navigation'
@@ -31,7 +32,6 @@ import Comment from './components/Comment'
 
 // import react router dependencies
 import { Router, Route } from 'react-router'
-
 import { Provider } from 'react-redux'
 import store, { history } from './store'
 import setAuthToken from './utils/setAuthToken'
@@ -61,6 +61,8 @@ const router = (
 				<Route path="/cookie-info" component={CookieInfoPage} />
 				<Route path="/meet-the-team" component={MeetTheTeamPage} />
 				<Route path="/contact-us" component={ContactUsPage} />
+				<Route path="/partners" component={PartnersPage} />
+
 				<Footer />
 			</div>
 		</Router>
