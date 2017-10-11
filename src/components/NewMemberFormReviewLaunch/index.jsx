@@ -24,7 +24,7 @@ class NewMemberFormReviewLaunch extends React.Component {
 			isStringValid(this.props.story.story) &&
 			isStringValid(this.props.story.futureGoals)
 		){
-			console.log("your cool");
+			this.props.submitNewMember(this.props)
 		}else{
 			console.log("invalid input");
 		}
