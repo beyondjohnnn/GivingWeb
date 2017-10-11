@@ -4,3 +4,11 @@ export function setCurrentTab(tab) {
 		tab
 	}
 }
+
+export function readFile(file, result) {
+	return {
+		type: 'CHANGE_IMAGE',
+		file: file,
+		imagePreviewUrl: result
+	}
+}

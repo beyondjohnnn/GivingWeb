@@ -1,7 +1,15 @@
+$height: calc(100vh - (118px));
+
 .cd-members-new {
 	display: flex;
 	flex-direction: column;
 	padding: 20px;
+	height: $height;
+	overflow-y: scroll;
+
+	* {
+		flex-shrink: 0;
+	}
 
 	.header {
 		height: 60px;
