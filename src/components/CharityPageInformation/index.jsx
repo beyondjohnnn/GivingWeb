@@ -11,11 +11,11 @@ import css from './CharityPageInformation.scss'
 class CharityPageInformation extends React.Component {
   
   createDescriptionStyle() {
-    return this.props.aboutUsVisible ? "charity-description open" : "charity-description"
+    return this.props.aboutUsVisible ? "charity-description open-description" : "charity-description"
   } 
 
   createLinearGradientStyle() {
-    return this.props.aboutUsVisible ? "linear-gradient-fade removed" : "linear-gradient-fade"
+    return this.props.aboutUsVisible ? "linear-gradient-fade removed-gradient" : "linear-gradient-fade"
   } 
 
   renderButtonText() {
@@ -39,9 +39,13 @@ class CharityPageInformation extends React.Component {
         <div className="charity-description-wrapper">
           <div className={this.createDescriptionStyle()}>
             <h3>About the Charity</h3>
-            <p>Streetwork is about enabling a life off the streets. We focus on where people are most in need and at risk - on the streets.</p>
-            <p>We don't wait for people to find us; we find them, with outreach teams spending at least 84hrs each week on the streets of Edinburgh helping the most vulnerable people.</p>
-            <p>We don't wait for people to find us; we find them, with outreach teams spending at least 84hrs each week on the streets of Edinburgh helping the most vulnerable people.</p>
+            <p>Streetwork is about enabling a life off the streets. We focus on where people are most in need and at risk - on the streets.  We don't wait for people to find us; we find them, with outreach teams spending at least 84hrs each week on the streets of Edinburgh helping the most vulnerable people.</p>
+            <p>We go out, we seek, we find and connect with people who are in such trouble that they find themselves on the street. Regardless of whatever brought this about, we work to enable them to bring safety and stability to their lives. We aim to get it right first time, to bring an end to the recurring problems that living without a home can bring.</p>
+            <p>But homelessness is often a symptom of other underlying issues. A bed for the night is just the starting place.  Working in a partnership based on respect and trust, we help people to find their own solution in ‘your terms, your pace, your place’.</p>
+
+
+
+               
             <div className={this.createLinearGradientStyle()}></div> 
           </div> 
           <button className="read-more-button" onClick={this.props.toggleAboutUsSection}>{this.renderButtonText()}</button>

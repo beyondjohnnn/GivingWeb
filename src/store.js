@@ -50,6 +50,11 @@ const defaultState = {
     tab: 'basics',
     file: '',
     imagePreviewUrl: ''
+  },
+  charityPage: {
+    aboutUsVisible: false,
+
+
   }
 }
 
