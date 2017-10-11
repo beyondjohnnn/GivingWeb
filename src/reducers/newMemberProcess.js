@@ -12,6 +12,11 @@ function newMemberProcess(state = [], action) {
 			return { ...state, name: action.name}
 		case 'EDIT_NEW_MEMBER_GOAL':
 			return { ...state, goal: action.amount}
+		case 'EDIT_NEW_MEMBER_LOCATION':
+			return { ...state, location: action.location}
+
+		case 'TO_STORY_TAB':
+			return { ...state, tab: "story"}
 
     case 'SUBMIT_NEW_MEMBER_STORY':
     	return { ...state, ...action.details, tab: 'cover-photo'}

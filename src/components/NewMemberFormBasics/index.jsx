@@ -12,17 +12,8 @@ class NewMemberFormBasics extends React.Component {
 		super(props)
 		this.onEditName = this.onEditName.bind(this)
 		this.onEditGoal = this.onEditGoal.bind(this)
-	}
-
-	handleFormSubmit(e) {
-		e.preventDefault()
-		console.log("click");
-		const newMemberDetailsBasics = {
-			goal: this.refs.goal.value,
-			location: this.refs.location.value
-		}
-
-		this.props.submitNewMemberBasics(newMemberDetailsBasics)
+		this.onEditLocation = this.onEditLocation.bind(this)
+		this.toStoryTab = this.toStoryTab.bind(this)
 	}
 
 	onEditName(event){
@@ -31,6 +22,14 @@ class NewMemberFormBasics extends React.Component {
 
 	onEditGoal(event){
 		this.props.editNewMemberGoal(event.target.value)
+	}
+
+	onEditLocation(event){
+		this.props.editNewMemberLocation(event.target.value)
+	}
+
+	toStoryTab(){
+		this.props.moveToStoryTab()
 	}
 
 	render() {
@@ -52,9 +51,11 @@ class NewMemberFormBasics extends React.Component {
 					</div>
 					<div className="form-field">
 						<label htmlFor="location">Location</label>
-						<input id="location" ref="location" type="text" className="location" name="location" />
+						<input id="location" ref="location" type="text" className="location" name="location"
+							onChange={this.onEditLocation} value={this.props.location}
+						/>
 					</div>
-					<input type="submit" value="Next" />
+					<input type="submit" value="Next" onClick={this.toStoryTab}/>
 				</section>
 			</div>
 		)
