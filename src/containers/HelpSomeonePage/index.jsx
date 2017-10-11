@@ -59,6 +59,10 @@ class HelpSomeonePage extends React.Component {
 					<MemberPreviewBuilder members={this.getMembersToDisplay()} previewsPerLine={3}/>
 				</section>
 
+				<section className="load-members-button-container">
+					<button>+ Load More</button>
+				</section>
+
 			</div>
 		)
 	}
