@@ -8,36 +8,49 @@ import css from './NewMemberFormStory.scss'
 
 class NewMemberFormStory extends React.Component {
 
-	handleFormSubmit(e) {
-		e.preventDefault()
+	constructor(props){
+		super(props)
+		this.onEditReasonForUse = this.onEditReasonForUse.bind(this)
+		this.onEditStory = this.onEditStory.bind(this)
+		this.onEditFutureGoals = this.onEditFutureGoals.bind(this)
+	}
 
-		const newMemberDetailsStory = {
-			reasonForUse: this.refs.reason_for_use.value,
-			story: this.refs.story.value,
-			futureGoals: this.refs.future_goals.value
-		}
+	onEditReasonForUse(event){
+		this.props.editNewMemberReasonForUse(event.target.value)
+	}
 
-		this.props.submitNewMemberStory({ story: newMemberDetailsStory })
+	onEditStory(event){
+		this.props.editNewMemberStory(event.target.value)
+	}
+
+	onEditFutureGoals(event){
+		this.props.editNewMemberFutureGoals(event.target.value)
 	}
 
 	render() {
 		return (
 			<div className="new-member-form-story">
-				<form className="story-form" action="/" method="post" onSubmit={this.handleFormSubmit.bind(this)}>
+				<section className="story-form">
 					<div className="form-field">
 						<label htmlFor="reason_for_use">Reason For Using GivingWeb</label>
-						<textarea id="reason_for_use" ref="reason_for_use" className="reason-for-use" name="reason_for_use"	 />
+						<textarea id="reason_for_use" ref="reason_for_use" className="reason-for-use" name="reason_for_use"
+							onChange={this.onEditReasonForUse} value={this.props.story.reasonForUse}
+						/>
 					</div>
 					<div className="form-field">
 						<label htmlFor="story">Member Story</label>
-						<textarea id="story" ref="story" className="story" name="story" />
+						<textarea id="story" ref="story" className="story" name="story"
+							onChange={this.onEditStory} value={this.props.story.story}
+						/>
 					</div>
 					<div className="form-field">
 						<label htmlFor="future_goals">Future Goals</label>
-						<textarea id="future_goals" ref="future_goals" className="future-goals" name="future_goals" />
+						<textarea id="future_goals" ref="future_goals" className="future-goals" name="future_goals"
+							onChange={this.onEditFutureGoals} value={this.props.story.futureGoals}
+						/>
 					</div>
 					<input type="submit" value="Next" />
-				</form>
+				</section>
 			</div>
 		)
 	}

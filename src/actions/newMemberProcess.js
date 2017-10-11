@@ -43,6 +43,27 @@ export function editNewMemberLocation(location) {
 	}
 }
 
+export function editNewMemberReasonForUse(value) {
+	return {
+		type: 'EDIT_NEW_MEMBER_REASON',
+		value: value
+	}
+}
+
+export function editNewMemberStory(value) {
+	return {
+		type: 'EDIT_NEW_MEMBER_STORY',
+		value: value
+	}
+}
+
+export function editNewMemberFutureGoals(value) {
+	return {
+		type: 'EDIT_NEW_MEMBER_FUTURE_GOALS',
+		value: value
+	}
+}
+
 export function moveToStoryTab() {
 	return {
 		type: 'TO_STORY_TAB',

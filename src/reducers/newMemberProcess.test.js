@@ -49,6 +49,39 @@ describe('New member process', () => {
 		expect(result).toEqual(defaultState)
 	})
 
+	it(`EDIT_NEW_MEMBER_REASON: should change story.reasonForUse property to
+		value of action.value`, () => {
+		const action = {
+			type: "EDIT_NEW_MEMBER_REASON",
+			value: "this is text"
+		}
+		const result = newMemberProcessReducer(defaultState, action)
+		defaultState.story.reasonForUse = action.value
+		expect(result).toEqual(defaultState)
+	})
+
+	it(`EDIT_NEW_MEMBER_STORY: should change story.story property to
+		value of action.value`, () => {
+		const action = {
+			type: "EDIT_NEW_MEMBER_STORY",
+			value: "this is text"
+		}
+		const result = newMemberProcessReducer(defaultState, action)
+		defaultState.story.story = action.value
+		expect(result).toEqual(defaultState)
+	})
+
+	it(`EDIT_NEW_MEMBER_FUTURE_GOALS: should change story.futureGoals property to
+		value of action.value`, () => {
+		const action = {
+			type: "EDIT_NEW_MEMBER_FUTURE_GOALS",
+			value: "this is text"
+		}
+		const result = newMemberProcessReducer(defaultState, action)
+		defaultState.story.futureGoals = action.value
+		expect(result).toEqual(defaultState)
+	})
+
 	it('TO_STORY_TAB: should change tab property to story', () => {
 		const action = {
 			type: "TO_STORY_TAB",

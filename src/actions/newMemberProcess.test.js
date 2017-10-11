@@ -35,6 +35,39 @@ describe('New member process action creators', () => {
 		expect(result).toEqual(expected);
 	})
 
+	it(`editNewMemberReasonForUse: returns an object with properties type (set to
+		EDIT_NEW_MEMBER_REASON) and value (set to given argument)`, () => {
+
+		const result = actions.editNewMemberReasonForUse("I want a towel")
+		const expected = {
+			type: "EDIT_NEW_MEMBER_REASON",
+			value: "I want a towel"
+		}
+		expect(result).toEqual(expected);
+	})
+
+	it(`editNewMemberStory: returns an object with properties type (set to
+		EDIT_NEW_MEMBER_STORY) and value (set to given argument)`, () => {
+
+		const result = actions.editNewMemberStory("I want a towel")
+		const expected = {
+			type: "EDIT_NEW_MEMBER_STORY",
+			value: "I want a towel"
+		}
+		expect(result).toEqual(expected);
+	})
+
+	it(`editNewMemberFutureGoals: returns an object with properties type (set to
+		EDIT_NEW_MEMBER_FUTURE_GOALS) and value (set to given argument)`, () => {
+
+		const result = actions.editNewMemberFutureGoals("I want a towel")
+		const expected = {
+			type: "EDIT_NEW_MEMBER_FUTURE_GOALS",
+			value: "I want a towel"
+		}
+		expect(result).toEqual(expected);
+	})
+
 	it(`moveToStoryTab: returns an object with properties type (set to TO_STORY_TAB)`, () => {
 
 		const result = actions.moveToStoryTab("Riften")
