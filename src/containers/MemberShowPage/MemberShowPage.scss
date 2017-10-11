@@ -1,3 +1,5 @@
+$giving-web-purple: #7267ee;
+
 .member-show-page {
 	width: 100%;
 	padding: 0 10%;
@@ -32,10 +34,15 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			color: #9400FF;
+			color: $giving-web-purple;
+			font-size: 1.1em;
 
-			.square-o {
-				width: 30px;
+			font-weight: 400;
+
+			i {
+				// width: 30px;
+				margin-right: 5px;
+				font-size: 1.4em;
 			}
 		}
 	}
@@ -192,18 +199,23 @@
 			}
 
 			.progress-summary {
-				width: 100%;
+				// width: 100%;
 				display: flex;
 				flex-flow: row nowrap;
 
 				p {
-					width: 50%;
-					padding: 10px;
+					// width: 50%;
+					// padding: 10px;
 					display: flex;
 					align-items: center;
+					height: 20px;
+					font-size: 1em;
+					padding: 0px 5px;
+					text-transform: uppercase;
+					dont-weight: 200;
 
 					&:first-child {
-						border-right: 1px solid black;
+						border-right: solid 2px $giving-web-purple;
 					}
 				}
 			}
