@@ -14,7 +14,7 @@ class MembersController < ApplicationController
     end
 
     def create
-      member = Member.new(name: params[:name], info: params[:info], snippet: params[:snippet], location: params[:location], goal: params[:goal])
+      member = Member.new(name: params[:name], info: params[:info], snippet: params[:snippet], location: params[:location], goal: params[:goal], url_image: params[:url_image])
       if member.save
         render json: member
       else

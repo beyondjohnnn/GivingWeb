@@ -44,6 +44,8 @@ members = MemberMigration.build_member_hashes
 comments = CommentMigration.run()
 
 members.each do |member|
+	member[:member_data].delete('title')
+	member[:member_data].delete('meta_description')
 	dbMember = Member.create(member[:member_data])
 	Legacy.create({member_id: dbMember.id, legacy_sql_id: member[:legacy_sql_id]})
 

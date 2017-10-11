@@ -70,8 +70,7 @@ ActiveRecord::Schema.define(version: 20171005122053) do
     t.string "snippet"
     t.string "location"
     t.integer "goal"
-    t.string "title"
-    t.string "meta_description"
+    t.string "url_image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

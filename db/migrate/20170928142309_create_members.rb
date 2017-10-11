@@ -7,8 +7,7 @@ class CreateMembers < ActiveRecord::Migration[5.1]
       t.string :snippet
       t.string :location
       t.integer :goal
-      t.string :title
-      t.string :meta_description
+      t.string :url_image
 
       t.timestamps
     end
