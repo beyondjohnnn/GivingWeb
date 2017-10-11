@@ -12,3 +12,10 @@ export function readFile(file, result) {
 		imagePreviewUrl: result
 	}
 }
+
+export function submitNewMemberBasics(details) {
+	return {
+		type: 'SUBMIT_NEW_MEMBER_BASICS',
+		details
+	}
+}

@@ -23,6 +23,7 @@ import MeetTheTeamPage from './containers/MeetTheTeamPage'
 import TermsAndPrivacyPage from './containers/TermsAndPrivacyPage'
 import ContactUsPage from './containers/ContactUsPage'
 import PartnersPage from './containers/PartnersPage'
+import AboutUsPage from './containers/AboutUsPage'
 
 // import components
 import Navigation from './components/Navigation'
@@ -51,6 +52,7 @@ const router = (
 				<Route path="/auth-landing-page" component={AuthLandingPage} />
 				<Route path="/user-dashboard" component={UserDashboard} />
 				<Route path="/charity-signup" component={CharitySignup} />
+				<Route path="/charity-login" component={CharityLogin} />
 				<Route path="/featured-members" component={FeaturedMembers} />
 				<Route path="/help-someone" component={HelpSomeonePage} />
 				<Route path="/charities" component={CharityLandingPage} />
@@ -62,6 +64,7 @@ const router = (
 				<Route path="/meet-the-team" component={MeetTheTeamPage} />
 				<Route path="/contact-us" component={ContactUsPage} />
 				<Route path="/partners" component={PartnersPage} />
+				<Route path="/about-us" component={AboutUsPage} />
 
 				<Footer />
 			</div>

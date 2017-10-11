@@ -20,7 +20,9 @@ const routerStuff = routerMiddleware(history)
 export { history }
 
 const defaultState = {
-	auth: {},
+	auth: {
+    charity: null
+  },
   navigation: {
     dropdownVisible: false
   },

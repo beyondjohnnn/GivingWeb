@@ -1,4 +1,8 @@
 import React from 'react'
+import {bindActionCreators} from 'redux'
+import {connect} from 'react-redux'
+
+import * as actionCreators from '../../actions/newMemberProcess'
 
 import css from './NewMemberFormBasics.scss'
 
@@ -39,4 +43,12 @@ class NewMemberFormBasics extends React.Component {
 	}
 }
 
-export default NewMemberFormBasics
+function mapStateToProps(state, routing) {
+	return { ...state.newMemberProcess, ...routing}
+}
+
+function mapDispatchToProps(dispatch) {
+	return bindActionCreators(actionCreators, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(NewMemberFormBasics)
