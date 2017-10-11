@@ -12,9 +12,9 @@ class NewMemberFormStory extends React.Component {
 		e.preventDefault()
 
 		const newMemberDetailsStory = {
-			reason_for_use: this.refs.reason_for_use.value,
+			reasonForUse: this.refs.reason_for_use.value,
 			story: this.refs.story.value,
-			future_goals: this.refs.future_goals.value
+			futureGoals: this.refs.future_goals.value
 		}
 
 		this.props.submitNewMemberStory({ story: newMemberDetailsStory })
