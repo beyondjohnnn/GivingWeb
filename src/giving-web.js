@@ -51,6 +51,7 @@ const router = (
 				<Route path="/auth-landing-page" component={AuthLandingPage} />
 				<Route path="/user-dashboard" component={UserDashboard} />
 				<Route path="/charity-signup" component={CharitySignup} />
+				<Route path="/charity-login" component={CharityLogin} />
 				<Route path="/featured-members" component={FeaturedMembers} />
 				<Route path="/help-someone" component={HelpSomeonePage} />
 				<Route path="/charities" component={CharityLandingPage} />
