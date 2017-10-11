@@ -1,3 +1,6 @@
+import cloudinary from 'cloudinary'
+import cloudinaryEvn from './cloudinaryEvn.js'
+
 import React from 'react'
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
@@ -15,6 +18,17 @@ class NewMemberFormReviewLaunch extends React.Component {
 		this.onClickSubmit = this.onClickSubmit.bind(this)
 	}
 
+	saveImage(){
+		cloudinary.config({
+		  cloud_name: 'givingweb',
+		  api_key: '797396724361621',
+		  api_secret: 'mYMv2UuFcMqr31H2o633PJikfl4'
+		});
+		cloudinary.uploader.upload(this.props.imagePreviewUrl, function(result) {
+		  console.log(result)
+		});
+	}
+
 	onClickSubmit(){
 
 		if(isStringValid(this.props.name) &&
@@ -24,6 +38,7 @@ class NewMemberFormReviewLaunch extends React.Component {
 			isStringValid(this.props.story.story) &&
 			isStringValid(this.props.story.futureGoals)
 		){
+			this.saveImage()
 			this.props.submitNewMember({
 				name: this.props.name,
 				goal: this.props.goal,
