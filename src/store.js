@@ -37,7 +37,7 @@ const defaultState = {
   },
 	helpSomeone: {
 		members: [],
-    membersToShow: 6
+    membersToShow: 6,
     current_member: {
       donations: [],
       comments: [],

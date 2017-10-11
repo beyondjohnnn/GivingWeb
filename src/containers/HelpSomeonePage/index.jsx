@@ -16,6 +16,12 @@ class HelpSomeonePage extends React.Component {
 		this.props.getMembers()
 	}
 
+	getMembersToDisplay(){
+		const allMembers = this.props.members
+		const membersToShow = this.props.membersToShow
+		return allMembers.slice(0, membersToShow)
+	}
+
 	render() {
 		return (
 			<div className="help-someone-page">
@@ -50,7 +56,7 @@ class HelpSomeonePage extends React.Component {
 				<CategoryList />
 
 				<section>
-					<MemberPreviewBuilder members={this.props.members} previewsPerLine={3}/>
+					<MemberPreviewBuilder members={this.getMembersToDisplay()} previewsPerLine={3}/>
 				</section>
 
 			</div>
