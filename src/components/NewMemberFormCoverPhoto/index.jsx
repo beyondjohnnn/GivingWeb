@@ -40,7 +40,7 @@ class NewMemberFormCoverPhoto extends React.Component {
 					<p>Please pick a nice photo. This will be the photo that potential doners will see.</p>
 					<form onSubmit={this.handleSubmit}>
 	          <input className="file-input" type="file" onChange={this.handleImageChange.bind(this)} />
-	          <input className="submitButton" type="submit" value="Upload Image" />
+	          <input className="submit-button" type="submit" value="Next" />
 	        </form>
 				</div>
 			</div>

@@ -7,6 +7,8 @@ function newMemberProcess(state = [], action) {
     	return { ...state, file: action.file, imagePreviewUrl: action.imagePreviewUrl }
     case 'SUBMIT_NEW_MEMBER_BASICS':
     	return { ...state, ...action.details, tab: 'story'}
+    case 'SUBMIT_NEW_MEMBER_STORY':
+    	return { ...state, ...action.details, tab: 'cover-photo'}
 		default:
 			return state
 	}

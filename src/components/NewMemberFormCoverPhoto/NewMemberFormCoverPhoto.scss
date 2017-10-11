@@ -20,4 +20,17 @@
 			width: 100%;
 		}
 	}
+
+	.submit-button {
+		width: 30%;
+		height: 50px;
+		background-color: #8149ED;
+		color: #fff;
+		border: none;
+		font-size: 1.2em;
+
+		&:hover {
+			cursor: pointer;
+		}
+	}
 }
