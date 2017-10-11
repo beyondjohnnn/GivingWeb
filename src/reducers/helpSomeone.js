@@ -1,6 +1,10 @@
 
 function helpSomeone(state = [], action) {
 	switch(action.type) {
+
+		case 'SET_MEMBERS_COUNT':
+			return {...state, membersToShow: action.membersToShow}
+
     case 'GET_MEMBERS_PENDING':
       return {...state, fetching: true}
   	case 'GET_MEMBERS_REJECTED':
