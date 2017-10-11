@@ -8,11 +8,15 @@ import css from './NewMemberFormBasics.scss'
 
 class NewMemberFormBasics extends React.Component {
 
+	constructor(props){
+		super(props)
+		this.onEditMemberName = this.onEditMemberName.bind(this)
+	}
+
 	handleFormSubmit(e) {
 		e.preventDefault()
-
+		console.log("click");
 		const newMemberDetailsBasics = {
-			name: this.refs.member_name.value,
 			goal: this.refs.goal.value,
 			location: this.refs.location.value
 		}
@@ -20,13 +24,20 @@ class NewMemberFormBasics extends React.Component {
 		this.props.submitNewMemberBasics(newMemberDetailsBasics)
 	}
 
+	onEditMemberName(event){
+		this.props.editNewMemberName(event.target.value)
+	}
+
 	render() {
 		return (
 			<div className="new-member-form-basics">
-				<form className="basics-form" action="/" method="post" onSubmit={this.handleFormSubmit.bind(this)}>
+				<section className="basics-form">
 					<div className="form-field">
 						<label htmlFor="member_name">Name</label>
-						<input id="member_name" ref="member_name" type="text" className="member-name" name="member_name" />
+						<input id="member_name" ref="member_name" type="text"
+							className="member-name" name="member_name"
+							onChange={this.onEditMemberName} value={this.props.name}
+						/>
 					</div>
 					<div className="form-field">
 						<label htmlFor="goal">Fundraising Goal (£)</label>
@@ -37,7 +48,7 @@ class NewMemberFormBasics extends React.Component {
 						<input id="location" ref="location" type="text" className="location" name="location" />
 					</div>
 					<input type="submit" value="Next" />
-				</form>
+				</section>
 			</div>
 		)
 	}

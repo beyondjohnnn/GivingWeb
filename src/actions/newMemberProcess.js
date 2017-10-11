@@ -22,6 +22,13 @@ export function submitNewMemberBasics(details) {
 	}
 }
 
+export function editNewMemberName(name) {
+	return {
+		type: 'EDIT_NEW_MEMBER_NAME',
+		name: name
+	}
+}
+
 export function submitNewMemberStory(details) {
 	return {
 		type: 'SUBMIT_NEW_MEMBER_STORY',
