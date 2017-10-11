@@ -29,6 +29,13 @@ export function editNewMemberName(name) {
 	}
 }
 
+export function editNewMemberGoal(amount) {
+	return {
+		type: 'EDIT_NEW_MEMBER_GOAL',
+		amount: amount
+	}
+}
+
 export function submitNewMemberStory(details) {
 	return {
 		type: 'SUBMIT_NEW_MEMBER_STORY',

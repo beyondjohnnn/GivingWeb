@@ -10,7 +10,8 @@ class NewMemberFormBasics extends React.Component {
 
 	constructor(props){
 		super(props)
-		this.onEditMemberName = this.onEditMemberName.bind(this)
+		this.onEditName = this.onEditName.bind(this)
+		this.onEditGoal = this.onEditGoal.bind(this)
 	}
 
 	handleFormSubmit(e) {
@@ -24,8 +25,12 @@ class NewMemberFormBasics extends React.Component {
 		this.props.submitNewMemberBasics(newMemberDetailsBasics)
 	}
 
-	onEditMemberName(event){
+	onEditName(event){
 		this.props.editNewMemberName(event.target.value)
+	}
+
+	onEditGoal(event){
+		this.props.editNewMemberGoal(event.target.value)
 	}
 
 	render() {
@@ -36,12 +41,14 @@ class NewMemberFormBasics extends React.Component {
 						<label htmlFor="member_name">Name</label>
 						<input id="member_name" ref="member_name" type="text"
 							className="member-name" name="member_name"
-							onChange={this.onEditMemberName} value={this.props.name}
+							onChange={this.onEditName} value={this.props.name}
 						/>
 					</div>
 					<div className="form-field">
 						<label htmlFor="goal">Fundraising Goal (£)</label>
-						<input id="goal" ref="goal" type="number" min="0" step="1" className="goal" name="goal" />
+						<input id="goal" ref="goal" type="number" min="0" step="1" className="goal" name="goal"
+							onChange={this.onEditGoal} value={this.props.goal}
+					 	/>
 					</div>
 					<div className="form-field">
 						<label htmlFor="location">Location</label>
