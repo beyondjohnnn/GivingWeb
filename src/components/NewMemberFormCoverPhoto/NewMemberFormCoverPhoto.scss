@@ -18,6 +18,24 @@
 
 		p {
 			width: 100%;
+			margin-bottom: 20px;
+		}
+	}
+
+	input {
+		margin-bottom: 20px;
+	}
+
+	.submit-button {
+		width: 60%;
+		height: 50px;
+		background-color: #8149ED;
+		color: #fff;
+		border: none;
+		font-size: 1.2em;
+
+		&:hover {
+			cursor: pointer;
 		}
 	}
 }

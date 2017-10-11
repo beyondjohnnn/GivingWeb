@@ -19,3 +19,10 @@ export function submitNewMemberBasics(details) {
 		details
 	}
 }
+
+export function submitNewMemberStory(details) {
+	return {
+		type: 'SUBMIT_NEW_MEMBER_STORY',
+		details
+	}
+}
