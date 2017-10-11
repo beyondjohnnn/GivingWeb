@@ -51,7 +51,12 @@ const defaultState = {
   newMemberProcess: {
     tab: 'basics',
     file: '',
-    imagePreviewUrl: ''
+    imagePreviewUrl: '',
+    story: {
+      reason_for_use: '',
+      story: '',
+      goal: ''
+    }
   },
   charityPage: {
     aboutUsVisible: false,
