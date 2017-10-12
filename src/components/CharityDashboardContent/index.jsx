@@ -15,6 +15,7 @@ class CharityDashboardContent extends React.Component {
       <div className="charity-dashboard-content">
         <CharityDashboardBreadcrumbs />
         <Switch>
+          <Route exact path="/charity-dashboard" component={CharityDashboardMembers} />
 	        <Route path="/charity-dashboard/campaigns" component={CharityDashboardCampaign} />
 	        <Route path="/charity-dashboard/members/new" component={CharityDashboardMembersNew} />
 	        <Route path="/charity-dashboard/members" component={CharityDashboardMembers} />
