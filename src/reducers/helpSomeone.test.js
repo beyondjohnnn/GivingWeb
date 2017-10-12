@@ -1,4 +1,4 @@
-import helpSomeoneReducer from './../../reducers/helpSomeone'
+import helpSomeoneReducer from './helpSomeone'
 
 describe('CharityTile', () => {
 	let defaultState
@@ -106,5 +106,18 @@ describe('CharityTile', () => {
 		let state = defaultState
 		state.current_member = "current_member"
 		expect(result).toMatchObject(state)
+	})
+
+	it(`SET_MEMBERS_COUNT: should change the property membersToShow to the value
+		given by action.membersToShow`, () => {
+
+		const action = {
+			type: "SET_MEMBERS_COUNT",
+			membersToShow: 12
+		}
+
+		const result = helpSomeoneReducer(defaultState, action)
+		defaultState.membersToShow = action.membersToShow
+		expect(result).toEqual(defaultState)
 	})
 })
