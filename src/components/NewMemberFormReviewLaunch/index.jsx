@@ -21,7 +21,7 @@ class NewMemberFormReviewLaunch extends React.Component {
 	saveImage(){
 		cloudinary.config(cloudinaryEvn);
 		cloudinary.uploader.upload(this.props.imagePreviewUrl, function(result) {
-		  console.log(result)
+		  console.log(result.url)
 		});
 	}
 
