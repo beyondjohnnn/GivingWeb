@@ -12,7 +12,7 @@
 	h3 {
 		font-size: 2.5em;
 		font-weight: 300;
-		margin-bottom: 15px;
+		margin-bottom: 25px;
 	}
 
 	p {
@@ -27,7 +27,7 @@
 		display: flex;
 		justify-contents: center;
 		align-items: center;
-		margin-top: 25px;
+		margin-top: 45px;
 
 
 			button {
@@ -38,16 +38,24 @@
 				color: lighten(#5a5a5a, 10);
 				padding-left: 8px;
 				padding-right: 8px;
-				background: linear-gradient(#FAFAFA, #F4F4F4 90%, #E5E5E5);
 		   	border: 1px solid #AAA;
 			  color: #555;
 			  margin-left: 8px;
+			  cursor: pointer;
+			  outline: none;
+			  background-color: #f8f8f8;
+
+			  &:hover {
+			  	// background-color: darken(#f8f8f8, 20);
+			  	background-color: darken(#f8f8f8, 3);
+			  }
 
 			}
 
 	
 
 			.soflow select {
+			 outline: none;
 			 margin-right: 8px;
 		   appearance: button;
 		   border-radius: 2px;
@@ -68,6 +76,8 @@
 		   width: 100px;
 		   height: 45px;
 		   font-size: 1.2em;
+			 cursor: pointer;
+
 			}
 	}
 
