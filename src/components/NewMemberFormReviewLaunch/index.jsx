@@ -12,19 +12,21 @@ import css from './NewMemberFormReviewLaunch.scss'
 import { isStringValid, isMonetaryValueValid } from "./../../utils/validator"
 
 class NewMemberFormReviewLaunch extends React.Component {
-	
+
 
 	constructor(props){
 		super(props)
 		this.onClickSubmit = this.onClickSubmit.bind(this)
 	}
 
+
 	saveImage(){
+
 		// cloudinary.config(cloudinaryEvn);
 		// cloudinary.uploader.upload(this.props.imagePreviewUrl, function(result) {
 		//   console.log(result.url)
 		// });
-		
+
 	}
 
 	onClickSubmit(){
