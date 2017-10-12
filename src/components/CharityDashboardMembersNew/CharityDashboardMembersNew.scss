@@ -1,5 +1,4 @@
 $height: calc(100vh - (118px));
-$nav-color: #f5f5f5;
 
 .cd-members-new {
 	display: flex;
@@ -12,11 +11,6 @@ $nav-color: #f5f5f5;
 		flex-shrink: 0;
 	}
 
-	img {
-		width: 60%;
-		height: 60%;
-	}
-	
 	.header {
 		height: 60px;
 		display: flex;
@@ -51,7 +45,6 @@ $nav-color: #f5f5f5;
 			align-items: center;
 			height: 75px;
 			padding-left: 10px;
-			background-color: $nav-color;
 
 			span {
 				width: 60%;
@@ -74,9 +67,9 @@ $nav-color: #f5f5f5;
 				  width: 0px;
 				  height: 0px;
 				  background-color: #8149ED;
-				  border-top: 40px solid $nav-color;
+				  border-top: 40px solid white;
 				  border-left: 15px solid #8149ED;
-				  border-bottom: 40px solid $nav-color;
+				  border-bottom: 40px solid white;
 				  position: absolute;
 				  right: -15px;
 				  top: 0;
@@ -86,9 +79,9 @@ $nav-color: #f5f5f5;
 				  content: '';
 				  width: 0px;
 				  height: 0px;
-				  background-color: #ccc;
+				  background-color: #8149ED;
 				  border-top: 40px solid #8149ED;
-				  border-left: 15px solid $nav-color;
+				  border-left: 15px solid white;
 				  border-bottom: 40px solid #8149ED;
 				  position: absolute;
 				  left: 0;
