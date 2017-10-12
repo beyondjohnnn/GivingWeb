@@ -24,10 +24,12 @@ class CharityDashboardMembers extends React.Component {
 						<Link className="navtab-link" to="/charity-dashboard/members/review"><li>Review (0)</li></Link>
 						<Link className="navtab-link" to="/charity-dashboard/members/success"><li>Success (0)</li></Link>
 					</ul>
-					<Route path={'/charity-dashboard/members/live'} component={CharityDashboardMembersLive} />
-					<Route path={'/charity-dashboard/members/draft'} component={CharityDashboardMembersDraft} />
-					<Route path={'/charity-dashboard/members/review'} component={CharityDashboardMembersReview} />
-					<Route path={'/charity-dashboard/members/success'} component={CharityDashboardMembersSuccess} />
+					<Route exact path="/charity-dashboard" component={CharityDashboardMembersLive} />
+					<Route exact path="/charity-dashboard/members" component={CharityDashboardMembersLive} />
+					<Route path="/charity-dashboard/members/live" component={CharityDashboardMembersLive} />
+					<Route path="/charity-dashboard/members/draft" component={CharityDashboardMembersDraft} />
+					<Route path="/charity-dashboard/members/review" component={CharityDashboardMembersReview} />
+					<Route path="/charity-dashboard/members/success" component={CharityDashboardMembersSuccess} />
 				</div>
 			</div>
 		)

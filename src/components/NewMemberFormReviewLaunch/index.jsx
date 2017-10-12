@@ -12,6 +12,7 @@ import css from './NewMemberFormReviewLaunch.scss'
 import { isStringValid, isMonetaryValueValid } from "./../../utils/validator"
 
 class NewMemberFormReviewLaunch extends React.Component {
+	
 
 	constructor(props){
 		super(props)

@@ -16,6 +16,7 @@ import HowItWorks from '../../components/HowItWorks'
 import MemberPreview from '../../components/MemberPreview'
 import WhatsHappening from '../../components/WhatsHappening'
 import ExtendedScrollAnchor from '../../components/ExtendedScrollAnchor'
+import DonateMonthly from '../../components/DonateMonthly'
 
 configureAnchors({offset: 0, scrollDuration: 600})
 
@@ -68,6 +69,7 @@ class NoAuthLandingPage extends React.Component {
 				</ExtendedScrollAnchor>
 				<NoAuthSubNavigation />
 				{this.renderSubNavigationSelection()}
+				<DonateMonthly />
 			</div>
 		)
 	}
