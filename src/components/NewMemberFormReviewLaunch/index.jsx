@@ -1,5 +1,5 @@
-import cloudinary from 'cloudinary'
-import cloudinaryEvn from './cloudinaryEvn.js'
+// import cloudinary from 'cloudinary'
+// import cloudinaryEvn from './cloudinaryEvn.js'
 
 import React from 'react'
 import {connect} from 'react-redux'
@@ -19,10 +19,11 @@ class NewMemberFormReviewLaunch extends React.Component {
 	}
 
 	saveImage(){
-		cloudinary.config(cloudinaryEvn);
-		cloudinary.uploader.upload(this.props.imagePreviewUrl, function(result) {
-		  console.log(result.url)
-		});
+		// cloudinary.config(cloudinaryEvn);
+		// cloudinary.uploader.upload(this.props.imagePreviewUrl, function(result) {
+		//   console.log(result.url)
+		// });
+		
 	}
 
 	onClickSubmit(){
