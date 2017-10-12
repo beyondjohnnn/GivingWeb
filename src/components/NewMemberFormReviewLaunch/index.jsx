@@ -69,7 +69,7 @@ class NewMemberFormReviewLaunch extends React.Component {
 				<img src={this.props.imagePreviewUrl} />
 
 				<h3>Name</h3>
-				<p>{this.props.memberName}</p>
+				<p>{this.props.name}</p>
 
 				<h3>Fundraising Goal</h3>
 				<p>£ {this.props.goal}</p>
