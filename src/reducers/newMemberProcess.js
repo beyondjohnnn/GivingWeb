@@ -9,6 +9,14 @@ function newMemberProcess(state = [], action) {
     	return { ...state, ...action.details, tab: 'story'}
     case 'SUBMIT_NEW_MEMBER_STORY':
     	return { ...state, ...action.details, tab: 'cover-photo'}
+
+		case 'SUBMIT_NEW_MEMBER_PENDING':
+      return {...state, fetching: true}
+  	case 'SUBMIT_NEW_MEMBER_REJECTED':
+      return {...state, fetching: true, error: action.payload}
+  	case 'SUBMIT_NEW_MEMBER_FULFILLED':
+      return {...state, fetching: true, fetched: true, members: action.payload}
+
 		default:
 			return state
 	}

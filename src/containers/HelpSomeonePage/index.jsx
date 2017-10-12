@@ -12,8 +12,34 @@ import MemberPreviewBuilder from '../../components/MemberPreviewBuilder'
 
 class HelpSomeonePage extends React.Component {
 
+	constructor(props){
+		super(props)
+		this.onClickLoadMore = this.onClickLoadMore.bind(this)
+	}
+
 	componentDidMount(){
 		this.props.getMembers()
+	}
+
+	renderLoadMoreButton(){
+		if(this.props.membersToShow < this.props.members.length){
+			return (
+				<section className="load-members-button-container">
+					<button onClick={this.onClickLoadMore}>+ Load More</button>
+				</section>
+			)
+		}
+	}
+
+	getMembersToDisplay(){
+		const allMembers = this.props.members
+		const membersToShow = this.props.membersToShow
+		return allMembers.slice(0, membersToShow)
+	}
+
+	onClickLoadMore(){
+		let membersToShow = this.props.membersToShow + 6
+		this.props.setMembersShown(membersToShow)
 	}
 
 	render() {
@@ -50,8 +76,10 @@ class HelpSomeonePage extends React.Component {
 				<CategoryList />
 
 				<section>
-					<MemberPreviewBuilder members={this.props.members} previewsPerLine={3}/>
+					<MemberPreviewBuilder members={this.getMembersToDisplay()} previewsPerLine={3}/>
 				</section>
+
+				{this.renderLoadMoreButton()}
 
 			</div>
 		)

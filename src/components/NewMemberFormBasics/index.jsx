@@ -12,7 +12,7 @@ class NewMemberFormBasics extends React.Component {
 		e.preventDefault()
 
 		const newMemberDetailsBasics = {
-			member_name: this.refs.member_name.value,
+			name: this.refs.member_name.value,
 			goal: this.refs.goal.value,
 			location: this.refs.location.value
 		}

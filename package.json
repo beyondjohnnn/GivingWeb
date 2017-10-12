@@ -17,12 +17,13 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.16.2",
+    "cloudinary": "^1.9.0",
     "express": "^4.16.1",
     "google-maps": "^3.2.1",
     "mathjs": "^3.16.4",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
-    "react-google-maps": "^8.3.5",
+    "react-google-maps": "^8.4.2",
     "react-html-parser": "^2.0.1",
     "react-modal-video": "^1.0.7",
     "react-redux": "^5.0.6",
@@ -32,6 +33,7 @@
     "react-router-redux": "^4.0.8",
     "react-scrollable-anchor": "^0.5.0",
     "really-smooth-scroll": "^2.1.1",
+    "recompose": "^0.26.0",
     "redux": "^3.7.2",
     "redux-promise-middleware": "^4.4.1"
   },

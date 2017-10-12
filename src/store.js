@@ -37,6 +37,7 @@ const defaultState = {
   },
 	helpSomeone: {
 		members: [],
+    membersToShow: 6,
     current_member: {
       donations: [],
       comments: [],
@@ -51,7 +52,15 @@ const defaultState = {
   newMemberProcess: {
     tab: 'basics',
     file: '',
-    imagePreviewUrl: ''
+    imagePreviewUrl: '',
+    name: '',
+    goal: '',
+    location: '',
+    story: {
+      reasonForUse: '',
+      story: '',
+      futureGoals: ''
+    }
   },
   charityPage: {
     aboutUsVisible: false,

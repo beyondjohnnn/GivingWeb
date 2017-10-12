@@ -17,5 +17,12 @@ test/coverage
 js_playground.js
 
 
+<<<<<<< HEAD
 #cloudinary api key
 cloudinaryEvn.js
+=======
+#security evn
+
+cloudinaryEvn.js
+
+>>>>>>> e88b8d4ab5b10c3d2577c092b66f72a71cee6a93
