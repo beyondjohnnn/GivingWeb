@@ -1,0 +1,54 @@
+.cd-member-preview {
+	// background-color: red;
+	margin-top: 10px;
+	border-radius: 5px;
+	border: 1px solid #999;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	padding: 10px;
+	justify-content: space-between;
+
+	img {
+		width: 60px;
+		height: 60px;
+		margin-right: 10px;
+	}
+
+	h2 {
+		padding: 10px;
+		width: 25%;
+	}
+
+	.donation-details {
+		min-height: 80px;
+		width: 40%;
+		padding: 10px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+
+		.member-progress-bar {
+			width: 100%;
+			height: 10px;
+			border-radius: 5px;
+			background-color: #ddd;
+			overflow: hidden;
+
+			.bar-fill {
+				// width: 80%;
+				height: 10px;
+				background-color: gold;
+			}
+		}
+	}
+
+	.percentage-container {
+		height: 100%;
+		width: 15%;
+		padding: 10px;
+		display: flex;
+		justify-content: flex-end;
+		align-items: flex-start;
+	}
+}
