@@ -47,11 +47,10 @@ class CharityDashboardMembers extends React.Component {
 	}
 
 	getNavTabStyling(navtab) {
-		console.log('tab in state', this.props.tab)
 		if (this.props.tab == navtab) {
 			return "selected"
 		} else {
-			return "f"
+			return ""
 		}
 	}
 
