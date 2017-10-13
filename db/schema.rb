@@ -15,13 +15,6 @@ ActiveRecord::Schema.define(version: 20171013155239) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "accounts", force: :cascade do |t|
-    t.string "name"
-    t.integer "amount"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "charities", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -34,6 +27,8 @@ ActiveRecord::Schema.define(version: 20171013155239) do
     t.inet "current_sign_in_ip"
     t.inet "last_sign_in_ip"
     t.string "name"
+    t.string "first_name"
+    t.string "last_name"
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -83,8 +78,7 @@ ActiveRecord::Schema.define(version: 20171013155239) do
     t.string "snippet"
     t.string "location"
     t.integer "goal"
-    t.string "title"
-    t.string "meta_description"
+    t.string "url_image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
