@@ -23,7 +23,7 @@ axios.get("http://localhost:3000/featured_members")
     const promises = []
     const featuredMembers = result.data
     for(member of featuredMembers){
-      promises.push(axios.delete(`http://localhost:3000/featured_members/${member.member_id}`))
+      promises.push(axios.delete(`http://localhost:3000/featured_members/${member.id}`))
     }
     return Promise.all(promises)
   }).then(() => {
