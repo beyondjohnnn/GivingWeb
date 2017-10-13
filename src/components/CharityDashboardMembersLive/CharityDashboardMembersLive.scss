@@ -1,6 +1,7 @@
-$height: calc(100vh - (118px));
+$height: calc(100vh - (342px));
 
 .cd-members-live {
 	height: $height;
 	overflow-y: scroll;
-}
+	padding-bottom: 10px;
+}																																																																									
