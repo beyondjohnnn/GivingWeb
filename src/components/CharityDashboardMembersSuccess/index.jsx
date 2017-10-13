@@ -3,7 +3,7 @@ import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 import {calcDonationPercentage} from '../../utils/donations'
 
-import * as actionCreators from '../../actions/helpSomeoneActionCreators'
+import * as actionCreators from '../../actions/dashboard'
 
 import css from './CharityDashboardMembersSuccess.scss'
 
@@ -17,16 +17,17 @@ class CharityDashboardMembersSuccess extends React.Component {
 	}
 
 	componentDidMount() {
+		this.props.setDashboardTab('success')
 		if (this.props.members.length == 0) {
 			// this.props.getMembers()
 		}
 	}
 
 	createMemberPreviews() {
-		return this.props.members.map((member, id) => {
-			if (calcDonationPercentage(member) >= 100) {
-				return <CharityDashboardMemberPreview key={id} member={member} />
-			}
+		return this.props.members.filter((member) => {
+			return calcDonationPercentage(member) >= 100
+		}).map((member, id) => {
+			return <CharityDashboardMemberPreview key={id} member={member} />
 		})
 	}
 
@@ -47,4 +48,4 @@ function mapDispatchToProps(dispatch) {
 	return bindActionCreators(actionCreators, dispatch)
 }
 
-export default connect(mapStateToProps, mapStateToProps)(CharityDashboardMembersSuccess)
+export default connect(mapStateToProps, mapDispatchToProps)(CharityDashboardMembersSuccess)
