@@ -1,14 +1,20 @@
 	$giving-web-purple: #7267ee;
 
 .member-show-page {
+	
 	width: 100%;
-	padding: 0 10%;
+	display: flex;
+	background-color: #F4F4F4;
+
+	.main-wrapper {
+	width: 1170px;
+	// padding: 0 10%;
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: space-around;
 	margin: 0 auto;
 	padding-bottom: 50px;
-	background-color: #F4F4F4;
+	}
 
 	.header {
 		width: 100%;
@@ -58,7 +64,7 @@
 	}
 
 	.left-section {
-		width: 58%;
+		width: 65%;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -174,7 +180,7 @@
 	}
 
 	.right-section {
-		width: 38%;
+		width: 35%;
 
 		.donation-section {
 			background-color: white;

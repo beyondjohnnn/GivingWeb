@@ -65,81 +65,83 @@ class MemberShowPage extends React.Component {
 
 		return (
 			<div className="member-show-page">
-				<div className="header">
-					<h2>{current_member.snippet}</h2>
-					<h3><i className="fa fa-check-circle-o" />Verified by <Link to="/charity-page" className="verified-charity-link">Streetwork</Link></h3>
-				</div>
-				<div className="left-section">
-					<div className="member-details">
-						<div className="member-photo" style={photoStyle}></div>
-						<div className="member-photo-text-container">
-							<h3>{current_member.name}</h3>
-							<p>
-								<i className="fa-icon fa fa-map-marker" aria-hidden="true"></i>
-								 {current_member.location}
-							</p>
-							<div className="member-tags">
-								<i className="fa-icon fa fa-tags" aria-hidden="true"></i>
-								{this.createTags(current_member)}
+				<div className="main-wrapper">
+					<div className="header">
+						<h2>{current_member.snippet}</h2>
+						<h3><i className="fa fa-check-circle-o" />Verified by <Link to="/charity-page" className="verified-charity-link">Streetwork</Link></h3>
+					</div>
+					<div className="left-section">
+						<div className="member-details">
+							<div className="member-photo" style={photoStyle}></div>
+							<div className="member-photo-text-container">
+								<h3>{current_member.name}</h3>
+								<p>
+									<i className="fa-icon fa fa-map-marker" aria-hidden="true"></i>
+									 {current_member.location}
+								</p>
+								<div className="member-tags">
+									<i className="fa-icon fa fa-tags" aria-hidden="true"></i>
+									{this.createTags(current_member)}
+								</div>
+							</div>
+							<div className="social-media">
+								<button>share</button>
+								<button>tweet</button>
+								<button>share</button>
+							</div>
+							<div className="loaded-story">
+								{ReactHtmlParser(current_member.info.replace('&#039;', '\''))}
 							</div>
 						</div>
-						<div className="social-media">
-							<button>share</button>
-							<button>tweet</button>
-							<button>share</button>
+						<div className="make-comment">
+							<h3>Post a comment</h3>
+							<label htmlFor="comment-box">Send a message</label>
+							<textarea id="comment-box" ref="comment-box" className="comment-box" />
+							<button className="post-button">Post</button>
+							<div className="comment-list">
+								{this.createComments()}
+							</div>
 						</div>
-						<div className="loaded-story">
-							{ReactHtmlParser(current_member.info.replace('&#039;', '\''))}
-						</div>
-					</div>
-					<div className="make-comment">
-						<h3>Post a comment</h3>
-						<label htmlFor="comment-box">Send a message</label>
-						<textarea id="comment-box" ref="comment-box" className="comment-box" />
-						<button className="post-button">Post</button>
-						<div className="comment-list">
-							{this.createComments()}
-						</div>
-					</div>
 
-				</div>
-				<div className="right-section">
-					<div className="donation-section">
-						<h4>£{totalDonations}</h4>
-						<p>raised of £{current_member.goal} goal</p>
-						<div className="member-progress-bar">
-							<div className="bar-fill" style={donationBarStyles}></div>
-						</div>
-						<div className="progress-summary">
-							<p>£{current_member.goal - totalDonations} still needed</p>
-							<p>{current_member.donations.length} supporters</p>
-						</div>
-						<div className="donation-controls">
-							<h4>
-								Select Donation amount
-							</h4>
-							<select>
-								<option value="25">£25</option>
-								<option value="50">£50</option>
-								<option value="75">£75</option>
-								<option value="custom">Custom amount</option>
-							</select>
-							<div className="support-checkbox">
-								<input id="checkbox" type="checkbox" />
-								<label htmlFor="checkbox">Add £3 to help support GivingWeb</label>
-							</div>
-						</div>
-						<div className="message-controls">
-							<label htmlFor="message">Send a message</label>
-							<textarea className="message-text" />
-							<div className="name-hide">
-								<input id="checkbox-hidename" type="checkbox" />
-								<label htmlFor="checkbox-hidename">Hide my name</label>
-							</div>
-						</div>
-						<button className="donate-button">DONATE NOW</button>
 					</div>
-				</div>
+					<div className="right-section">
+						<div className="donation-section">
+							<h4>£{totalDonations}</h4>
+							<p>raised of £{current_member.goal} goal</p>
+							<div className="member-progress-bar">
+								<div className="bar-fill" style={donationBarStyles}></div>
+							</div>
+							<div className="progress-summary">
+								<p>£{current_member.goal - totalDonations} still needed</p>
+								<p>{current_member.donations.length} supporters</p>
+							</div>
+							<div className="donation-controls">
+								<h4>
+									Select Donation amount
+								</h4>
+								<select>
+									<option value="25">£25</option>
+									<option value="50">£50</option>
+									<option value="75">£75</option>
+									<option value="custom">Custom amount</option>
+								</select>
+								<div className="support-checkbox">
+									<input id="checkbox" type="checkbox" />
+									<label htmlFor="checkbox">Add £3 to help support GivingWeb</label>
+								</div>
+							</div>
+							<div className="message-controls">
+								<label htmlFor="message">Send a message</label>
+								<textarea className="message-text" />
+								<div className="name-hide">
+									<input id="checkbox-hidename" type="checkbox" />
+									<label htmlFor="checkbox-hidename">Hide my name</label>
+								</div>
+							</div>
+							<button className="donate-button">DONATE NOW</button>
+						</div>
+					</div>
+				</div>	
 			</div>
 		)
 	}
