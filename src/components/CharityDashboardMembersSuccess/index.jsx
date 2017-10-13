@@ -33,7 +33,7 @@ class CharityDashboardMembersSuccess extends React.Component {
 
 	render() {
 		return (
-			<div className="cd-member-success">
+			<div className="cd-members-success">
 				{this.createMemberPreviews()}
 			</div>
 		)

@@ -1,5 +1,5 @@
-import cloudinary from 'cloudinary'
-import cloudinaryEvn from './cloudinaryEvn.js'
+import AWS from 'aws-sdk'
+import uuidV1 from 'uuid/v1'
 
 import React from 'react'
 import {connect} from 'react-redux'
@@ -12,7 +12,7 @@ import css from './NewMemberFormReviewLaunch.scss'
 import { isStringValid, isMonetaryValueValid } from "./../../utils/validator"
 
 class NewMemberFormReviewLaunch extends React.Component {
-	
+
 
 	constructor(props){
 		super(props)
@@ -20,10 +20,27 @@ class NewMemberFormReviewLaunch extends React.Component {
 	}
 
 	saveImage(){
-		cloudinary.config(cloudinaryEvn);
-		cloudinary.uploader.upload(this.props.imagePreviewUrl, function(result) {
-		  console.log(result.url)
-		});
+		const imgObj = {
+			img: this.props.imagePreviewUrl
+		}
+
+		const s3 = new AWS.S3()
+		const myBucket = 'givingweb-storage/images' + uuidV1()
+		const myKey = 'myBucketKey'
+		s3.createBucket({Bucket: myBucket}, function(err, data) {
+		if (err) {
+		   console.log(err)
+		   } else {
+		     params = {Bucket: myBucket, Key: myKey, Body: this.props.imagePreviewUrl}
+		     s3.putObject(params, function(err, data) {
+		         if (err) {
+		             console.log(err)
+		         } else {
+		             console.log("Successfully uploaded data to myBucket/myKey")
+		         }
+		      })
+		   }
+		})
 	}
 
 	onClickSubmit(){
