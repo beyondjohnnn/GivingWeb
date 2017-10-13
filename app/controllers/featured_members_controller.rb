@@ -1,9 +1,12 @@
 class FeaturedMembersController < ApplicationController
 
     def index
-      members = FeaturedMember.all.as_json({
-        include: [:member]
+      members = FeaturedMember.order(:position)
+      members = members.map do |featured_member|
+        featured_member.member.as_json({
+          include: [:donations, :comments]
         })
+      end
       render json: members
     end
 
