@@ -55,13 +55,15 @@ class MemberShowPage extends React.Component {
 			backgroundColor: donationBarColour
 		}
 
-		const photoStyle = {
-			backgroundImage: `linear-gradient(360deg, rgba(10, 10, 10, 0.75), rgba(250, 250, 250, 0)),
-					url("images/${current_member.name}.png")`,
-			backgroundRepeat: "no-repeat",
-			backgroundSize: "cover",
-			backgroundPosition: "center"
-		}
+		// const photoStyle = {
+		// 	backgroundImage: `linear-gradient(360deg, rgba(10, 10, 10, 0.2), rgba(250, 250, 250, 0)),
+		// 			url("images/${current_member.name}.png")`,
+		// 	backgroundRepeat: "no-repeat",
+		// 	backgroundSize: "cover",
+		// 	backgroundPosition: "center",
+		// 	width: "100%",
+		// 	height: '400px'
+		// 	}
 
 		return (
 			<div className="member-show-page">
@@ -72,7 +74,7 @@ class MemberShowPage extends React.Component {
 					</div>
 					<div className="left-section">
 						<div className="member-details">
-							<div className="member-photo" style={photoStyle}></div>
+							<img src={current_member.name}/>
 							<div className="member-photo-text-container">
 								<h3>{current_member.name}</h3>
 								<p>
