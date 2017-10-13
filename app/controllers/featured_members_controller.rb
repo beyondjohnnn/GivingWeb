@@ -1,15 +1,9 @@
 class FeaturedMembersController < ApplicationController
 
-  # Account.includes(:details).where(:id => current_account_id).first
-
     def index
-      featured_members = FeaturedMember.order(:position)
-      members = featured_members.map do |featured_member|
-        {
-          member: Member.where(id: featured_member.member_id)[0],
-          position: featured_member.position
-        }
-      end
+      members = FeaturedMember.all.as_json({
+        include: [:member]
+        })
       render json: members
     end
 
@@ -23,6 +17,7 @@ class FeaturedMembersController < ApplicationController
     end
 
     def destroy
-      render json: {route: "delete", delete_id: params[:id]}
+      delete = FeaturedMember.where(member_id: params[:id])[0].delete
+      render json: {out: "deleted"}
     end
  end

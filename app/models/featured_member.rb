@@ -1,3 +1,3 @@
 class FeaturedMember < ApplicationRecord
-  has_many :members
+  belongs_to :member
 end
