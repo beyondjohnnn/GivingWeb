@@ -18,8 +18,17 @@ function getUserInput(prompt) {
 let allMembers
 let selectedMembers = []
 
-axios.get("http://localhost:3000/members")
-  .then((response) => {
+axios.get("http://localhost:3000/featured_members")
+  .then((result) => {
+    const promises = []
+    const featuredMembers = result.data
+    for(member of featuredMembers){
+      promises.push(axios.delete(`http://localhost:3000/featured_members/${member.member_id}`))
+    }
+    return Promise.all(promises)
+  }).then(() => {
+    return axios.get("http://localhost:3000/members")
+  }).then((response) => {
 
     allMembers = response.data
     for(let index in allMembers){
