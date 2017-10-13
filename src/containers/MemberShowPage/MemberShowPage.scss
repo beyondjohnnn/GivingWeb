@@ -1,4 +1,4 @@
-$giving-web-purple: #7267ee;
+	$giving-web-purple: #7267ee;
 
 .member-show-page {
 	width: 100%;
@@ -16,7 +16,7 @@ $giving-web-purple: #7267ee;
 		flex-direction: column;
 		justify-content: space-around;
 		align-items: center;
-		height: 200px;
+		height: 230px;
 		padding: 30px;
 
 		h2 {
@@ -24,8 +24,8 @@ $giving-web-purple: #7267ee;
 			justify-content: center;
 			align-items: center;
 			text-transform: uppercase;
-			font-size: 2em;
-			font-weight: 400;
+			font-size: 2.5em;
+			font-weight: 300;
 			width: 60%;
 			text-align: center;
 		}
@@ -35,14 +35,24 @@ $giving-web-purple: #7267ee;
 			justify-content: center;
 			align-items: center;
 			color: $giving-web-purple;
-			font-size: 1.1em;
+			font-size: 1em;
 
-			font-weight: 400;
+			font-weight: 300;
+
+			.verified-charity-link {
+				color: $giving-web-purple;
+				padding-left: 3px;
+
+				&:hover {
+					color: darken($giving-web-purple, 10);
+				}
+			}
 
 			i {
 				// width: 30px;
-				margin-right: 5px;
-				font-size: 1.4em;
+				margin-right: 3px;
+				font-size: 1.1em;
+
 			}
 		}
 	}

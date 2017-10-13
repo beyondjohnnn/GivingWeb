@@ -67,7 +67,7 @@ class MemberShowPage extends React.Component {
 			<div className="member-show-page">
 				<div className="header">
 					<h2>{current_member.snippet}</h2>
-					<h3><i className="fa fa-check-circle-o" />Verified by Streetwork</h3>
+					<h3><i className="fa fa-check-circle-o" />Verified by <Link to="/charity-page" className="verified-charity-link">Streetwork</Link></h3>
 				</div>
 				<div className="left-section">
 					<div className="member-details">
