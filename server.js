@@ -4,6 +4,11 @@ const path = require('path')
 
 app.use(express.static('./build'))
 
+app.get('/upload', require('react-s3-upload/S3Sign')({
+	 S3_BUCKET:'givingweb-storage',
+	 unique: true
+ }));
+
 app.get('*', (req, res) => {
 	res.sendFile(path.join(__dirname, 'build/index.html'))
 })

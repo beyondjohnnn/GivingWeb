@@ -1,4 +1,4 @@
-import AWS from 'aws-sdk'
+import ReactUpload from 'react-s3-upload'
 import uuidV1 from 'uuid/v1'
 
 import React from 'react'
@@ -20,27 +20,11 @@ class NewMemberFormReviewLaunch extends React.Component {
 	}
 
 	saveImage(){
-		const imgObj = {
-			img: this.props.imagePreviewUrl
-		}
-
-		const s3 = new AWS.S3()
-		const myBucket = 'givingweb-storage/images' + uuidV1()
-		const myKey = 'myBucketKey'
-		s3.createBucket({Bucket: myBucket}, function(err, data) {
-		if (err) {
-		   console.log(err)
-		   } else {
-		     params = {Bucket: myBucket, Key: myKey, Body: this.props.imagePreviewUrl}
-		     s3.putObject(params, function(err, data) {
-		         if (err) {
-		             console.log(err)
-		         } else {
-		             console.log("Successfully uploaded data to myBucket/myKey")
-		         }
-		      })
-		   }
-		})
+		this.props.newMemberImage(this.props.imagePreviewUrl)
+		// <ReactUpload
+		//   onProgress={ (pct) => { console.log(pct) } }
+		//   onComplete={ (url) => { console.log(url) } }
+		//   folder="images" />
 	}
 
 	onClickSubmit(){
