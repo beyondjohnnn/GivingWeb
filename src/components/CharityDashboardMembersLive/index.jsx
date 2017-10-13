@@ -1,8 +1,9 @@
 import React from 'react'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
+import {calcDonationPercentage} from '../../utils/donations'
 
-import actionCreators from '../../actions/helpSomeoneActionCreators'
+import * as actionCreators from '../../actions/helpSomeoneActionCreators'
 
 import css from './CharityDashboardMembersLive.scss'
 
@@ -22,8 +23,10 @@ class CharityDashboardMembersLive extends React.Component {
 	}
 
 	createMemberPreviews() {
-		return this.props.members.map((member) => {
-			return <CharityDashboardMemberPreview member={member} />
+		return this.props.members.map((member, id) => {
+			if (calcDonationPercentage(member) < 100){
+				return <CharityDashboardMemberPreview key={id} member={member} />
+			}
 		})
 	}
 

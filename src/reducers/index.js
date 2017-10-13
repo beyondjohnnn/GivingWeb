@@ -10,6 +10,7 @@ import helpSomeone from './helpSomeone'
 import careButton from './careButton'
 import newMemberProcess from './newMemberProcess'
 import charityPage from './charityPage'
+import dashboard from './dashboard'
 
 const rootReducer = combineReducers({
 	auth,
@@ -21,6 +22,7 @@ const rootReducer = combineReducers({
 	careButton,
   newMemberProcess,
 	charityPage,
+	dashboard,
 	routing: routerReducer
 })
 
