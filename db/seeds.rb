@@ -34,7 +34,7 @@ Charity.create(
 	password_confirmation: 'abcdef'
 )
 
-
+FeaturedMember.delete_all
 Member.delete_all
 Donation.delete_all
 Legacy.delete_all
