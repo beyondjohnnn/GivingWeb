@@ -27,4 +27,3 @@ export function charityLogin(loginDetails) {
 		payload: axios.post('http://localhost:3000/sessions/charities', loginDetails)
 	}
 }
-
