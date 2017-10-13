@@ -1,5 +1,3 @@
-// import cloudinary from 'cloudinary'
-// import cloudinaryEvn from './cloudinaryEvn.js'
 import AWS from 'aws-sdk'
 import uuidV1 from 'uuid/v1'
 
@@ -21,9 +19,7 @@ class NewMemberFormReviewLaunch extends React.Component {
 		this.onClickSubmit = this.onClickSubmit.bind(this)
 	}
 
-
 	saveImage(){
-
 		const imgObj = {
 			img: this.props.imagePreviewUrl
 		}
@@ -31,9 +27,7 @@ class NewMemberFormReviewLaunch extends React.Component {
 		const s3 = new AWS.S3()
 		const myBucket = 'givingweb-storage/images' + uuidV1()
 		const myKey = 'myBucketKey'
-
 		s3.createBucket({Bucket: myBucket}, function(err, data) {
-
 		if (err) {
 		   console.log(err)
 		   } else {
@@ -47,13 +41,6 @@ class NewMemberFormReviewLaunch extends React.Component {
 		      })
 		   }
 		})
-
-		// this.props.newMemberImage(imgObj)
-		// cloudinary.config(cloudinaryEvn);
-		// cloudinary.uploader.upload(this.props.imagePreviewUrl, function(result) {
-		//   console.log(result.url)
-		// });
-
 	}
 
 	onClickSubmit(){
