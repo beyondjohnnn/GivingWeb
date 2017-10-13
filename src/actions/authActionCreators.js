@@ -27,10 +27,3 @@ export function charityLogin(loginDetails) {
 		payload: axios.post('http://localhost:3000/sessions/charities', loginDetails)
 	}
 }
-
-export function newMemberImage(base64Img) {
-	return {
-		type: 'NEW_MEMBER_IMAGE_POST',
-		payload: axios.post('http://localhost:5000/upload', base64Img)
-	}
-}

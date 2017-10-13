@@ -16,6 +16,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "aws-sdk": "^2.133.0",
     "axios": "^0.16.2",
     "base64-img": "^1.0.3",
     "body-parser": "^1.18.2",
