@@ -11,10 +11,50 @@ import css from './MemberShowPage.scss'
 
 import Comment from '../../components/Comment'
 
+import { ShareButtons, ShareCounts, generateShareIcon } from 'react-share';
+
+const {
+  FacebookShareButton,
+  GooglePlusShareButton,
+  LinkedinShareButton,
+  TwitterShareButton,
+  TelegramShareButton,
+  WhatsappShareButton,
+  PinterestShareButton,
+  VKShareButton,
+  OKShareButton,
+  RedditShareButton,
+  EmailShareButton,
+} = ShareButtons;
+
+const {
+  FacebookShareCount,
+  GooglePlusShareCount,
+  LinkedinShareCount,
+  PinterestShareCount,
+  VKShareCount,
+  OKShareCount,
+  RedditShareCount,
+} = ShareCounts;
+
+const FacebookIcon = generateShareIcon('facebook');
+const TwitterIcon = generateShareIcon('twitter');
+const TelegramIcon = generateShareIcon('telegram');
+const WhatsappIcon = generateShareIcon('whatsapp');
+const GooglePlusIcon = generateShareIcon('google');
+const LinkedinIcon = generateShareIcon('linkedin');
+const PinterestIcon = generateShareIcon('pinterest');
+const VKIcon = generateShareIcon('vk');
+const OKIcon = generateShareIcon('ok');
+const RedditIcon = generateShareIcon('reddit');
+const EmailIcon = generateShareIcon('email');
+
+
 class MemberShowPage extends React.Component {
 
 	constructor(props) {
 		super(props)
+
 	}
 
 	componentDidMount() {
@@ -54,6 +94,9 @@ class MemberShowPage extends React.Component {
 			width: textPercentage,
 			backgroundColor: donationBarColour
 		}
+		const shareUrl = 'https://www.npmjs.com/package/react-share';
+		// const shareUrl = '`http://localhost:8080/member?member_id=${current_member.id}`';
+		const title = `Help support ${current_member.name} reach their target`;
 
 		// const photoStyle = {
 		// 	backgroundImage: `linear-gradient(360deg, rgba(10, 10, 10, 0.2), rgba(250, 250, 250, 0)),
@@ -74,22 +117,27 @@ class MemberShowPage extends React.Component {
 					</div>
 					<div className="left-section">
 						<div className="member-details">
-							<img src={current_member.name}/>
-							<div className="member-photo-text-container">
-								<h3>{current_member.name}</h3>
-								<p>
-									<i className="fa-icon fa fa-map-marker" aria-hidden="true"></i>
-									 {current_member.location}
-								</p>
-								<div className="member-tags">
-									<i className="fa-icon fa fa-tags" aria-hidden="true"></i>
-									{this.createTags(current_member)}
+							<div className="member-image-basic-info"> 
+								<img src={`images/${current_member.name}.png`}/>
+								<div className="linear-gradient"></div>
+								<div className="member-photo-text-container">
+									<h3>{current_member.name}</h3>
+									<p>
+										<i className="fa-icon fa fa-map-marker" aria-hidden="true"></i>
+										 {current_member.location}
+									</p>
+									<div className="member-tags">
+										<i className="fa-icon fa fa-tags" aria-hidden="true"></i>
+										{this.createTags(current_member)}
+									</div>
 								</div>
-							</div>
+							</div>	
+
 							<div className="social-media">
-								<button>share</button>
-								<button>tweet</button>
-								<button>share</button>
+								<FacebookShareButton url={shareUrl} quote={title}> <button className="facebook"><i className="fa fa-facebook"></i>Share</button></FacebookShareButton>
+								<TwitterShareButton url={shareUrl} quote={title}> <button className="twitter"><i className="fa fa-twitter"></i>Tweet</button></TwitterShareButton>
+								<GooglePlusShareButton url={shareUrl} quote={title}> <button className="google-plus"><i className="fa fa-google-plus"></i>Share</button></GooglePlusShareButton>
+								<button className="widgets"><i className="fa fa-code" aria-hidden="true"></i>Widgets</button>
 							</div>
 							<div className="loaded-story">
 								{ReactHtmlParser(current_member.info.replace('&#039;', '\''))}
