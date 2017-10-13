@@ -49,6 +49,9 @@ const defaultState = {
   careButton: {
     tooltipVisible: false
   },
+  dashboard: {
+    tab: 'live'
+  },
   newMemberProcess: {
     tab: 'basics',
     file: '',
