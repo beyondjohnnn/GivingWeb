@@ -16,6 +16,13 @@ class FeaturedMembersController < ApplicationController
       end
     end
 
+    def update
+      member = FeaturedMember.where(member_id: params[:id])[0]
+      member.position = params[:position]
+      member.save
+      render json: member
+    end
+
     def destroy
       delete = FeaturedMember.where(member_id: params[:id])[0].delete
       render json: {out: "deleted"}
