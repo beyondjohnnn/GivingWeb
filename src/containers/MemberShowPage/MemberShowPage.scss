@@ -1,14 +1,21 @@
-$giving-web-purple: #7267ee;
+	$giving-web-purple: #7267ee;
 
 .member-show-page {
+	
 	width: 100%;
-	padding: 0 10%;
+	display: flex;
+	background-color: #F4F4F4;
+	font-family: Montserrat, sans-serif;
+
+	.main-wrapper {
+	width: 1170px;
+	// padding: 0 10%;
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: space-around;
 	margin: 0 auto;
 	padding-bottom: 50px;
-	background-color: #F4F4F4;
+	}
 
 	.header {
 		width: 100%;
@@ -16,7 +23,7 @@ $giving-web-purple: #7267ee;
 		flex-direction: column;
 		justify-content: space-around;
 		align-items: center;
-		height: 200px;
+		height: 230px;
 		padding: 30px;
 
 		h2 {
@@ -24,8 +31,8 @@ $giving-web-purple: #7267ee;
 			justify-content: center;
 			align-items: center;
 			text-transform: uppercase;
-			font-size: 2em;
-			font-weight: 400;
+			font-size: 2.5em;
+			font-weight: 300;
 			width: 60%;
 			text-align: center;
 		}
@@ -35,99 +42,226 @@ $giving-web-purple: #7267ee;
 			justify-content: center;
 			align-items: center;
 			color: $giving-web-purple;
-			font-size: 1.1em;
+			font-size: 1em;
 
-			font-weight: 400;
+			font-weight: 300;
+
+			.verified-charity-link {
+				color: $giving-web-purple;
+				padding-left: 3px;
+
+				&:hover {
+					color: darken($giving-web-purple, 10);
+				}
+			}
 
 			i {
 				// width: 30px;
-				margin-right: 5px;
-				font-size: 1.4em;
+				margin-right: 3px;
+				font-size: 1.1em;
+
 			}
 		}
 	}
 
 	.left-section {
-		width: 58%;
+		display: flex;
+		width: 65%;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 
 		.member-details {
-			padding: 40px;
+			display: flex;
+			flex-direction: column;
 			background-color: white;
-			width: 90%;
+			width: 93%;
 			margin-bottom: 50px;
-			border-radius: 8px;
+			border-radius: 5px;
 			border: 1px solid #ccc;
+			position: relative;
+			padding: 30px;
+			// margin-right: 8%;
 
-			.member-photo-container{
-				height: auto;
-			}
+			.member-image-basic-info {
 
-			.member-photo{
-				width: 100%;
-				height: 400px;
-				margin-bottom: 20px;
-			}
-
-			.member-photo-text-container{
+				display: flex;
+				flex-direction: column;
+				width:100%;
 				position: relative;
-				color: #fff;
-				height: 0;
-				left: 30px;
-				bottom: 120px;
 
-				h3{
-					font-size: 25px;
-				}
-				
-				p{
-					font-size: 20px;
+				img {
+			 		width: 100%;
+					height: 100%;
+					object-fit: cover;
 				}
 
-				.fa-icon{
-					margin-right: 8px;
-					font-size: 20px;
+				.linear-gradient {
+					position: absolute;
+					bottom:0;
+					width: 100%;
+					height: 60%;
+					background: linear-gradient(360deg, rgba(10, 10, 10, 0.6), rgba(250, 250, 250, 0));
 				}
 
-				.member-tags{
-					display: flex;
+				.member-photo-container{
+					height: auto;
+				}
 
-					a{
+				.member-photo{
+					width: 100%;
+					min-height: 400px;
+					margin-bottom: 20px;
+				}
+
+				.member-photo-text-container{
+
+					position: absolute;
+					color: #fff;
+					left: 0;
+					bottom: 0;
+					margin: 30px 35px;
+
+					h3{
+						font-size: 2em;
+						font-weight: 300;
+					}
+					
+					p{
+						font-size: 1.2em;
+						font-weight: 300;
+						text-transform: capatalize;
+						margin-top: 4px;
+					}
+
+					.fa-icon{
+						margin-right: 8px;
 						font-size: 20px;
-						color: #fff;
 					}
 
-					.member-tag{
-						margin-right: 10px;
+					.member-tags{
+						display: flex;
+						padding-top: 4px;
+						justify-content: flex-start; 
+						align-items: center;
+
+						a{
+							font-size: 0.9em;
+							font-weight: 300;
+							color: #fff;
+
+							&:hover {
+								color: lighten(#7b5dff,5);
+							}
+						}
+
+						.member-tag{
+							margin-right: 5px;
+						}
 					}
 				}
+
 			}
 
 			.social-media {
 				display: flex;
-				justify-content: space-between;
+				// justify-content: space-between;
 				width: 70%;
-				margin-bottom: 50px;
+				margin-bottom: 20px;
+				margin-top: 8px;
 
 				button {
-					width: 80px;
-					height: 35px;
+					padding: 5px 13px; 
+					height: 34px;
 					border: none;
+					color: #fff;
+					font-weight: 300;
+					font-size: 1em;
+					font-family: Montserrat, sans-serif;
+					border-radius: 3px;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					cursor: pointer;
+					outline: none;
+					margin-right: 5px;
+					transition-duration: 0.2s;
+					width: 95px;
+					text-align: center;
+					// text-transform: uppercase;
+
+						&:hover {
+
+							box-shadow: 0.25px 0.25px 0.25px 1px darken(#f5f5f5, 15);
+						}
+
+					i {
+						font-size: 1.1em;
+						margin-right: 5px;
+					}
+
+					&.facebook {
+					background-color: #425A93;
+
+							background-color: darken(#425A93, 3);
+						&:hover {
+						}
+					}
+
+					&.twitter {
+					background-color: #4CA0EC;
+
+						&:hover {
+							background-color: darken(#4CA0EC, 3);
+						}
+					}
+					&.google-plus {
+					background-color: #CD5643;
+
+						&:hover {
+							background-color: darken(#CD5643, 3);
+						}
+					}
+
+					&.widgets {
+					background-color: #c6c6c6;
+					font-size: 0.9em;
+
+						i {
+							font-size: 1.1em;
+						}
+
+						&:hover {
+							background-color: darken(#c6c6c6, 3);
+						}
+					}
 
 				}
 			}
 
 			.loaded-story {
+				
+				margin-bottom: 25px;
+
+				strong {
+					font-weight: 400;
+				}
+
 				h3 {
-					margin-top: 40px;
+					margin-top: 20px;
 					margin-bottom: 20px;
+					font-size: 1.5em;
+					font-weight: 400;
 				}
 
 				span {
-					margin-bottom: 40px;
+					margin-bottom: 20px;
+					font-size: 1.1em;
+					font-weight: 300 !important;
+					color: #686868;
+					line-height: 1.5;
 				}
+
 			}
 
 		}
@@ -164,7 +298,7 @@ $giving-web-purple: #7267ee;
 	}
 
 	.right-section {
-		width: 38%;
+		width: 35%;
 
 		.donation-section {
 			background-color: white;

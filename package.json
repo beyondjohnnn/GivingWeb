@@ -10,7 +10,8 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
-    "test:snapshot": "jest --updateSnapshot"
+    "test:snapshot": "jest --updateSnapshot",
+    "feat-members": "node src/utils/scripts/featured_members.js"
   },
   "keywords": [],
   "author": "",
@@ -35,6 +36,7 @@
     "react-router-dom": "^4.2.2",
     "react-router-redux": "^4.0.8",
     "react-scrollable-anchor": "^0.5.0",
+    "react-share": "^1.16.0",
     "really-smooth-scroll": "^2.1.1",
     "recompose": "^0.26.0",
     "redux": "^3.7.2",

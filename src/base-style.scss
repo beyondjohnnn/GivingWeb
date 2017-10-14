@@ -13,3 +13,8 @@ body {
   font-family: $main-font;
   color: $main-text-color;
 }
+
+::selection {
+    color: #fff;
+    background: lighten(#7663f6, 1);
+}
