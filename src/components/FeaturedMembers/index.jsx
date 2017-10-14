@@ -16,15 +16,7 @@ class FeaturedMembers extends React.Component {
 	}
 
 	componentWillMount(){
-		this.props.getMembers();
-	}
-
-	prepareMembers(){
-		let members = [this.props.members[5], this.props.members[4], this.props.members[1]];
-		for(let index in members){
-			if(!members[index]) return [];
-		}
-		return members
+		this.props.getFeaturedMembers();
 	}
 
 	render() {
@@ -32,7 +24,7 @@ class FeaturedMembers extends React.Component {
 			<div className="featured-members">
 				<h2>Featured Members</h2>
 				<div className="members-list">
-					<MemberPreviewBuilder members={this.prepareMembers()} previewsPerLine={3}/>
+					<MemberPreviewBuilder members={this.props.members} previewsPerLine={3}/>
 				</div>
 				<Link to="/help-someone" className="see-more-link">See more members</Link>
 			</div>

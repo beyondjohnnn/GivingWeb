@@ -11,6 +11,14 @@ function helpSomeone(state = [], action) {
       return {...state, fetching: true, error: action.payload}
   	case 'GET_MEMBERS_FULFILLED':
       return {...state, fetching: true, fetched: true, members: action.payload.data}
+
+		case 'GET_FEATURED_MEMBERS_PENDING':
+      return {...state, fetching: true}
+  	case 'GET_FEATURED_MEMBERS_REJECTED':
+      return {...state, fetching: true, error: action.payload}
+  	case 'GET_FEATURED_MEMBERS_FULFILLED':
+      return {...state, fetching: true, fetched: true, members: action.payload.data}
+
     case 'GET_SINGLE_MEMBER_PENDING':
       return {...state, fetching: true}
     case 'GET_SINGLE_MEMBER_REJECTED':
