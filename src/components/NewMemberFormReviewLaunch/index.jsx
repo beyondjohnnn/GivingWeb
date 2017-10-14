@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 import cloudinary from 'cloudinary'
 import cloudinaryEvn from './cloudinaryEvn.js'
-=======
->>>>>>> development
 
 import React from 'react'
 import {connect} from 'react-redux'
