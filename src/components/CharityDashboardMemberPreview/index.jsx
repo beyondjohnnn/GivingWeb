@@ -5,6 +5,14 @@ import css from './CharityDashboardMemberPreview.scss'
 
 class CharityDashboardMemberPreview extends React.Component {
 
+	renderMembersImage() {
+		if (this.props.member.url_image == undefined) {
+			return `images/${this.props.member.name}.png`
+		} else {
+			return this.props.member.url_image
+		}
+	}
+
 	render() {
 		let previewStyle = this.props.style || {}
 		const {member} = this.props
@@ -16,7 +24,7 @@ class CharityDashboardMemberPreview extends React.Component {
 		}
 		return (
 			<div className="cd-member-preview">
-				<img src={`images/${member.name}.png`} alt=""/>
+				<img src={this.renderMembersImage()} alt=""/>
 				<h2>{member.snippet}</h2>
 				<div className="donation-details">
 					<h4 className="no-of-donors">{member.donations.length} donors</h4>
