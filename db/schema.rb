@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171005122053) do
+ActiveRecord::Schema.define(version: 20171013155239) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,6 +55,14 @@ ActiveRecord::Schema.define(version: 20171005122053) do
     t.datetime "updated_at", null: false
     t.index ["member_id"], name: "index_donations_on_member_id"
     t.index ["user_id"], name: "index_donations_on_user_id"
+  end
+
+  create_table "featured_members", force: :cascade do |t|
+    t.bigint "member_id"
+    t.integer "position"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["member_id"], name: "index_featured_members_on_member_id"
   end
 
   create_table "legacies", force: :cascade do |t|

@@ -1,10 +1,10 @@
 class MembersController < ApplicationController
 
     def index
-      members = Member.all.as_json({
+      members = Member.order(id: :desc).as_json({
         include: [:donations, :comments]
         })
-      render json: members.reverse
+      render json: members
     end
 
     def show
