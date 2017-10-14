@@ -153,11 +153,12 @@ class MemberShowPage extends React.Component {
 							<label htmlFor="comment-box">Send a message</label>
 							<textarea id="comment-box" ref="comment-box" className="comment-box" />
 							<button className="post-button">Post</button>
+						</div> 
+						<div className="make-comment">
 							<div className="comment-list">
 								{this.createComments()}
 							</div>
 						</div>
-
 					</div>
 					<div className="right-section">
 						<div className="donation-section">
