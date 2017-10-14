@@ -1,10 +1,12 @@
 	$giving-web-purple: #7267ee;
+	$border: 1px solid #eaeaea;
+	$light-grey-color: #686868;
 
 .member-show-page {
 	
 	width: 100%;
 	display: flex;
-	background-color: #F4F4F4;
+	background-color: #fcfcfc;
 	font-family: Montserrat, sans-serif;
 
 	.main-wrapper {
@@ -69,16 +71,16 @@
 		width: 65%;
 		display: flex;
 		flex-direction: column;
-		align-items: center;
+		align-items: flex-start;
 
 		.member-details {
 			display: flex;
 			flex-direction: column;
 			background-color: white;
-			width: 93%;
+			width: 95%;
 			margin-bottom: 50px;
 			border-radius: 5px;
-			border: 1px solid #ccc;
+			border: $border;
 			position: relative;
 			padding: 30px;
 			// margin-right: 8%;
@@ -166,9 +168,18 @@
 			.social-media {
 				display: flex;
 				// justify-content: space-between;
-				width: 70%;
-				margin-bottom: 20px;
+				width: 100%;
+				// margin-bottom: 20px;
 				margin-top: 8px;
+
+				input {
+					width: 900px;
+					outline: none;
+					focus: none;
+					padding-left: 40px;
+
+
+				}
 
 				button {
 					padding: 5px 13px; 
@@ -203,7 +214,7 @@
 					&.facebook {
 					background-color: #425A93;
 
-							background-color: darken(#425A93, 3);
+							background-color: darken(#425A93, 6);
 						&:hover {
 						}
 					}
@@ -212,14 +223,14 @@
 					background-color: #4CA0EC;
 
 						&:hover {
-							background-color: darken(#4CA0EC, 3);
+							background-color: darken(#4CA0EC, 6);
 						}
 					}
 					&.google-plus {
 					background-color: #CD5643;
 
 						&:hover {
-							background-color: darken(#CD5643, 3);
+							background-color: darken(#CD5643, 6);
 						}
 					}
 
@@ -232,10 +243,36 @@
 						}
 
 						&:hover {
-							background-color: darken(#c6c6c6, 3);
+							background-color: darken(#c6c6c6, 6);
 						}
 					}
 
+				}
+			}
+
+			.share-message {
+				display: flex;
+				margin-left: 70px;
+				align-items: flex-end;
+				// justify-content: center;
+				font-weight: 300;
+				// color: #686868;
+				color: #7267ee;
+
+
+				h3 {
+					font-size: 30px;
+				}
+
+				p {
+					padding-bottom: 7px;
+					margin-left: 10px;
+					cursor: pointer;
+
+					&:hover {
+						color: darken(#7267ee, 10);
+						text-decoration: underline;
+					}
 				}
 			}
 
@@ -258,7 +295,7 @@
 					margin-bottom: 20px;
 					font-size: 1.1em;
 					font-weight: 300 !important;
-					color: #686868;
+					color: $light-grey-color;
 					line-height: 1.5;
 				}
 
@@ -273,7 +310,7 @@
 			width: 90%;
 			padding: 40px;
 			border-radius: 8px;
-			border: 1px solid #ccc;
+			border: $border;
 
 
 			h3 {
@@ -303,15 +340,24 @@
 		.donation-section {
 			background-color: white;
 			width: 100%;
-			padding: 40px;
+			padding: 30px;
 			border-radius: 8px;
-			border: 1px solid #ccc;
+			border: $border;
 
 			h4 {
-				font-size: 1.4em;
+				font-size: 2.2em;
+				font-weight: 400;
 				display: flex;
 				align-items: center;
 				height: 40px;
+			}
+
+			h2 {
+				margin-top: 4px;
+				font-size: 1.1em;
+				font-weight: 300;
+				// text-transform: uppercase; 
+				color: lighten($light-grey-color, 20);
 			}
 
 			p {
@@ -325,7 +371,8 @@
 				border-radius: 5px;
 				background-color: #ddd;
 				overflow: hidden;
-				margin-bottom: 15px;
+				margin-bottom: 10px;
+				margin-top: 25px;
 
 				.bar-fill {
 					height: 10px;
@@ -341,15 +388,23 @@
 					// width: 50%;
 					// padding: 10px;
 					display: flex;
-					align-items: center;
+					align-items: flex-start;
 					height: 20px;
-					font-size: 1em;
-					padding: 0px 5px;
+					font-size: 0.9em;
+					// padding: 0px 5px;
 					text-transform: uppercase;
-					dont-weight: 200;
+					font-weight: 300;
+					color: lighten($light-grey-color, 5);
+					padding-right: 5px;
+
+
 
 					&:first-child {
 						border-right: solid 2px $giving-web-purple;
+					}
+
+					&.supporters-text {
+						padding-left: 5px;
 					}
 				}
 			}

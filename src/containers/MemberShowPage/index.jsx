@@ -138,7 +138,12 @@ class MemberShowPage extends React.Component {
 								<TwitterShareButton url={shareUrl} quote={title}> <button className="twitter"><i className="fa fa-twitter"></i>Tweet</button></TwitterShareButton>
 								<GooglePlusShareButton url={shareUrl} quote={title}> <button className="google-plus"><i className="fa fa-google-plus"></i>Share</button></GooglePlusShareButton>
 								<button className="widgets"><i className="fa fa-code" aria-hidden="true"></i>Widgets</button>
+								<input type="url" value={`https://givingweb.io/${current_member.name}`}></input>
 							</div>
+							<div className="share-message"> 
+								<h3>&#10551;</h3>
+								<p>Sharing my story lets my voice reach more people!</p>
+							</div> 
 							<div className="loaded-story">
 								{ReactHtmlParser(current_member.info.replace('&#039;', '\''))}
 							</div>
@@ -157,18 +162,18 @@ class MemberShowPage extends React.Component {
 					<div className="right-section">
 						<div className="donation-section">
 							<h4>£{totalDonations}</h4>
-							<p>raised of £{current_member.goal} goal</p>
+							<h2>raised of £{current_member.goal} goal</h2>
 							<div className="member-progress-bar">
 								<div className="bar-fill" style={donationBarStyles}></div>
 							</div>
 							<div className="progress-summary">
 								<p>£{current_member.goal - totalDonations} still needed</p>
-								<p>{current_member.donations.length} supporters</p>
+								<p className="supporters-text">{current_member.donations.length} supporters</p>
 							</div>
 							<div className="donation-controls">
-								<h4>
+								<h3>
 									Select Donation amount
-								</h4>
+								</h3>
 								<select>
 									<option value="25">£25</option>
 									<option value="50">£50</option>
