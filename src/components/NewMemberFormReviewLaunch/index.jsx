@@ -1,5 +1,3 @@
-import AWS from 'aws-sdk'
-import uuidV1 from 'uuid/v1'
 
 import React from 'react'
 import {connect} from 'react-redux'
