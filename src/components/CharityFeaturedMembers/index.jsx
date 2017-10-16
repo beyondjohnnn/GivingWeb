@@ -3,13 +3,13 @@ import { bindActionCreators } from 'redux'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 
-import * as actionCreators from '../../actions/CharityFeaturedMembersActionCreators'
+import * as actionCreators from '../../actions/helpSomeoneActionCreators'
 
 import css from './CharityFeaturedMembers.scss'
 
 import MemberPreviewBuilder from '../../components/MemberPreviewBuilder'
 
-class FeaturedMembers extends React.Component {
+class CharityFeaturedMembers extends React.Component {
 
 	constructor(props){
 		super(props);
@@ -23,7 +23,7 @@ class FeaturedMembers extends React.Component {
 	render() {
 		return (
 			<div className="featured-members">
-				<h2>Featured Members</h2>
+				<h2>Charity Featured Members</h2>
 				<div className="members-list">
 					<MemberPreviewBuilder members={this.props.members} previewsPerLine={3}/>
 				</div>
@@ -41,4 +41,4 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators(actionCreators, dispatch)
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(FeaturedMembers)
+export default connect(mapStateToProps, mapDispatchToProps)(CharityFeaturedMembers)

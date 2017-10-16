@@ -6,7 +6,7 @@ import css from './CharityPage.scss'
 import CharityTile from '../../components/CharityTile'
 import CareButton from '../../components/CareButton'
 
-import FeaturedMembers from '../../components/FeaturedMembers'
+import CharityFeaturedMembers from '../../components/CharityFeaturedMembers'
 import CharityPageInformation from '../../components/CharityPageInformation'
 import CharityPageHero from '../../components/CharityPageHero'
 
