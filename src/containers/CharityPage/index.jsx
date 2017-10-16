@@ -11,7 +11,7 @@ import CharityPageInformation from '../../components/CharityPageInformation'
 import CharityPageHero from '../../components/CharityPageHero'
 
 
-	     
+
 
 
 class CharityPage extends React.Component {
@@ -22,7 +22,7 @@ class CharityPage extends React.Component {
 				<div className="main-charity-wrapper">
 					<CharityPageHero />
 					<CharityPageInformation />
-					<FeaturedMembers />
+					<CharityFeaturedMembers />
 				</div>
 			</div>
 
@@ -33,11 +33,11 @@ class CharityPage extends React.Component {
 export default CharityPage
 
 
-				{/* 
+				{/*
 <<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
-		      <button className="about-us-scroller">About Us<i class="fa fa-angle-double-down" aria-hidden="true"></i></button> 
+		      <button className="about-us-scroller">About Us<i class="fa fa-angle-double-down" aria-hidden="true"></i></button>
 =======
 >>>>>>> development
 				<div className="giving-levels-container">
@@ -50,19 +50,19 @@ export default CharityPage
 						<p className="giving-card-description">A £5 pays for someone to have a hot shower and access to our laundry.</p>
 						<p className="giving-card-support"><i className="fa fa-heart"></i>Be the first supporter!</p>
 						<h3 className="giving-card-support">£5</h3>
-					</div> 
+					</div>
 					<div className="giving-card">
 						<p className="giving-card-description">A £5 pays for someone to have a hot shower and access to our laundry.</p>
 						<p className="giving-card-support"><i className="fa fa-heart"></i>Be the first supporter!</p>
 						<h3 className="giving-card-support">£5</h3>
-					</div> 
+					</div>
 					<div className="giving-card">
 						<p className="giving-card-description">A £5 pays for someone to have a hot shower and access to our laundry.</p>
 						<p className="giving-card-support"><i className="fa fa-heart"></i>Be the first supporter!</p>
 						<h3 className="giving-card-support">£5</h3>
-					</div> 
+					</div>
 
-				</div>  
+				</div>
 <<<<<<< HEAD
 >>>>>>> Stashed changes
 =======
@@ -93,7 +93,7 @@ export default CharityPage
 								save more lives. We are entirely funded by the public. With your
 								help, we can ensure more people beat cancer.
 							</p>
-							
+
 							<a href="#">www.cancerresearchuk.org</a>
 							<a href="#">supporter.services@cancer.org.uk</a>
 						</article>

@@ -8,7 +8,7 @@ class MemberPreview extends React.Component {
 
 	createCompletedBanner(percentage) {
 		if (percentage >= 100) {
-			return <div className="completed-banner">Completed!</div>
+			return <div className="completed-banner">{"Completed!"}</div>
 		}
 	}
 
@@ -20,7 +20,7 @@ class MemberPreview extends React.Component {
 
 	// generateRandomBear() {
 	// 	const bearImages = ["images/bear-blue.png", "images/bear-red.png", "images/bear-green.png", "images/bear-yellow.png"]
-	// 	console.log(bearImages[Math.floor(Math.random() * 4)]);		
+	// 	console.log(bearImages[Math.floor(Math.random() * 4)]);
 	// }
 
 	// renderMembersImages() {
@@ -71,15 +71,15 @@ class MemberPreview extends React.Component {
 					</div>
 					<div className="member-donations">Donations</div>
 						<div className="member-images">
-							<img src="images/bear-blue.png"></img> 
-							<img src="images/bear-green.png"></img> 
-							<img src="images/bear-red.png"></img> 
-							<img src="images/bear-yellow.png"></img> 
+							<img src="images/bear-blue.png"></img>
 							<img src="images/bear-green.png"></img>
-							<p>+3</p> 
+							<img src="images/bear-red.png"></img>
+							<img src="images/bear-yellow.png"></img>
+							<img src="images/bear-green.png"></img>
+							<p>+3</p>
 						</div>
 				</div>
-			</div>	
+			</div>
 		)
 	}
 }
