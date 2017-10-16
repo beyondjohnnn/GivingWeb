@@ -14,7 +14,7 @@ class MemberPreview extends React.Component {
 
 	createDonateButton(percentage) {
 		if (percentage < 100) {
-			return <button className="donate-button">Donate</button>
+			return <button className="donate-button">{"Donate"}</button>
 		}
 	}
 
@@ -23,9 +23,13 @@ class MemberPreview extends React.Component {
 	// 	console.log(bearImages[Math.floor(Math.random() * 4)]);
 	// }
 
-	// renderMembersImages() {
-	// 	console.log({member.donations.count})
-	// }
+	renderMembersImage() {
+		if (this.props.member.url_image == undefined) {
+			return `images/${this.props.member.name}.png`
+		} else {
+			return this.props.member.url_image
+		}
+	}
 
 	render() {
 		let previewStyle = this.props.style || {}
@@ -42,8 +46,7 @@ class MemberPreview extends React.Component {
 			<div className="member-preview" style={previewStyle}>
 				<div className="member-photo-container">
 					{this.createCompletedBanner(percentage)}
-					<Link className="member-link" to={`/member?member_id=${member.id}`}><img className="member-photo" src={`images/${member.name}.png`} /></Link>
-					}
+					<Link className="member-link" to={`/member?member_id=${member.id}`}><img className="member-photo" src={this.renderMembersImage()} /></Link>
 				</div>
 				<div className="member-information">
 					<Link className="member-link" to={`/member?member_id=${member.id}`}><h3 className="member-name">{member.name}</h3></Link>
