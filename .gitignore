@@ -16,8 +16,5 @@ build/index.html
 test/coverage
 js_playground.js
 
-
-#cloudinary api key
+#security evn
 cloudinaryEvn.js
-aws
-

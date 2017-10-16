@@ -1,0 +1,46 @@
+.featured-members {
+	width: 100%;
+	padding: 30px 220px;
+	background-color: #f5f5f5;
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+
+	h2 {
+		display: flex;
+		color: #333333;
+		font-size: 25px;
+		margin-bottom: 40px;
+		font-weight: 400;
+	}
+
+	.members-list {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-around;
+		margin-bottom: 20px;
+	}
+
+	.see-more-link {
+		text-decoration: none;
+		color: #fff;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 15px 20px;
+		background-color: #7663f6;
+		text-transform: uppercase;
+		font-weight: 300; 
+		margin-bottom: 30px;
+		transition-duration: 0.2s;
+		border: solid 1.5px #7663f6;
+
+
+
+		&:hover {
+			background-color: #fff;
+			color: #7663f6;
+
+		}
+	}
+}

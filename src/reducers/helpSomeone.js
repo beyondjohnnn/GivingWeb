@@ -27,6 +27,15 @@ function helpSomeone(state = [], action) {
       return {...state, fetching: true, fetched: true, current_member: action.payload.data}
     case 'SET_CURRENT_MEMBER':
       return {...state, current_member: action.member}
+
+
+		case 'GET_CHARITY_FEATURED_MEMBERS_PENDING':
+	    return {...state, fetching: true}
+		case 'GET_CHARITY_FEATURED_MEMBERS_REJECTED':
+	    return {...state, fetching: true, error: action.payload}
+		case 'GET_CHARITY_FEATURED_MEMBERS_FULFILLED':
+	    return {...state, fetching: true, fetched: true, members: action.payload.data}
+
     default:
 			return state
 	}
