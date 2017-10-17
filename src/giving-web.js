@@ -7,35 +7,34 @@ import css from './base-style.scss'
 
 // import containers
 import NoAuthLandingPage from './NoAuthLandingPage'
-import UserSignup from './containers/UserSignup'
-import UserLogin from './containers/UserLogin'
+import UserSignup from './Shared/containers/UserSignup'
+import UserLogin from './Shared/containers/UserLogin'
 import CharityPage from './CharityPage'
-import AuthLandingPage from './containers/AuthLandingPage'
-import UserDashboard from './containers/UserDashboard'
-import CharityLogin from './containers/CharityLogin'
-import CharitySignup from './containers/CharitySignup'
+import AuthLandingPage from './Shared/containers/AuthLandingPage'
+import UserDashboard from './Shared/containers/UserDashboard'
+import CharityLogin from './Shared/containers/CharityLogin'
+import CharitySignup from './Shared/containers/CharitySignup'
 import HelpSomeone from './HelpSomeone'
-import CharityLandingPage from './containers/CharityLandingPage'
+import CharityLandingPage from './Shared/containers/CharityLandingPage'
 import CharityDashboard from './CharityDashboard'
-import MemberShowPage from './containers/MemberShowPage'
-import CookieInfoPage from './containers/CookieInfoPage'
-import MeetTheTeamPage from './containers/MeetTheTeamPage'
-import TermsAndPrivacyPage from './containers/TermsAndPrivacyPage'
+import MemberShowPage from './Shared/containers/MemberShowPage'
+import CookieInfoPage from './Shared/containers/CookieInfoPage'
+import MeetTheTeamPage from './Shared/containers/MeetTheTeamPage'
+import TermsAndPrivacyPage from './Shared/containers/TermsAndPrivacyPage'
 import ContactUs from './ContactUs'
-import PartnersPage from './containers/PartnersPage'
-import AboutUsPage from './containers/AboutUsPage'
+import PartnersPage from './Shared/containers/PartnersPage'
+import AboutUsPage from './Shared/containers/AboutUsPage'
 
 // import components
 import Navigation from './Navigation'
-import FeaturedMembers from './components/FeaturedMembers'
-import Footer from './components/Footer'
-import Comment from './components/Comment'
+import FeaturedMembers from './Shared/components/FeaturedMembers'
+import Footer from './Shared/components/Footer'
 
 // import react router dependencies
 import { Router, Route } from 'react-router'
 import { Provider } from 'react-redux'
 import store, { history } from './store'
-import setAuthToken from './utils/setAuthToken'
+import setAuthToken from './Shared/utils/setAuthToken'
 
 
 setAuthToken(localStorage.getItem('token'))
@@ -58,14 +57,12 @@ const router = (
 				<Route path="/charities" component={CharityLandingPage} />
 				<Route path="/charity-dashboard" component={CharityDashboard} />
 				<Route path="/member" component={MemberShowPage} />
-				<Route path="/comment" component={Comment} />
 				<Route path="/terms" component={TermsAndPrivacyPage} />
 				<Route path="/cookie-info" component={CookieInfoPage} />
 				<Route path="/meet-the-team" component={MeetTheTeamPage} />
 				<Route path="/contact-us" component={ContactUs} />
 				<Route path="/partners" component={PartnersPage} />
 				<Route path="/about-us" component={AboutUsPage} />
-
 				<Footer />
 			</div>
 		</Router>

@@ -8,7 +8,7 @@ import * as actionCreators from '../../../actions/helpSomeoneActionCreators'
 import css from './CharityFeaturedMembers.scss'
 
 //TODO: used for mulipulte pages
-import MemberPreviewBuilder from '../../../components/MemberPreviewBuilder'
+import MemberPreviewBuilder from '../../../Shared/components/MemberPreviewBuilder'
 
 class CharityFeaturedMembers extends React.Component {
 

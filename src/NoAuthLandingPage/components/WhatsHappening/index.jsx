@@ -7,7 +7,7 @@ import * as actionCreators from '../../../actions/howItWorksActionCreators'
 
 import css from './WhatsHappening.scss'
 
-import FeaturedMembers from '../../../components/FeaturedMembers'
+import FeaturedMembers from '../../../Shared/components/FeaturedMembers'
 
 class WhatsHappening extends React.Component {
 	render() {

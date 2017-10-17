@@ -1,7 +1,7 @@
 import React from 'react'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
-import {calcDonationPercentage} from '../../../utils/donations'
+import {calcDonationPercentage} from '../../../Shared/utils/donations'
 
 import * as actionCreators from '../../../actions/helpSomeoneActionCreators'
 

@@ -7,8 +7,8 @@ import * as actionCreators from '../actions/helpSomeoneActionCreators'
 import css from './HelpSomeone.scss'
 
 import CategoryList from './components/CategoryList'
-import MemberPreview from '../components/MemberPreview'
-import MemberPreviewBuilder from '../components/MemberPreviewBuilder'
+import MemberPreview from '../Shared/components/MemberPreview'
+import MemberPreviewBuilder from '../Shared/components/MemberPreviewBuilder'
 
 class HelpSomeonePage extends React.Component {
 

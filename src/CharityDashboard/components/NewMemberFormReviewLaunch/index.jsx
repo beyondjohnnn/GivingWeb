@@ -9,7 +9,7 @@ import * as actionCreators from '../../../actions/newMemberProcess'
 
 import css from './NewMemberFormReviewLaunch.scss'
 
-import { isStringValid, isMonetaryValueValid } from "../../../utils/validator"
+import { isStringValid, isMonetaryValueValid } from "../../../Shared/utils/validator"
 
 class NewMemberFormReviewLaunch extends React.Component {
 

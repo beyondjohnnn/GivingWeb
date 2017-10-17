@@ -1,4 +1,4 @@
-import saveAuthTokenToLocalStorage from '../utils/saveAuthTokenToLocalStorage'
+import saveAuthTokenToLocalStorage from '../Shared/utils/saveAuthTokenToLocalStorage'
 
 function auth(state = [], action) {
 	switch(action.type) {

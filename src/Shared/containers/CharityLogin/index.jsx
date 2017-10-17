@@ -1,15 +1,17 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { Link } from 'react-router-dom'
 
-import * as actionCreators from '../../actions/authActionCreators'
+import * as actionCreators from '../../../actions/authActionCreators'
 
-import css from './UserLogin.scss'
+import css from './CharityLogin.scss'
 
-class UserLogin extends React.Component {
+class CharityLogin extends React.Component {
 
-	componentWillReceiveProps() {
+	componentWillReceiveProps(nextProps) {
+		if (nextProps.charity) {
+			this.props.history.push('/charity-dashboard')
+		}
 	}
 
 	submitForm(e) {
@@ -20,15 +22,15 @@ class UserLogin extends React.Component {
 			password: this.refs.password.value
 		}
 
-		this.props.login(loginDetails)
+		this.props.charityLogin(loginDetails)
 	}
 
 	render() {
 		return (
-			<div className="user-login">
+			<div className="charity-login">
 				<form onSubmit={this.submitForm.bind(this)} >
 					<div className="form-header">
-						<h2>Log in</h2>
+						<h2>Charity Log in</h2>
 					</div>
 					<div className="email-field-wrapper form-field">
 						<label htmlFor="email">Email</label>
@@ -40,7 +42,7 @@ class UserLogin extends React.Component {
 					</div>
 					<input type="submit" value="Log in" />
 					<div className="extra-info">
-						<p>Are you working for a charity? <Link to="/charity-login">Login here</Link></p>
+						Already have an account?
 					</div>
 				</form>
 			</div>
@@ -56,4 +58,4 @@ function mapDispatchToProps(dispatch) {
 	return bindActionCreators(actionCreators, dispatch)
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(UserLogin)
+export default connect(mapStateToProps, mapDispatchToProps)(CharityLogin)

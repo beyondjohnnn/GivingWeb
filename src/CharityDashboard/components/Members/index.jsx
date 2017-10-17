@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { Route } from 'react-router'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
-import {calcDonationPercentage} from '../../../utils/donations'
+import {calcDonationPercentage} from '../../../Shared/utils/donations'
 
 import * as helpSomeoneActionCreators from '../../../actions/helpSomeoneActionCreators'
 import * as dashboardActionCreators from '../../../actions/dashboard'

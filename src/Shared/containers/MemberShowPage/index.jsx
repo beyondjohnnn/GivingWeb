@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser'
 import { calcDonationPercentage, getDonationBarColour, calcTotalDonations } from '../../utils/donations'
 
-import * as actionCreators from '../../actions/helpSomeoneActionCreators'
+import * as actionCreators from '../../../actions/helpSomeoneActionCreators'
 
 import css from './MemberShowPage.scss'
 
@@ -117,7 +117,7 @@ class MemberShowPage extends React.Component {
 					</div>
 					<div className="left-section">
 						<div className="member-details">
-							<div className="member-image-basic-info"> 
+							<div className="member-image-basic-info">
 								<img src={`images/${current_member.name}.png`}/>
 								<div className="linear-gradient"></div>
 								<div className="member-photo-text-container">
@@ -131,7 +131,7 @@ class MemberShowPage extends React.Component {
 										{this.createTags(current_member)}
 									</div>
 								</div>
-							</div>	
+							</div>
 
 							<div className="social-media">
 								<FacebookShareButton url={shareUrl} quote={title}> <button className="facebook"><i className="fa fa-facebook"></i>Share</button></FacebookShareButton>
@@ -140,10 +140,10 @@ class MemberShowPage extends React.Component {
 								<button className="widgets"><i className="fa fa-code" aria-hidden="true"></i>Widgets</button>
 								<input type="url" value={`https://givingweb.io/${current_member.name}`}></input>
 							</div>
-							<div className="share-message"> 
+							<div className="share-message">
 								<h3>&#10551;</h3>
 								<p>Sharing my story lets my voice reach more people!</p>
-							</div> 
+							</div>
 							<div className="loaded-story">
 								{ReactHtmlParser(current_member.info.replace('&#039;', '\''))}
 							</div>
@@ -153,7 +153,7 @@ class MemberShowPage extends React.Component {
 							<label htmlFor="comment-box">Send a message</label>
 							<textarea id="comment-box" ref="comment-box" className="comment-box" />
 							<button className="post-button">Post</button>
-						</div> 
+						</div>
 						<div className="make-comment">
 							<div className="comment-list">
 								{this.createComments()}
@@ -197,7 +197,7 @@ class MemberShowPage extends React.Component {
 							<button className="donate-button">DONATE NOW</button>
 						</div>
 					</div>
-				</div>	
+				</div>
 			</div>
 		)
 	}

@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 
-import * as actionCreators from '../../actions/helpSomeoneActionCreators'
+import * as actionCreators from '../../../actions/helpSomeoneActionCreators'
 
 import css from './FeaturedMembers.scss'
 

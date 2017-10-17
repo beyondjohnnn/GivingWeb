@@ -2,16 +2,16 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
-import * as actionCreators from '../../actions/authActionCreators'
+import * as actionCreators from '../../../actions/authActionCreators'
 
-import css from './UserSignup.scss'
+import css from './CharitySignup.scss'
 
-class UserSignup extends React.Component {
+class CharitySignup extends React.Component {
 
 	formSubmit(e) {
 		e.preventDefault()
 
-		const newUserDetails = {
+		const newCharityDetails = {
 			first_name: this.refs.first_name.value,
 			last_name: this.refs.last_name.value,
 			email: this.refs.email.value,
@@ -19,13 +19,13 @@ class UserSignup extends React.Component {
 			password_confirmation: this.refs.password_confirmation.value
 		}
 
-		this.props.signup(newUserDetails)
+		this.props.charitySignup(newCharityDetails)
 	}
 
 
 	render() {
 		return (
-			<div className="user-signup">
+			<div className="charity-signup">
 				<form ref="signup-form" action="/" method="post" onSubmit={this.formSubmit.bind(this)}>
 					<div className="form-header">
 						<h2>Sign up</h2>
@@ -72,4 +72,4 @@ function mapDispatchToProps(dispatch) {
 	return bindActionCreators(actionCreators, dispatch)
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(UserSignup)
+export default connect(mapStateToProps, mapDispatchToProps)(CharitySignup)
