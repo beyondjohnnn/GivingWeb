@@ -2,13 +2,13 @@ import React from 'react'
 import { bindActionCreators } from 'redux'
 import {connect} from 'react-redux'
 
-import * as actionCreators from '../../actions/helpSomeoneActionCreators'
+import * as actionCreators from '../actions/helpSomeoneActionCreators'
 
-import css from './HelpSomeonePage.scss'
+import css from './HelpSomeone.scss'
 
-import CategoryList from '../../../components/CategoryList'
-import MemberPreview from '../../../components/MemberPreview'
-import MemberPreviewBuilder from '../../../components/MemberPreviewBuilder'
+import CategoryList from './components/CategoryList'
+import MemberPreview from '../components/MemberPreview'
+import MemberPreviewBuilder from '../components/MemberPreviewBuilder'
 
 class HelpSomeonePage extends React.Component {
 

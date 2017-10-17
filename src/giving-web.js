@@ -14,7 +14,7 @@ import AuthLandingPage from './containers/AuthLandingPage'
 import UserDashboard from './containers/UserDashboard'
 import CharityLogin from './containers/CharityLogin'
 import CharitySignup from './containers/CharitySignup'
-import HelpSomeonePage from './containers/HelpSomeonePage'
+import HelpSomeone from './HelpSomeone'
 import CharityLandingPage from './containers/CharityLandingPage'
 import CharityDashboard from './CharityDashboard'
 import MemberShowPage from './containers/MemberShowPage'
@@ -26,7 +26,7 @@ import PartnersPage from './containers/PartnersPage'
 import AboutUsPage from './containers/AboutUsPage'
 
 // import components
-import Navigation from './components/Navigation'
+import Navigation from './Navigation'
 import FeaturedMembers from './components/FeaturedMembers'
 import Footer from './components/Footer'
 import Comment from './components/Comment'
@@ -54,7 +54,7 @@ const router = (
 				<Route path="/charity-signup" component={CharitySignup} />
 				<Route path="/charity-login" component={CharityLogin} />
 				<Route path="/featured-members" component={FeaturedMembers} />
-				<Route path="/help-someone" component={HelpSomeonePage} />
+				<Route path="/help-someone" component={HelpSomeone} />
 				<Route path="/charities" component={CharityLandingPage} />
 				<Route path="/charity-dashboard" component={CharityDashboard} />
 				<Route path="/member" component={MemberShowPage} />
