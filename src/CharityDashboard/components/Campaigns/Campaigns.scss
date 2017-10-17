@@ -1,0 +1,83 @@
+.cd-campaigns {
+	width: 100%;
+	height: 1000px;
+	// overflow: ;
+	padding-left: 40px;
+	padding-top: 40px;
+
+	.header {
+
+		height: 80px;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 20px;
+
+		h2 {
+			font-size: 2em;
+			font-weight: 400;
+			color: #5a5a5a;
+		}
+
+		.create-campaign-link {
+			display: flex;
+			text-transform: uppercase;
+			justify-content: center;
+			align-items: center;
+			text-decoration: none;
+			height: 50px;
+			width: 260px;
+			color: white;
+			background-color: #7267EE;
+			transition-duration: 0.2s;
+			border: solid 1.5px #7663f6;
+
+			&:hover {
+				background-color: #fff;
+				color: #7663f6;
+			}
+		}
+	}
+
+	.cd-current-campaigns {
+
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+
+		.campaign-nav-tabs {
+			width: 100%;
+			border-bottom: 2px solid #ccc;
+			list-style: none;
+			display: flex;
+			justify-content: flex-start;
+			height: 59px;
+
+			.navtab-link {
+				text-decoration: none;
+
+				li {
+					display: flex;
+					width: 160px;
+					height: 60px;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					text-transform: uppercase;
+					letter-spacing: 3px;
+					font-weight: 600;
+					font-size: 1.2em;
+					color: #bbb;
+
+					&.selected {
+						color: tomato;
+						border-bottom: 4px solid tomato;
+					}
+				}
+				
+			}
+
+		}
+	}
+}
