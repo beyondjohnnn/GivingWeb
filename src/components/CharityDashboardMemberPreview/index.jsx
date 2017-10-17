@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import { calcDonationPercentage, getDonationBarColour, calcTotalDonations } from '../../utils/donations'
 
 import css from './CharityDashboardMemberPreview.scss'
@@ -17,7 +18,10 @@ class CharityDashboardMemberPreview extends React.Component {
 		return (
 			<div className="cd-member-preview">
 				<img src={`images/${member.name}.png`} alt=""/>
-				<h2>{member.snippet}</h2>
+				<div className="member-details">
+					<Link to={`/charity-dashboard/member?id=${member.id}`}><h2>{member.name}</h2></Link>
+					<p>{member.snippet}</p>
+				</div>
 				<div className="donation-details">
 					<h4 className="no-of-donors">{member.donations.length} donors</h4>
 					<div className="member-progress-bar">

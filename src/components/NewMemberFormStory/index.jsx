@@ -38,19 +38,19 @@ class NewMemberFormStory extends React.Component {
 			<div className="new-member-form-story">
 				<form className="story-form" action="/" method="post" onSubmit={this.handleFormSubmit}>
 					<div className="form-field">
-						<label htmlFor="reason_for_use">Reason For Using GivingWeb</label>
+						<textarea className="reason-for-use-label" defaultValue="Reason For Using GivingWeb"/>
 						<textarea id="reason_for_use" ref="reason_for_use" className="reason-for-use" name="reason_for_use"
 							onChange={this.onEditReasonForUse} value={this.props.story.reasonForUse}
 						/>
 					</div>
 					<div className="form-field">
-						<label htmlFor="story">Member Story</label>
+						<textarea className="story-label" defaultValue="Member Story"/>
 						<textarea id="story" ref="story" className="story" name="story"
 							onChange={this.onEditStory} value={this.props.story.story}
 						/>
 					</div>
 					<div className="form-field">
-						<label htmlFor="future_goals">Future Goals</label>
+						<textarea className="future-goals-label" defaultValue="Future Goals"/>
 						<textarea id="future_goals" ref="future_goals" className="future-goals" name="future_goals"
 							onChange={this.onEditFutureGoals} value={this.props.story.futureGoals}
 						/>

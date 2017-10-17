@@ -1,3 +1,5 @@
+@import '../../fonts.scss';
+
 .new-member-form-story {
 	width: 100%;
 	display: flex;
@@ -14,11 +16,19 @@
 			justify-content: space-between;
 			align-items: center;
 
-			label {
+			textarea:nth-child(1) {
+				width: auto;
+				border: none;
+				font-family: $main-font;
+				resize: none;
 
+				&:focus {
+					outline: none;
+					border: 2px solid #bbb;
+				}
 			}
 
-			textarea {
+			textarea:nth-child(2) {
 				height: 100px;
 				width: 400px;
 				padding: 10px;
