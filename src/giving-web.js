@@ -21,7 +21,7 @@ import MemberShowPage from './containers/MemberShowPage'
 import CookieInfoPage from './containers/CookieInfoPage'
 import MeetTheTeamPage from './containers/MeetTheTeamPage'
 import TermsAndPrivacyPage from './containers/TermsAndPrivacyPage'
-import ContactUsPage from './containers/ContactUsPage'
+import ContactUs from './ContactUs'
 import PartnersPage from './containers/PartnersPage'
 import AboutUsPage from './containers/AboutUsPage'
 
@@ -62,7 +62,7 @@ const router = (
 				<Route path="/terms" component={TermsAndPrivacyPage} />
 				<Route path="/cookie-info" component={CookieInfoPage} />
 				<Route path="/meet-the-team" component={MeetTheTeamPage} />
-				<Route path="/contact-us" component={ContactUsPage} />
+				<Route path="/contact-us" component={ContactUs} />
 				<Route path="/partners" component={PartnersPage} />
 				<Route path="/about-us" component={AboutUsPage} />
 
