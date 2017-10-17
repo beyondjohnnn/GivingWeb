@@ -45,10 +45,6 @@
 			margin-bottom: 2px; 
 		}
 
-			font-weight: 300;
-			padding-bottom: 5px;
-		}
-
 		.view-campaign {
 			font-size: 0.8em;
 			font-weight: 300;
@@ -87,25 +83,26 @@
 			// align-items: center;
 			margin-right: 25px;
 
-				h4 {
-					font-weight: 300;
-				}
+			h4 {
+				font-weight: 300;
+			}
 
 
-				.member-progress-bar {
-					width: 100%;
+			.member-progress-bar {
+				width: 100%;
+				height: 10px;
+				border-radius: 5px;
+				background-color: #ddd;
+				overflow: hidden;
+
+				.bar-fill {
+					// width: 80%;
 					height: 10px;
-					border-radius: 5px;
-					background-color: #ddd;
-					overflow: hidden;
-
-					.bar-fill {
-						// width: 80%;
-						height: 10px;
-						background-color: gold;
-					}
+					background-color: gold;
 				}
 			}
+		}
+	}
 
 	.percentage-container {
 		height: 100%;
@@ -116,6 +113,6 @@
 		align-items: flex-start;
 		font-weight: 300;
 		color: #7b5dff;
-		}
+		
 	}
 }
