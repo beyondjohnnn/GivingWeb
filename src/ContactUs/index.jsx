@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
-// import * as actionCreators from '../../actions/helpSomeoneActionCreators'
+// import * as actionCreators from '../../actions/contactUsActionCreators'
 
 import css from './ContactUsPage.scss'
 
-import ContactUs from '../../components/ContactUs'
-import GoogleMapComponent from '../../components/GoogleMapComponent'
+import ContactUs from './components/ContactUs'
+import GoogleMapComponent from './components/GoogleMapComponent'
 
 class ContactUsPage extends React.Component {
 
