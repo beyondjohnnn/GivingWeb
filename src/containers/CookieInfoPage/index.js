@@ -4,9 +4,6 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser'
 
-
-import CookieInfo from '../../components/CookieInfo'
-
 import css from './CookieInfoPage.scss'
 
 class CookieInfoPage extends React.Component {
