@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import * as actionCreators from '../../actions/careButtonActionCreators'
+import * as actionCreators from '../../../actions/careButtonActionCreators'
 
 import Tooltip from '../Tooltip'
 import css from './CareButton.scss'
@@ -20,7 +20,7 @@ class CareButton extends React.Component {
 					<Tooltip style={this.createTooltipStyle()} text="Click here to follow the charities progress" />
 					<i className="fa fa-heart-o"></i>
 					Care
-				</button>	
+				</button>
 				<div className="care-count-wrapper">
 					<div className="care-count-square"></div>
 					<p>222</p>

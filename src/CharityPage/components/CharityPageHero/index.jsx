@@ -4,9 +4,9 @@ import {connect}  from 'react-redux'
 import { bindActionCreators } from 'redux'
 import ModalVideo from 'react-modal-video'
 
-import * as actionCreators from '../../actions/charityPageActionCreators'
+import * as actionCreators from '../../../actions/charityPageActionCreators'
 
-import '../../../node_modules/react-modal-video/scss/modal-video.scss';
+import '../../../../node_modules/react-modal-video/scss/modal-video.scss';
 import css from './CharityPageHero.scss'
 
 import CareButton from '../CareButton'
@@ -31,7 +31,7 @@ class CharityPageHero extends React.Component {
         <a href="https://www.facebook.com/StreetChange1/" target="_blank"><i className="fa fa-twitter"></i></a>
         <a href="https://www.facebook.com/StreetChange1/" target="_blank"><i className="fa fa-globe"></i></a>
       </div>
-    <button className="watch-a-video" onClick={this.props.toggleVideo}>Watch a Video<i className="fa fa-play-circle-o" aria-hidden="true"></i></button> 
+    <button className="watch-a-video" onClick={this.props.toggleVideo}>Watch a Video<i className="fa fa-play-circle-o" aria-hidden="true"></i></button>
     <CareButton />
     </div>
 		)
