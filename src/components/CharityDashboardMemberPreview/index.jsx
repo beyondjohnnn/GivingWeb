@@ -24,17 +24,24 @@ class CharityDashboardMemberPreview extends React.Component {
 		}
 		return (
 			<div className="cd-member-preview">
-				<img src={this.renderMembersImage()} alt=""/>
-				<h2>{member.snippet}</h2>
-				<div className="donation-details">
-					<h4 className="no-of-donors">{member.donations.length} donors</h4>
-					<div className="member-progress-bar">
-						<div className="bar-fill" style={donationBarStyles}></div>
-					</div>
-					<div className="donation-ratio">£{calcTotalDonations(member)} of £{member.goal} raised</div>
+				<div className="image-cover"> 
+					<img src={this.renderMembersImage()} alt=""/>
 				</div>
-				<div className="percentage-container">
-					<p className="donation-percentage">{textPercentage}</p>
+				<div className="member-preview-info">
+					<h3>{member.name}</h3>
+					<h2>{member.snippet}</h2>
+				</div>
+				<div className="donation-details">
+					<div className="donation-information">
+						<h4 className="no-of-donors">{member.donations.length} donors</h4>
+						<div className="member-progress-bar">
+							<div className="bar-fill" style={donationBarStyles}></div>
+						</div>
+						<h4 className="donation-ratio">£{calcTotalDonations(member)} / £{member.goal} raised</h4>
+					</div>
+					<div className="percentage-container">
+						<p className="donation-percentage">{textPercentage}</p>
+					</div>
 				</div>
 			</div>
 		)
