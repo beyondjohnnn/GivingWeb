@@ -1,5 +1,6 @@
 import React from 'react'
 import { calcDonationPercentage, getDonationBarColour, calcTotalDonations } from '../../utils/donations'
+import { Link } from 'react-router-dom'
 
 import css from './CharityDashboardMemberPreview.scss'
 
@@ -30,6 +31,7 @@ class CharityDashboardMemberPreview extends React.Component {
 				<div className="member-preview-info">
 					<h3>{member.name}</h3>
 					<h2>{member.snippet}</h2>
+					<Link to="" className="view-campaign"><i className="fa fa-pencil-square-o" aria-hidden="true"></i>Manage</Link>
 				</div>
 				<div className="donation-details">
 					<div className="donation-information">
