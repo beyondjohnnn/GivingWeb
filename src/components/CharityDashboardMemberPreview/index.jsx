@@ -1,6 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import { calcDonationPercentage, getDonationBarColour, calcTotalDonations } from '../../utils/donations'
+import { Link } from 'react-router-dom'
 
 import css from './CharityDashboardMemberPreview.scss'
 

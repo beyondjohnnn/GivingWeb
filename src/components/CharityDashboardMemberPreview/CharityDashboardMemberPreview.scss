@@ -35,9 +35,32 @@
 	.member-details {
 		padding: 10px;
 		width: 25%;
-		
-		h2 {
-			font-size: 1em;
+		justify-content: flex-start;
+
+		h3 {
+			// padding: 10px;
+			// width: 25%;
+			font-size: 1.2em;
+			font-weight: 400;
+			margin-bottom: 2px; 
+		}
+
+			font-weight: 300;
+			padding-bottom: 5px;
+		}
+
+		.view-campaign {
+			font-size: 0.8em;
+			font-weight: 300;
+			text-decoration: none;
+			color: lighten(#444444, 30);
+
+			i {
+				margin-right: 3px;
+			}
+			&:hover {
+				color: #7b5dff;
+			}
 		}
 
 		p {
