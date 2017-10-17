@@ -1,6 +1,10 @@
 import saveAuthTokenToLocalStorage from '../Shared/utils/saveAuthTokenToLocalStorage'
 
-function auth(state = [], action) {
+const defaultState = {
+  charity: null
+}
+
+function auth(state = defaultState, action) {
 	switch(action.type) {
 		case 'SIGNUP_POST_PENDING':
       return {...state, fetching: true}

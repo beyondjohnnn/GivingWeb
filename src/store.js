@@ -20,61 +20,15 @@ const routerStuff = routerMiddleware(history)
 export { history }
 
 const defaultState = {
-	auth: {
-    charity: null
-  },
-  navigation: {
-    dropdownVisible: false
-  },
-  howItWorks: {
-    howItWorksVisible: false
-  },
   noAuthSubNavigation: {
     currentLandingPageComponent: "Whats Happening"
   },
-  charityDashboardSidebar: {
-    currentCharityDashboardSidebarTab: "Members"
-  },
-	helpSomeone: {
-		members: [],
-    membersToShow: 6,
-    current_member: {
-      donations: [],
-      comments: [],
-      info: '',
-      name: 'Charlie',
-      goal: 0
-    }
-	},
-  careButton: {
-    tooltipVisible: false
-  },
-  dashboard: {
-    tab: 'live'
-  },
-  newMemberProcess: {
-    tab: 'basics',
-    file: '',
-    imagePreviewUrl: '',
-    name: '',
-    goal: '',
-    location: '',
-    story: {
-      reasonForUse: '',
-      story: '',
-      futureGoals: ''
-    }
-  },
-  charityPage: {
-    aboutUsVisible: false,
-    story: {}
-  }
 }
 
 const middleware = applyMiddleware(routerStuff, promiseMiddleware(), createScrollMiddleware())
 
 const enhancers = compose(middleware, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
-const store = createStore(rootReducer, defaultState, enhancers)
+const store = createStore(rootReducer, {}, enhancers)
 
 export default store

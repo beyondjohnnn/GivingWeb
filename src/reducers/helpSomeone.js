@@ -1,5 +1,16 @@
+const defaultState = {
+  members: [],
+  membersToShow: 6,
+  current_member: {
+    donations: [],
+    comments: [],
+    info: '',
+    name: 'Charlie',
+    goal: 0
+  }
+}
 
-function helpSomeone(state = [], action) {
+function helpSomeone(state = defaultState, action) {
 	switch(action.type) {
 
 		case 'SET_MEMBERS_COUNT':

@@ -1,5 +1,9 @@
+const defaultState = {
+	dropdownVisible: false
+}
 
-function navigation(state = [], action) {
+
+function navigation(state = defaultState, action) {
 	switch(action.type) {
 		case 'TOGGLE_DROPDOWN':
 			return {...state, dropdownVisible: !state.dropdownVisible}

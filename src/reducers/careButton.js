@@ -1,4 +1,8 @@
-function careButton(state = [], action) {
+const defaultState = {
+  tooltipVisible: false
+}
+
+function careButton(state = defaultState, action) {
   switch(action.type) {
     case 'TOGGLE_TOOLTIP':
       return {...state, tooltipVisible: !state.tooltipVisible}

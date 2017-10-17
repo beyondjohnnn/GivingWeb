@@ -1,5 +1,18 @@
+const defaultState = {
+	tab: 'basics',
+  file: '',
+  imagePreviewUrl: '',
+  name: '',
+  goal: '',
+  location: '',
+  story: {
+    reasonForUse: '',
+    story: '',
+    futureGoals: ''
+  }
+}
 
-function newMemberProcess(state = [], action) {
+function newMemberProcess(state = defaultState, action) {
 	switch(action.type) {
 		case 'SET_CURRENT_NEW_MEMBER_TAB':
       return { ...state, tab: action.tab }
