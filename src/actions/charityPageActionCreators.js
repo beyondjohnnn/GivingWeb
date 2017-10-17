@@ -9,4 +9,3 @@ export function toggleVideo() {
     type: 'TOGGLE_VIDEO'
   }
 }
-

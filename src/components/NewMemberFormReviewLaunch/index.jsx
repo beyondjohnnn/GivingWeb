@@ -1,3 +1,5 @@
+import cloudinary from 'cloudinary'
+import cloudinaryEvn from './cloudinaryEvn.js'
 
 import React from 'react'
 import {connect} from 'react-redux'
@@ -17,32 +19,34 @@ class NewMemberFormReviewLaunch extends React.Component {
 		this.onClickSubmit = this.onClickSubmit.bind(this)
 	}
 
-	saveImage(){
-		const imgObj = {
-			img: this.props.imagePreviewUrl
-		}
+	saveMember(){
+		cloudinary.config(cloudinaryEvn);
+		cloudinary.uploader.upload(this.props.imagePreviewUrl, function(result) {
+			this.props.submitNewMember({
+				name: this.props.name,
+				goal: this.props.goal,
+				location: this.props.location,
+				url_image: result.url,
+				info: this.makeMemberStory(this.props.story)
+			})
+		  console.log("your member was saved")
+		}.bind(this))
+	}
 
-		const s3 = new AWS.S3()
-		const myBucket = 'givingweb-storage/images' + uuidV1()
-		const myKey = 'myBucketKey'
-		s3.createBucket({Bucket: myBucket}, function(err, data) {
-		if (err) {
-		   console.log(err)
-		   } else {
-		     params = {Bucket: myBucket, Key: myKey, Body: this.props.imagePreviewUrl}
-		     s3.putObject(params, function(err, data) {
-		         if (err) {
-		             console.log(err)
-		         } else {
-		             console.log("Successfully uploaded data to myBucket/myKey")
-		         }
-		      })
-		   }
-		})
+	makeMemberStory(story) {
+		const tempObj = [
+			"<h3> Why I'am Using GivingWeb </h3>",
+			"<p>", story.reasonForUse, "</p>",
+			"<h3> My Story </h3>",
+			"<p>", story.story, "</p>",
+			"<h3> My Future Goals </h3>",
+			"<p>", story.futureGoals, "</p>"
+		]
+		const htmlString = tempObj.join("")
+		return htmlString
 	}
 
 	onClickSubmit(){
-
 		if(isStringValid(this.props.name) &&
 			isMonetaryValueValid(this.props.goal) &&
 			isStringValid(this.props.location) &&
@@ -50,32 +54,12 @@ class NewMemberFormReviewLaunch extends React.Component {
 			isStringValid(this.props.story.story) &&
 			isStringValid(this.props.story.futureGoals)
 		){
-			this.saveImage()
-			this.props.submitNewMember({
-				name: this.props.name,
-				goal: this.props.goal,
-				location: this.props.location,
-				info: this.makeMemberStory(this.props.story)
-			})
+			this.saveMember()
 		}else{
-			console.log("invalid input");
+			console.log("invalid input or something went wrong with the upload");
 		}
-
 	}
 
-	makeMemberStory(story) {
-	  const tempObj = [
-	    "<h3> Why I'am Using GivingWeb </h3>",
-	    "<p>", story.reasonForUse, "</p>",
-	    "<h3> My Story </h3>",
-	    "<p>", story.story, "</p>",
-	    "<h3> My Future Goals </h3>",
-	    "<p>", story.futureGoals, "</p>"
-	  ]
-
-	  const htmlString = tempObj.join("")
-	  return htmlString
-	}
 
 	render() {
 		return (

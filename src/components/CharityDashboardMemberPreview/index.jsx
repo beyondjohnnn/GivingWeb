@@ -6,6 +6,14 @@ import css from './CharityDashboardMemberPreview.scss'
 
 class CharityDashboardMemberPreview extends React.Component {
 
+	renderMembersImage() {
+		if (this.props.member.url_image == undefined) {
+			return `images/${this.props.member.name}.png`
+		} else {
+			return this.props.member.url_image
+		}
+	}
+
 	render() {
 		let previewStyle = this.props.style || {}
 		const {member} = this.props
@@ -17,20 +25,22 @@ class CharityDashboardMemberPreview extends React.Component {
 		}
 		return (
 			<div className="cd-member-preview">
-				<img src={`images/${member.name}.png`} alt=""/>
+				<img src={this.renderMembersImage()} alt=""/>
 				<div className="member-details">
 					<Link to={`/charity-dashboard/member?id=${member.id}`}><h2>{member.name}</h2></Link>
 					<p>{member.snippet}</p>
 				</div>
 				<div className="donation-details">
-					<h4 className="no-of-donors">{member.donations.length} donors</h4>
-					<div className="member-progress-bar">
-						<div className="bar-fill" style={donationBarStyles}></div>
+					<div className="donation-information">
+						<h4 className="no-of-donors">{member.donations.length} donors</h4>
+						<div className="member-progress-bar">
+							<div className="bar-fill" style={donationBarStyles}></div>
+						</div>
+						<h4 className="donation-ratio">£{calcTotalDonations(member)} / £{member.goal} raised</h4>
 					</div>
-					<div className="donation-ratio">£{calcTotalDonations(member)} of £{member.goal} raised</div>
-				</div>
-				<div className="percentage-container">
-					<p className="donation-percentage">{textPercentage}</p>
+					<div className="percentage-container">
+						<p className="donation-percentage">{textPercentage}</p>
+					</div>
 				</div>
 			</div>
 		)
