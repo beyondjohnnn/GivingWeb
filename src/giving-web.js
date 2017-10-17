@@ -6,7 +6,7 @@ import { render } from 'react-dom'
 import css from './base-style.scss'
 
 // import containers
-import NoAuthLandingPage from './containers/NoAuthLandingPage'
+import NoAuthLandingPage from './NoAuthLandingPage'
 import UserSignup from './containers/UserSignup'
 import UserLogin from './containers/UserLogin'
 import CharityPage from './CharityPage'

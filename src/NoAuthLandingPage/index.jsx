@@ -4,19 +4,19 @@ import {connect}  from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { goToTop, goToAnchor, configureAnchors } from 'react-scrollable-anchor'
 
-import * as actionCreators from '../../actions/howItWorksActionCreators'
+import * as actionCreators from '../actions/howItWorksActionCreators'
 
 import css from './NoAuthLandingPage.scss'
 
-import Hero from '../../components/Hero'
-import NoAuthSubNavigation from '../../components/NoAuthSubNavigation'
-import BeAHero from '../../components/BeAHero'
-import ForCharities from '../../components/ForCharities'
-import HowItWorks from '../../components/HowItWorks'
-import MemberPreview from '../../components/MemberPreview'
-import WhatsHappening from '../../components/WhatsHappening'
-import ExtendedScrollAnchor from '../../components/ExtendedScrollAnchor'
-import DonateMonthly from '../../components/DonateMonthly'
+import Hero from './components/Hero'
+import NoAuthSubNavigation from './components/NoAuthSubNavigation'
+import BeAHero from './components/BeAHero'
+import ForCharities from './components/ForCharities'
+import HowItWorks from './components/HowItWorks'
+import MemberPreview from '../components/MemberPreview'
+import WhatsHappening from './components/WhatsHappening'
+import ExtendedScrollAnchor from './components/ExtendedScrollAnchor'
+import DonateMonthly from './components/DonateMonthly'
 
 configureAnchors({offset: 0, scrollDuration: 600})
 
