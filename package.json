@@ -11,7 +11,7 @@
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
     "test:snapshot": "jest --updateSnapshot",
-    "feat-members": "node src/utils/scripts/featured_members.js"
+    "feat-members": "node src/Shared/utils/scripts/featured_members.js"
   },
   "keywords": [],
   "author": "",
