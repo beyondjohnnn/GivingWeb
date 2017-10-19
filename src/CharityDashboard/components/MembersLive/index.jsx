@@ -34,7 +34,7 @@ class MembersLive extends React.Component {
 	render() {
 		return (
 			<div className="cd-members-live">
-				<FeaturedMemberController charity={1}/>
+				<FeaturedMemberController />
 				{this.createMemberPreviews()}
 			</div>
 		)

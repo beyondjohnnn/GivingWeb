@@ -1,4 +1,6 @@
 const defaultState = {
+  charity_id: 1,
+  // this is hardcoded till the charity user is set up fully
   charityFeaturedMembers: []
 }
 

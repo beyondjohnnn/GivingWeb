@@ -20,7 +20,7 @@ class FeaturedMemberController extends React.Component {
 	}//TODO: remove build images loop when refactoring
 
 	componentDidMount(){
-		this.props.getCharityFeaturedMembers()
+		this.props.getCharityFeaturedMembers(this.props.charity_id)
 	}
 
 	renderFeaturedMembers(){
@@ -50,23 +50,13 @@ class FeaturedMemberController extends React.Component {
 		return featureMembersComponents
 	}
 
-	renderController(){
-		if(this.props.charityFeaturedMembers.length !== 0){
-			return (
-				<div className="featured-member-controller">
-					<div className="title">
-						<h3>Your Featured Members</h3>
-					</div>
-					{this.renderFeaturedMembers()}
-				</div>
-			)
-		}
-	}
-
 	render() {
 		return (
-			<div>
-				{this.renderController()}
+			<div className="featured-member-controller">
+				<div className="title">
+					<h3>Your Featured Members</h3>
+				</div>
+				{this.renderFeaturedMembers()}
 			</div>
 		)
 	}

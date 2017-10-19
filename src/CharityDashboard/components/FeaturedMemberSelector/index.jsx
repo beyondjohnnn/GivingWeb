@@ -3,43 +3,66 @@ import {Link} from 'react-router-dom'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 
-import Modal from 'react-modal'
 import css from './FeaturedMemberSelector.scss'
 import * as actionCreators from '../../../actions/charityDashBoardContentActionCreators'
 
 
 class FeaturedMemberSelector extends React.Component {
 
-	addMember() {
-		this.props.createFeaturedMember(this.props.member.id)
-	}
-	componentDidMount() {
-		// Modal.setAppElement("#modal")
-		// <Modal
-		//   isOpen={false}
-		//   onAfterOpen={afterOpenFn}
-		//   onRequestClose={requestCloseFn}
-		//   closeTimeoutMS={n}
-		//   style={customStyle}
-		//   contentLabel="Modal"
-		// >
-		// </Modal>
+	constructor(props){
+		super(props)
+		this.state = {
+			feat_member: true
+		}
 	}
 
+	onChangeSelector(event) {
+		this.addMember(event.target.value)
+	}
+
+	addMember(id) {
+		const newFeatMember = {
+			charity_id: this.props.charity_id,
+			member_id: id,
+			position: this.props.position
+		}
+		this.props.createFeaturedMember(newFeatMember)
+	}
+
+	onClickAddMember() {
+		this.setState({
+			feat_member: false
+		})
+	}
+
+	renderMembers(){
+		if(this.state.feat_member === true ){
+			return(
+				<button
+				className="member-placeholder"
+				onClick={this.onClickAddMember.bind(this)}>Click To Add Member
+				</button>
+			)} else {
+		const maping = this.props.members.map(
+				(member)=> {
+					return (
+						<option key={member.id} value={member.id}>{member.name}
+						</option>
+					)
+				}
+			)
+			return (<select onChange={this.onChangeSelector.bind(this)}>{maping}</select>)
+		}
+	}
+	//onChange needs to be changed to onSelect but ins't working for some reason
 
 	render() {
-		let member = this.props.member
 		return (
 			<div className="featured-member-selector">
 				<div className="member-one">
 					<div className="del-div">
 					</div>
-					<div id="modal">
-					 <select>
-					 	{this.props.members.map((member)=>{<option key={member.id}>{member.name}</option>})}
-					 </select>
-					</div>
-					<div className="member-placeholder">Click To Add Member</div>
+						{this.renderMembers()}
 					<h3>member</h3>
 				</div>
 			</div>

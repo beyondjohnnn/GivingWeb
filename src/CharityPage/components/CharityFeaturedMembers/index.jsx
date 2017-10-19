@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 
-import * as actionCreators from '../../../actions/helpSomeoneActionCreators'
+import * as actionCreators from '../../../actions/charityPageActionCreators'
 
 import css from './CharityFeaturedMembers.scss'
 
@@ -16,8 +16,9 @@ class CharityFeaturedMembers extends React.Component {
 		super(props);
 	}
 
-	componentWillMount(){
-		this.props.getCharityFeaturedMembers(1)
+	componentDidMount(){
+		console.log(this.props)
+		this.props.getCharityFeaturedMembers(this.props.charity_id)
 		//TODO: you'll need to setup the getCharityFeaturedMembers to take in the charity ID by the params when there are more then just one charity being hardcoded into the app
 	}
 
@@ -35,7 +36,7 @@ class CharityFeaturedMembers extends React.Component {
 }
 
 function mapStateToProps(state, routing) {
-  return { ...state.helpSomeone, ...routing}
+  return { ...state.charityPage, ...routing}
 }
 
 function mapDispatchToProps(dispatch) {
