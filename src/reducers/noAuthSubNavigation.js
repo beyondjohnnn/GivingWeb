@@ -2,7 +2,7 @@ const defaultState = {
 	currentLandingPageComponent: "Whats Happening"
 }
 
-function noAuthSubNavigation(state = [], action) {
+function noAuthSubNavigation(state = defaultState, action) {
 
   switch(action.type) {
     case 'SET_CURRENT_LANDING_PAGE_COMPONENT':
