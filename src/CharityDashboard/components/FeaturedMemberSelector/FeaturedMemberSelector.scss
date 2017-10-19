@@ -1,0 +1,17 @@
+.featured-member-selector{
+  flex: 1;
+  padding: 5px;
+  text-align: center;
+
+ .member-placeholder {
+    padding-top: 10px;
+    height: 80px;
+    width: 80px;
+    border-radius: 50px;
+    color: white;
+    background: #444;
+  }
+  .del-div{
+    height: 19px;
+  }
+}

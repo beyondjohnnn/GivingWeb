@@ -63,11 +63,11 @@ class CharityPageInformation extends React.Component {
             <i className="fa fa-chevron-right" aria-hidden="true"></i>
           </div>
           <div className="circle-wrapper">
-            <i class="fa fa-circle selected-circle" aria-hidden="true"></i>
-            <i class="fa fa-circle" aria-hidden="true"></i>
-            <i class="fa fa-circle" aria-hidden="true"></i>
-            <i class="fa fa-circle" aria-hidden="true"></i>
-            <i class="fa fa-circle" aria-hidden="true"></i>
+            <i className="fa fa-circle selected-circle" aria-hidden="true"></i>
+            <i className="fa fa-circle" aria-hidden="true"></i>
+            <i className="fa fa-circle" aria-hidden="true"></i>
+            <i className="fa fa-circle" aria-hidden="true"></i>
+            <i className="fa fa-circle" aria-hidden="true"></i>
           </div>
         </div>
 
