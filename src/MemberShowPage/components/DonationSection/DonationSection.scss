@@ -1,0 +1,147 @@
+$border: 1px solid #eaeaea;
+$light-grey-color: #686868;
+$giving-web-purple: #7267ee;
+
+.donation-section {
+	background-color: white;
+	width: 100%;
+	padding: 30px;
+	border-radius: 8px;
+	border: $border;
+
+	h4 {
+		font-size: 2.2em;
+		font-weight: 400;
+		display: flex;
+		align-items: center;
+		height: 40px;
+	}
+
+	h2 {
+		margin-top: 4px;
+		font-size: 1.1em;
+		font-weight: 300;
+		// text-transform: uppercase; 
+		color: lighten($light-grey-color, 20);
+	}
+
+	p {
+		height: 30px;
+		margin-bottom: 30px;
+	}
+
+	.member-progress-bar {
+		width: 100%;
+		height: 10px;
+		border-radius: 5px;
+		background-color: #ddd;
+		overflow: hidden;
+		margin-bottom: 10px;
+		margin-top: 25px;
+
+		.bar-fill {
+			height: 10px;
+		}
+	}
+
+	.progress-summary {
+		// width: 100%;
+		display: flex;
+		flex-flow: row nowrap;
+
+		p {
+			// width: 50%;
+			// padding: 10px;
+			display: flex;
+			align-items: flex-start;
+			height: 20px;
+			font-size: 0.9em;
+			// padding: 0px 5px;
+			text-transform: uppercase;
+			font-weight: 300;
+			color: lighten($light-grey-color, 5);
+			padding-right: 5px;
+
+
+
+			&:first-child {
+				border-right: solid 2px $giving-web-purple;
+			}
+
+			&.supporters-text {
+				padding-left: 5px;
+			}
+		}
+	}
+
+	.donation-controls {
+		margin-bottom: 20px;
+		border-bottom: 1px solid #bbb;
+
+		h4 {
+			margin-bottom: 10px;
+			font-weight: 400;
+		}
+
+		select {
+			width: 100%;
+			height: 50px;
+			border: 4px solid black;
+			font-size: 1.2em;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.support-checkbox {
+			display: flex;
+			align-items: center;
+			width: 100%;
+			height: 60px;
+
+			input {
+				height: 20px;
+				width: 20px;
+				margin: 0 15px;
+			}
+		}
+	}
+
+	.message-controls {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 30px;
+
+		label {
+			margin-bottom: 10px;
+		}
+
+		textarea {
+			height: 80px;
+			margin-bottom: 20px;
+		}
+
+		.name-hide {
+			display: flex;
+			flex-flow: row nowrap;
+
+			input {
+				width: 20px;
+				height: 20px;
+				margin: 0 15px;
+			}
+
+			label {
+
+			}
+		}
+	}
+
+	.donate-button {
+		width: 100%;
+		height: 50px;
+		border-radius: 5px;
+		border: none;
+	}
+}

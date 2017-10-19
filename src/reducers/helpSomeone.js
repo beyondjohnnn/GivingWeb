@@ -7,6 +7,10 @@ const defaultState = {
     info: '',
     name: 'Charlie',
     goal: 0
+  },
+  select: {
+    open: false,
+    donationAmount: 10
   }
 }
 

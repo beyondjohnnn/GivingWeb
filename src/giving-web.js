@@ -17,13 +17,14 @@ import CharitySignup from './Shared/containers/CharitySignup'
 import HelpSomeone from './HelpSomeone'
 import CharityLandingPage from './Shared/containers/CharityLandingPage'
 import CharityDashboard from './CharityDashboard'
-import MemberShowPage from './Shared/containers/MemberShowPage'
+import MemberShowPage from './MemberShowPage'
 import CookieInfoPage from './Shared/containers/CookieInfoPage'
 import MeetTheTeamPage from './Shared/containers/MeetTheTeamPage'
 import TermsAndPrivacyPage from './Shared/containers/TermsAndPrivacyPage'
 import ContactUs from './ContactUs'
 import PartnersPage from './Shared/containers/PartnersPage'
 import AboutUsPage from './Shared/containers/AboutUsPage'
+import StripePayment from './Shared/containers/StripePayment'
 
 // import components
 import Navigation from './Navigation'
@@ -63,6 +64,7 @@ const router = (
 				<Route path="/contact-us" component={ContactUs} />
 				<Route path="/partners" component={PartnersPage} />
 				<Route path="/about-us" component={AboutUsPage} />
+				<Route path="/stripe-payment" component={StripePayment} />
 				<Footer />
 			</div>
 		</Router>

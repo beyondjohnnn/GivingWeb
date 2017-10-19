@@ -1,0 +1,51 @@
+$giving-web-purple: #7267ee;
+
+@mixin flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@mixin flex-column {
+	display: flex;
+	flex-direction: column;
+}
+
+.header {
+	width: 100%;
+	@include flex-column;
+	justify-content: space-around;
+	align-items: center;
+	height: 230px;
+	padding: 30px;
+
+	h2 {
+		@include flex-center;
+		text-transform: uppercase;
+		font-size: 2.5em;
+		font-weight: 300;
+		width: 60%;
+		text-align: center;
+	}
+
+	h3 {
+		@include flex-center;
+		color: $giving-web-purple;
+		font-size: 1em;
+		font-weight: 300;
+
+		.verified-charity-link {
+			color: $giving-web-purple;
+			padding-left: 3px;
+
+			&:hover {
+				color: darken($giving-web-purple, 10);
+			}
+		}
+
+		i {
+			margin-right: 3px;
+			font-size: 1.1em;
+		}
+	}
+}
