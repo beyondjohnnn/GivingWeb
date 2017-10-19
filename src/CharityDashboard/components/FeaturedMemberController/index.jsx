@@ -5,6 +5,7 @@ import {connect} from 'react-redux'
 import * as actionCreators from '../../../actions/charityDashBoardContentActionCreators'
 
 import FeaturedMemberPreview from './../FeaturedMemberPreview'
+import FeaturedMemberSelector from './../FeaturedMemberSelector'
 
 import css from './FeaturedMemberController.scss'
 
@@ -16,7 +17,7 @@ class FeaturedMemberController extends React.Component {
 		} else {
 			return this.props.member.url_image
 		}
-	}
+	}//TODO: remove build images loop when refactoring
 
 	componentDidMount(){
 		this.props.getCharityFeaturedMembers()
@@ -26,10 +27,10 @@ class FeaturedMemberController extends React.Component {
 		const featureMembersComponents = []
 		let position = 1
 		const members = this.props.charityFeaturedMembers
-		for(let j=0; j<4; j++){
+		for(let j=0; j<3; j++){
 			let member = members[j]
 			let component
-			if(member !== null && member !== undefined){
+			if(member != undefined){
 				component = (
 					<FeaturedMemberPreview
 						key={position}
@@ -43,6 +44,7 @@ class FeaturedMemberController extends React.Component {
 						position={position} />
 				)
 			}
+			featureMembersComponents.push(component)
 			position++
 		}
 		return featureMembersComponents

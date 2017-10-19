@@ -13,6 +13,10 @@ class FeaturedMemberPreview extends React.Component {
 		this.props.deleteFeaturedMember(this.props.member.id)
 	}
 
+	addMember() {
+		this.props.createFeaturedMember(this.props.member.id)
+	}
+
 	render() {
 		let member = this.props.member
 		return (
@@ -20,11 +24,9 @@ class FeaturedMemberPreview extends React.Component {
 				<div className="member-one">
 					<div className="del-div">
 						<p className="delete" onClick={this.deleteMember.bind(this)}>x</p>
-						</div>
-					<Link to={`/charity-dashboard/member?id=${member.id}`}>
-						<img src={member.url_image} alt=""/>
-						<h3>{member.name}</h3>
-					</Link>
+					</div>
+					<img src={member.url_image} alt="http://via.placeholder.com/80x80?text=Add_Image"/>
+					<h3>{member.name}</h3>
 				</div>
 			</div>
 		)
