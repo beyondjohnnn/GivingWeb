@@ -17,4 +17,4 @@ test/coverage
 js_playground.js
 
 #security evn
-cloudinaryEvn.js
+#cloudinaryEvn.js #TODO: ass this back in after you lunch the repo live and refreash the keys from the cloudinary website
