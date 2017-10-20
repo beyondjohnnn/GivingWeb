@@ -26,6 +26,20 @@ class MemberShowPage extends Component {
 		}
 	}
 
+	renderMatchedCompany(companyName, url){
+    return (
+      <div className="matched-section">
+        <div className="matched-by-image-container">
+          <img src="./images/matchedX2.png" />
+        </div>
+        <div className="matched-by-text-container">
+          <p>Donations Matched By:</p>
+          <img src={url} alt={`${companyName} logo`} />
+        </div>
+      </div>
+    )
+  }
+
 	render() {
 		const { current_member } = this.props
 
@@ -38,6 +52,7 @@ class MemberShowPage extends Component {
 						<CommentSection comments={current_member.comments} />
 					</div>
 					<div className="right-section">
+						{this.renderMatchedCompany("John Lewis", "./images/john-lewis.jpg")}
 						<DonationSection current_member={current_member} />
 					</div>
 				</div>

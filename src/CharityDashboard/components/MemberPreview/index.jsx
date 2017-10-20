@@ -25,10 +25,13 @@ class MemberPreview extends React.Component {
 		}
 		return (
 			<div className="cd-member-preview">
-				<img src={this.renderMembersImage()} alt=""/>
-				<div className="member-details">
-					<Link to={`/charity-dashboard/member?id=${member.id}`}><h2>{member.name}</h2></Link>
-					<p>{member.snippet}</p>
+				<div className="image-cover"> 
+					<img src={this.renderMembersImage()} alt=""/>
+				</div>
+				<div className="member-preview-info">
+					<h3>{member.name}</h3>
+					<h2>{member.snippet}</h2>
+					<Link to="" className="view-campaign"><i className="fa fa-pencil-square-o" aria-hidden="true"></i>Manage</Link>
 				</div>
 				<div className="donation-details">
 					<div className="donation-information">
@@ -48,3 +51,5 @@ class MemberPreview extends React.Component {
 }
 
 export default MemberPreview
+
+
