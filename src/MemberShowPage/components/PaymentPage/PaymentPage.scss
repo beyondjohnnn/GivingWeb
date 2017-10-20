@@ -1,23 +1,18 @@
 $giving-web-purple: #7267ee;
 $border: 1px solid #eaeaea;
 $light-grey-color: #686868;
-
-@mixin flex-center {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
+$extra-light-grey: #f4f4f4;
+$white: #ffffff;
 
 @mixin flex-column {
 	display: flex;
 	flex-direction: column;
 }
 
-.member-show-page {
-	
+.payment-page {	
 	width: 100%;
 	display: flex;
-	background-color: #fcfcfc;
+	background-color: #f4f4f4;
 	font-family: Montserrat, sans-serif;
 
 	.main-wrapper {
@@ -26,17 +21,37 @@ $light-grey-color: #686868;
 		flex-flow: row wrap;
 		justify-content: space-around;
 		margin: 0 auto;
-		padding-bottom: 50px;
+		padding: 50px 0;
 
 		.left-section {
 			@include flex-column;
 			width: 65%;
 			display: flex;
 			align-items: flex-start;
+
+			.payment-details {
+				@include flex-column;
+				align-items: center;
+				background-color: $white;
+				width: 95%;
+				margin-bottom: 50px;
+				border-radius: 5px;
+				border: $border;
+				position: relative;
+				padding: 30px;
+			}
 		}
 
 		.right-section {
 			width: 35%;
+
+			.charge-details {
+				background-color: $white;
+				width: 100%;
+				padding: 30px;
+				border-radius: 8px;
+				border: $border;
+			}
 		}
 	}
 }

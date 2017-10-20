@@ -30,6 +30,7 @@ import StripePayment from './Shared/containers/StripePayment'
 import Navigation from './Navigation'
 import FeaturedMembers from './Shared/components/FeaturedMembers'
 import Footer from './Shared/components/Footer'
+import PaymentPage from './MemberShowPage/components/PaymentPage'
 
 // import react router dependencies
 import { Router, Route } from 'react-router'
@@ -64,7 +65,7 @@ const router = (
 				<Route path="/contact-us" component={ContactUs} />
 				<Route path="/partners" component={PartnersPage} />
 				<Route path="/about-us" component={AboutUsPage} />
-				<Route path="/stripe-payment" component={StripePayment} />
+				<Route path="/payment" component={PaymentPage} />
 				<Footer />
 			</div>
 		</Router>
