@@ -15,7 +15,7 @@ import UserDashboard from './Shared/containers/UserDashboard'
 import CharityLogin from './Shared/containers/CharityLogin'
 import CharitySignup from './Shared/containers/CharitySignup'
 import HelpSomeone from './HelpSomeone'
-import CharityLandingPage from './Shared/containers/CharityLandingPage'
+import ForCharities from './ForCharities'
 import CharityDashboard from './CharityDashboard'
 import MemberShowPage from './MemberShowPage'
 import CookieInfoPage from './Shared/containers/CookieInfoPage'
@@ -55,7 +55,7 @@ const router = (
 				<Route path="/charity-login" component={CharityLogin} />
 				<Route path="/featured-members" component={FeaturedMembers} />
 				<Route path="/help-someone" component={HelpSomeone} />
-				<Route path="/charities" component={CharityLandingPage} />
+				<Route path="/charities" component={ForCharities} />
 				<Route path="/charity-dashboard" component={CharityDashboard} />
 				<Route path="/member" component={MemberShowPage} />
 				<Route path="/terms" component={TermsAndPrivacyPage} />
