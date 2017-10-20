@@ -1,14 +1,12 @@
 import React, {Component} from 'react'
 
-import Pricing from './components/Pricing'
-
-import css from './ForCharities.scss'
+import css from './Pricing.scss'
 
 class ForCharities extends Component {
   render() {
     return (
-      <div className="for-charities">
-        <Pricing />
+      <div className="pricing">
+        
       </div>
     )
   }
