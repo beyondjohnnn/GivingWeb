@@ -12,6 +12,7 @@ import newMemberProcess from './newMemberProcess'
 import charityPage from './charityPage'
 import dashboard from './dashboard'
 import stripe from './stripe'
+import donations from './donations'
 
 const rootReducer = combineReducers({
 	auth,
@@ -25,6 +26,7 @@ const rootReducer = combineReducers({
 	charityPage,
 	dashboard,
 	stripe,
+	donations,
 	routing: routerReducer
 })
 

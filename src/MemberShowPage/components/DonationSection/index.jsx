@@ -4,6 +4,8 @@ import { calcDonationPercentage, getDonationBarColour, calcTotalDonations } from
 
 import css from './DonationSection.scss'
 
+import SelectInput from '../SelectInput'
+
 class DonationSection extends Component {
 	render() {
 		const { current_member } = this.props
@@ -30,12 +32,7 @@ class DonationSection extends Component {
 					<h3>
 						Select Donation amount
 					</h3>
-					<select>
-						<option value="25">£25</option>
-						<option value="50">£50</option>
-						<option value="75">£75</option>
-						<option value="custom">Custom amount</option>
-					</select>
+					<SelectInput goalRemaining={current_member.goal - totalDonations} />
 					<div className="support-checkbox">
 						<input id="checkbox" type="checkbox" />
 						<label htmlFor="checkbox">Add £3 to help support GivingWeb</label>

@@ -1,9 +1,23 @@
 $border: 1px solid #eaeaea;
+
 $light-grey-color: #686868;
 $giving-web-purple: #7267ee;
+$white: #ffffff;
+
+@mixin flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@mixin flex-column {
+	display: flex;
+	flex-direction: column;
+}
+
 
 .donation-section {
-	background-color: white;
+	background-color: $white;
 	width: 100%;
 	padding: 30px;
 	border-radius: 8px;
@@ -12,8 +26,7 @@ $giving-web-purple: #7267ee;
 	h4 {
 		font-size: 2.2em;
 		font-weight: 400;
-		display: flex;
-		align-items: center;
+		@include flex-center;
 		height: 40px;
 	}
 
@@ -21,7 +34,6 @@ $giving-web-purple: #7267ee;
 		margin-top: 4px;
 		font-size: 1.1em;
 		font-weight: 300;
-		// text-transform: uppercase; 
 		color: lighten($light-grey-color, 20);
 	}
 
@@ -45,18 +57,14 @@ $giving-web-purple: #7267ee;
 	}
 
 	.progress-summary {
-		// width: 100%;
 		display: flex;
 		flex-flow: row nowrap;
 
 		p {
-			// width: 50%;
-			// padding: 10px;
 			display: flex;
 			align-items: flex-start;
 			height: 20px;
 			font-size: 0.9em;
-			// padding: 0px 5px;
 			text-transform: uppercase;
 			font-weight: 300;
 			color: lighten($light-grey-color, 5);
@@ -81,16 +89,6 @@ $giving-web-purple: #7267ee;
 		h4 {
 			margin-bottom: 10px;
 			font-weight: 400;
-		}
-
-		select {
-			width: 100%;
-			height: 50px;
-			border: 4px solid black;
-			font-size: 1.2em;
-			display: flex;
-			align-items: center;
-			justify-content: center;
 		}
 
 		.support-checkbox {

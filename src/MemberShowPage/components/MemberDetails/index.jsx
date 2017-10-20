@@ -44,8 +44,13 @@ const EmailIcon = generateShareIcon('email');
 class MemberDetails extends Component {
 
 	createTags(member) {
-		if(!member.tags) member.tags = ["music", "food", "art"]
-		return member.tags.map((tag, id) => {
+		let tags
+		if (member.tags) {
+			tags = member.tags.split(',')
+		} else {
+			tags = ["music", "food", "art"]
+		}
+		return tags.map((tag, id) => {
 			return <Link key={id} to=""><p className="member-tag">{tag}</p></Link>
 		})
 	}
@@ -58,7 +63,7 @@ class MemberDetails extends Component {
 		return (
 			<div className="member-details">
 				<div className="member-image-basic-info">
-					<img src={`images/${current_member.name}.png`}/>
+					<img src={current_member.url_image}/>
 					<div className="linear-gradient"></div>
 					<div className="member-photo-text-container">
 						<h3>{current_member.name}</h3>

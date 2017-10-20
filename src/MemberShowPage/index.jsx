@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {Component} from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
@@ -11,7 +11,7 @@ import CommentSection from './components/CommentSection'
 import MemberDetails from './components/MemberDetails'
 import DonationSection from './components/DonationSection'
 
-class MemberShowPage extends React.Component {
+class MemberShowPage extends Component {
 
 	componentDidMount() {
 		const member_id = parseInt(this.props.location.search.split('=')[1])

@@ -15,7 +15,6 @@ class StripePayment extends React.Component {
 	}
 
   onToken(token) {
-  	console.log(token)
     this.props.payWithToken(token)
   }
  
