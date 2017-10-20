@@ -2,7 +2,7 @@ const webpack = require('webpack')
 const merge = require('webpack-merge')
 const common = require('./webpack.common.js')
 const { join } = require('path')
-var DashboardPlugin = require('webpack-dashboard/plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = merge(common, {
 	devtool: 'inline-source-map',
@@ -31,6 +31,10 @@ module.exports = merge(common, {
         'NODE_ENV': JSON.stringify('development')
       }
     }),
-    new DashboardPlugin()
+    new HtmlWebpackPlugin({
+      template: 'src/index.html',
+      inject: 'body',
+      filename: 'index.html'
+    })
   ]
 })
