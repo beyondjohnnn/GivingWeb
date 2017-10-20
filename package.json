@@ -29,6 +29,7 @@
     "react-dom": "^16.0.0",
     "react-google-maps": "^8.4.2",
     "react-html-parser": "^2.0.1",
+    "react-modal": "^3.0.4",
     "react-modal-video": "^1.0.7",
     "react-redux": "^5.0.6",
     "react-redux-scroll": "0.0.10",

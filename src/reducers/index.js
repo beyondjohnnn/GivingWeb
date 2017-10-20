@@ -13,6 +13,7 @@ import charityPage from './charityPage'
 import dashboard from './dashboard'
 import stripe from './stripe'
 import donations from './donations'
+import charityDashboardContent from './charityDashboardContent'
 
 const rootReducer = combineReducers({
 	auth,
@@ -27,6 +28,7 @@ const rootReducer = combineReducers({
 	dashboard,
 	stripe,
 	donations,
+	charityDashboardContent,
 	routing: routerReducer
 })
 

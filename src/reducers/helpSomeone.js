@@ -43,7 +43,6 @@ function helpSomeone(state = defaultState, action) {
     case 'SET_CURRENT_MEMBER':
       return {...state, current_member: action.member}
 
-
 		case 'GET_CHARITY_FEATURED_MEMBERS_PENDING':
 	    return {...state, fetching: true}
 		case 'GET_CHARITY_FEATURED_MEMBERS_REJECTED':
