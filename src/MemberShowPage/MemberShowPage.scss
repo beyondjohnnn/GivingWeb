@@ -3,79 +3,40 @@ $border: 1px solid #eaeaea;
 $light-grey-color: #686868;
 
 @mixin flex-center {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 @mixin flex-column {
-	display: flex;
-	flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 .member-show-page {
-	
-	width: 100%;
-	display: flex;
-	background-color: #fcfcfc;
-	font-family: Montserrat, sans-serif;
 
-	.main-wrapper {
-		width: 1170px;
-		display: flex;
-		flex-flow: row wrap;
-		justify-content: space-around;
-		margin: 0 auto;
-		padding-bottom: 50px;
-	}
+  width: 100%;
+  display: flex;
+  background-color: #fcfcfc;
+  font-family: Montserrat, sans-serif;
 
-	.header {
-		width: 100%;
-		@include flex-column;
-		justify-content: space-around;
-		align-items: center;
-		height: 230px;
-		padding: 30px;
+  .main-wrapper {
+    width: 1170px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    margin: 0 auto;
+    padding-bottom: 50px;
 
-		h2 {
-			@include flex-center;
-			text-transform: uppercase;
-			font-size: 2.5em;
-			font-weight: 300;
-			width: 60%;
-			text-align: center;
-		}
+    .left-section {
+        @include flex-column;
+        width: 65%;
+        display: flex;
+        align-items: flex-start;
+    }
 
-		h3 {
-			@include flex-center;
-			color: $giving-web-purple;
-			font-size: 1em;
-			font-weight: 300;
-
-			.verified-charity-link {
-				color: $giving-web-purple;
-				padding-left: 3px;
-
-				&:hover {
-					color: darken($giving-web-purple, 10);
-				}
-			}
-
-			i {
-				margin-right: 3px;
-				font-size: 1.1em;
-			}
-		}
-	}
-
-	.left-section {
-		@include flex-column;
-		width: 65%;
-		display: flex;
-		align-items: flex-start;
-	}
-
-	.right-section {
-		width: 35%;
-	}
+    .right-section {
+        width: 35%;
+    }
+  }
 }
