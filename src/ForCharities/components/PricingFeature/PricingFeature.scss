@@ -1,0 +1,26 @@
+.pricing-feature {
+  display: flex;
+  margin-top: 3px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-bottom: 1px solid #e8e8e8;
+  
+
+  .pricing-feature-text {
+    display: flex;
+    justify-content: center;
+    font-size: 0.9em;
+    font-weight: 300;
+    margin-right: 6px;
+    color: #3d4351;
+    padding-bottom: 9px;
+    margin-top: 9px;
+  }
+
+  i {
+    font-size: 1em;
+    font-weight: 300;
+    color: #d8d8d8;
+  }
+}

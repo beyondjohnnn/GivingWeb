@@ -33,180 +33,205 @@
   .pricing-main-wrapper {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     // height: 1500px;
     width: 100%;
     max-width: 1150px;
-    margin-top: 22px;
+    margin-top: 52px;
     margin-bottom: 35px;
 
 
     .pricing-tier-wrapper {
-      display: flex; 
-      flex-direction: column;
-      min-height: 500px;
-      width: 32%;
-      background-color: #fff;  
-      border: 1px solid #d1d5d7;
-      box-shadow: 0 4px 12px 0 rgba(0,0,0,.06);
-      border-radius: 5px;
-      align-items: center;
+      
+        display: flex; 
+        flex-direction: column;
+        align-items: center;
+        width: 32%;
 
+      .main-info-pricing-wrapper {
 
-        .pricing-color-banner {
-          border-top-left-radius: 5px;
-          border-top-right-radius: 5px;
-          width: 100%;
-          height: 8px;
-          background-color: #9da0a7;
+        display: flex; 
+        flex-direction: column;
+        min-height: 390px;
+        width: 100%;
+        background-color: #fff;  
+        border: 1px solid #d1d5d7;
+        box-shadow: 0 4px 12px 0 rgba(0,0,0,.06);
+        border-radius: 5px;
+        align-items: center;
 
-          &.custom {
-            background-color: #5e687c;
+          .pricing-color-banner {
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            width: 100%;
+            height: 8px;
+            background-color: #9da0a7;
+
+            &.custom {
+              background-color: #5e687c;
+            }
+
           }
-
-        }
-        
-        .tier-name {
-          font-weight: 300;
-          font-size: 1.8em;
-          margin-top: 35px;
-          color: #757575;
-
-          &.growth-tier-color {
-            // color: lighten(#7663f6, 6);
-            // color: #AB59F5;
-            color: #57B3F4;
-          }
-        }
-
-        .tier-description {
-          font-weight: 300;
-          color: #757575;
-          font-size: 0.9em;
-          width: 70%;
-          text-align: center;
-          margin-top: 20px;
-          line-height: 150%;
-          min-height: 42px;
-
-        }
-
-        .price-container {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          height: 90px;
-          margin-top: 30px;
-
-          .pound-symbol {
-            font-size: 1.1em;
+          
+          .tier-name {
             font-weight: 300;
-            // display: flex;
-            // align-items: flex-start;
-            height:100%;
-            margin-top: 25px;
-            margin-right: 6px;
+            font-size: 1.8em;
+            margin-top: 35px;
+            color: #757575;
+
+            &.growth-tier-color {
+              // color: lighten(#7663f6, 6);
+              // color: #AB59F5;
+              color: #57B3F4;
+            }
+          }
+
+          .tier-description {
+            font-weight: 300;
+            color: #757575;
+            font-size: 0.9em;
+            width: 70%;
+            text-align: center;
+            margin-top: 20px;
+            line-height: 150%;
+            min-height: 42px;
 
           }
 
-          .price-number {
-            font-size: 5.4em; 
-            font-weight: 300;
-            height:100%;
+          .price-container {
             display: flex;
-            align-items: flex-end;
+            align-items: center;
+            justify-content: center;
+            height: 90px;
+            margin-top: 30px;
+
+            .pound-symbol {
+              font-size: 1.1em;
+              font-weight: 300;
+              // display: flex;
+              // align-items: flex-start;
+              height:100%;
+              margin-top: 25px;
+              margin-right: 6px;
+
+            }
+
+            .price-number {
+              font-size: 5.4em; 
+              font-weight: 300;
+              height:100%;
+              display: flex;
+              align-items: flex-end;
 
 
+            }
+
+            .per-month-text {
+              font-size:1em;
+              font-weight: 300;
+              height:100%;
+              display: flex;
+              align-items: flex-end;
+              margin-bottom: 25px;
+
+            }
           }
 
-          .per-month-text {
-            font-size:1em;
-            font-weight: 300;
-            height:100%;
+          .below-price-message {
+            font-size:0.8em;
+            font-weight: 200;
+            // margin-top: 25px;
+          }
+
+          button {
+            background-color: #9da0a7;
+            // width: 285px;
             display: flex;
-            align-items: flex-end;
-            margin-bottom: 25px;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 50px;
+            font-weight: 200;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            border: none;
+            font-size: 16px;
+            font-family: montserrat;
+            outline: none;
+            cursor: pointer;
+            margin-top: 30px;
 
+
+              &:hover {
+                background-color: darken(#9da0a7, 5);
+              }
           }
-        }
 
-        .below-price-message {
-          font-size:0.8em;
-          font-weight: 200;
-          // margin-top: 25px;
-        }
-
-        button {
-          background-color: #9da0a7;
-          // width: 285px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          padding: 10px 50px;
-          font-weight: 200;
-          color: #fff;
-          text-decoration: none;
-          border-radius: 4px;
-          border: none;
-          font-size: 16px;
-          font-family: montserrat;
-          outline: none;
-          cursor: pointer;
-          margin-top: 30px;
-
+          .recommended-button {
+            background-color: #0D89E0;
 
             &:hover {
-              background-color: darken(#9da0a7, 5);
+              background-color: darken(#0D89E0, 5);
             }
-        }
+          }
 
-        .recommended-button {
-          background-color: #0D89E0;
+          .custom-button {
+            background-color: #5e687c;
+            margin-top: 12px;
 
-          &:hover {
-            background-color: darken(#0D89E0, 5);
+            &:hover {
+              background-color: darken(#5e687c, 5);
+            }
+          }
+
+          > i {
+            font-size: 9em;
+            color: lighten(#FFDCAF,10);
+            margin-top: 10px;
+          }
+
+
+      }
+      
+      .recommended {
+        height: 428px;
+        margin-top: -18px;
+
+        .recommended-banner {
+          width: 100%;
+          height: 26px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: #666AF6;
+          color: #fff;
+          border-top-left-radius: 5px;
+          border-top-right-radius: 5px;
+
+          h4 {
+            font-weight: 300;
+            font-size: 0.9em;
           }
         }
+      }  
 
-        .custom-button {
-          background-color: #5e687c;
-          margin-top: 12px;
-
-          &:hover {
-            background-color: darken(#5e687c, 5);
-          }
-        }
-
-        i {
-          font-size: 9em;
-          color: lighten(#FFDCAF,10);
-          margin-top: 10px;
-        }
-
+      .plus-more-text {
+        font-size: 0.9em;
+        font-weight: 300;
+        margin-top: 37px;
+      }
 
     }
-    
-    .recommended {
-      min-height: 550px;
-      margin-top: 13px;
 
-      .recommended-banner {
-        width: 100%;
-        height: 26px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: #666AF6;
-        color: #fff;
-        border-top-left-radius: 5px;
-        border-top-right-radius: 5px;
+    .pricing-features {
+      display: flex;
+      flex-direction: column; 
+      align-items: center;
+      margin-top: 30px;
+      width:100%;
 
-        h4 {
-          font-weight: 300;
-          font-size: 0.9em;
-        }
-
-
+      &.growth-features {
+        margin-top: 9px;
       }
     }  
   }
