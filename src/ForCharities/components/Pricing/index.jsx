@@ -32,9 +32,6 @@ class Pricing extends Component {
               <PricingFeature text="5% service fee"/>
               <PricingFeature text="1.4% + 20p payment processing fees"/>
               <PricingFeature text="Donors can cover fees"/>
-              <PricingFeature text="Donation buttons"/>
-              <PricingFeature text="Campaign widgets"/>
-              <PricingFeature text="Reporting & insights"/>
             </div>
           </div>
           <div className="pricing-tier-wrapper">
