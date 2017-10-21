@@ -12,7 +12,7 @@ import css from './ForCharities.scss'
 class ForCharities extends React.Component {
 	render() {
 		return (
-			<div className="for-charities">
+			<div className="for-charities-landing-page">
 
 			</div>
 		)
