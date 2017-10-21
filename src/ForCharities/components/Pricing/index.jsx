@@ -54,6 +54,8 @@ class Pricing extends Component {
               <PricingFeature text="Extra promotion tools"/>
               <PricingFeature text="Access to mastermind community"/>
               <PricingFeature text="Reduced 3% service fee"/>
+              <PricingFeature text="1.4% + 20p payment processing fees"/>
+              <PricingFeature text="Gift aid processing"/>
              </div>
           </div> 
           <div className="pricing-tier-wrapper">
