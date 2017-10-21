@@ -8,6 +8,7 @@ import noAuthSubNavigation from './noAuthSubNavigation'
 import charityDashboardSidebar from './charityDashboardSidebar'
 import helpSomeone from './helpSomeone'
 import careButton from './careButton'
+import pricing from './pricing'
 import newMemberProcess from './newMemberProcess'
 import charityPage from './charityPage'
 import dashboard from './dashboard'
@@ -23,6 +24,7 @@ const rootReducer = combineReducers({
   charityDashboardSidebar,
   helpSomeone,
 	careButton,
+  pricing,
   newMemberProcess,
 	charityPage,
 	dashboard,
