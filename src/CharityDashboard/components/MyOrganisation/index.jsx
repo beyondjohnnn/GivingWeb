@@ -1,19 +1,8 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import { Route } from 'react-router'
-import {bindActionCreators} from 'redux'
-import {connect} from 'react-redux'
-import {calcDonationPercentage} from '../../../Shared/utils/donations'
-
-import * as helpSomeoneActionCreators from '../../../actions/helpSomeoneActionCreators'
-import * as dashboardActionCreators from '../../../actions/dashboard'
 
 import css from './MyOrganisation.scss'
 
-import MembersLive from '../MembersLive'
-import MembersDraft from '../MembersDraft'
-import MembersReview from '../MembersReview'
-import MembersSuccess from '../MembersSuccess'
+import FeaturedMemberController from './../FeaturedMemberController'
 
 class MyOrganisation extends React.Component {
 
@@ -23,6 +12,7 @@ class MyOrganisation extends React.Component {
 				<div className="content-section-header">
 					<h2>My Organisation</h2>
 				</div>
+				<FeaturedMemberController />
 			</div>
 		)
 	}
