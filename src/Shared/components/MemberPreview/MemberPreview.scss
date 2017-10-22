@@ -1,20 +1,8 @@
 $button-color: #7663f6;
 // $button-color: #925ebc;
 
-
-.member-previews-one-column{
-	width: 80%;
-}
-
-.member-previews-two-column{
-	width: 45%;
-}
-
-.member-previews-three-column{
-	width: 30%;
-}
-
 .member-preview {
+	width: 30%;
 	background-color: #fff;
 	border-radius: 7px;
 
@@ -132,8 +120,6 @@ $button-color: #7663f6;
 		margin-bottom: 20px;
   	color: #686868;
 
-
-
 		.member-progress-bar {
 			width: 100%;
 			height: 10px;
@@ -177,9 +163,6 @@ $button-color: #7663f6;
 				border-left: solid 1px #7b5dff;
 				padding-left: 10px;
 
-
-
-
 				.goal-amount {
 
 				}
@@ -187,8 +170,6 @@ $button-color: #7663f6;
 				.goal-label {
 					font-size: 0.55em;
 					font-weight: 300;
-
-
 				}
 			}
 
@@ -217,27 +198,39 @@ $button-color: #7663f6;
 		}
 
 	}
-		.member-donations {
-				font-weight: 300;
+	.member-donations {
+		font-weight: 300;
+	}
+
+	.member-images {
+
+		padding-top: 7px;
+		display: flex;
+		align-items: center;
+
+		img {
+			height: 22px;
+			padding-right: 5px;
 		}
 
-		.member-images {
-
-				padding-top: 7px;
-				display: flex;
-				align-items: center;
-
-				img {
-					height: 22px;
-					padding-right: 5px;
-				}
-
-				p{
-					font-size: 1em;
-					font-weight: 300;
-  				color: #686868;
+		p{
+			font-size: 1em;
+			font-weight: 300;
+			color: #686868;
 
 
-				}
-			}
+		}
+	}
+}
+
+.member-previews-one-column{
+	width: 80%;
+}
+
+.member-previews-two-column{
+	width: 45%;
+}
+
+.member-previews-three-column{
+	width: 30%;
 }
