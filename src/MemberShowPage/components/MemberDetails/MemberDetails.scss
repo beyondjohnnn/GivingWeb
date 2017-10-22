@@ -1,5 +1,6 @@
 $border: 1px solid #eaeaea;
 $light-grey-color: #686868;
+$giving-web-purple: #666AF6;
 
 @mixin flex-center {
 	display: flex;
@@ -87,7 +88,7 @@ $light-grey-color: #686868;
 					color: #fff;
 
 					&:hover {
-						color: lighten(#7b5dff,5);
+						color: lighten($giving-web-purple,5);
 					}
 				}
 
@@ -181,7 +182,7 @@ $light-grey-color: #686868;
 		margin-left: 70px;
 		align-items: flex-end;
 		font-weight: 300;
-		color: #7267ee;
+		color: $giving-web-purple;
 
 		h3 {
 			font-size: 30px;
@@ -193,7 +194,7 @@ $light-grey-color: #686868;
 			cursor: pointer;
 
 			&:hover {
-				color: darken(#7267ee, 10);
+				color: darken($giving-web-purple, 10);
 				text-decoration: underline;
 			}
 		}
@@ -201,6 +202,11 @@ $light-grey-color: #686868;
 
 	.loaded-story {
 		margin-bottom: 25px;
+		margin-bottom: 20px;
+		font-size: 1.1em;
+		font-weight: 300;
+		color: $light-grey-color;
+		line-height: 1.5;
 
 		strong {
 			font-weight: 400;
@@ -211,6 +217,9 @@ $light-grey-color: #686868;
 			margin-bottom: 20px;
 			font-size: 1.5em;
 			font-weight: 400;
+			line-height: 1;
+			color: #444444;
+
 		}
 
 		span {

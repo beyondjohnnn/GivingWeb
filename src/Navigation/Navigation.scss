@@ -1,7 +1,7 @@
 $radius-size: 3px;
 $search-color: #9b9b9b;
 $search-border: 1px solid $search-color;
-$search-border-focus-color: #4569e0;
+$search-border-focus-color: #666AF6;
 $search-border-focus: 1.4px solid $search-border-focus-color;
 $nav-links-size: 13px; 
 $nav-links-weight: 200;
@@ -77,11 +77,12 @@ $nav-links-weight: 200;
 			}
 
 		.giving-text {
+			// color: #0D89E0;
 			color: #5a5a5a;
 		}
 		
 		.web-text{
-			color: #7267EE;
+			color: #666AF6;
 		}
 		}
 
@@ -208,7 +209,7 @@ $nav-links-weight: 200;
 		& .signup-link {
 			padding-right: 20px;
 			padding-left: 8px;
-			color: $search-border-focus-color;
+			color: #666AF6;
 		}
 	}
 

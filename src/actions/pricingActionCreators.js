@@ -1,5 +1,6 @@
-export function toggleTooltip() {
+export function revealTooltip(dropdownRef) {
   return {
-    type: 'TOGGLE_TOOLTIP'
+    type: "SET_VISIBLE_TOOLTIP",
+    dropdownRef
   }
 }

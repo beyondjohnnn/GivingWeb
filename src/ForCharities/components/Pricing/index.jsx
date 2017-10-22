@@ -27,11 +27,11 @@ class Pricing extends Component {
               <button>Get started</button>
             </div>
             <div className="pricing-features">  
-              <PricingFeature text="Unlimited fundraising campaigns"/>
-              <PricingFeature text="Member fundraising"/>
-              <PricingFeature text="5% service fee"/>
-              <PricingFeature text="1.4% + 20p payment processing fees"/>
-              <PricingFeature text="Donors can cover fees"/>
+              <PricingFeature uniqueID="campaigns" text="Unlimited fundraising campaigns" tooltipText="As many of our high converting fundraising campaigns as you like"/>
+              <PricingFeature uniqueID="members" text="Member fundraising" tooltipText="Our member fundraising is available to all human service organisations fighting inequality"/>
+              <PricingFeature uniqueID="starter-service" text="5% service fee" tooltipText="This fee allows us to innovate and make GivingWeb even better!"/>
+              <PricingFeature uniqueID="starter-payment" text="1.4% + 20p payment processing fees" tooltipText="This is the fee our payment processing provider Stripe takes per transaction"/>
+              <PricingFeature uniqueID="donors" text="Donors can cover fees" tooltipText="This feature allows you to decide if the donor will pick up our small fees or if they are covered in the target. We're always transparent to donors about our fees either way!"/>
             </div>
           </div>
           <div className="pricing-tier-wrapper">
@@ -51,11 +51,11 @@ class Pricing extends Component {
               <h3 className="plus-more-text">Everything in Starter, plus:</h3>
              </div> 
              <div className="pricing-features growth-features">
-              <PricingFeature text="Extra promotion tools"/>
-              <PricingFeature text="Access to mastermind community"/>
-              <PricingFeature text="Reduced 3% service fee"/>
-              <PricingFeature text="1.4% + 20p payment processing fees"/>
-              <PricingFeature text="Gift aid processing"/>
+              <PricingFeature uniqueID="promo" text="Extra promotion tools" tooltipText="Tools like our converting email templates allow your organisation to gain momentum from the get go."/>
+              <PricingFeature uniqueID="mastermind" text="Access to mastermind community" tooltipText="Up to two representatives from your organisation will be invited to our Facebook digital marketing community, where we share the latest and greatest techniques for successful fundraising and digital engagement."/>
+              <PricingFeature uniqueID="growth-service" text="Reduced 3% service fee" tooltipText="This reduced fee allows you to raise even more with each donation."/>
+              <PricingFeature uniqueID="growth-payment" text="1.4% + 20p payment processing fees" tooltipText="This is the fee our payment processing provider Stripe takes per transaction."/>
+              <PricingFeature uniqueID="gift aid" text="Gift aid reclaim" tooltipText="We'll reclaim gift aid on your behalf and won't take a penny of it!"/>
              </div>
           </div> 
           <div className="pricing-tier-wrapper">
@@ -67,9 +67,9 @@ class Pricing extends Component {
               <button className="custom-button">Get in touch</button>
             </div>
             <div className="pricing-features">  
-              <PricingFeature text="Personalised Marketing Strategy"/>
-              <PricingFeature text="Eliminate Service Fees"/>
-              <PricingFeature text="Custom fundraising solutions"/>
+              <PricingFeature uniqueID="marketing-strategy" text="Personalised Marketing Strategy" tooltipText="We know boosting engagement online can be overwhleming at times. We're here to help with dedicated marketing support for your organisation."/>
+              <PricingFeature uniqueID="eliminate" text="Eliminate Service Fees" tooltipText="We cater for organisations of all size.  If your organisation is expecting significant volume, we can talk about custom upfront packages to do away with our fee altogther."/>
+              <PricingFeature uniqueID="custom-fundraising" text="Custom fundraising solutions" tooltipText="Do you have an idea you'd like to impliment on your own website?  Maybe a further integration with ours?  We're here to help."/>
             </div>
           </div> 
         </div>

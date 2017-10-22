@@ -1,15 +1,16 @@
 const defaultState = {
-  tooltipVisible: false
+  currentTooltip: ""
 }
 
-function pricingHover(state = defaultState, action) {
+function pricing(state = defaultState, action) {
+
   switch(action.type) {
-    case 'TOGGLE_TOOLTIP':
-      return {...state, tooltipVisible: !state.tooltipVisible}
+    case 'SET_VISIBLE_TOOLTIP':
+      return {...state, currentTooltip: action.dropdownRef}
     default:
       return state
-
   }
 }
 
-export default pricingHover;
+
+export default pricing

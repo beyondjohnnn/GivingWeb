@@ -32,15 +32,15 @@ class DonationSection extends Component {
 					<h3>
 						Select Donation amount
 					</h3>
-					<SelectInput goalRemaining={current_member.goal - totalDonations} />
+					<SelectInput goalRemaining={current_member.goal - totalDonations} memberName={current_member.name} />
 					<div className="support-checkbox">
-						<input id="checkbox" type="checkbox" />
+						<input id="checkbox" type="checkbox" checked/>
 						<label htmlFor="checkbox">Add £3 to help support GivingWeb</label>
 					</div>
 				</div>
 				<div className="message-controls">
 					<label htmlFor="message">Send a message</label>
-					<textarea className="message-text" />
+					<textarea rows="3" name="form-message" placeholder={`Your kind words of support will be sent to ${current_member.name} and posted on this campaign for others to see`} className="message-text" />
 					<div className="name-hide">
 						<input id="checkbox-hidename" type="checkbox" />
 						<label htmlFor="checkbox-hidename">Hide my name</label>

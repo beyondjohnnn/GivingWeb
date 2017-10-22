@@ -38,9 +38,9 @@ class SelectInput extends Component {
 
 	handleOptionSelect(value) {
 		switch (value) {
-			case 25:
+			case 10:
+			case 20:
 			case 50:
-			case 75:
 				this.props.setDonationAmount(value)
 				break
 			case 'custom':
@@ -73,14 +73,14 @@ class SelectInput extends Component {
 		return (
 			<div className="donation-select">
 				<span className="placeholder" onClick={this.handleSelectToggle}>
-					£ {this.createPlaceholder()} <i onClick={this.props.toggleSelect} className={`fa ${this.getArrowStyling()}`}></i>
+					£{this.createPlaceholder()} <i onClick={this.props.toggleSelect} className={`fa ${this.getArrowStyling()}`}></i>
 				</span>
 				<ul className="options" style={this.getOptionsStyling()}>
-					<li className="option" onClick={this.handleOptionSelect.bind(this, 25)}>£25</li>
+					<li className="option" onClick={this.handleOptionSelect.bind(this, 10)}>£10</li>
+					<li className="option" onClick={this.handleOptionSelect.bind(this, 20)}>£20</li>
 					<li className="option" onClick={this.handleOptionSelect.bind(this, 50)}>£50</li>
-					<li className="option" onClick={this.handleOptionSelect.bind(this, 75)}>£75</li>
+					<li className="option" onClick={this.handleOptionSelect.bind(this, 'complete')}>£{this.props.goalRemaining} - Complete {this.props.memberName}'s goal!</li>
 					<li className="option" onClick={this.handleOptionSelect.bind(this, 'custom')}>Custom Amount</li>
-					<li className="option" onClick={this.handleOptionSelect.bind(this, 'complete')}>Complete their goal</li>
 				</ul>
 				<select name="" id="" className="real-select"></select>
 			</div>
