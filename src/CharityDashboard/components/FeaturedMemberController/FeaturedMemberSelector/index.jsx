@@ -4,8 +4,8 @@ import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 
 import css from './FeaturedMemberSelector.scss'
-import * as charityDashBoardContentActionCreators from '../../../actions/charityDashBoardContentActionCreators'
-import * as helSomeoneActionCreators from '../../../actions/helpSomeoneActionCreators'
+import * as charityDashBoardContentActionCreators from '../../../../actions/charityDashBoardContentActionCreators'
+import * as helSomeoneActionCreators from '../../../../actions/helpSomeoneActionCreators'
 
 class FeaturedMemberSelector extends React.Component {
 
@@ -66,9 +66,8 @@ class FeaturedMemberSelector extends React.Component {
 	render() {
 		return (
 			<div className="featured-member-selector">
-				<div className="member-one">
-					<div className="del-div">
-					</div>
+				<div>
+					<div className="del-div"></div>
 						{this.renderMembers()}
 					<h3>member</h3>
 				</div>

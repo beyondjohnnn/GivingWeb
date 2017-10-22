@@ -4,8 +4,8 @@ import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 import * as actionCreators from '../../../actions/charityDashBoardContentActionCreators'
 
-import FeaturedMemberPreview from './../FeaturedMemberPreview'
-import FeaturedMemberSelector from './../FeaturedMemberSelector'
+import FeaturedMemberPreview from './FeaturedMemberPreview'
+import FeaturedMemberSelector from './FeaturedMemberSelector'
 
 import css from './FeaturedMemberController.scss'
 

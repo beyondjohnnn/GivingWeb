@@ -4,7 +4,7 @@ import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 
 import css from './FeaturedMemberPreview.scss'
-import * as actionCreators from '../../../actions/charityDashBoardContentActionCreators'
+import * as actionCreators from '../../../../actions/charityDashBoardContentActionCreators'
 
 
 class FeaturedMemberPreview extends React.Component {
