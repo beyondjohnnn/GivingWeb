@@ -1,11 +1,35 @@
 .featured-member-controller{
 	display: flex;
-	height: 116px;
+	height: 120px;
 	width: 100%;
-
 
 	.title{
 		flex: 1;
+
+		h3{
+			display: flex;
+			height: 100%;
+			text-align: center;
+			align-items: center;
+		}
 	}
 
+	.featured-member-controller-element{
+	  flex: 1;
+	  padding: 5px;
+	  text-align: center;
+
+		.del-div{
+			height: 20px;
+			display: flex;
+			justify-content: flex-end;
+		}
+
+		.content-div{
+			height: 80px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+	}
 }
