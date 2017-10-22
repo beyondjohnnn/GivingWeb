@@ -4,8 +4,8 @@ import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 
 import css from './FeaturedMemberSelector.scss'
-import * as actionCreators from '../../../actions/charityDashBoardContentActionCreators'
-
+import * as charityDashBoardContentActionCreators from '../../../actions/charityDashBoardContentActionCreators'
+import * as helSomeoneActionCreators from '../../../actions/helpSomeoneActionCreators'
 
 class FeaturedMemberSelector extends React.Component {
 
@@ -13,6 +13,12 @@ class FeaturedMemberSelector extends React.Component {
 		super(props)
 		this.state = {
 			feat_member: true
+		}
+	}
+
+	componentDidMount(){
+		if(this.props.members.length === 0){
+			this.props.getMembers()
 		}
 	}
 
@@ -43,16 +49,15 @@ class FeaturedMemberSelector extends React.Component {
 					onClick={this.onClickAddMember.bind(this)}>
 					Click To Add Member
 				</button>
-			)} else {
-		const maping = this.props.members.map(
-				(member)=> {
-					return (
-						<option key={member.id} value={member.id}>
-							{member.name}
-						</option>
-					)
-				}
 			)
+		} else {
+			const maping = this.props.members.map((member)=> {
+				return (
+					<option key={member.id} value={member.id}>
+						{member.name}
+					</option>
+				)
+			})
 			return (<select onChange={this.onChangeSelector.bind(this)}>{maping}</select>)
 		}
 	}
@@ -77,7 +82,8 @@ function mapStateToProps(state, routing) {
 }
 
 function mapDispatchToProps(dispatch) {
-	return bindActionCreators(actionCreators, dispatch)
+	const creators = Object.assign({}, charityDashBoardContentActionCreators, helSomeoneActionCreators)
+	return bindActionCreators(creators, dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(FeaturedMemberSelector)
