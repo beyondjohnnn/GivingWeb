@@ -1,4 +1,4 @@
-$button-color: #7663f6;
+$button-color: #666AF6;
 // $button-color: #925ebc;
 
 .member-preview {
@@ -63,6 +63,11 @@ $button-color: #7663f6;
 		font-weight: 400;
 		font-size: 20px;
 
+
+			&:hover {
+				text-decoration: underline;
+			}
+
 	}
 
 	.member-location {
@@ -98,10 +103,10 @@ $button-color: #7663f6;
 
 		.charity-link {
 			color: #999;
-			text-decoration: none;
+			text-decoration: underline;
 
 				&:hover {
-					text-decoration: underline;
+					color: #57B3F4;
 				}
 		}
 

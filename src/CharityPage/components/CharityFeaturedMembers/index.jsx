@@ -24,7 +24,7 @@ class CharityFeaturedMembers extends React.Component {
 
 	render() {
 		return (
-			<div className="featured-members">
+			<div className="charity-featured-members">
 				<h2>Charity Featured Members</h2>
 				<div className="members-list">
 					<MemberPreviewBuilder members={this.props.members} previewsPerLine={3}/>
