@@ -78,7 +78,7 @@ class FeaturedMemberSelector extends React.Component {
 				<div>
 					<div className="del-div"></div>
 					<div className="content-div">{this.renderMembers()}</div>
-					<h3 className="feat-member-name">member</h3>
+					<h3>member</h3>
 				</div>
 			</div>
 		)

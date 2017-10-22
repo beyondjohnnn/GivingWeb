@@ -1,6 +1,6 @@
 .featured-member-controller{
 	display: flex;
-	height: 116px;
+	height: 120px;
 	width: 100%;
 
 	.title{
@@ -20,17 +20,16 @@
 	  text-align: center;
 
 		.del-div{
-			height: 18px;
+			height: 20px;
 			display: flex;
 			justify-content: flex-end;
 		}
 
 		.content-div{
-			height: 90%;
-		}
-
-		.feat-member-name{
-			height: 10%;
+			height: 80px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
 		}
 	}
 }

@@ -28,7 +28,7 @@ class FeaturedMemberPreview extends React.Component {
 					<div className="content-div">
 						<img src={member.url_image} alt="http://via.placeholder.com/80x80?text=Add_Image"/>
 					</div>
-					<h3 className="feat-member-name">{member.name}</h3>
+					<h3>{member.name}</h3>
 				</div>
 			</div>
 		)
