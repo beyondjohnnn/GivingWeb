@@ -12,8 +12,8 @@ class MemberPreview extends React.Component {
 		}
 	}
 
-	createMatchedBanner(){
-		if(this.props.member.sponsors){
+	createMatchedIcon(){
+		if(this.props.member.sponsors.length > 0){
 			return (
 				<div className="matched-icon">
 					<img
@@ -61,7 +61,7 @@ class MemberPreview extends React.Component {
 		return (
 			<div className={this.getContainerClassName()} style={previewStyle}>
 				<div className="member-photo-container">
-					{this.createMatchedBanner()}
+					{this.createMatchedIcon()}
 					<div className="overflow-container">
 						{this.createCompletedBanner(percentage)}
 						<Link className="member-link" to={`/member?member_id=${member.id}`}>
