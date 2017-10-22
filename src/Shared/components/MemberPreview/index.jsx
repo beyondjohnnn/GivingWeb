@@ -31,19 +31,23 @@ class MemberPreview extends React.Component {
 		}
 	}
 
+	getContainerClassName(){
+		let className = "member-preview"
+		if(this.props.className) className += " " + this.props.className
+		return className
+	}
+
 	render() {
 		let previewStyle = this.props.style || {}
 		const {member} = this.props
 		const percentage = calcDonationPercentage(member)
-		const textPercentage = percentage.toString() + "%"
-		const donationBarColour = getDonationBarColour(percentage)
 		const donationBarStyles = {
-			"width": textPercentage,
-			"backgroundColor": donationBarColour
+			"width": percentage.toString() + "%",
+			"backgroundColor": getDonationBarColour(percentage)
 		}
 
 		return (
-			<div className="member-preview" style={previewStyle}>
+			<div className={this.getContainerClassName()} style={previewStyle}>
 				<div className="member-photo-container">
 					{this.createCompletedBanner(percentage)}
 					<Link className="member-link" to={`/member?member_id=${member.id}`}><img className="member-photo" src={this.renderMembersImage()} /></Link>
@@ -62,7 +66,7 @@ class MemberPreview extends React.Component {
 						</div>
 						<div className="progress-details">
 							<div className="member-progress">
-								<p className="progress-percentage">{textPercentage}</p>
+								<p className="progress-percentage">{donationBarStyles.width}</p>
 								<p className="progress-label">RAISED</p>
 							</div>
 							<div className="member-goal">

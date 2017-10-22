@@ -1,7 +1,6 @@
 $button-color: #7663f6;
 // $button-color: #925ebc;
 
-
 .member-preview {
 	width: 30%;
 	background-color: #fff;
@@ -54,7 +53,7 @@ $button-color: #7663f6;
 	}
 
 	.member-link {
-			
+
 			color: #333333;
 		}
 	.member-name {
@@ -100,7 +99,7 @@ $button-color: #7663f6;
 		.charity-link {
 			color: #999;
 			text-decoration: none;
-				
+
 				&:hover {
 					text-decoration: underline;
 				}
@@ -120,8 +119,6 @@ $button-color: #7663f6;
 		flex-flow: row wrap;
 		margin-bottom: 20px;
   	color: #686868;
-
-
 
 		.member-progress-bar {
 			width: 100%;
@@ -166,9 +163,6 @@ $button-color: #7663f6;
 				border-left: solid 1px #7b5dff;
 				padding-left: 10px;
 
-				
-
-
 				.goal-amount {
 
 				}
@@ -176,8 +170,6 @@ $button-color: #7663f6;
 				.goal-label {
 					font-size: 0.55em;
 					font-weight: 300;
-
-					
 				}
 			}
 
@@ -199,34 +191,46 @@ $button-color: #7663f6;
 
 			&:hover {
 				background-color: $button-color;
-				color: #fff; 
+				color: #fff;
 				cursor: pointer;
 
-			}  
+			}
 		}
 
 	}
-		.member-donations {
-				font-weight: 300;
+	.member-donations {
+		font-weight: 300;
+	}
+
+	.member-images {
+
+		padding-top: 7px;
+		display: flex;
+		align-items: center;
+
+		img {
+			height: 22px;
+			padding-right: 5px;
 		}
 
-		.member-images {
+		p{
+			font-size: 1em;
+			font-weight: 300;
+			color: #686868;
 
-				padding-top: 7px;
-				display: flex;
-				align-items: center;
 
-				img {
-					height: 22px;
-					padding-right: 5px; 
-				}
+		}
+	}
+}
 
-				p{
-					font-size: 1em;
-					font-weight: 300;
-  				color: #686868;
-					
+.member-previews-one-column{
+	width: 80%;
+}
 
-				}
-			}
+.member-previews-two-column{
+	width: 45%;
+}
+
+.member-previews-three-column{
+	width: 30%;
 }
