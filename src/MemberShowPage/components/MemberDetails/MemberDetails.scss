@@ -202,6 +202,11 @@ $giving-web-purple: #666AF6;
 
 	.loaded-story {
 		margin-bottom: 25px;
+		margin-bottom: 20px;
+		font-size: 1.1em;
+		font-weight: 300;
+		color: $light-grey-color;
+		line-height: 1.5;
 
 		strong {
 			font-weight: 400;
@@ -212,6 +217,9 @@ $giving-web-purple: #666AF6;
 			margin-bottom: 20px;
 			font-size: 1.5em;
 			font-weight: 400;
+			line-height: 1;
+			color: #444444;
+
 		}
 
 		span {
