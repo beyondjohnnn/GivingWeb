@@ -36,17 +36,19 @@ class FeaturedMemberSelector extends React.Component {
 	}
 
 	renderMembers(){
-		if(this.state.feat_member === true ){
+		if(this.state.feat_member){
 			return(
 				<button
-				className="member-placeholder"
-				onClick={this.onClickAddMember.bind(this)}>Click To Add Member
+					className="member-placeholder"
+					onClick={this.onClickAddMember.bind(this)}>
+					Click To Add Member
 				</button>
 			)} else {
 		const maping = this.props.members.map(
 				(member)=> {
 					return (
-						<option key={member.id} value={member.id}>{member.name}
+						<option key={member.id} value={member.id}>
+							{member.name}
 						</option>
 					)
 				}
