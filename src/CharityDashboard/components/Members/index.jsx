@@ -58,7 +58,7 @@ class Members extends React.Component {
 		const {members} = this.props
 		return (
 			<div className="cd-members">
-				<div className="header content-section-header">
+				<div className="header">
 					<h2>Members</h2>
 					<Link to="/charity-dashboard/members/new" className="create-member-link">Create a new member</Link>
 				</div>

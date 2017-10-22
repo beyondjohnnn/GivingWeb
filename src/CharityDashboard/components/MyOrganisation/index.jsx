@@ -9,7 +9,7 @@ class MyOrganisation extends React.Component {
 	render() {
 		return (
 			<div className="dashboard-container">
-				<div className="content-section-header">
+				<div className="header">
 					<h2>My Organisation</h2>
 				</div>
 				<FeaturedMemberController />
