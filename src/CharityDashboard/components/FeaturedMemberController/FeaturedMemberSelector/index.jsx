@@ -50,18 +50,27 @@ class FeaturedMemberSelector extends React.Component {
 					Click To Add Member
 				</button>
 			)
-		} else {
-			const maping = this.props.members.map((member)=> {
-				return (
-					<option key={member.id} value={member.id}>
-						{member.name}
-					</option>
-				)
-			})
-			return (<select onChange={this.onChangeSelector.bind(this)}>{maping}</select>)
+		}else{
+			return this.buildMemberDropDown()
 		}
 	}
-	//onChange needs to be changed to onSelect but ins't working for some reason
+
+	buildMemberDropDown(){
+		const disabledOption = [<option key={0} value={-1} disabled>Select A Member</option>]
+		const members = this.props.members.map((member)=> {
+			return (
+				<option key={member.id} value={member.id}>
+					{member.name}
+				</option>
+			)
+		})
+		const options = disabledOption.concat(members)
+		return (
+			<select onChange={this.onChangeSelector.bind(this)} defaultValue={-1}>
+				{options}
+			</select>
+		)
+	}
 
 	render() {
 		return (
