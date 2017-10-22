@@ -9,21 +9,33 @@ import css from './PricingFeature.scss'
 
 class PricingFeature extends React.Component {
 
-  // createTooltipStyle() {
-  //   return this.props.tooltipVisible ? "tooltip-component care-button-tooltip" : "tooltip-component care-button-tooltip hidden"
-  // }
-        // <button onMouseEnter={this.props.toggleTooltip} onMouseLeave={this.props.toggleTooltip}>
-        //   <Tooltip style={this.createTooltipStyle()} text="Click here to follow the charities progress" />
-        //   <i className="fa fa-heart-o"></i>
-        //   Care
-        // </button>
+  createTooltipStyle(expectedState) {
 
-        // <i className="fa fa-check" aria-hidden="true"></i>
+    console.log(expectedState)
+
+    if (this.props.currentTooltip == expectedState) {
+      return 'tooltip-component tooltip-visible'
+    } else {
+      return 'tooltip-component'
+    }
+   //  if (this.props.currentTooltip = "") { 
+   //    return "tooltip-component tooltip-visible"
+   //  } else { 
+   //   "tooltip-component"
+   // }
+  }
+       
   render() {
     return (
       <div className="pricing-feature">
         <h3 className="pricing-feature-text">{this.props.text}</h3> 
-        <i className="fa fa-question-circle" aria-hidden="true"></i>
+        <i className="fa fa-question-circle" aria-hidden="true" onMouseEnter={this.props.revealTooltip.bind(this, `${this.props.uniqueID}`)} onMouseLeave={this.props.revealTooltip.bind(this, "")}></i>
+        <div className={this.createTooltipStyle(`${this.props.uniqueID}`)}>
+          <div className="tooltip-arrow"></div>
+          <div className="tooltip-box"> 
+            <p className="tooltip-text">{this.props.tooltipText}</p>
+          </div> 
+        </div>
       </div>
     )
   }
