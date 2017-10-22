@@ -13,7 +13,7 @@ class Campaigns extends React.Component {
 	render() {
 		return (
 			<div className="cd-campaigns">
-				<div className="header">
+				<div className="header content-section-header">
 					<h2>Campaigns</h2>
 					<Link to="" className="create-campaign-link">Create a new campaign</Link>
 				</div>

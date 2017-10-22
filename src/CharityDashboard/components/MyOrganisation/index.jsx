@@ -20,7 +20,7 @@ class MyOrganisation extends React.Component {
 	render() {
 		return (
 			<div className="dashboard-container">
-				<div className="header">
+				<div className="content-section-header">
 					<h2>My Organisation</h2>
 				</div>
 			</div>
