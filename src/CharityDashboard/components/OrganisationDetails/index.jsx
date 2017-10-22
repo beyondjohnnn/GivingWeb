@@ -16,4 +16,4 @@ class OrganisationDetails extends React.Component {
 	}
 }
 
-export default OrganisationDetails 
+export default OrganisationDetails
