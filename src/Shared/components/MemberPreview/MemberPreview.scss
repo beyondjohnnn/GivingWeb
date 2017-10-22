@@ -2,8 +2,19 @@ $button-color: #7663f6;
 // $button-color: #925ebc;
 
 
-.member-preview {
+.member-previews-one-column{
 	width: 30%;
+}
+
+.member-previews-two-column{
+	width: 40%;
+}
+
+.member-previews-three-column{
+	width: 50%;
+}
+
+.member-preview {
 	background-color: #fff;
 	border-radius: 7px;
 
@@ -54,7 +65,7 @@ $button-color: #7663f6;
 	}
 
 	.member-link {
-			
+
 			color: #333333;
 		}
 	.member-name {
@@ -100,7 +111,7 @@ $button-color: #7663f6;
 		.charity-link {
 			color: #999;
 			text-decoration: none;
-				
+
 				&:hover {
 					text-decoration: underline;
 				}
@@ -166,7 +177,7 @@ $button-color: #7663f6;
 				border-left: solid 1px #7b5dff;
 				padding-left: 10px;
 
-				
+
 
 
 				.goal-amount {
@@ -177,7 +188,7 @@ $button-color: #7663f6;
 					font-size: 0.55em;
 					font-weight: 300;
 
-					
+
 				}
 			}
 
@@ -199,10 +210,10 @@ $button-color: #7663f6;
 
 			&:hover {
 				background-color: $button-color;
-				color: #fff; 
+				color: #fff;
 				cursor: pointer;
 
-			}  
+			}
 		}
 
 	}
@@ -218,14 +229,14 @@ $button-color: #7663f6;
 
 				img {
 					height: 22px;
-					padding-right: 5px; 
+					padding-right: 5px;
 				}
 
 				p{
 					font-size: 1em;
 					font-weight: 300;
   				color: #686868;
-					
+
 
 				}
 			}

@@ -42,8 +42,11 @@ class MemberPreview extends React.Component {
 			"backgroundColor": donationBarColour
 		}
 
+		let className = "member-preview"
+		if(this.props.className) className += " " + this.props.className
+
 		return (
-			<div className="member-preview" style={previewStyle}>
+			<div className={className} style={previewStyle}>
 				<div className="member-photo-container">
 					{this.createCompletedBanner(percentage)}
 					<Link className="member-link" to={`/member?member_id=${member.id}`}><img className="member-photo" src={this.renderMembersImage()} /></Link>
