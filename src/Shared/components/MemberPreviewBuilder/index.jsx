@@ -20,7 +20,7 @@ class HelpSomeonePage extends React.Component {
     let members = this.props.members
     let previewsPerLine = this.props.previewsPerLine;
 		let memberPreviews = [];
-		let previewClassName = this.getRowCountClassName();
+		let previewClassName = this.getRowCountClassName(previewsPerLine);
 
 		let row = [];
 		for(let index in members){
