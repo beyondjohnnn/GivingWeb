@@ -56,20 +56,32 @@ class FeaturedMemberSelector extends React.Component {
 	}
 
 	buildMemberDropDown(){
-		const disabledOption = [<option key={0} value={-1} disabled>Select A Member</option>]
-		const members = this.props.members.map((member)=> {
-			return (
+		let members = [<option key={0} value={-1} disabled>Select A Member</option>]
+		const options = this.mapMembersToOptions(
+			this.props.charityFeaturedMembers, this.props.members
+		)
+		members = members.concat(options)
+		return (
+			<select onChange={this.onChangeSelector.bind(this)} defaultValue={-1}>
+				{members}
+			</select>
+		)
+	}
+
+	mapMembersToOptions(featuredMembers, members){
+		const options = []
+		for(let member of members){
+			const isFeatured = featuredMembers.some((featureMember) => {
+				return featureMember.member.id === member.id
+			})
+			if(isFeatured) continue;
+			options.push(
 				<option key={member.id} value={member.id}>
 					{member.name}
 				</option>
 			)
-		})
-		const options = disabledOption.concat(members)
-		return (
-			<select onChange={this.onChangeSelector.bind(this)} defaultValue={-1}>
-				{options}
-			</select>
-		)
+		}
+		return options
 	}
 
 	render() {
