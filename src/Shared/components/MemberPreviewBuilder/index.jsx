@@ -8,17 +8,19 @@ import MemberPreview from '../../components/MemberPreview'
 
 class HelpSomeonePage extends React.Component {
 
+	getRowCountClassName(previewsPerLine){
+		switch(previewsPerLine){
+			case 1: return "member-previews-one-column"
+			case 2: return "member-previews-two-column"
+			case 3: return "member-previews-three-column"
+		}
+	}
+
 	buildMemberPreviews(){
     let members = this.props.members
     let previewsPerLine = this.props.previewsPerLine;
 		let memberPreviews = [];
-
-		let previewClassName;
-		switch(previewsPerLine){
-			case 1: previewClassName = "member-previews-one-column"
-			case 2: previewClassName = "member-previews-two-column"
-			case 3: previewClassName = "member-previews-three-column"
-		}
+		let previewClassName = this.getRowCountClassName();
 
 		let row = [];
 		for(let index in members){
