@@ -12,6 +12,18 @@ class MemberPreview extends React.Component {
 		}
 	}
 
+	createMatchedBanner(){
+		if(this.props.member.sponsors){
+			return (
+				<div className="matched-icon">
+					<img
+						src="./images/matchedX2.png"
+						alt="All donations are matched by a sponsor icon"/>
+				</div>
+			)
+		}
+	}
+
 	createDonateButton(percentage) {
 		if (percentage < 100) {
 			return <button className="donate-button">{"Donate"}</button>
@@ -49,8 +61,13 @@ class MemberPreview extends React.Component {
 		return (
 			<div className={this.getContainerClassName()} style={previewStyle}>
 				<div className="member-photo-container">
-					{this.createCompletedBanner(percentage)}
-					<Link className="member-link" to={`/member?member_id=${member.id}`}><img className="member-photo" src={this.renderMembersImage()} /></Link>
+					{this.createMatchedBanner()}
+					<div className="overflow-container">
+						{this.createCompletedBanner(percentage)}
+						<Link className="member-link" to={`/member?member_id=${member.id}`}>
+							<img className="member-photo" src={this.renderMembersImage()} />
+						</Link>
+					</div>
 				</div>
 				<div className="member-information">
 					<Link className="member-link" to={`/member?member_id=${member.id}`}><h3 className="member-name">{member.name}</h3></Link>
