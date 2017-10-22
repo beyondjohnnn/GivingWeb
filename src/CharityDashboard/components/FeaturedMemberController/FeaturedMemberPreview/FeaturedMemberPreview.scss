@@ -1,25 +1,18 @@
-.featured-member-preview{
-  flex: 1;
-  padding: 5px;
-  text-align: center;
+.featured-member-controller-element{
 
- img {
-   height: 80px;
+	img {
+    height: 80px;
     width: 80px;
     border-radius: 50px;
   }
 
-  .del-div{
-    height: 19px;
-
-    .delete {
-      cursor: pointer;
-      max-width: 20px;
-      width: 19px;
-      background-color: red;
-      color: white;
-      float: right;
-      border-radius: 50px;
-    }
+  .delete {
+    cursor: pointer;
+    max-width: 20px;
+    width: 19px;
+    background-color: red;
+    color: white;
+    float: right;
+    border-radius: 50px;
   }
 }

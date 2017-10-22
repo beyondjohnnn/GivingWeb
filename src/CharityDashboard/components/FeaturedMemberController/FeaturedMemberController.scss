@@ -13,4 +13,22 @@
 			align-items: center;
 		}
 	}
+
+	.featured-member-controller-element{
+	  flex: 1;
+	  padding: 5px;
+	  text-align: center;
+
+		.del-div{
+			height: 18px;
+		}
+
+		.content-div{
+			height: 90%;
+		}
+
+		.feat-member-name{
+			height: 10%;
+		}
+	}
 }

@@ -65,11 +65,11 @@ class FeaturedMemberSelector extends React.Component {
 
 	render() {
 		return (
-			<div className="featured-member-selector">
+			<div className="featured-member-controller-element">
 				<div>
 					<div className="del-div"></div>
-						{this.renderMembers()}
-					<h3>member</h3>
+					<div className="content-div">{this.renderMembers()}</div>
+					<h3 className="feat-member-name">member</h3>
 				</div>
 			</div>
 		)
