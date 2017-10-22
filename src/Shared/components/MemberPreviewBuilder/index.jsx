@@ -13,12 +13,20 @@ class HelpSomeonePage extends React.Component {
     let previewsPerLine = this.props.previewsPerLine;
 		let memberPreviews = [];
 
+		let previewClassName;
+		switch(previewsPerLine){
+			case 1: previewClassName = "member-previews-one-column"
+			case 2: previewClassName = "member-previews-two-column"
+			case 3: previewClassName = "member-previews-three-column"
+		}
+
 		let row = [];
 		for(let index in members){
 			let previewStyle = null;
 			if(index % previewsPerLine !== previewsPerLine - 1) previewStyle = {"marginRight": "4.5%"}
 			row.push(<MemberPreview
 				key={index}
+				className={previewClassName}
 				style={previewStyle}
 				member={members[index]} />
 			);
