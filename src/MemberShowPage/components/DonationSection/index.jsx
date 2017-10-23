@@ -20,7 +20,7 @@ class DonationSection extends Component {
 			<div className="donation-section">
 				<h4>£{totalDonations}</h4>
 				<h2>raised of £{current_member.goal} goal</h2>
-				<DonationProgressBar percentage={donationPercentage} hasSponsor={hasSponsor} />
+				<DonationProgressBar sponsors={current_member.sponsors} memberId={current_member.id} percentage={donationPercentage}/>
 				<div className="progress-summary">
 					<p>£{current_member.goal - totalDonations} still needed</p>
 					<p className="supporters-text">{current_member.donations.length} supporters</p>

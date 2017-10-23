@@ -7,24 +7,52 @@ import Animation from './../../utils/animate'
 
 class DonationProgressBar extends React.Component {
 
+	componentDidMount(){
+		this.animateBar()
+	}
+
+	componentDidUpdate(){
+		this.animateBar()
+	}
+
 	buildProgressBars(fillPercent){
 		const bars = []
 		const barStyles = {
-			"width": fillPercent + "%",
 			"backgroundColor": getDonationBarColour(fillPercent),
 			"zIndex": 2
 		}
-		bars[0] = (<div className="bar-fill" key={1} style={barStyles}></div>)
+		bars[0] = (<div className={`bar-fill member${this.props.memberId}`} key={1} style={barStyles}></div>)
 
-		if(this.props.hasSponsor){
+		if(this.props.sponsors.length > 0){
 			const matchedBarStyles = {
-				"width": fillPercent + "%",
 				"backgroundColor": "#00FFFF",
 				"zIndex": 1
 			}
-			bars[1] = (<div className="bar-fill" key={2} style={matchedBarStyles}></div>)
+			bars[1] = (<div className={`bar-fill member${this.props.memberId}`} key={2} style={matchedBarStyles}></div>)
 		}
 		return bars
+	}
+
+	animateBar(){
+		const bars = document.getElementsByClassName(`member${this.props.memberId}`)
+
+		const getWidth = function(){
+			let width = 0
+			return () => {
+				return width+=1
+			}
+		}()
+
+		const frame = function(){
+			let width = getWidth()
+			for(let bar of bars){
+				bar.style.width = width.toString() + "%"
+			}
+			return width < this.props.percentage
+		}.bind(this)
+
+		const animate = new Animation(40, frame);
+		animate.start()
 	}
 
 	render(){

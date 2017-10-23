@@ -93,7 +93,7 @@ class MemberPreview extends React.Component {
 							</div>
 						</div>
 						{this.renderDonateButton(this.hasSponsor ? percentage*2 : percentage)}
-						<DonationProgressBar percentage={percentage} hasSponsor={this.hasSponsor} />
+						<DonationProgressBar sponsors={member.sponsors} memberId={member.id} percentage={percentage}/>
 					</div>
 					<div className="member-donations">Donations</div>
 						<div className="member-images">
