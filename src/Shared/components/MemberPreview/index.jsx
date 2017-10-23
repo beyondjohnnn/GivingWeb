@@ -29,9 +29,9 @@ class MemberPreview extends React.Component {
 		}
 	}
 
-		renderDonateButton(percentage) {
+		renderDonateButton(percentage, memberID) {
 		if (percentage < 100) {
-			return <button className="donate-button">{"Donate"}</button>
+			return <Link className="donate-button" to={`/member?member_id=${memberID}`}>Donate</Link>
 		}
 	}
 
@@ -66,7 +66,7 @@ class MemberPreview extends React.Component {
 		if(this.hasSponsor){
 			const matchedBarStyles = {
 				"width": (fillPercent*2) + "%",
-				"backgroundColor": "#00FFFF",
+				"backgroundColor": "#666AF6",
 				"zIndex": 1
 			}
 			bars[1] = (<div className="bar-fill" key={2} style={matchedBarStyles}></div>)
@@ -111,7 +111,7 @@ class MemberPreview extends React.Component {
 								<p className="goal-label">GOAL</p>
 							</div>
 						</div>
-							{this.renderDonateButton(percentage)}
+							{this.renderDonateButton(percentage, member.id)}
 						<div className="member-progress-bar">
 							<div className="progress-bar-container">
 								{this.buildProgressBars(percentage)}
