@@ -24,16 +24,16 @@ class MemberPreview extends React.Component {
 			return (
 				<div className="matched-icon">
 					<img
-						src="./images/matchedX2.png"
+						src="./images/matched-x2-purple.png"
 						alt="All donations are matched by a sponsor icon"/>
 				</div>
 			)
 		}
 	}
 
-		renderDonateButton(percentage) {
+		renderDonateButton(percentage, memberID) {
 		if (percentage < 100) {
-			return <button className="donate-button">{"Donate"}</button>
+			return <Link className="donate-button" to={`/member?member_id=${memberID}`}>Donate</Link>
 		}
 	}
 
@@ -60,14 +60,15 @@ class MemberPreview extends React.Component {
 		let previewStyle = this.props.style || {}
 		const {member} = this.props
 		const percentage = calcDonationPercentage(member)
-		const percentageToDisplay = (this.hasSponsor ? percentage*2 : percentage).toString() + "%"
+		const matchedPercentage = this.hasSponsor ? percentage*2 : percentage
+		const percentageToDisplay = (matchedPercentage).toString() + "%"
 
 		return (
 			<div className={this.getContainerClassName()} style={previewStyle}>
 				{this.createMatchedIcon()}
 				<div className="member-photo-container">
 					<div className="overflow-container">
-						{this.createCompletedBanner(percentage)}
+						{this.createCompletedBanner(matchedPercentage)}
 						<Link className="member-link" to={`/member?member_id=${member.id}`}>
 							<img className="member-photo" src={this.renderMembersImage()} />
 						</Link>
@@ -92,8 +93,8 @@ class MemberPreview extends React.Component {
 								<p className="goal-label">GOAL</p>
 							</div>
 						</div>
-						{this.renderDonateButton(this.hasSponsor ? percentage*2 : percentage)}
-						<DonationProgressBar sponsors={member.sponsors} memberId={member.id} percentage={percentage}/>
+						{this.renderDonateButton(matchedPercentage, member.id)}
+						<DonationProgressBar percentage={percentage} hasSponsor={this.hasSponsor} />
 					</div>
 					<div className="member-donations">Donations</div>
 						<div className="member-images">

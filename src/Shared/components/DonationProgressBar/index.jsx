@@ -19,14 +19,12 @@ class DonationProgressBar extends React.Component {
 		const bars = []
 		const barStyles = {
 			"backgroundColor": getDonationBarColour(fillPercent),
-			"zIndex": 2
 		}
 		bars[0] = (<div className={`bar-fill member${this.props.memberId}`} key={1} style={barStyles}></div>)
 
 		if(this.props.sponsors.length > 0){
 			const matchedBarStyles = {
-				"backgroundColor": "#00FFFF",
-				"zIndex": 1
+				"backgroundColor": "#8A8DF9",
 			}
 			bars[1] = (<div className={`bar-fill member${this.props.memberId}`} key={2} style={matchedBarStyles}></div>)
 		}
