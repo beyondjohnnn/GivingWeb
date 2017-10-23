@@ -4,6 +4,8 @@ import { calcDonationPercentage, getDonationBarColour } from '../../utils/donati
 
 import css from './MemberPreview.scss'
 
+import DonationProgressBar from './../DonationProgressBar'
+
 class MemberPreview extends React.Component {
 
 	constructor(props){
@@ -54,27 +56,30 @@ class MemberPreview extends React.Component {
 		return className
 	}
 
-	buildProgressBars(fillPercent){
-		const bars = []
-		const barStyles = {
-			"width": fillPercent + "%",
-			"backgroundColor": getDonationBarColour(fillPercent),
-			"zIndex": 2
-		}
-		bars[0] = (<div className="bar-fill" key={1} style={barStyles}></div>)
+// <<<<<<< HEAD
+// 	buildProgressBars(fillPercent){
+// 		const bars = []
+// 		const barStyles = {
+// 			"width": fillPercent + "%",
+// 			"backgroundColor": getDonationBarColour(fillPercent),
+// 			"zIndex": 2
+// 		}
+// 		bars[0] = (<div className="bar-fill" key={1} style={barStyles}></div>)
 
-		if(this.hasSponsor){
-			const matchedBarStyles = {
-				"width": (fillPercent*2) + "%",
-				"backgroundColor": "#666AF6",
-				"zIndex": 1
-			}
-			bars[1] = (<div className="bar-fill" key={2} style={matchedBarStyles}></div>)
-		}
+// 		if(this.hasSponsor){
+// 			const matchedBarStyles = {
+// 				"width": (fillPercent*2) + "%",
+// 				"backgroundColor": "#666AF6",
+// 				"zIndex": 1
+// 			}
+// 			bars[1] = (<div className="bar-fill" key={2} style={matchedBarStyles}></div>)
+// 		}
 
-		return bars
-	}
+// 		return bars
+// 	}
 
+// =======
+// >>>>>>> development
 	render() {
 		let previewStyle = this.props.style || {}
 		const {member} = this.props
@@ -111,12 +116,10 @@ class MemberPreview extends React.Component {
 								<p className="goal-label">GOAL</p>
 							</div>
 						</div>
-							{this.renderDonateButton(percentage, member.id)}
-						<div className="member-progress-bar">
-							<div className="progress-bar-container">
-								{this.buildProgressBars(percentage)}
-							</div>
-						</div>
+
+						{this.renderDonateButton(percentage, member.id)}
+						<DonationProgressBar percentage={percentage} hasSponsor={this.hasSponsor} />
+
 					</div>
 					<div className="member-donations">Donations</div>
 						<div className="member-images">

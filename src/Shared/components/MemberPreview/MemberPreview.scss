@@ -30,7 +30,7 @@ $button-color: #666AF6;
 		border-top-right-radius: 7px;
 		overflow: hidden;
 
-			
+
 
 
 			img{
@@ -154,38 +154,12 @@ $button-color: #666AF6;
 		margin-bottom: 20px;
   	color: #686868;
 
-		.member-progress-bar {
-			$bar-border-radius: 5px;
-			width: 100%;
-			height: 10px;
-			border-radius: $bar-border-radius;
-			background-color: #ddd;
-			overflow: hidden;
-			// margin-bottom: 15px;
-			margin-top: 15px;
-
-			.progress-bar-container{
-				display: flex;
-				position: relative;
-				z-index: 1;
-
-				.bar-fill {
-					position: absolute;
-					height: 10px;
-					border-top-right-radius: $bar-border-radius;
-					border-bottom-right-radius: $bar-border-radius;
-				}
-			}
-		}
-
 		.progress-details {
-
 			display: flex;
 			font-weight: 300;
 			// width: 40%;
 
 			.member-progress {
-
 				// border-right: 1px solid $text-color;
 				width: 50%;
 				padding-right: 25px;
