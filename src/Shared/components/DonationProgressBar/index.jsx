@@ -15,21 +15,22 @@ class DonationProgressBar extends React.Component {
 	}
 
 	componentDidMount(){
-		const animationTime = 1000
-		this.animateBar(animationTime)
+		// const animationTime = 1000
+		// this.animateBar(animationTime)
+		this.animateBar()
 	}
 
 	animateBar(time){
 		const bars = document.getElementsByClassName(`member${this.memberId}`)
 		const framesPerSecond = 35
-		time = time/1000
-		const ticks = time * framesPerSecond
-		const incrementValue = this.props.percentage / ticks
+		// time = time/1000
+		// const ticks = time * framesPerSecond
+		// const incrementValue = this.props.percentage / ticks
 
 		const getWidth = function(){
 			let width = 0
 			return () => {
-				return width+=incrementValue
+				return width+=2
 			}
 		}()
 
