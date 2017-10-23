@@ -68,8 +68,8 @@ class Pricing extends Component {
             </div>
             <div className="pricing-features">  
               <PricingFeature uniqueID="marketing-strategy" text="Personalised Marketing Strategy" tooltipText="We know boosting engagement online can be overwhleming at times. We're here to help with dedicated marketing support for your organisation."/>
-              <PricingFeature uniqueID="eliminate" text="Eliminate Service Fees" tooltipText="We cater for organisations of all size.  If your organisation is expecting significant volume, we can talk about custom upfront packages to do away with our fee altogther."/>
-              <PricingFeature uniqueID="custom-fundraising" text="Custom fundraising solutions" tooltipText="Do you have an idea you'd like to impliment on your own website?  Maybe a further integration with ours?  We're here to help."/>
+              <PricingFeature uniqueID="eliminate" text="Eliminate Service Fees" tooltipText="We cater for organisations of all size.  If your organisation is expecting significant volume, we can talk about custom upfront packages to do away with our fee altogether."/>
+              <PricingFeature uniqueID="custom-fundraising" text="Custom fundraising solutions" tooltipText="Do you have an idea you'd like to implement on your own website?  Maybe a further integration with ours?  We're here to help."/>
             </div>
           </div> 
         </div>
