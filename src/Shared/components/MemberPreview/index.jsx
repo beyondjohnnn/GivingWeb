@@ -92,7 +92,7 @@ class MemberPreview extends React.Component {
 								<p className="goal-label">GOAL</p>
 							</div>
 						</div>
-						{this.renderDonateButton(percentage)}
+						{this.renderDonateButton(this.hasSponsor ? percentage*2 : percentage)}
 						<DonationProgressBar percentage={percentage} hasSponsor={this.hasSponsor} />
 					</div>
 					<div className="member-donations">Donations</div>
