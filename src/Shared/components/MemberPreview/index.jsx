@@ -24,16 +24,16 @@ class MemberPreview extends React.Component {
 			return (
 				<div className="matched-icon">
 					<img
-						src="./images/matchedX2.png"
+						src="./images/matched-x2-purple.png"
 						alt="All donations are matched by a sponsor icon"/>
 				</div>
 			)
 		}
 	}
 
-		renderDonateButton(percentage) {
+		renderDonateButton(percentage, memberID) {
 		if (percentage < 100) {
-			return <button className="donate-button">{"Donate"}</button>
+			return <Link className="donate-button" to={`/member?member_id=${memberID}`}>Donate</Link>
 		}
 	}
 
@@ -92,8 +92,10 @@ class MemberPreview extends React.Component {
 								<p className="goal-label">GOAL</p>
 							</div>
 						</div>
-						{this.renderDonateButton(this.hasSponsor ? percentage*2 : percentage)}
+
+						{this.renderDonateButton(this.hasSponsor ? percentage*2 : percentage, member.id)}
 						<DonationProgressBar percentage={percentage} hasSponsor={this.hasSponsor} />
+
 					</div>
 					<div className="member-donations">Donations</div>
 						<div className="member-images">

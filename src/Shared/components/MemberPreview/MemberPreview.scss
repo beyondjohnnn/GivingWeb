@@ -10,12 +10,12 @@ $button-color: #666AF6;
 	.matched-icon{
 		position: absolute;
 		z-index: 2;
-		right: -15px;
-		top: -15px;
+		right: -10px;
+		top: -10px;
 
 		img {
-			width: 65px;
-			height: 65px;
+			width: 70px;
+			height: 70px;
 		}
 	}
 
@@ -196,14 +196,16 @@ $button-color: #666AF6;
 		.donate-button {
 			background-color: #fff;
 			width: 30%;
-			border: 1px solid $button-color;
+			border: 1.25px solid $button-color;
 			color: $button-color;
 			font-size: 0.8em;
+			font-weight: 300;
 			display: flex;
 			justify-content: center;
 			align-items: center;
 			text-transform: uppercase;
 			transition-duration: 0.2s;
+			text-decoration: none;
 
 
 			&:hover {
