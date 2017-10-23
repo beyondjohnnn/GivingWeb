@@ -50,25 +50,34 @@ class MemberPreview extends React.Component {
 	}
 
 	renderDonationBar(fillPercent){
-
-		const barStyles = {
-			"width": fillPercent + "%",
-			"backgroundColor": getDonationBarColour(fillPercent)
-		}
-
-		const matchedBarStyles = {
-			"width": 50 + "%",
-			"backgroundColor": "#000"
-		}
-
 		return (
 			<div className="member-progress-bar">
 				<div className="progress-bar-container">
-					<div className="bar-fill" style={barStyles}></div>
-					<div className="bar-fill" style={matchedBarStyles}></div>
+					{this.buildProgressBars(fillPercent)}
 				</div>
 			</div>
 		)
+	}
+
+	buildProgressBars(fillPercent){
+		const bars = []
+		const barStyles = {
+			"width": fillPercent + "%",
+			"backgroundColor": getDonationBarColour(fillPercent),
+			"zIndex": 2
+		}
+		bars[0] = (<div className="bar-fill" key={1} style={barStyles}></div>)
+
+		if(true){
+			const matchedBarStyles = {
+				"width": (fillPercent*2) + "%",
+				"backgroundColor": "#000",
+				"zIndex": 1
+			}
+			bars[1] = (<div className="bar-fill" key={2} style={matchedBarStyles}></div>)
+		}
+
+		return bars
 	}
 
 	render() {
