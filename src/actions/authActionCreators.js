@@ -7,6 +7,13 @@ export function signup(newUserDetails) {
 	}
 }
 
+export function loginFB(details) {
+	return {
+		type: 'FB_LOGIN',
+		payload: axios.post('http://localhost:3000/auth', details)
+	}
+}
+
 export function login(loginDetails) {
 	return {
 		type: 'LOGIN_POST',

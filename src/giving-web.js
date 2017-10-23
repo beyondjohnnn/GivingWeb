@@ -7,7 +7,7 @@ import css from './base-style.scss'
 
 // import containers
 import NoAuthLandingPage from './NoAuthLandingPage'
-import UserSignup from './Shared/containers/UserSignup'
+import UserSignup from './UserSignup'
 import UserLogin from './Shared/containers/UserLogin'
 import CharityPage from './CharityPage'
 import AuthLandingPage from './Shared/containers/AuthLandingPage'
