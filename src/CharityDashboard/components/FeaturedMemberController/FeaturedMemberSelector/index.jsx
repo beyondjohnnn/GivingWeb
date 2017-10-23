@@ -70,9 +70,11 @@ class FeaturedMemberSelector extends React.Component {
 
 	mapMembersToOptions(featuredMembers, members){
 		const options = []
+		console.log(featuredMembers)
+		console.log(members);
 		for(let member of members){
 			const isFeatured = featuredMembers.some((featureMember) => {
-				return featureMember.member.id === member.id
+				return featureMember.id === member.id
 			})
 			if(isFeatured) continue;
 			options.push(

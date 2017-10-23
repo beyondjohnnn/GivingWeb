@@ -28,10 +28,10 @@ class FeaturedMemberController extends React.Component {
 		const members = this.props.charityFeaturedMembers
 		let memberIndex = 0
 		for(let j=0; j<3; j++){
-			let membersDetails = members[memberIndex]
+			let member = members[memberIndex]
 			let component
-			if(membersDetails && membersDetails.position === j){
-				component = <FeaturedMemberPreview key={j} member={membersDetails.member} position={j} />
+			if(member && member.position === j){
+				component = <FeaturedMemberPreview key={j} member={member} position={j} />
 				memberIndex++
 			}else{
 				component = (<FeaturedMemberSelector key={j} position={j} />)
