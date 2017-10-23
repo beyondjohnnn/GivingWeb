@@ -14,9 +14,11 @@ class DonationProgressBar extends React.Component {
 	}
 
 	componentDidMount(){
+		const animationTime = 1000
+		const delay = 750
 		setTimeout(() => {
-			this.animateBar(750)
-		}, 250)
+			this.animateBar(animationTime)
+		}, delay)
 	}
 
 	animateBar(time){
@@ -37,11 +39,13 @@ class DonationProgressBar extends React.Component {
 			const nextWidth = getWidth()
 			const isNotOverMax = nextWidth < this.props.percentage
 			for(let bar of bars){
-				if(isNotOverMax){
-					bar.style.width = nextWidth.toString() + "%"
-				}else{
-					bar.style.width = this.props.percentage + "%"
-				}
+				setTimeout(() => {
+					if(isNotOverMax){
+						bar.style.width = nextWidth.toString() + "%"
+					}else{
+						bar.style.width = this.props.percentage + "%"
+					}
+				}, 1)
 			}
 			return isNotOverMax
 		}
