@@ -10,6 +10,7 @@ import Header from './components/Header'
 import CommentSection from './components/CommentSection'
 import MemberDetails from './components/MemberDetails'
 import DonationSection from './components/DonationSection'
+import MatchedCompanySection from './components/MatchedCompanySection'
 
 class MemberShowPage extends Component {
 
@@ -34,18 +35,7 @@ class MemberShowPage extends Component {
 
 	renderMatchedCompany(member){
 		if(member.sponsors.length > 0){
-			const sponsor = member.sponsors[0]
-    	return (
-	      <div className="matched-section">
-	        <div className="matched-by-image-container">
-	          <img src="./images/matchedX2.png" />
-	        </div>
-	        <div className="matched-by-text-container">
-	          <p>Donations Matched By:</p>
-	          <img src={sponsor.sponsor_url_image} alt={`${sponsor.name} logo`} />
-	        </div>
-	      </div>
-	    )
+    	return <MatchedCompanySection sponsor={member.sponsors[0]}/>
 		}
   }
 
