@@ -3,11 +3,12 @@ function Animation(framesPerSecond, frameCallBack){
   this.interval = 1000/framesPerSecond;
   this.startTime = 0;
   this.frameCallBack = frameCallBack;
+  this.run = this.run.bind(this)
 }
 
 Animation.prototype.start = function(){
   this.startTime = Date.now();
-  requestAnimationFrame(this.run.bind(this));
+  requestAnimationFrame(this.run);
 }
 
 Animation.prototype.run = function(){
@@ -15,7 +16,7 @@ Animation.prototype.run = function(){
   if(this.shouldRunNextFrame()){
     runNext = this.frameCallBack();
   }
-  if(runNext)requestAnimationFrame(this.run.bind(this));
+  if(runNext)requestAnimationFrame(this.run);
 }
 
 Animation.prototype.shouldRunNextFrame = function(){
