@@ -11,14 +11,12 @@ class DonationProgressBar extends React.Component {
 		super(props)
 		const member = this.props.member
 		this.memberId = member ? member.id : 0
+		this.animateBar = this.animateBar.bind(this)
 	}
 
 	componentDidMount(){
 		const animationTime = 1000
-		const delay = 750
-		setTimeout(() => {
-			this.animateBar(animationTime)
-		}, delay)
+		this.animateBar(animationTime)
 	}
 
 	animateBar(time){

@@ -27,3 +27,9 @@ export function setCurrentMember(member) {
 		member: member
 	}
 }
+
+export function setCurrentMemberToDefault() {
+	return {
+		type: 'SET_CURRENT_MEMBER_TO_DEFAULT',
+	}
+}

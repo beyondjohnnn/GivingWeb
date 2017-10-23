@@ -16,19 +16,18 @@ class MemberShowPage extends Component {
 
 	constructor(props){
 		super(props)
+		this.props.setCurrentMemberToDefault()
 	}
 
 	componentDidMount() {
 		const member_id = parseInt(this.props.location.search.split('=')[1])
 		const { members } = this.props
-		console.log(members.length);
 		if (members.length === 0) {
 			this.props.getSingleMember(member_id)
 		} else {
 			const current_member = members.find((member) => {
 				return member.id == member_id
 			})
-			console.log(current_member);
 			this.props.setCurrentMember(current_member)
 		}
 	}
