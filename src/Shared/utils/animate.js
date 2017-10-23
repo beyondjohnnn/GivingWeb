@@ -11,15 +11,16 @@ Animation.prototype.start = function(){
 }
 
 Animation.prototype.run = function(){
+  let runNext = true
   if(this.shouldRunNextFrame()){
-    this.frameCallBack();
+    runNext = this.frameCallBack();
   }
-  requestAnimationFrame(this.run.bind(this));
+  if(runNext)requestAnimationFrame(this.run.bind(this));
 }
 
 Animation.prototype.shouldRunNextFrame = function(){
-  var now = Date.now();
-  elapsed = now - this.startTime;
+  let now = Date.now();
+  let elapsed = now - this.startTime;
   var shouldRun = elapsed >= this.interval;
   if(shouldRun) this.startTime = now;
   return shouldRun;
