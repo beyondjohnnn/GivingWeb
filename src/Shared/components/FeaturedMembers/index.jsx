@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 
-import * as actionCreators from '../../../actions/helpSomeoneActionCreators'
+import * as actionCreators from './../../../actions/featuredMembersActionCreators'
 
 import css from './FeaturedMembers.scss'
 
@@ -33,7 +33,7 @@ class FeaturedMembers extends React.Component {
 }
 
 function mapStateToProps(state, routing) {
-  return { ...state.helpSomeone, ...routing}
+  return { ...state.featuredMembers, ...routing}
 }
 
 function mapDispatchToProps(dispatch) {
