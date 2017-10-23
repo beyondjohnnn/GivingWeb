@@ -56,42 +56,19 @@ class MemberPreview extends React.Component {
 		return className
 	}
 
-// <<<<<<< HEAD
-// 	buildProgressBars(fillPercent){
-// 		const bars = []
-// 		const barStyles = {
-// 			"width": fillPercent + "%",
-// 			"backgroundColor": getDonationBarColour(fillPercent),
-// 			"zIndex": 2
-// 		}
-// 		bars[0] = (<div className="bar-fill" key={1} style={barStyles}></div>)
-
-// 		if(this.hasSponsor){
-// 			const matchedBarStyles = {
-// 				"width": (fillPercent*2) + "%",
-// 				"backgroundColor": "#666AF6",
-// 				"zIndex": 1
-// 			}
-// 			bars[1] = (<div className="bar-fill" key={2} style={matchedBarStyles}></div>)
-// 		}
-
-// 		return bars
-// 	}
-
-// =======
-// >>>>>>> development
 	render() {
 		let previewStyle = this.props.style || {}
 		const {member} = this.props
 		const percentage = calcDonationPercentage(member)
-		const percentageToDisplay = (this.hasSponsor ? percentage*2 : percentage).toString() + "%"
+		const matchedPercentage = this.hasSponsor ? percentage*2 : percentage
+		const percentageToDisplay = (matchedPercentage).toString() + "%"
 
 		return (
 			<div className={this.getContainerClassName()} style={previewStyle}>
 				{this.createMatchedIcon()}
 				<div className="member-photo-container">
 					<div className="overflow-container">
-						{this.createCompletedBanner(percentage)}
+						{this.createCompletedBanner(matchedPercentage)}
 						<Link className="member-link" to={`/member?member_id=${member.id}`}>
 							<img className="member-photo" src={this.renderMembersImage()} />
 						</Link>
@@ -117,7 +94,7 @@ class MemberPreview extends React.Component {
 							</div>
 						</div>
 
-						{this.renderDonateButton(percentage, member.id)}
+						{this.renderDonateButton(matchedPercentage, member.id)}
 						<DonationProgressBar percentage={percentage} hasSponsor={this.hasSponsor} />
 
 					</div>
