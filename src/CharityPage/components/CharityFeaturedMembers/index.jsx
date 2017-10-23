@@ -22,12 +22,18 @@ class CharityFeaturedMembers extends React.Component {
 		//TODO: you'll need to setup the getCharityFeaturedMembers to take in the charity ID by the params when there are more then just one charity being hardcoded into the app
 	}
 
+	getMembers(){
+		return this.props.members.map((member_detail) => {
+			return member_detail.member
+		})
+	}
+
 	render() {
 		return (
 			<div className="charity-featured-members">
 				<h2>Charity Featured Members</h2>
 				<div className="members-list">
-					<MemberPreviewBuilder members={this.props.members} previewsPerLine={3}/>
+					<MemberPreviewBuilder members={this.getMembers()} previewsPerLine={3}/>
 				</div>
 				<Link to="/help-someone" className="see-more-link">See more members</Link>
 			</div>
