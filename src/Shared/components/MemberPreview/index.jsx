@@ -49,14 +49,24 @@ class MemberPreview extends React.Component {
 		return className
 	}
 
+	renderDonationBar(fillPercent){
+		console.log(fillPercent);
+		const donationBarStyles = {
+			"width": fillPercent + "%",
+			"backgroundColor": getDonationBarColour(fillPercent)
+		}
+
+		return (
+			<div className="member-progress-bar">
+				<div className="bar-fill" style={donationBarStyles}></div>
+			</div>
+		)
+	}
+
 	render() {
 		let previewStyle = this.props.style || {}
 		const {member} = this.props
 		const percentage = calcDonationPercentage(member)
-		const donationBarStyles = {
-			"width": percentage.toString() + "%",
-			"backgroundColor": getDonationBarColour(percentage)
-		}
 
 		return (
 			<div className={this.getContainerClassName()} style={previewStyle}>
@@ -78,12 +88,10 @@ class MemberPreview extends React.Component {
 						Verified by <Link className="charity-link" to="charity-page">Streetwork</Link>
 					</h4>
 					<div className="donation-details">
-						<div className="member-progress-bar">
-							<div className="bar-fill" style={donationBarStyles}></div>
-						</div>
+						{this.renderDonationBar(percentage)}
 						<div className="progress-details">
 							<div className="member-progress">
-								<p className="progress-percentage">{donationBarStyles.width}</p>
+								<p className="progress-percentage">{percentage.toString() + "%"}</p>
 								<p className="progress-label">RAISED</p>
 							</div>
 							<div className="member-goal">
