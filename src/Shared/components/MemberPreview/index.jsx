@@ -6,6 +6,11 @@ import css from './MemberPreview.scss'
 
 class MemberPreview extends React.Component {
 
+	constructor(props){
+		super(props)
+		this.hasSponsor = this.props.member.sponsors.length > 0
+	}
+
 	createCompletedBanner(percentage) {
 		if (percentage >= 100) {
 			return <div className="completed-banner">{"Completed!"}</div>
@@ -49,14 +54,32 @@ class MemberPreview extends React.Component {
 		return className
 	}
 
+	buildProgressBars(fillPercent){
+		const bars = []
+		const barStyles = {
+			"width": fillPercent + "%",
+			"backgroundColor": getDonationBarColour(fillPercent),
+			"zIndex": 2
+		}
+		bars[0] = (<div className="bar-fill" key={1} style={barStyles}></div>)
+
+		if(this.hasSponsor){
+			const matchedBarStyles = {
+				"width": (fillPercent*2) + "%",
+				"backgroundColor": "#00FFFF",
+				"zIndex": 1
+			}
+			bars[1] = (<div className="bar-fill" key={2} style={matchedBarStyles}></div>)
+		}
+
+		return bars
+	}
+
 	render() {
 		let previewStyle = this.props.style || {}
 		const {member} = this.props
 		const percentage = calcDonationPercentage(member)
-		const donationBarStyles = {
-			"width": percentage.toString() + "%",
-			"backgroundColor": getDonationBarColour(percentage)
-		}
+		const percentageToDisplay = (this.hasSponsor ? percentage*2 : percentage).toString() + "%"
 
 		return (
 			<div className={this.getContainerClassName()} style={previewStyle}>
@@ -78,12 +101,9 @@ class MemberPreview extends React.Component {
 						Verified by <Link className="charity-link" to="charity-page">Streetwork</Link>
 					</h4>
 					<div className="donation-details">
-						<div className="member-progress-bar">
-							<div className="bar-fill" style={donationBarStyles}></div>
-						</div>
 						<div className="progress-details">
 							<div className="member-progress">
-								<p className="progress-percentage">{donationBarStyles.width}</p>
+								<p className="progress-percentage">{percentageToDisplay}</p>
 								<p className="progress-label">RAISED</p>
 							</div>
 							<div className="member-goal">
@@ -91,7 +111,11 @@ class MemberPreview extends React.Component {
 								<p className="goal-label">GOAL</p>
 							</div>
 						</div>
-						{this.createDonateButton(percentage)}
+						<div className="member-progress-bar">
+							<div className="progress-bar-container">
+								{this.buildProgressBars(percentage)}
+							</div>
+						</div>
 					</div>
 					<div className="member-donations">Donations</div>
 						<div className="member-images">
