@@ -3,6 +3,8 @@ import { getDonationBarColour } from '../../utils/donations'
 
 import css from './DonationProgressBar.scss'
 
+import Animation from './../../utils/animate'
+
 class DonationProgressBar extends React.Component {
 
 	buildProgressBars(fillPercent){
@@ -16,7 +18,7 @@ class DonationProgressBar extends React.Component {
 
 		if(this.props.hasSponsor){
 			const matchedBarStyles = {
-				"width": (fillPercent*2) + "%",
+				"width": fillPercent + "%",
 				"backgroundColor": "#00FFFF",
 				"zIndex": 1
 			}
@@ -24,7 +26,6 @@ class DonationProgressBar extends React.Component {
 		}
 		return bars
 	}
-
 
 	render(){
 		return(
