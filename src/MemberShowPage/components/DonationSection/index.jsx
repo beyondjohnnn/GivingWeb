@@ -11,9 +11,10 @@ class DonationSection extends Component {
 	render() {
 		const { current_member } = this.props
 		const hasSponsor = current_member.sponsors.length > 0
-		const totalDonations = calcTotalDonations(current_member)
+		let totalDonations = calcTotalDonations(current_member)
+		if(hasSponsor) totalDonations *= 2
 		const donationPercentage = calcDonationPercentage(current_member)
-		const textPercentage = donationPercentage + '%'
+
 
 		return (
 			<div className="donation-section">
