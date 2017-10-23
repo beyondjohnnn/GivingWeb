@@ -8,11 +8,6 @@ import DonationProgressBar from './../DonationProgressBar'
 
 class MemberPreview extends React.Component {
 
-	constructor(props){
-		super(props)
-		this.hasSponsor = this.props.member.sponsors.length > 0
-	}
-
 	createCompletedBanner(percentage) {
 		if (percentage >= 100) {
 			return <div className="completed-banner">{"Completed!"}</div>
@@ -60,7 +55,8 @@ class MemberPreview extends React.Component {
 		let previewStyle = this.props.style || {}
 		const {member} = this.props
 		const percentage = calcDonationPercentage(member)
-		const matchedPercentage = this.hasSponsor ? percentage*2 : percentage
+		const hasSponsor = this.props.member.sponsors.length > 0
+		const matchedPercentage = hasSponsor ? percentage*2 : percentage
 		const percentageToDisplay = (matchedPercentage).toString() + "%"
 
 		return (
@@ -94,7 +90,7 @@ class MemberPreview extends React.Component {
 							</div>
 						</div>
 						{this.renderDonateButton(matchedPercentage, member.id)}
-						<DonationProgressBar percentage={percentage} hasSponsor={this.hasSponsor} />
+						<DonationProgressBar member={member} percentage={percentage} />
 					</div>
 					<div className="member-donations">Donations</div>
 						<div className="member-images">
