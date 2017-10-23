@@ -49,7 +49,6 @@ class NoAuthLandingPage extends React.Component {
 				return <BeAHero />
 			case 'For Charities':
 				return <ForCharities />
-			default:
 		}
 	}
 

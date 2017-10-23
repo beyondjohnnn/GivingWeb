@@ -7,13 +7,6 @@ export function setMembersShown(count) {
 	}
 }
 
-export function getFeaturedMembers() {
-	return {
-		type: 'GET_FEATURED_MEMBERS',
-		payload: axios.get('http://localhost:3000/featured_members')
-	}
-}
-
 export function getMembers() {
 	return {
 		type: 'GET_MEMBERS',
