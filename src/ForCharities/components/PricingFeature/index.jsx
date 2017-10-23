@@ -11,18 +11,11 @@ class PricingFeature extends React.Component {
 
   createTooltipStyle(expectedState) {
 
-    console.log(expectedState)
-
     if (this.props.currentTooltip == expectedState) {
       return 'tooltip-component tooltip-visible'
     } else {
       return 'tooltip-component'
     }
-   //  if (this.props.currentTooltip = "") { 
-   //    return "tooltip-component tooltip-visible"
-   //  } else { 
-   //   "tooltip-component"
-   // }
   }
        
   render() {

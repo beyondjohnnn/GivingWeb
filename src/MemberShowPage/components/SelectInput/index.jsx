@@ -69,6 +69,14 @@ class SelectInput extends Component {
 		}
 	}
 
+	renderCompleteText(remainingValue, memberName) {
+		if (remainingValue == 0) {
+			return `£0 - ${memberName}'s goal is complete!` 
+		} else {
+			return `£${remainingValue} - Complete ${memberName}'s goal!`
+		}
+	}
+
 	render() {
 		return (
 			<div className="donation-select">
@@ -79,7 +87,7 @@ class SelectInput extends Component {
 					<li className="option" onClick={this.handleOptionSelect.bind(this, 10)}>£10</li>
 					<li className="option" onClick={this.handleOptionSelect.bind(this, 20)}>£20</li>
 					<li className="option" onClick={this.handleOptionSelect.bind(this, 50)}>£50</li>
-					<li className="option" onClick={this.handleOptionSelect.bind(this, 'complete')}>£{this.props.goalRemaining} - Complete {this.props.memberName}'s goal!</li>
+					<li className="option" onClick={this.handleOptionSelect.bind(this, 'complete')}>{this.renderCompleteText(this.props.goalRemaining, this.props.memberName)}</li>
 					<li className="option" onClick={this.handleOptionSelect.bind(this, 'custom')}>Custom Amount</li>
 				</ul>
 				<select name="" id="" className="real-select"></select>

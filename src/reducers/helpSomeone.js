@@ -2,6 +2,7 @@ const defaultState = {
   members: [],
   membersToShow: 6,
   current_member: {
+    sponsors: [],
     donations: [],
     comments: [],
     info: '',
