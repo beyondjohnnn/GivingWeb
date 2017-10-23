@@ -151,8 +151,12 @@ $button-color: #666AF6;
 			overflow: hidden;
 			margin-bottom: 15px;
 
-			.bar-fill {
-				height: 10px;
+			.progress-bar-container{
+				display: flex;
+
+				.bar-fill {
+					height: 10px;
+				}
 			}
 		}
 
