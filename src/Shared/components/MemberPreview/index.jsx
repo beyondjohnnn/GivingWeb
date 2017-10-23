@@ -56,30 +56,6 @@ class MemberPreview extends React.Component {
 		return className
 	}
 
-// <<<<<<< HEAD
-// 	buildProgressBars(fillPercent){
-// 		const bars = []
-// 		const barStyles = {
-// 			"width": fillPercent + "%",
-// 			"backgroundColor": getDonationBarColour(fillPercent),
-// 			"zIndex": 2
-// 		}
-// 		bars[0] = (<div className="bar-fill" key={1} style={barStyles}></div>)
-
-// 		if(this.hasSponsor){
-// 			const matchedBarStyles = {
-// 				"width": (fillPercent*2) + "%",
-// 				"backgroundColor": "#666AF6",
-// 				"zIndex": 1
-// 			}
-// 			bars[1] = (<div className="bar-fill" key={2} style={matchedBarStyles}></div>)
-// 		}
-
-// 		return bars
-// 	}
-
-// =======
-// >>>>>>> development
 	render() {
 		let previewStyle = this.props.style || {}
 		const {member} = this.props
@@ -117,7 +93,7 @@ class MemberPreview extends React.Component {
 							</div>
 						</div>
 
-						{this.renderDonateButton(percentage, member.id)}
+						{this.renderDonateButton(this.hasSponsor ? percentage*2 : percentage, member.id)}
 						<DonationProgressBar percentage={percentage} hasSponsor={this.hasSponsor} />
 
 					</div>
