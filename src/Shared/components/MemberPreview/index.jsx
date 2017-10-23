@@ -29,7 +29,7 @@ class MemberPreview extends React.Component {
 		}
 	}
 
-	createDonateButton(percentage) {
+		renderDonateButton(percentage) {
 		if (percentage < 100) {
 			return <button className="donate-button">{"Donate"}</button>
 		}
@@ -83,8 +83,8 @@ class MemberPreview extends React.Component {
 
 		return (
 			<div className={this.getContainerClassName()} style={previewStyle}>
+				{this.createMatchedIcon()}
 				<div className="member-photo-container">
-					{this.createMatchedIcon()}
 					<div className="overflow-container">
 						{this.createCompletedBanner(percentage)}
 						<Link className="member-link" to={`/member?member_id=${member.id}`}>
@@ -111,6 +111,7 @@ class MemberPreview extends React.Component {
 								<p className="goal-label">GOAL</p>
 							</div>
 						</div>
+							{this.renderDonateButton(percentage)}
 						<div className="member-progress-bar">
 							<div className="progress-bar-container">
 								{this.buildProgressBars(percentage)}
