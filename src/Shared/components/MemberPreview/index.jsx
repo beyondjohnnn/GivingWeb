@@ -24,16 +24,16 @@ class MemberPreview extends React.Component {
 			return (
 				<div className="matched-icon">
 					<img
-						src="./images/matchedX2.png"
+						src="./images/matched-x2-purple.png"
 						alt="All donations are matched by a sponsor icon"/>
 				</div>
 			)
 		}
 	}
 
-		renderDonateButton(percentage) {
+		renderDonateButton(percentage, memberID) {
 		if (percentage < 100) {
-			return <button className="donate-button">{"Donate"}</button>
+			return <Link className="donate-button" to={`/member?member_id=${memberID}`}>Donate</Link>
 		}
 	}
 
@@ -56,6 +56,30 @@ class MemberPreview extends React.Component {
 		return className
 	}
 
+// <<<<<<< HEAD
+// 	buildProgressBars(fillPercent){
+// 		const bars = []
+// 		const barStyles = {
+// 			"width": fillPercent + "%",
+// 			"backgroundColor": getDonationBarColour(fillPercent),
+// 			"zIndex": 2
+// 		}
+// 		bars[0] = (<div className="bar-fill" key={1} style={barStyles}></div>)
+
+// 		if(this.hasSponsor){
+// 			const matchedBarStyles = {
+// 				"width": (fillPercent*2) + "%",
+// 				"backgroundColor": "#666AF6",
+// 				"zIndex": 1
+// 			}
+// 			bars[1] = (<div className="bar-fill" key={2} style={matchedBarStyles}></div>)
+// 		}
+
+// 		return bars
+// 	}
+
+// =======
+// >>>>>>> development
 	render() {
 		let previewStyle = this.props.style || {}
 		const {member} = this.props
@@ -92,8 +116,10 @@ class MemberPreview extends React.Component {
 								<p className="goal-label">GOAL</p>
 							</div>
 						</div>
-						{this.renderDonateButton(percentage}
+
+						{this.renderDonateButton(percentage, member.id)}
 						<DonationProgressBar percentage={percentage} hasSponsor={this.hasSponsor} />
+
 					</div>
 					<div className="member-donations">Donations</div>
 						<div className="member-images">

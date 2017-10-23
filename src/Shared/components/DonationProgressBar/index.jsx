@@ -19,7 +19,7 @@ class DonationProgressBar extends React.Component {
 		if(this.props.hasSponsor){
 			const matchedBarStyles = {
 				"width": fillPercent + "%",
-				"backgroundColor": "#00FFFF",
+				"backgroundColor": "#8A8DF9",
 				"zIndex": 1
 			}
 			bars[1] = (<div className="bar-fill" key={2} style={matchedBarStyles}></div>)
