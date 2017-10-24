@@ -11,7 +11,7 @@ class DonationProgressBar{
 		this.constructTime = Date.now()
 	}
 
-	animateBar(time, percentage){
+	animateBar(percentage, time = 1000){
 		const bars = document.getElementsByClassName(`member${this.constructTime}`)
 		this.setProgressBarColours(bars, percentage)
 		const framesPerSecond = 35
@@ -47,7 +47,7 @@ class DonationProgressBar{
 
 	setProgressBarColours(bars, percentage){
 		bars[0].style.backgroundColor = getDonationBarColour(percentage)
-		if(bars.length === 2) bars[1].style.backgroundColor = "#8A8DF9"
+		if(bars[1]) bars[1].style.backgroundColor = "#8A8DF9"
 	}
 
 	buildProgressBars(hasSponsor){

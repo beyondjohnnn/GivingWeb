@@ -25,7 +25,7 @@ class MemberShowPage extends Component {
 	componentDidMount() {
 		this.getCurrentMember()
 		.then((member) => {
-			this.donationProgressBar.animateBar(1000, calcDonationPercentage(member))
+			this.donationProgressBar.animateBar(calcDonationPercentage(member))
 		}).catch((err) =>{console.log(err)})
 	}
 

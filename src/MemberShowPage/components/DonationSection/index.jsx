@@ -8,10 +8,6 @@ import SelectInput from '../SelectInput'
 
 class DonationSection extends Component {
 
-	constructor(props){
-		super(props)
-	}
-
 	render() {
 		const { current_member } = this.props
 		const hasSponsor = current_member.sponsors.length > 0
