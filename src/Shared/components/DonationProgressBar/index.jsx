@@ -16,23 +16,22 @@ class DonationProgressBar{
 		this.setProgressBarColours(bars, percentage)
 		const framesPerSecond = 35
 		time = time/1000
-		const ticks = time * framesPerSecond
-		const incrementValue = percentage / ticks
+		const totalFrames = time * framesPerSecond
+		const incrementValue = percentage / totalFrames
 
-		const getWidth = function(){
-			let width = 0
-			return () => {
-				return width+=incrementValue
-			}
-		}()
+		const frame = this.buildAnimationFrame(bars, incrementValue, percentage).bind(this)
+		const animate = new Animation(framesPerSecond, frame);
+		animate.start()
+	}
 
-		const frame = () => {
-			const nextWidth = getWidth()
-			const isNotOverMax = nextWidth < percentage
+	buildAnimationFrame(bars, incrementValue, percentage, width = 0){
+		return () => {
+			width += incrementValue
+			const isNotOverMax = width < percentage
 			for(let bar of bars){
 				setTimeout(() => {
 					if(isNotOverMax){
-						bar.style.width = nextWidth.toString() + "%"
+						bar.style.width = width.toString() + "%"
 					}else{
 						bar.style.width = percentage.toString() + "%"
 					}
@@ -40,9 +39,6 @@ class DonationProgressBar{
 			}
 			return isNotOverMax
 		}
-
-		const animate = new Animation(framesPerSecond, frame);
-		animate.start()
 	}
 
 	setProgressBarColours(bars, percentage){
