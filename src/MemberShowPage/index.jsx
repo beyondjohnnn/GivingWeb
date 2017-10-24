@@ -6,17 +6,20 @@ import * as actionCreators from '../actions/helpSomeoneActionCreators'
 
 import css from './MemberShowPage.scss'
 
+import { calcDonationPercentage } from './../Shared/utils/donations'
 import Header from './components/Header'
 import CommentSection from './components/CommentSection'
 import MemberDetails from './components/MemberDetails'
 import DonationSection from './components/DonationSection'
 import MatchedCompanySection from './components/MatchedCompanySection'
+import DonationProgressBar from './../Shared/components/DonationProgressBar'
 
 class MemberShowPage extends Component {
 
 	constructor(props){
 		super(props)
 		this.props.setCurrentMemberToDefault()
+		this.donationProgressBar = new DonationProgressBar()
 	}
 
 	componentDidMount() {
@@ -24,11 +27,16 @@ class MemberShowPage extends Component {
 		const { members } = this.props
 		if (members.length === 0) {
 			this.props.getSingleMember(member_id)
+				.then((payload) => {
+					const member = payload.value.data
+					this.donationProgressBar.animateBar(1000, calcDonationPercentage(member))
+				})
 		} else {
 			const current_member = members.find((member) => {
 				return member.id == member_id
 			})
 			this.props.setCurrentMember(current_member)
+			this.donationProgressBar.animateBar(1000, calcDonationPercentage(current_member))
 		}
 	}
 
@@ -50,7 +58,9 @@ class MemberShowPage extends Component {
 					</div>
 					<div className="right-section">
 						{this.renderMatchedCompany(current_member)}
-						<DonationSection current_member={current_member} />
+						<DonationSection
+							donationProgressBar={this.donationProgressBar}
+							current_member={current_member} />
 					</div>
 				</div>
 			</div>

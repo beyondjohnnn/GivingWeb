@@ -5,26 +5,20 @@ import css from './DonationProgressBar.scss'
 
 import Animation from './../../utils/animate'
 
-class DonationProgressBar extends React.Component {
+class DonationProgressBar{
 
-	constructor(props){
-		super(props)
-		const member = this.props.member
-		this.memberId = member ? member.id : 0
-		this.animateBar = this.animateBar.bind(this)
+	constructor(){
+		this.constructTime = Date.now()
 	}
 
-	componentDidMount(){
-		const animationTime = 1000
-		this.animateBar(animationTime)
-	}
-
-	animateBar(time){
-		const bars = document.getElementsByClassName(`member${this.memberId}`)
+	animateBar(time, percentage){
+		console.log(this.memberId);
+		const bars = document.getElementsByClassName(`member${this.constructTime}`)
+		this.setProgressBarColours(bars, percentage)
 		const framesPerSecond = 35
 		time = time/1000
 		const ticks = time * framesPerSecond
-		const incrementValue = this.props.percentage / ticks
+		const incrementValue = percentage / ticks
 
 		const getWidth = function(){
 			let width = 0
@@ -35,13 +29,13 @@ class DonationProgressBar extends React.Component {
 
 		const frame = () => {
 			const nextWidth = getWidth()
-			const isNotOverMax = nextWidth < this.props.percentage
+			const isNotOverMax = nextWidth < percentage
 			for(let bar of bars){
 				setTimeout(() => {
 					if(isNotOverMax){
 						bar.style.width = nextWidth.toString() + "%"
 					}else{
-						bar.style.width = this.props.percentage + "%"
+						bar.style.width = percentage.toString() + "%"
 					}
 				}, 1)
 			}
@@ -52,27 +46,26 @@ class DonationProgressBar extends React.Component {
 		animate.start()
 	}
 
-	buildProgressBars(){
-		const bars = []
-		const barStyles = {
-			"backgroundColor": getDonationBarColour(this.props.percentage),
-		}
-		bars[0] = (<div className={`bar-fill member${this.memberId}`} key={1} style={barStyles}></div>)
+	setProgressBarColours(bars, percentage){
+		bars[0].style.backgroundColor = getDonationBarColour(percentage)
+		if(bars.length === 2) bars[1].style.backgroundColor = "#8A8DF9"
+	}
 
-		if(this.props.member.sponsors.length > 0){
-			const matchedBarStyles = {
-				"backgroundColor": "#8A8DF9",
-			}
-			bars[1] = (<div className={`bar-fill member${this.memberId}`} key={2} style={matchedBarStyles}></div>)
+	buildProgressBars(hasSponsor){
+		const bars = []
+		bars[0] = (<div className={`bar-fill member${this.constructTime}`} key={1}></div>)
+		if(hasSponsor){
+			bars[1] = (<div className={`bar-fill member${this.constructTime}`} key={2}></div>)
 		}
 		return bars
 	}
 
-	render(){
+	render(hasSponsor){
+		hasSponsor = hasSponsor || false
 		return(
 			<div className="member-progress-bar">
 				<div className="progress-bar-container">
-					{this.buildProgressBars()}
+					{this.buildProgressBars(hasSponsor)}
 				</div>
 			</div>
 		)
