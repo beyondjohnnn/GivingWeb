@@ -27,6 +27,7 @@
     "mathjs": "^3.16.4",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
+    "react-facebook": "^4.0.16",
     "react-facebook-login-component": "^0.9.1",
     "react-google-maps": "^8.4.2",
     "react-html-parser": "^2.0.1",
