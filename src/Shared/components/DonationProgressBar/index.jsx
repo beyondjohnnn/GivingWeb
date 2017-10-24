@@ -11,11 +11,10 @@ class DonationProgressBar{
 		this.constructTime = Date.now()
 	}
 
-	animateBar(percentage, time = 1000){
+	animateBar(percentage, time = 1){
 		const bars = document.getElementsByClassName(`member${this.constructTime}`)
 		this.setProgressBarColours(bars, percentage)
 		const framesPerSecond = 35
-		time = time/1000
 		const totalFrames = time * framesPerSecond
 		const incrementValue = percentage / totalFrames
 
