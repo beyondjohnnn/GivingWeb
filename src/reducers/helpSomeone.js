@@ -1,16 +1,15 @@
-const defaultMember = {
-  sponsors: [],
-  donations: [],
-  comments: [],
-  info: '',
-  name: 'Charlie',
-  goal: 0
-}
 
 const defaultState = {
   members: [],
   membersToShow: 6,
-  current_member: defaultMember,
+  current_member: {
+    sponsors: [],
+    donations: [],
+    comments: [],
+    info: '',
+    name: 'Charlie',
+    goal: 0
+  },
   select: {
     open: false,
     donationAmount: 10
@@ -40,8 +39,6 @@ function helpSomeone(state = defaultState, action) {
 
     case 'SET_CURRENT_MEMBER':
       return {...state, current_member: action.member}
-    case 'SET_CURRENT_MEMBER_TO_DEFAULT':
-      return {...state, current_member: defaultMember}
 
     default:
 			return state

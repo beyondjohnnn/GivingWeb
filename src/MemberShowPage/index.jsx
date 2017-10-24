@@ -18,7 +18,6 @@ class MemberShowPage extends Component {
 
 	constructor(props){
 		super(props)
-		this.props.setCurrentMemberToDefault()
 		this.donationProgressBar = new DonationProgressBar()
 	}
 
