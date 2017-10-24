@@ -12,7 +12,6 @@ class DonationProgressBar{
 	}
 
 	animateBar(time, percentage){
-		console.log(this.memberId);
 		const bars = document.getElementsByClassName(`member${this.constructTime}`)
 		this.setProgressBarColours(bars, percentage)
 		const framesPerSecond = 35

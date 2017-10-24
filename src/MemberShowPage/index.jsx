@@ -23,21 +23,36 @@ class MemberShowPage extends Component {
 	}
 
 	componentDidMount() {
-		const member_id = parseInt(this.props.location.search.split('=')[1])
+		this.getCurrentMember()
+		.then((member) => {
+			this.donationProgressBar.animateBar(1000, calcDonationPercentage(member))
+		}).catch((err) =>{console.log(err)})
+	}
+
+	getCurrentMember(){
+		const memberId = parseInt(this.props.location.search.split('=')[1])
 		const { members } = this.props
-		if (members.length === 0) {
-			this.props.getSingleMember(member_id)
-				.then((payload) => {
-					const member = payload.value.data
-					this.donationProgressBar.animateBar(1000, calcDonationPercentage(member))
-				})
-		} else {
-			const current_member = members.find((member) => {
-				return member.id == member_id
-			})
-			this.props.setCurrentMember(current_member)
-			this.donationProgressBar.animateBar(1000, calcDonationPercentage(current_member))
-		}
+
+		return new Promise((resolve, reject) => {
+			if (members.length === 0) {
+				this.props.getSingleMember(memberId)
+					.then((payload) => {
+						const member = payload.value.data
+						resolve(member)
+					}).catch((err) => {reject(err)})
+			} else {
+				const member = this.findMember(memberId, members)
+				resolve(member)
+			}
+	  })
+	}
+
+	findMember(memberId, members){
+		const current_member = members.find((member) => {
+			return member.id === memberId
+		})
+		this.props.setCurrentMember(current_member)
+		return current_member
 	}
 
 	renderMatchedCompany(member){
