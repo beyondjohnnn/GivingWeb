@@ -13,8 +13,12 @@ class MemberPreview extends React.Component {
 		this.donationProgressBar = new DonationProgressBar()
 	}
 
+	componentWillMount(){
+		this.percentage = calcDonationPercentage(this.props.member)
+	}
+
 	componentDidMount(){
-		this.donationProgressBar.animateBar(1000, calcDonationPercentage(this.props.member))
+		this.donationProgressBar.animateBar(this.percentage)
 	}
 
 	createCompletedBanner(percentage) {
@@ -63,7 +67,7 @@ class MemberPreview extends React.Component {
 	render() {
 		let previewStyle = this.props.style || {}
 		const {member} = this.props
-		const percentage = calcDonationPercentage(this.props.member)
+		const percentage = this.percentage || 0
 		const hasSponsor = this.props.member.sponsors.length > 0
 		const matchedPercentage = hasSponsor ? percentage*2 : percentage
 		const percentageToDisplay = (matchedPercentage).toString() + "%"
