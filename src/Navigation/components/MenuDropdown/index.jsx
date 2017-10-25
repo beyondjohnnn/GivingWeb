@@ -44,7 +44,7 @@ class MenuDropdown extends React.Component {
           <Link to="/charities" className="menu-link-text">For Charities</Link>
           <div/>
           <Link to="" className="menu-link-text">Help</Link>
-          <Link to="" className="menu-link-text">About Us</Link>
+          <Link to="/about-us" className="menu-link-text">About Us</Link>
         </div>
       </div>
     )
