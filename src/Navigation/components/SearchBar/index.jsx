@@ -44,7 +44,8 @@ class SearchBar extends Component {
 			    	onChange={this.handleChange}
 			    	onFocus={this.props.toggleSearchResultsVisibility}
 			    	onBlur={this.props.toggleSearchResultsVisibility}
-			    	placeholder="Search for a city, friend, non-profit or cause..." />
+			    	placeholder="Search for a city, friend, non-profit or cause..."
+			    	autocomplete="off" />
 			    <button className="search-icon"><i className="fa fa-search"></i></button>
 				</div>
 		    {this.createFuzzyDropdown()}
