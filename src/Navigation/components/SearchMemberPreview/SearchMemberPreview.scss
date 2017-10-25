@@ -1,3 +1,9 @@
+.member-link-search-member { 
+
+  text-decoration: none; 
+
+}
+
 .search-member-preview {
   // background-color: red;
   // margin-top: 10px;
@@ -7,6 +13,13 @@
   width: 100%;
   display: flex;
   align-items: center;
+  text-decoration: none; 
+
+  &:hover {
+  background-color: darken(#f7f7f7, 5);
+
+  }
+
   // justify-content: space-between;
 
   .image-cover {
@@ -59,6 +72,8 @@
       font-size: 1.1em;
       font-weight: 400;
       margin-bottom: 2px; 
+      color: #333333;
+
     }
 
     h2 {
@@ -67,6 +82,8 @@
       font-size: 0.9em;
       font-weight: 300;
       padding-bottom: 5px;
+      color: #686868;
+
     }
 
     .view-campaign {
@@ -87,26 +104,29 @@
   }
 
 
-  .donation-details {
-    min-height: 80px;
-    width: 25%;
-    // padding: 10px;
+  .donation-details-member-preview {
     display: flex;
-    justify-content: flex-end;
+
+    width: 20%;
+    // background-color: blue;
+    flex-direction: column;
+    // padding: 10px;
+    // justify-content: flex-end;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     color: #666AF6;
 
     .member-progress-bar {
       width: 70%;
-      height: 10px;
+      height: 8px;
       border-radius: 5px;
       background-color: #ddd;
       overflow: hidden;
+      margin-top: 5px;
 
       .bar-fill {
         // width: 80%;
-        height: 10px;
+        height: 8px;
         background-color: gold;
       }
     }

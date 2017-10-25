@@ -1,6 +1,10 @@
 import React, {Component} from 'react'
+import { bindActionCreators } from 'redux'
+import {connect}  from 'react-redux'
 
 import css from './SearchDropdown.scss'
+
+import * as actionCreators from '../../../actions/navActionCreators'
 
 import SearchMemberPreview from '../SearchMemberPreview'
 import SearchCharityPreview from '../SearchCharityPreview'
@@ -23,14 +27,21 @@ class SearchDropdown extends Component {
 	createCharities() {
 		const {charities} = this.props
 		return charities.map((charity, id) => {
-			return <SearchCharityPreview key={id} charity={charity} />
+			return <SearchCharityPreview  logoUrl="http://res.cloudinary.com/givingweb/image/upload/v1508963429/streetwork_u5ry1v.jpg" key={id} charity={charity} />
 		})
 	}
 
+	createStyling() {
+		if (this.props.searchResultsVisible) {
+			return "search-dropdown"
+		} else {
+			return "search-dropdown hidden"
+		}
+	}
 
 	render() {
 		return (
-			<div className="search-dropdown">
+			<div className={this.createStyling()}>
 				<div className="members-list">
 					{this.createMembers()}
 				</div>
@@ -42,4 +53,12 @@ class SearchDropdown extends Component {
 	}
 }
 
-export default SearchDropdown
+function mapStateToProps(state, routing) {
+  return Object.assign({}, state.navigation, routing)
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators(actionCreators, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SearchDropdown)

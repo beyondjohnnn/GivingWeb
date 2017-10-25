@@ -26,4 +26,8 @@ $giving-web-purple: #7267ee;
 			
 		}
 	}
+
+	&.hidden {
+		visibility: hidden;
+	}
 }
