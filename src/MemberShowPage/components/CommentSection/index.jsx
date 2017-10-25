@@ -1,6 +1,10 @@
 import React, {Component} from 'react'
 import moment from 'moment'
 import _ from 'lodash'
+import {bindActionCreators} from 'redux'
+import {connect} from 'react-redux'
+
+import * as actionCreators from '../../../actions/comments'
 
 import css from './CommentSection.scss'
 
@@ -11,13 +15,8 @@ class CommentSection extends Component {
 
 	constructor(props) {
 		super(props)
-	}
 
-	createComments() {
-		const { comments } = this.props
-		return comments.map((comment, id) => {
-			return <Comment key={id} comment={comment} />
-		})
+		this.handleCommentChange = this.handleCommentChange.bind(this)
 	}
 
 	createCommentGroups() {
@@ -35,13 +34,21 @@ class CommentSection extends Component {
 		return commentGroups
 	}
 
+	handleCommentChange(e) {
+		e.preventDefault()
+		const commentText = this.refs.comment_box.value
+		this.props.updateNewCommentText(commentText)
+	}
+
 	render() {
 		return (
-			<div className="make-comment">
-				<h3>Post a comment</h3>
-				<label htmlFor="comment-box">Send a message</label>
-				<textarea id="comment-box" ref="comment-box" className="comment-box" />
-				<button className="post-button">Post</button>
+			<div className="comment-section">
+				<div className="make-comment">
+					<h3>Post a comment</h3>
+					<label htmlFor="comment-box">Send a message</label>
+					<textarea id="comment-box" ref="comment_box" className="comment-box" maxLength="300" onChange={this.handleCommentChange} />
+					<button className="post-button">Post</button> <span className="comment-length">{300 - this.props.commentText.length} / 300 left</span>
+				</div>
 				<div className="comment-list">
 					{this.createCommentGroups()}
 				</div>
@@ -50,4 +57,12 @@ class CommentSection extends Component {
 	}
 }
 
-export default CommentSection
+function mapStateToProps(state, routing) {
+	return { ...state.comments, ...routing }
+}
+
+function mapDispatchToProps(dispatch) {
+	return bindActionCreators(actionCreators, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CommentSection)
