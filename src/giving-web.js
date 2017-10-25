@@ -65,6 +65,7 @@ const router = (
 				<Route path="/partners" component={PartnersPage} />
 				<Route path="/about-us" component={AboutUsPage} />
 				<Route path="/stripe-payment" component={StripePayment} />
+
 				<Footer />
 			</div>
 		</Router>
