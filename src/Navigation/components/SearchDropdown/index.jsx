@@ -32,11 +32,9 @@ class SearchDropdown extends Component {
 		return (
 			<div className="search-dropdown">
 				<div className="members-list">
-					<h4>Members</h4>
 					{this.createMembers()}
 				</div>
 				<div className="charities-list">
-					<h4>Charities</h4>
 					{this.createCharities()}
 				</div>
 			</div>
