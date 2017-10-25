@@ -40,7 +40,7 @@ class SearchBar extends Component {
 				<div className="searchbar-container">
 			    <input
 			    	ref="search"
-			    	id="search" 
+			    	id="search"
 			    	onChange={this.handleChange}
 			    	onFocus={this.props.toggleSearchResultsVisibility}
 			    	onBlur={this.props.toggleSearchResultsVisibility}
