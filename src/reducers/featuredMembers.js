@@ -3,7 +3,6 @@ const defaultState = {
 }
 
 function helpSomeone(state = defaultState, action) {
-  console.log("state: ", action.type);
 	switch(action.type) {
 		case 'GET_FEATURED_MEMBERS_PENDING':
       return {...state, fetching: true}

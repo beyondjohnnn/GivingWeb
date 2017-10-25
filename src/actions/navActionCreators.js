@@ -6,15 +6,21 @@ export function toggleDropdown() {
   }
 }
 
-export function fuzzySearch(searchTerms) {
+export function fuzzySearch(searchTerm) {
 	return {
 		type: 'FUZZY_SEARCH',
-		payload: axios.post('http://localhost:3000/search', searchTerms)
+		payload: axios.post('http://localhost:3000/search', {searchTerm})
 	}
 }
 
 export function clearSearch() {
 	return {
 		type: 'CLEAR_SEARCH'
+	}
+}
+
+export function toggleSearchResultsVisibility() {
+	return {
+		type: 'TOGGLE_SEARCH_RESULTS_VISIBILITY'
 	}
 }

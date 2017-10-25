@@ -1,5 +1,7 @@
 const defaultState = {
-	dropdownVisible: false
+	dropdownVisible: false,
+	searchResults: null,
+	searchResultsVisible: false
 }
 
 
@@ -15,6 +17,8 @@ function navigation(state = defaultState, action) {
      return {...state, fetching: false, error: action.payload}
   	case 'FUZZY_SEARCH_FULFILLED':
       return {...state, fetching: false, fetched: true, searchResults: action.payload.data}
+    case 'TOGGLE_SEARCH_RESULTS_VISIBILITY':
+    	return {...state, searchResultsVisible: !state.searchResultsVisible}
     default:
 			return state
 
