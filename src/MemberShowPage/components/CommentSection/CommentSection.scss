@@ -4,31 +4,43 @@ $border: 1px solid #eaeaea;
 	display: flex;
 	flex-direction: column;
 }
-
-.make-comment {
+.comment-section {
 	@include flex-column;
-	background-color: white;
 	width: 95%;
-	padding: 40px;
-	border-radius: 8px;
-	border: $border;
 
 	h3 {
 		margin-bottom: 20px;
 	}
 
-	label {
-		margin-bottom: 10px;
+	.make-comment {
+		@include flex-column;
+		background-color: white;
+		width: 100%;
+		padding: 40px;
+		border-radius: 8px;
+		border: $border;
+		margin-bottom: 40px;
+
+
+		label {
+			margin-bottom: 10px;
+		}
+
+		textarea {
+			margin-bottom: 10px;
+			height: 80px;
+			resize: none;
+		}
+
+		button {
+			height: 40px;
+			width: 80px;
+			margin-bottom: 50px;
+		}
 	}
 
-	textarea {
-		margin-bottom: 10px;
-		height: 80px;
-	}
-
-	button {
-		height: 40px;
-		width: 80px;
-		margin-bottom: 50px;
+	.comment-list {
+		@include flex-column;
+		width: 100%;
 	}
 }
