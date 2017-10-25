@@ -30,7 +30,7 @@ class DonationSection extends Component {
 					</h3>
 					<SelectInput goalRemaining={current_member.goal - totalDonations} memberName={current_member.name} />
 					<div className="support-checkbox">
-						<input id="checkbox" type="checkbox" checked/>
+						<input id="checkbox" type="checkbox" defaultChecked />
 						<label htmlFor="checkbox">Add £3 to help support GivingWeb</label>
 					</div>
 				</div>

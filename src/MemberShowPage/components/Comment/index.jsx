@@ -15,9 +15,7 @@ class Comment extends React.Component {
 					<img src="http://placehold.it/50x50" />
 					<div className="header-details">
 						<h4><span>{comment.comment_author}</span> {comment.donation_amount}</h4>
-						<p><Moment date={date} format="MMM DD, YYYY"/></p>
-						<p>at</p>
-						<p><Moment date={date} format="HH:mm"/></p>
+						<p><Moment date={date} format="MMM DD, YYYY"/> at <Moment date={date} format="HH:mm"/></p>
 					</div>
 				</div>
 				<div className="comment-content">{comment.comment_content.replace('&#039;', '\'')}</div>
