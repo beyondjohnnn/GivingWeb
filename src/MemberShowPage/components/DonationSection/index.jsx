@@ -5,9 +5,9 @@ import { calcDonationPercentage, getDonationBarColour, calcTotalDonations } from
 import css from './DonationSection.scss'
 
 import SelectInput from '../SelectInput'
-import DonationProgressBar from './../../../Shared/components/DonationProgressBar'
 
 class DonationSection extends Component {
+
 	render() {
 		const { current_member } = this.props
 		const hasSponsor = current_member.sponsors.length > 0
@@ -15,12 +15,11 @@ class DonationSection extends Component {
 		if(hasSponsor) totalDonations *= 2
 		const donationPercentage = calcDonationPercentage(current_member)
 
-
 		return (
 			<div className="donation-section">
 				<h4>£{totalDonations}</h4>
 				<h2>raised of £{current_member.goal} goal</h2>
-				<DonationProgressBar percentage={donationPercentage} hasSponsor={hasSponsor} />
+				{this.props.donationProgressBar.render(hasSponsor)}
 				<div className="progress-summary">
 					<p>£{current_member.goal - totalDonations} still needed</p>
 					<p className="supporters-text">{current_member.donations.length} supporters</p>

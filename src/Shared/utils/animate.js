@@ -1,28 +1,33 @@
 
-function Animation(framesPerSecond, frameCallBack){
-  this.interval = 1000/framesPerSecond;
-  this.startTime = 0;
-  this.frameCallBack = frameCallBack;
-}
+class Animation{
 
-Animation.prototype.start = function(){
-  this.startTime = Date.now();
-  requestAnimationFrame(this.run.bind(this));
-}
-
-Animation.prototype.run = function(){
-  if(this.shouldRunNextFrame()){
-    this.frameCallBack();
+  constructor(framesPerSecond, frameCallBack){
+    this.interval = 1000/framesPerSecond;
+    this.startTime = 0;
+    this.frameCallBack = frameCallBack;
+    this.run = this.run.bind(this)
   }
-  requestAnimationFrame(this.run.bind(this));
-}
 
-Animation.prototype.shouldRunNextFrame = function(){
-  var now = Date.now();
-  elapsed = now - this.startTime;
-  var shouldRun = elapsed >= this.interval;
-  if(shouldRun) this.startTime = now;
-  return shouldRun;
+  start(){
+    this.startTime = Date.now();
+    requestAnimationFrame(this.run);
+  }
+
+  run(){
+    let runNext = true
+    if(this.shouldRunNextFrame()){
+      runNext = this.frameCallBack();
+    }
+    if(runNext)requestAnimationFrame(this.run);
+  }
+
+  shouldRunNextFrame(){
+    let now = Date.now();
+    let elapsed = now - this.startTime;
+    var shouldRun = elapsed >= this.interval;
+    if(shouldRun) this.startTime = now;
+    return shouldRun;
+  }
 }
 
 export default Animation
