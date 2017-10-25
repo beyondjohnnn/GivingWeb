@@ -1,7 +1,10 @@
 import React, {Component} from 'react'
+import moment from 'moment'
+import _ from 'lodash'
 
 import css from './CommentSection.scss'
 
+import CommentGrouping from '../CommentGroup'
 import Comment from '../Comment'
 
 class CommentSection extends Component {
@@ -17,6 +20,21 @@ class CommentSection extends Component {
 		})
 	}
 
+	createCommentGroups() {
+		const { comments } = this.props
+		const groups = _.groupBy(comments, comment => {
+			const date = new Date(comment.comment_date)
+		  return moment(date).startOf('day').format()
+		})
+
+		let commentGroups = []
+		for (let date in groups) {
+			commentGroups.push(<CommentGrouping key={date} date={date} comments={groups[date]} />)
+		}
+
+		return commentGroups
+	}
+
 	render() {
 		return (
 			<div className="make-comment">
@@ -25,7 +43,7 @@ class CommentSection extends Component {
 				<textarea id="comment-box" ref="comment-box" className="comment-box" />
 				<button className="post-button">Post</button>
 				<div className="comment-list">
-					{this.createComments()}
+					{this.createCommentGroups()}
 				</div>
 			</div>
 		)
