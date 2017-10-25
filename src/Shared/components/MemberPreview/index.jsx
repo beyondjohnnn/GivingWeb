@@ -24,7 +24,7 @@ class MemberPreview extends React.Component {
 			return (
 				<div className="matched-icon">
 					<img
-						src="./images/matched-x2-purple.png"
+						src="./images/matched-x2-purple6.png"
 						alt="All donations are matched by a sponsor icon"/>
 				</div>
 			)
