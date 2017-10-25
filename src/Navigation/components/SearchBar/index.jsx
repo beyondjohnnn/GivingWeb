@@ -29,13 +29,9 @@ class SearchBar extends Component {
 	}
 
 	handleSubmit(e) {
-		console.log(this.props);
-
 		e.preventDefault()
 		const searchTerm = this.refs.search.value
-		// encodeURI(searchTerm)
-		// this.props.history.push(`/search?search_term=${searchTerm}`)
-		this.props.history.push('/search')
+		this.props.history.push(`/search?search_term=${searchTerm}`)
 	}
 
 	createFuzzyDropdown() {
