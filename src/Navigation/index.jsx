@@ -64,16 +64,16 @@ class Navigation extends React.Component {
 									<img src="images/favicon.png" className="logo" />
 									<p className="giving-text">Giving</p>
 									<p className="web-text">Web</p>
-								</div> 
+								</div>
 							</Link>
-							<SearchBar />
-						</div>		
+							<SearchBar history={this.props.history}/>
+						</div>
 						<nav>
 							{this.renderNavLinks()}
 							{this.renderMenuButton()}
 							{this.renderDropdown()}
 						</nav>
-					</div>	
+					</div>
 				</div>
 			</div>
 		)

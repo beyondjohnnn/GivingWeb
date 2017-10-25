@@ -14,6 +14,7 @@ class SearchBar extends Component {
 		super(props)
 
 		this.handleChange = this.handleChange.bind(this)
+		this.handleSubmit = this.handleSubmit.bind(this)
 		this.createFuzzyDropdown = this.createFuzzyDropdown.bind(this)
 	}
 
@@ -27,6 +28,16 @@ class SearchBar extends Component {
 		}
 	}
 
+	handleSubmit(e) {
+		console.log(this.props);
+
+		e.preventDefault()
+		const searchTerm = this.refs.search.value
+		// encodeURI(searchTerm)
+		// this.props.history.push(`/search?search_term=${searchTerm}`)
+		this.props.history.push('/search')
+	}
+
 	createFuzzyDropdown() {
 		if (this.props.searchResultsVisible && this.props.searchResults) {
 			const { members, charities } = this.props.searchResults
@@ -36,7 +47,7 @@ class SearchBar extends Component {
 
 	render() {
 		return (
-			<form className="search-bar">
+			<form className="search-bar" onSubmit={this.handleSubmit}>
 				<div className="searchbar-container">
 			    <input
 			    	ref="search"
@@ -45,7 +56,7 @@ class SearchBar extends Component {
 			    	onFocus={this.props.toggleSearchResultsVisibility}
 			    	onBlur={this.props.toggleSearchResultsVisibility}
 			    	placeholder="Search for a city, friend, non-profit or cause..." />
-			    <button className="search-icon"><i className="fa fa-search"></i></button>
+			    <button className="search-icon" onClick={this.handleSubmit}><i className="fa fa-search"></i></button>
 				</div>
 		    {this.createFuzzyDropdown()}
 		  </form>

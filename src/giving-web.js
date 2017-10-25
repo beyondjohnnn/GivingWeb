@@ -25,6 +25,7 @@ import ContactUs from './ContactUs'
 import PartnersPage from './Shared/containers/PartnersPage'
 import AboutUsPage from './Shared/containers/AboutUsPage'
 import StripePayment from './Shared/containers/StripePayment'
+import SearchPage from './Shared/containers/SearchPage'
 
 // import components
 import Navigation from './Navigation'
@@ -65,6 +66,7 @@ const router = (
 				<Route path="/partners" component={PartnersPage} />
 				<Route path="/about-us" component={AboutUsPage} />
 				<Route path="/stripe-payment" component={StripePayment} />
+				<Route path="/search" component={SearchPage} />
 
 				<Footer />
 			</div>
