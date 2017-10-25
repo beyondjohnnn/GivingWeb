@@ -10,7 +10,15 @@ class MemberPreview extends React.Component {
 
 	constructor(props){
 		super(props)
-		this.hasSponsor = this.props.member.sponsors.length > 0
+		this.donationProgressBar = new DonationProgressBar()
+	}
+
+	componentWillMount(){
+		this.percentage = calcDonationPercentage(this.props.member)
+	}
+
+	componentDidMount(){
+		this.donationProgressBar.animateBar(this.percentage)
 	}
 
 	createCompletedBanner(percentage) {
@@ -59,8 +67,9 @@ class MemberPreview extends React.Component {
 	render() {
 		let previewStyle = this.props.style || {}
 		const {member} = this.props
-		const percentage = calcDonationPercentage(member)
-		const matchedPercentage = this.hasSponsor ? percentage*2 : percentage
+		const percentage = this.percentage || 0
+		const hasSponsor = this.props.member.sponsors.length > 0
+		const matchedPercentage = hasSponsor ? percentage*2 : percentage
 		const percentageToDisplay = (matchedPercentage).toString() + "%"
 
 		return (
@@ -93,10 +102,8 @@ class MemberPreview extends React.Component {
 								<p className="goal-label">GOAL</p>
 							</div>
 						</div>
-
 						{this.renderDonateButton(matchedPercentage, member.id)}
-						<DonationProgressBar percentage={percentage} hasSponsor={this.hasSponsor} />
-
+						{this.donationProgressBar.render(hasSponsor)}
 					</div>
 					<div className="member-donations">Donations</div>
 						<div className="member-images">
