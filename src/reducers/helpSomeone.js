@@ -16,7 +16,6 @@ const defaultState = {
 }
 
 function helpSomeone(state = defaultState, action) {
-  console.log("state: ", action.type);
 	switch(action.type) {
 
 		case 'SET_MEMBERS_COUNT':
