@@ -16,6 +16,30 @@ class SearchBar extends Component {
 		this.handleChange = this.handleChange.bind(this)
 		this.handleSubmit = this.handleSubmit.bind(this)
 		this.createFuzzyDropdown = this.createFuzzyDropdown.bind(this)
+	  this.hideDropdownOnClick = this.hideDropdownOnClick.bind(this)
+	}
+
+
+	componentDidMount() {
+	  window.addEventListener('click', this.hideDropdownOnClick)
+	}
+
+	hideDropdownOnClick(e) {
+	  const inputBoundaries = this.refs.search.getBoundingClientRect()
+	  const dropdownBoundaries = document.querySelector('.search-dropdown').getBoundingClientRect()
+	  console.log(inputBoundaries)
+	  console.log(dropdownBoundaries)
+	  const outsideInput = (e.x < inputBoundaries.left || e.x > inputBoundaries.right || e.y < inputBoundaries.top || e.y > inputBoundaries.bottom)
+	  const outsideDropdown = (e.x < dropdownBoundaries.left || e.x > dropdownBoundaries.right || e.y < dropdownBoundaries.top || e.y > dropdownBoundaries.bottom)
+
+	  if (outsideInput && outsideDropdown && this.props.searchResultsVisible) {
+	    this.props.toggleSearchResultsVisibility()
+	  }
+	}
+
+
+	componentWillUnmount() {
+	  window.removeEventListener('click', this.hideDropdownOnClick)
 	}
 
 	handleChange(e) {
@@ -35,9 +59,9 @@ class SearchBar extends Component {
 	}
 
 	createFuzzyDropdown() {
-		if (this.props.searchResultsVisible && this.props.searchResults) {
+		if (this.props.searchResults) {
 			const { members, charities } = this.props.searchResults
-			return <SearchDropdown members={members} charities={charities} />
+			return <SearchDropdown ref="dropdown" members={members} charities={charities} />
 		}
 	}
 
@@ -50,9 +74,15 @@ class SearchBar extends Component {
 			    	id="search"
 			    	onChange={this.handleChange}
 			    	onFocus={this.props.toggleSearchResultsVisibility}
+<<<<<<< HEAD
 			    	onBlur={this.props.toggleSearchResultsVisibility}
 			    	placeholder="Search for a city, friend, non-profit or cause..." />
 			    <button className="search-icon" onClick={this.handleSubmit}><i className="fa fa-search"></i></button>
+=======
+			    	placeholder="Search for a city, friend, non-profit or cause..."
+			    	autocomplete="off" />
+			    <button className="search-icon"><i className="fa fa-search"></i></button>
+>>>>>>> development
 				</div>
 		    {this.createFuzzyDropdown()}
 		  </form>

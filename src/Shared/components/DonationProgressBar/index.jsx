@@ -42,7 +42,7 @@ class DonationProgressBar{
 
 	setProgressBarColours(bars, percentage){
 		bars[0].style.backgroundColor = getDonationBarColour(percentage)
-		if(bars[1]) bars[1].style.backgroundColor = "#8A8DF9"
+		if(bars[1]) bars[1].style.backgroundColor = "#57B3F4"
 	}
 
 	buildProgressBars(hasSponsor){
