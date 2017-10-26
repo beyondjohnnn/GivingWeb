@@ -13,14 +13,19 @@ class SearchPage extends Component {
 		super(props)
 	}
 
-	countSearchResults() {
-		if(this.props.searchResults != null) {
-			const { members, charities } = this.props.searchResults
-			const count = members.concat(charities).length
-			return count
-		} else {
-			return 0
+	textSearchResults() {
+		const searchInput = this.props.location.search.split('=')[1]
+		let htmlText = <h3>Search Results of "{searchInput}"</h3>
+		let NoHtml = <h3>No input was given</h3>
+
+		if (!searchInput) {
+			htmlText = NoHtml
 		}
+		return(
+			<div>
+				{htmlText}
+			</div>
+		)
 	}
 
 	renderResults() {
@@ -33,8 +38,10 @@ class SearchPage extends Component {
 	render() {
 		return (
 			<div>
-			<h3>There are {this.countSearchResults()} Search Results</h3>
-			{this.renderResults()}
+				<div className="search-header">
+					{this.textSearchResults()}
+				</div>
+				{this.renderResults()}
 			</div>
 		)
 	}
