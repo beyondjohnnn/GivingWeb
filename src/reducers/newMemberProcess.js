@@ -49,7 +49,7 @@ function newMemberProcess(state = defaultState, action) {
   	case 'SUBMIT_NEW_MEMBER_REJECTED':
       return {...state, fetching: true, error: action.payload}
   	case 'SUBMIT_NEW_MEMBER_FULFILLED':
-      return {...state, fetching: true, fetched: true, members: action.payload}
+      return {...defaultState, fetching: true, fetched: true}
 
 		default:
 			return state
