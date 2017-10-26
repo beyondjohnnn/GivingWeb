@@ -27,8 +27,6 @@ class SearchBar extends Component {
 	hideDropdownOnClick(e) {
 	  const inputBoundaries = this.refs.search.getBoundingClientRect()
 	  const dropdownBoundaries = document.querySelector('.search-dropdown').getBoundingClientRect()
-	  console.log(inputBoundaries)
-	  console.log(dropdownBoundaries)
 	  const outsideInput = (e.x < inputBoundaries.left || e.x > inputBoundaries.right || e.y < inputBoundaries.top || e.y > inputBoundaries.bottom)
 	  const outsideDropdown = (e.x < dropdownBoundaries.left || e.x > dropdownBoundaries.right || e.y < dropdownBoundaries.top || e.y > dropdownBoundaries.bottom)
 
@@ -36,7 +34,6 @@ class SearchBar extends Component {
 	    this.props.toggleSearchResultsVisibility()
 	  }
 	}
-
 
 	componentWillUnmount() {
 	  window.removeEventListener('click', this.hideDropdownOnClick)
@@ -74,15 +71,9 @@ class SearchBar extends Component {
 			    	id="search"
 			    	onChange={this.handleChange}
 			    	onFocus={this.props.toggleSearchResultsVisibility}
-<<<<<<< HEAD
-			    	onBlur={this.props.toggleSearchResultsVisibility}
-			    	placeholder="Search for a city, friend, non-profit or cause..." />
-			    <button className="search-icon" onClick={this.handleSubmit}><i className="fa fa-search"></i></button>
-=======
 			    	placeholder="Search for a city, friend, non-profit or cause..."
-			    	autocomplete="off" />
+			    	autoComplete="off" />
 			    <button className="search-icon"><i className="fa fa-search"></i></button>
->>>>>>> development
 				</div>
 		    {this.createFuzzyDropdown()}
 		  </form>

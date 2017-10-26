@@ -11,7 +11,6 @@ import { calcDonationPercentage, getDonationBarColour, calcTotalDonations } from
 
 class SearchMemberPreview extends Component {
 
-
   renderMembersImage() {
     if (this.props.member.url_image == undefined) {
       return `images/${this.props.member.name}.png`
@@ -22,23 +21,19 @@ class SearchMemberPreview extends Component {
 
   render() {
 
-
-
     let previewStyle = this.props.style || {}
     const {member} = this.props
-
-    console.log(member.id)
-
     const percentage = calcDonationPercentage(member)
     const textPercentage = percentage.toString() + "%"
     const donationBarStyles = {
       "width": textPercentage,
       "backgroundColor": getDonationBarColour(percentage)
     }
+
     return (
       <Link className="member-link-search-member" to={`/member?member_id=${member.id}`} onClick={this.props.toggleSearchResultsVisibility}>
         <div className="search-member-preview">
-          <div className="image-cover"> 
+          <div className="image-cover">
             <img src={this.renderMembersImage()} alt=""/>
           </div>
           <div className="member-preview-info">
@@ -56,6 +51,7 @@ class SearchMemberPreview extends Component {
     )
   }
 }
+
 function mapStateToProps(state, routing) {
   return { ...state.navigation, ...routing }
 }

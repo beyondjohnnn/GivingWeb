@@ -6,7 +6,7 @@ class SearchMemberPreview extends Component {
 	render() {
 		const {member} = this.props
 		return (
-			<div className="search-member-preview">
+			<div className="search-member-show">
 				<img src={member.url_image} alt=""/>
 				{member.name}
 			</div>

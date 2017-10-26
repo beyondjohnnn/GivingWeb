@@ -1,13 +1,142 @@
-.search-member-preview {
-	width: 100%;
-	display: flex;
-	align-items: center;
-	padding: 10px;
-	color: #ffffff;
+.member-link-search-member {
 
-	img {
-		width: 50px;
-		height: 50px;
-	}
+  text-decoration: none;
 
+}
+
+.search-member-show {
+  // background-color: red;
+  // margin-top: 10px;
+  // border-radius: 5px;
+  border: 1px solid lighten(#bbb, 20);
+  background-color: lighten(#f7f7f7, 2);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+
+  &:hover {
+  background-color: darken(#f7f7f7, 5);
+
+  }
+
+  // justify-content: space-between;
+
+  .image-cover {
+    min-height: 70px;
+    min-width: 70px;
+    border-radius: 50px;
+    // margin-right: 10px;
+    margin-left: 10px;
+    position: relative;
+  }
+
+  img {
+    max-width: 7em;
+    height: 7em;
+    object-fit: cover;
+    border-radius: 80px;
+    margin-right: 2em;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border: solid 0.7px #fff;
+    box-shadow: 0.5px 0.8px 3px 0.25px #888888;
+
+    object-position: 50% 50%;
+    cursor: pointer;
+
+    &:hover {
+      transition: 0.4s ease;
+      transform: scale(1.05);
+    }
+  }
+
+  .member-preview-info {
+
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    align-items: flex-start;
+    // height: 50px;
+    padding: 10px;
+    justify-content: flex-start;
+
+    h3 {
+      // padding: 10px;
+      // width: 25%;
+      font-size: 1.1em;
+      font-weight: 400;
+      margin-bottom: 2px;
+      color: #333333;
+
+    }
+
+    h2 {
+      // padding: 10px;
+      // width: 25%;
+      font-size: 0.9em;
+      font-weight: 300;
+      padding-bottom: 5px;
+      color: #686868;
+
+    }
+
+    .view-campaign {
+      font-size: 0.8em;
+      font-weight: 300;
+      text-decoration: none;
+      color: lighten(#444444, 30);
+
+      i {
+        margin-right: 3px;
+      }
+      &:hover {
+        color: #7b5dff;
+      }
+    }
+
+
+  }
+
+
+  .donation-details-member-show {
+    display: flex;
+
+    width: 20%;
+    // background-color: blue;
+    flex-direction: column;
+    // padding: 10px;
+    // justify-content: flex-end;
+    align-items: center;
+    justify-content: space-evenly;
+    color: #666AF6;
+
+    .member-progress-bar {
+      width: 70%;
+      height: 8px;
+      border-radius: 5px;
+      background-color: #ddd;
+      overflow: hidden;
+      margin-top: 5px;
+
+      .bar-fill {
+        // width: 80%;
+        height: 8px;
+        background-color: gold;
+      }
+    }
+
+  .percentage-container {
+    height: 100%;
+    width: 15%;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    font-weight: 300;
+    color: #7b5dff;
+    }
+  }
 }
