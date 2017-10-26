@@ -1,0 +1,43 @@
+@import './../../../colors.scss';
+
+.under-construction-container{
+	height: 540px;
+	background-image: url("./../../../../build/images/under-construction.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	padding: 9% 35% 0 20%;
+
+	section{
+		height: 100%;
+		color: #fff;
+		line-height: 27px;
+
+		h2{
+			margin-bottom: 20px;
+		}
+
+		p{
+			margin-bottom: 20px;
+		}
+
+		input[type=email]{
+			display: block;
+			height: 45px;
+			margin-bottom: 30px;
+			padding: 10px;
+			width: 400px;
+			font-size: 20px;
+		}
+
+		button{
+			border: none;
+			color: #fff;
+			font-size: 17px;
+			height: 50px;
+			padding: 15px;
+			background-color: $giving-web-purple;
+			box-shadow: 2px 2px 4px #594ED5;
+		}
+	}
+}
