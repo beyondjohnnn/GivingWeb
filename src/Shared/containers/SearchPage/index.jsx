@@ -13,6 +13,16 @@ class SearchPage extends Component {
 		super(props)
 	}
 
+	countSearchResults() {
+		if(this.props.searchResults != null) {
+			const { members, charities } = this.props.searchResults
+			const count = members.concat(charities).length
+			return count
+		} else {
+			return 0
+		}
+	}
+
 	renderResults() {
 		if (this.props.searchResults) {
 			const { members, charities } = this.props.searchResults
@@ -23,7 +33,7 @@ class SearchPage extends Component {
 	render() {
 		return (
 			<div>
-			hello world
+			<h3>There are {this.countSearchResults()} Search Results</h3>
 			{this.renderResults()}
 			</div>
 		)

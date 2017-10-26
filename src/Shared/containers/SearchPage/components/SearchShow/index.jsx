@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 
-import css from './SearchDropdown.scss'
+import css from './SearchShow.scss'
 
 import SearchCharityPreview from '../SearchCharityPreview'
 import SearchMemberPreview from '../SearchMemberPreview'
@@ -29,7 +29,7 @@ class SearchShow extends Component {
 
 	render() {
 		return (
-			<div className="search-dropdown">
+			<div className="search-show">
 				<div className="members-list">
 					<h4>Members</h4>
 					{this.createMembers()}
