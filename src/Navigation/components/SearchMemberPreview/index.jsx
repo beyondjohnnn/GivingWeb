@@ -12,7 +12,6 @@ import { calcDonationPercentage, getDonationBarColour, calcTotalDonations } from
 class SearchMemberPreview extends Component {
 
 
-  
   renderMembersImage() {
     if (this.props.member.url_image == undefined) {
       return `images/${this.props.member.name}.png`
@@ -37,7 +36,7 @@ class SearchMemberPreview extends Component {
       "backgroundColor": getDonationBarColour(percentage)
     }
     return (
-      <Link className="member-link-search-member" to={`/member?member_id=${member.id}`} onClick>
+      <Link className="member-link-search-member" to={`/member?member_id=${member.id}`} onClick={this.props.toggleSearchResultsVisibility}>
         <div className="search-member-preview">
           <div className="image-cover"> 
             <img src={this.renderMembersImage()} alt=""/>
