@@ -23,7 +23,7 @@ import MeetTheTeamPage from './Shared/containers/MeetTheTeamPage'
 import TermsAndPrivacyPage from './Shared/containers/TermsAndPrivacyPage'
 import ContactUs from './ContactUs'
 import PartnersPage from './Shared/containers/PartnersPage'
-import AboutUsPage from './Shared/containers/AboutUsPage'
+import AboutUsPage from './AboutUsPage'
 import StripePayment from './Shared/containers/StripePayment'
 import UnderConstruction from './Shared/containers/UnderConstruction'
 

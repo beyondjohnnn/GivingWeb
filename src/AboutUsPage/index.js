@@ -6,20 +6,17 @@ import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from
 
 import css from './AboutUsPage.scss'
 
+import Timeline from './Components/Timeline'
+
 class AboutUsPage extends React.Component {
 
-	componentDidMount() {
-	}
-
-	createComments() {
-	}
 
 	render() {
 
 		return (
 			<div className="about-us-page">
 
-				Welcome
+				<Timeline />
 
 			</div>
 		)
