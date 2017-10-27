@@ -45,9 +45,9 @@ class SearchBar extends Component {
 		if (searchTerm == '') {
 			this.props.clearSearch()
 		} else {
+			console.log(searchTerm);
 			this.props.fuzzySearch(searchTerm)
 		}
-		this.props.history.replace(`/search?search_term=${searchTerm}`)
 	}
 
 	handleSubmit(e) {
