@@ -46,7 +46,7 @@ class SearchBar extends Component {
 			this.props.clearSearch()
 		} else {
 			console.log(searchTerm);
-			this.props.fuzzySearch(searchTerm, 3)
+			this.props.fuzzySearch(searchTerm)
 		}
 	}
 
