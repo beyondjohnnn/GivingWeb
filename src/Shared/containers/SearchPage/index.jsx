@@ -11,6 +11,7 @@ class SearchPage extends Component {
 
 	constructor(props) {
 		super(props)
+		this.onClickMore = this.onClickMore.bind(this)
 	}
 
 	textSearchResults() {
@@ -28,6 +29,21 @@ class SearchPage extends Component {
 		)
 	}
 
+	onClickMore() {
+		const searchInput = this.props.location.search.split('=')[1]
+		const limitMore = 9
+		this.props.fuzzySearch(searchInput, limitMore)
+	}
+
+	renderLoadMoreButton(){
+		return (
+			<section className="load-more-button-container">
+				<button onClick={this.onClickMore}>+ Load More</button>
+			</section>
+		)
+	}//TODO: redesign this to provide a expaince on the search limit
+
+
 	renderResults() {
 		if (this.props.searchResults) {
 			const { members, charities } = this.props.searchResults
@@ -42,6 +58,7 @@ class SearchPage extends Component {
 					{this.textSearchResults()}
 				</div>
 				{this.renderResults()}
+				{this.renderLoadMoreButton()}
 			</div>
 		)
 	}
