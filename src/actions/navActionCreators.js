@@ -6,10 +6,10 @@ export function toggleDropdown() {
   }
 }
 
-export function fuzzySearch(searchTerm) {
+export function fuzzySearch(searchTerm, limit) {
 	return {
 		type: 'FUZZY_SEARCH',
-		payload: axios.post(`${process.env.API_URL}/search`, {searchTerm})
+		payload: axios.post(`${process.env.API_URL}/search`, {searchTerm, limit})
 	}
 }
 
