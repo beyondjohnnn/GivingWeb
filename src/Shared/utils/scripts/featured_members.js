@@ -18,16 +18,16 @@ function getUserInput(prompt) {
 let allMembers
 let selectedMembers = []
 
-axios.get("https://localhost:3000/featured_members")
+axios.get("http://localhost:3000/featured_members")
   .then((result) => {
     const promises = []
     const featuredMembers = result.data
     for(member of featuredMembers){
-      promises.push(axios.delete(`https://localhost:3000/featured_members/${member.id}`))
+      promises.push(axios.delete(`http://localhost:3000/featured_members/${member.id}`))
     }
     return Promise.all(promises)
   }).then(() => {
-    return axios.get("https://localhost:3000/members")
+    return axios.get("http://localhost:3000/members")
   }).then((response) => {
 
     allMembers = response.data
@@ -58,7 +58,7 @@ axios.get("https://localhost:3000/featured_members")
     let position = 1
     for(member of selectedMembers){
       const toPost = {id: member.id, position: position++}
-      promises.push(axios.post("https://localhost:3000/featured_members", toPost))
+      promises.push(axios.post("http://localhost:3000/featured_members", toPost))
     }
     return Promise.all(promises)
   }).then((result) => {
