@@ -18,7 +18,7 @@ module.exports = merge(common, {
 		}),
     new webpack.EnvironmentPlugin({
       NODE_ENV: 'production',
-      API_URL: 'http://givingweb.io/api'
+      API_URL: 'https://givingweb.io/api'
     }),
     new HtmlWebpackPlugin({
       template: 'src/index.html',
