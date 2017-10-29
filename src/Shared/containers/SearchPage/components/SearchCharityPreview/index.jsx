@@ -6,7 +6,7 @@ class SearchCharityPreview extends Component {
 	render() {
 		return (
 			<div className="search-charity-show">
-				<img src="http://res.cloudinary.com/givingweb/image/upload/v1508963429/streetwork_u5ry1v.jpg" />
+				<img src="https://res.cloudinary.com/givingweb/image/upload/v1508963429/streetwork_u5ry1v.jpg" />
 				{this.props.charity.name}
 			</div>
 		)

@@ -26,7 +26,7 @@ class FeaturedMemberPreview extends React.Component {
 						<p className="delete" onClick={this.deleteMember.bind(this)}>x</p>
 					</div>
 					<div className="content-div">
-						<img src={member.url_image} alt="http://via.placeholder.com/80x80?text=Add_Image"/>
+						<img src={member.url_image} alt="https://via.placeholder.com/80x80?text=Add_Image"/>
 					</div>
 					<h3>{member.name}</h3>
 				</div>

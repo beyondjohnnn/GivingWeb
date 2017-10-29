@@ -8,7 +8,7 @@ class CharityTile extends React.Component {
 		return (
       <div className="charity-tile">
         <section className="tile-header">
-          <img className="user-icon_img" src="http://via.placeholder.com/50x50" alt="user icon"/>
+          <img className="user-icon_img" src="https://via.placeholder.com/50x50" alt="user icon"/>
           <div>
             <h3>User Name</h3>
           </div>
