@@ -32,7 +32,7 @@ class NewMemberFormCoverPhoto extends React.Component {
     if (imagePreviewUrl) {
       $imagePreview = (<img src={imagePreviewUrl} />);
     } else {
-      $imagePreview = (<img src="http://via.placeholder.com/300x300" alt="" />);
+      $imagePreview = (<img src="https://via.placeholder.com/300x300" alt="" />);
     }
 
 		return (

@@ -27,7 +27,7 @@ class SearchDropdown extends Component {
 	createCharities() {
 		const {charities} = this.props
 		return charities.map((charity, id) => {
-			return <SearchCharityPreview  logoUrl="http://res.cloudinary.com/givingweb/image/upload/v1508963429/streetwork_u5ry1v.jpg" key={id} charity={charity} />
+			return <SearchCharityPreview  logoUrl="https://res.cloudinary.com/givingweb/image/upload/v1508963429/streetwork_u5ry1v.jpg" key={id} charity={charity} />
 		})
 	}
 

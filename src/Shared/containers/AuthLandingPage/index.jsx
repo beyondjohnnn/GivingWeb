@@ -9,7 +9,7 @@ class AuthLandingPage extends React.Component {
 			<div className="auth-landing-page">
 				<div className="user-details">
 					<div className="user-photo">
-						<img src="http://via.placeholder.com/150x150" />
+						<img src="https://via.placeholder.com/150x150" />
 						<h2>Peter Peterson</h2>
 					</div>
 
@@ -19,7 +19,7 @@ class AuthLandingPage extends React.Component {
 							<Link to="">See all</Link>
 						</div>
 						<div className="example-fundraiser">
-							<img src="http://via.placeholder.com/150x150" />
+							<img src="https://via.placeholder.com/150x150" />
 							<div className="fundraiser-details">
 								<h4>
 									Fundraiser name

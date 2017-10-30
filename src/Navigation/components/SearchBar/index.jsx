@@ -14,6 +14,7 @@ class SearchBar extends Component {
 		super(props)
 
 		this.handleChange = this.handleChange.bind(this)
+		this.handleSubmit = this.handleSubmit.bind(this)
 		this.createFuzzyDropdown = this.createFuzzyDropdown.bind(this)
 	  this.hideDropdownOnClick = this.hideDropdownOnClick.bind(this)
 	}
@@ -26,8 +27,6 @@ class SearchBar extends Component {
 	hideDropdownOnClick(e) {
 	  const inputBoundaries = this.refs.search.getBoundingClientRect()
 	  const dropdownBoundaries = document.querySelector('.search-dropdown').getBoundingClientRect()
-	  console.log(inputBoundaries)
-	  console.log(dropdownBoundaries)
 	  const outsideInput = (e.x < inputBoundaries.left || e.x > inputBoundaries.right || e.y < inputBoundaries.top || e.y > inputBoundaries.bottom)
 	  const outsideDropdown = (e.x < dropdownBoundaries.left || e.x > dropdownBoundaries.right || e.y < dropdownBoundaries.top || e.y > dropdownBoundaries.bottom)
 
@@ -35,7 +34,6 @@ class SearchBar extends Component {
 	    this.props.toggleSearchResultsVisibility()
 	  }
 	}
-
 
 	componentWillUnmount() {
 	  window.removeEventListener('click', this.hideDropdownOnClick)
@@ -47,8 +45,15 @@ class SearchBar extends Component {
 		if (searchTerm == '') {
 			this.props.clearSearch()
 		} else {
+			console.log(searchTerm);
 			this.props.fuzzySearch(searchTerm)
 		}
+	}
+
+	handleSubmit(e) {
+		e.preventDefault()
+		const searchTerm = this.refs.search.value
+		this.props.history.push(`/search?search_term=${searchTerm}`)
 	}
 
 	createFuzzyDropdown() {
@@ -60,7 +65,7 @@ class SearchBar extends Component {
 
 	render() {
 		return (
-			<form className="search-bar">
+			<form className="search-bar" onSubmit={this.handleSubmit}>
 				<div className="searchbar-container">
 			    <input
 			    	ref="search"
@@ -68,7 +73,7 @@ class SearchBar extends Component {
 			    	onChange={this.handleChange}
 			    	onFocus={this.props.toggleSearchResultsVisibility}
 			    	placeholder="Search for a city, friend, non-profit or cause..."
-			    	autocomplete="off" />
+			    	autoComplete="off" />
 			    <button className="search-icon"><i className="fa fa-search"></i></button>
 				</div>
 		    {this.createFuzzyDropdown()}
