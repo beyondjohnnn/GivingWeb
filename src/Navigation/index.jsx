@@ -8,6 +8,7 @@ import * as actionCreators from '../actions/navActionCreators'
 import css from './Navigation.scss'
 
 import MenuDropdown from './components/MenuDropdown'
+import SearchBar from './components/SearchBar'
 
 class Navigation extends React.Component {
 
@@ -63,19 +64,16 @@ class Navigation extends React.Component {
 									<img src="images/favicon.png" className="logo" />
 									<p className="giving-text">Giving</p>
 									<p className="web-text">Web</p>
-								</div> 
+								</div>
 							</Link>
-							<form className="search-bar">
-						    <input  id="search" placeholder="Search for a city, friend, non-profit or cause..." />
-						    <button className="search-icon"><i className="fa fa-search"></i></button>
-						  </form>
-						</div>		
+							<SearchBar history={this.props.history}/>
+						</div>
 						<nav>
 							{this.renderNavLinks()}
 							{this.renderMenuButton()}
 							{this.renderDropdown()}
 						</nav>
-					</div>	
+					</div>
 				</div>
 			</div>
 		)

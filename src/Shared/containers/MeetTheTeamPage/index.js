@@ -72,10 +72,6 @@ class MeetTheTeamPage extends React.Component {
 	              <p className="team-member-box">Basiclly Reece sits around looking cute and not doing much, he's very cute!</p>
 	            </div>
 	          </div>
-
-
-	          <div className="investor">
-	          </div>
 	        </div>
 	      </div>
 			</div>

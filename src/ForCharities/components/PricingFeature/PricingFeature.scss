@@ -1,0 +1,92 @@
+.pricing-feature {
+  display: flex;
+  margin-top: 3px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-bottom: 1px solid #e8e8e8;
+  position: relative; 
+  
+
+  .pricing-feature-text {
+    display: flex;
+    justify-content: center;
+    font-size: 0.9em;
+    font-weight: 300;
+    margin-right: 6px;
+    color: #3d4351;
+    padding-bottom: 11px;
+    margin-top: 11px;
+  }
+
+  i {
+    font-size: 1em;
+    font-weight: 300;
+    color: #d8d8d8;
+
+    &:hover {
+      cursor: help;
+    }
+  }
+
+
+   .tooltip-component {
+    
+      position: absolute;
+      // margin-top: 67px;
+      transition: visibility 0s ease-in-out, margin-top 0.2s ease-in-out;
+      display: flex; 
+      justify-content: center;
+      align-items: flex-end;
+      top: 0;
+      width: 100%;
+      height: 400px;
+      margin-top: -400px;
+      visibility: hidden;
+      background: none;
+      box-shadow: none;
+      // margin-bottom: 200px;
+
+      .tooltip-box {
+        color: #fff;
+        background-color: darken(#5e687c, 5);
+        width: 75%;
+        box-shadow: 0 4px 12px 0 rgba(0,0,0,.06);
+        border-radius: 5px;
+
+        p {
+        margin: 6px;
+        z-index: 6;
+        font-size: 0.9em;
+        font-weight: 200;
+        text-align: center;
+        padding: 6px 5px;
+      }
+    }
+    
+    
+   .tooltip-arrow {
+      height: 16px;
+      width: 16px;
+      transform: rotate(45deg); 
+      background-color: darken(#5e687c, 5);
+
+      position: absolute;
+      bottom: 0;
+      // left: 0;
+      margin-bottom: -4px;
+      // z-index: 5;
+
+    }
+  }
+
+  .tooltip-visible {
+    margin-top: -403px;
+    visibility: visible;
+  }
+
+    
+  
+
+
+}

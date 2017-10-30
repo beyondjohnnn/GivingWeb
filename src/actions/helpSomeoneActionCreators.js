@@ -7,24 +7,17 @@ export function setMembersShown(count) {
 	}
 }
 
-export function getFeaturedMembers() {
-	return {
-		type: 'GET_FEATURED_MEMBERS',
-		payload: axios.get('http://localhost:3000/featured_members')
-	}
-}
-
 export function getMembers() {
 	return {
 		type: 'GET_MEMBERS',
-		payload: axios.get('http://localhost:3000/members')
+		payload: axios.get(`${process.env.API_URL}/members`)
 	}
 }
 
 export function getSingleMember(id) {
 	return {
 		type: 'GET_SINGLE_MEMBER',
-		payload: axios.get(`http://localhost:3000/members/${id}`)
+		payload: axios.get(`${process.env.API_URL}/members/${id}`)
 	}
 }
 

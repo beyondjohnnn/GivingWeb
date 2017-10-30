@@ -4,8 +4,8 @@ import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 import * as actionCreators from '../../../actions/charityDashBoardContentActionCreators'
 
-import FeaturedMemberPreview from './../FeaturedMemberPreview'
-import FeaturedMemberSelector from './../FeaturedMemberSelector'
+import FeaturedMemberPreview from './FeaturedMemberPreview'
+import FeaturedMemberSelector from './FeaturedMemberSelector'
 
 import css from './FeaturedMemberController.scss'
 
@@ -25,27 +25,18 @@ class FeaturedMemberController extends React.Component {
 
 	renderFeaturedMembers(){
 		const featureMembersComponents = []
-		let position = 1
 		const members = this.props.charityFeaturedMembers
+		let memberIndex = 0
 		for(let j=0; j<3; j++){
-			let member = members[j]
+			let member = members[memberIndex]
 			let component
-			if(member != undefined){
-				component = (
-					<FeaturedMemberPreview
-						key={position}
-						member={member}
-						position={position} />
-				)
+			if(member && member.position === j){
+				component = <FeaturedMemberPreview key={j} member={member} position={j} />
+				memberIndex++
 			}else{
-				component = (
-					<FeaturedMemberSelector
-						key={position}
-						position={position} />
-				)
+				component = (<FeaturedMemberSelector key={j} position={j} />)
 			}
 			featureMembersComponents.push(component)
-			position++
 		}
 		return featureMembersComponents
 	}

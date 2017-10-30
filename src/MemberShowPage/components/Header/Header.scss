@@ -1,4 +1,4 @@
-$giving-web-purple: #7267ee;
+$giving-web-purple: #666AF6;
 
 @mixin flex-center {
 	display: flex;
@@ -39,7 +39,7 @@ $giving-web-purple: #7267ee;
 			padding-left: 3px;
 
 			&:hover {
-				color: darken($giving-web-purple, 10);
+				color: darken($giving-web-purple, 6);
 			}
 		}
 

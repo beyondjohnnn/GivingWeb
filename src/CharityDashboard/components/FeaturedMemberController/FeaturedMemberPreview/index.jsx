@@ -4,7 +4,7 @@ import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 
 import css from './FeaturedMemberPreview.scss'
-import * as actionCreators from '../../../actions/charityDashBoardContentActionCreators'
+import * as actionCreators from '../../../../actions/charityDashBoardContentActionCreators'
 
 
 class FeaturedMemberPreview extends React.Component {
@@ -20,12 +20,14 @@ class FeaturedMemberPreview extends React.Component {
 	render() {
 		let member = this.props.member
 		return (
-			<div className="featured-member-preview">
+			<div className="featured-member-controller-element">
 				<div className="member-one">
 					<div className="del-div">
 						<p className="delete" onClick={this.deleteMember.bind(this)}>x</p>
 					</div>
-					<img src={member.url_image} alt="http://via.placeholder.com/80x80?text=Add_Image"/>
+					<div className="content-div">
+						<img src={member.url_image} alt="https://via.placeholder.com/80x80?text=Add_Image"/>
+					</div>
 					<h3>{member.name}</h3>
 				</div>
 			</div>

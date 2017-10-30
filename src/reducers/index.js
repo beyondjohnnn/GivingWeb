@@ -7,13 +7,16 @@ import howItWorks from './howItWorks'
 import noAuthSubNavigation from './noAuthSubNavigation'
 import charityDashboardSidebar from './charityDashboardSidebar'
 import helpSomeone from './helpSomeone'
+import featuredMembers from './featuredMembers'
 import careButton from './careButton'
+import pricing from './pricing'
 import newMemberProcess from './newMemberProcess'
 import charityPage from './charityPage'
 import dashboard from './dashboard'
 import stripe from './stripe'
 import donations from './donations'
 import charityDashboardContent from './charityDashboardContent'
+import comments from './comments'
 
 const rootReducer = combineReducers({
 	auth,
@@ -22,13 +25,16 @@ const rootReducer = combineReducers({
   noAuthSubNavigation,
   charityDashboardSidebar,
   helpSomeone,
+	featuredMembers,
 	careButton,
+  pricing,
   newMemberProcess,
 	charityPage,
 	dashboard,
 	stripe,
 	donations,
 	charityDashboardContent,
+	comments,
 	routing: routerReducer
 })
 

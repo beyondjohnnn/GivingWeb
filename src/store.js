@@ -21,7 +21,9 @@ export { history }
 
 const middleware = applyMiddleware(routerStuff, promiseMiddleware(), createScrollMiddleware())
 
-const enhancers = compose(middleware, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+const enhancers = process.env.NODE_ENV === 'development' ?
+									compose(middleware, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()) :
+									middleware
 
 const store = createStore(rootReducer, {}, enhancers)
 

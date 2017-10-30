@@ -44,42 +44,43 @@ class HelpSomeonePage extends React.Component {
 	render() {
 		return (
 			<div className="help-someone-page">
+				<div className="help-someone-main-wrapper">
 
-				<section>
+					<section>
 
-					<h2>Find someone to help</h2>
-					<p className="intro-paragraph">
-						Support individuals and families who are experiencing poverty or
-						homelessness in raising money for basic needs and goals. You can
-						see first hand the positive impact of your donation when we send
-						you updates from our member once they have reach their target!
-					</p>
-					<p className="intro-paragraph">
-						*Each member is verified by our trusted partner organisations and
-						is receiving assistance towards long term stability.
-					</p>
+						<h2>Find someone to help</h2>
+						<p className="intro-paragraph">
+							Support individuals and families who are experiencing poverty or
+							homelessness in raising money for basic needs and goals. You can
+							see first hand the positive impact of your donation when we send
+							you updates from our member once they have reach their target!
+						</p>
+						<p className="intro-paragraph">
+							*Each member is verified by our trusted partner organisations and
+							is receiving assistance towards long term stability.
+						</p>
 
-				</section>
+					</section>
 
-				<section>
+					<section>
 
-					<div className="location-filter-container">
-						<span>
-							All Areas
-						</span>
-						<i className="fa fa-long-arrow-down custom-arrow" aria-hidden="true"></i>
-					</div>
+						<div className="location-filter-container">
+							<span>
+								All Areas
+							</span>
+							<i className="fa fa-long-arrow-down custom-arrow" aria-hidden="true"></i>
+						</div>
 
-				</section>
+					</section>
 
-				<CategoryList />
+					<CategoryList />
 
-				<section>
-					<MemberPreviewBuilder members={this.getMembersToDisplay()} previewsPerLine={3}/>
-				</section>
+					<section>
+						<MemberPreviewBuilder members={this.getMembersToDisplay()} previewsPerLine={3}/>
+					</section>
 
-				{this.renderLoadMoreButton()}
-
+					{this.renderLoadMoreButton()}
+				</div>
 			</div>
 		)
 	}

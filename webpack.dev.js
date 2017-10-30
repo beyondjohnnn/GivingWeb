@@ -26,15 +26,14 @@ module.exports = merge(common, {
   },
   plugins: [
   	new webpack.HotModuleReplacementPlugin(),
-    new webpack.DefinePlugin({
-      'process.env': {
-        'NODE_ENV': JSON.stringify('development')
-      }
-    }),
     new HtmlWebpackPlugin({
       template: 'src/index.html',
       inject: 'body',
       filename: 'index.html'
+    }),
+    new webpack.EnvironmentPlugin({
+      NODE_ENV: 'development',
+      API_URL: 'https://localhost:3000'
     })
   ]
 })

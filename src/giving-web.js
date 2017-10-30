@@ -15,7 +15,7 @@ import UserDashboard from './Shared/containers/UserDashboard'
 import CharityLogin from './Shared/containers/CharityLogin'
 import CharitySignup from './Shared/containers/CharitySignup'
 import HelpSomeone from './HelpSomeone'
-import CharityLandingPage from './Shared/containers/CharityLandingPage'
+import ForCharities from './ForCharities'
 import CharityDashboard from './CharityDashboard'
 import MemberShowPage from './MemberShowPage'
 import CookieInfoPage from './Shared/containers/CookieInfoPage'
@@ -25,6 +25,8 @@ import ContactUs from './ContactUs'
 import PartnersPage from './Shared/containers/PartnersPage'
 import AboutUsPage from './Shared/containers/AboutUsPage'
 import StripePayment from './Shared/containers/StripePayment'
+import UnderConstruction from './Shared/containers/UnderConstruction'
+import SearchPage from './Shared/containers/SearchPage'
 
 // import components
 import Navigation from './Navigation'
@@ -56,7 +58,7 @@ const router = (
 				<Route path="/charity-login" component={CharityLogin} />
 				<Route path="/featured-members" component={FeaturedMembers} />
 				<Route path="/help-someone" component={HelpSomeone} />
-				<Route path="/charities" component={CharityLandingPage} />
+				<Route path="/charities" component={ForCharities} />
 				<Route path="/charity-dashboard" component={CharityDashboard} />
 				<Route path="/member" component={MemberShowPage} />
 				<Route path="/terms" component={TermsAndPrivacyPage} />
@@ -66,6 +68,8 @@ const router = (
 				<Route path="/partners" component={PartnersPage} />
 				<Route path="/about-us" component={AboutUsPage} />
 				<Route path="/payment" component={PaymentPage} />
+				<Route path="/under-construction" component={UnderConstruction} />
+				<Route path="/search" component={SearchPage} />
 				<Footer />
 			</div>
 		</Router>

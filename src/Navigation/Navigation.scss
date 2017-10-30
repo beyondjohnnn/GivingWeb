@@ -1,7 +1,7 @@
 $radius-size: 3px;
 $search-color: #9b9b9b;
 $search-border: 1px solid $search-color;
-$search-border-focus-color: #4569e0;
+$search-border-focus-color: #666AF6;
 $search-border-focus: 1.4px solid $search-border-focus-color;
 $nav-links-size: 13px; 
 $nav-links-weight: 200;
@@ -9,10 +9,11 @@ $nav-links-weight: 200;
 .navigation-wrapper { 
 	height:58px;
 }
+
 .navigation {
 	width: 100%;
 	background-color: #ffffff;
-	box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.1), 0 3px 6px 0 rgba(0, 0, 0, 0.09); 
+	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 3px 0 rgba(0, 0, 0, 0.09); 
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -26,12 +27,11 @@ $nav-links-weight: 200;
 
 	.content-wrapper {
 		width: 100%;
-		max-width: 1300px;
+		max-width: 1240px;
 		height: 100%;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		// border: $search-border;
 	}	
 
 	.logo-search-wrapper {
@@ -39,15 +39,10 @@ $nav-links-weight: 200;
 		max-width: 800px;
 		height: 100%;
 		display: flex;
-		// justify-content: space-evenly;
 		align-items: center;
-		// border: $search-border;
-	}	
-
+	}
 	
-
-	
- 	 .search-bar:hover button.icon:hover{
+ 	.search-bar:hover button.icon:hover{
 	  background: white;
   }
 
@@ -69,112 +64,16 @@ $nav-links-weight: 200;
 		
 		img {
 			height:30px;
-			// width: 65%;
-			padding: {
-				left: 2%;
-				right: 1%;
-				} 
-			}
+			padding-left: 2%;
+			padding-right: 1%; 
+		}
 
 		.giving-text {
 			color: #5a5a5a;
 		}
 		
 		.web-text{
-			color: #7267EE;
-		}
-		}
-
-
-
-	form {
-
-		width: 500px;
-		height: 40px;
-		display: flex;
-		justify-content: start;
-		align-items: center;
-	
-
-		input {
-	 		outline: none;
-			vertical-align: middle;
-			white-space: nowrap;
-			border-bottom-left-radius: $radius-size;
-			outline: none;
-			padding: 0 5px;
-	  	overflow: hidden;
-		  width: 320px;
-		  height: 30px;
-		  background: white;
-		  font-size: 10pt;
-		  color: #5a5a5a;
-		  padding-left: 15px;
-		 
-			border: 0.5px solid $search-color;
-			-webkit-border-top-left-radius: $radius-size;
-			-webkit-border-bottom-left-radius: $radius-size;
-			-moz-border-radius-topleft: $radius-size;
-			-moz-border-radius-bottomleft: $radius-size;
-			border-top-left-radius: $radius-size;
-			-webkit-transition: width 0.4s ease-in-out;
-			transition: width 0.4s ease-in-out;
-
-			&::placeholder {
-				color: $search-color;
-			}
-
-			&:focus {
-				width: 470px;
-				border: {
-					top: $search-border-focus;
-					left: $search-border-focus;
-					bottom: $search-border-focus;
-					right: $search-border-focus;
-				}
-			}
-
-			// &:focus + .search-icon{
-			// 	border: {
-			// 		top: $search-border-focus;
-			// 		right: $search-border-focus;
-			// 		bottom: $search-border-focus;
-			// 	}
-			// }
-		}
-
-		.search-icon{
-		  -webkit-border-top-right-radius: $radius-size;
-		  -webkit-border-bottom-right-radius: $radius-size;
-		  -moz-border-radius-topright: $radius-size;
-		  -moz-border-radius-bottomright: $radius-size;
-		  border-top-right-radius: $radius-size;
-		  border-bottom-right-radius: $radius-size;
-		 
-		  border: none;
-		  background-color: #ffffff;
-		  color: $search-color;
-		  height: 30px;
-		  width: 60px;
-		  font-size: 11pt;
-		  border: {
-		  	top: $search-border;
-		  	right: $search-border;
-		  	bottom: $search-border;
-		  	}
-		  
-		  -webkit-transition: all .55s ease;
-		  -moz-transition: all .55s ease;
-		  -ms-transition: all .55s ease;
-		  -o-transition: all .55s ease;
-		  transition: all .55s ease;
-		  outline: none;
-		  cursor: pointer;
-
-		  &:hover{
-		  	background-color: #f4f4f4;
-		  	color: #5a5a5a;
-		  }		
+			color: #666AF6;
 		}
 	}
 
@@ -185,7 +84,6 @@ $nav-links-weight: 200;
 		display: flex;
 		align-items: center;
 		justify-content: flex-end;
-		// border: 1px solid grey;
 		padding-right: 0.5%;
 
 		.nav-link {
@@ -193,12 +91,12 @@ $nav-links-weight: 200;
 			font-size: $nav-links-size;
 			font-weight: $nav-links-weight;
 
-				&:hover {
-					text-decoration: underline;
-				}
+			&:hover {
+				text-decoration: underline;
 			}
+		}
 
-			.login-link {
+		.login-link {
 			padding-right: 8px;
 			border-right: 1px solid lighten($search-color, 30);
 			color: $search-color;
@@ -208,7 +106,7 @@ $nav-links-weight: 200;
 		& .signup-link {
 			padding-right: 20px;
 			padding-left: 8px;
-			color: $search-border-focus-color;
+			color: #666AF6;
 		}
 	}
 
@@ -240,10 +138,8 @@ $nav-links-weight: 200;
 		.up-arrow{
 			top: 3px;
 		}
+	}
 
-	
-
-}
 	.menu-open{
 		color: darken($search-color, 30);
 	}

@@ -2,7 +2,6 @@ import React from 'react'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 import {calcDonationPercentage} from '../../../Shared/utils/donations'
-import FeaturedMemberController from './../FeaturedMemberController'
 
 import * as actionCreators from '../../../actions/helpSomeoneActionCreators'
 
@@ -34,7 +33,6 @@ class MembersLive extends React.Component {
 	render() {
 		return (
 			<div className="cd-members-live">
-				<FeaturedMemberController />
 				{this.createMemberPreviews()}
 			</div>
 		)

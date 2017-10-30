@@ -16,10 +16,9 @@ module.exports = merge(common, {
 			filename: '[name].css',
 			allChunks: true
 		}),
-		new webpack.DefinePlugin({
-      'process.env': {
-        'NODE_ENV': JSON.stringify('production')
-    	}
+    new webpack.EnvironmentPlugin({
+      NODE_ENV: 'production',
+      API_URL: 'https://givingweb.io/api'
     }),
     new HtmlWebpackPlugin({
       template: 'src/index.html',

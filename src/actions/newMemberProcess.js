@@ -86,6 +86,6 @@ export function submitNewMemberStory(details) {
 export function submitNewMember(member) {
 	return {
 		type: 'SUBMIT_NEW_MEMBER',
-		payload: axios.post('http://localhost:3000/members', member)
+		payload: axios.post(`${process.env.API_URL}/members`, member)
 	}
 }

@@ -22,6 +22,7 @@ export function calcDonationPercentage(member){
 }
 
 export function getDonationBarColour(percentage){
-	if(percentage < 50) return "#FBAC3D"
-	else if(percentage >= 50) return "#00CB9B"
+	if(percentage < 49) return "#FFB350"
+	else if(percentage >= 49) return "#00CB9B"
+	// else return "gold"
 }

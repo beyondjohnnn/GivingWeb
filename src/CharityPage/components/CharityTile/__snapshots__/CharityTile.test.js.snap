@@ -10,7 +10,7 @@ exports[`CharityTile should render correctly 1`] = `
     <img
       alt="user icon"
       className="user-icon_img"
-      src="http://via.placeholder.com/50x50"
+      src="https://via.placeholder.com/50x50"
     />
     <div>
       <h3>

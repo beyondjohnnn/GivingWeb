@@ -1,0 +1,33 @@
+$giving-web-purple: #7267ee;
+
+.search-dropdown {
+	min-height: 60px;
+	width: 470px;
+	background-color: lighten($giving-web-purple, 10);
+	position: absolute;
+	border-radius: 5px;
+  border: 0.75px solid lighten(#bbb, 30);
+  overflow: hidden;
+
+	// padding: 0 10px;
+
+	.members-list {
+		// padding: 10px 0;
+
+		h4 {
+
+		}
+	}
+
+	.charities-list {
+		// padding: 10px 0;
+
+		h4 {
+
+		}
+	}
+
+	&.hidden {
+		visibility: hidden;
+	}
+}
