@@ -11,13 +11,23 @@ class Timeline extends React.Component {
       <div className="timeline">
         <div className="timeline-header"></div>
         <div className="main-wrapper">
-          <div className="timeline-block"></div> 
+          <div className="timeline-block">
+            <div className="shadow-today"></div>  
+            <div className="today-text">Today</div>  
+            <div className="the-beginning-circle">
+              <div className="the-beginning">
+                <h2>THE</h2>
+                <h3>Beginning</h3>
+              </div>
+              <h1>2015</h1>
+            </div>  
+          </div> 
           <div className="timeline-wrapper">
           <div className="timeline-asset">
             <div className="asset-arrow"></div>
             <div className="timeline-content">
             <h4 className="timeline-title">November 2017</h4>
-            We rebuild and rebrand our platform and set off on our mission to support charities with the tools and digital strategy needed to rocket launch online fundraising and engagement.
+            We rebuild (and rebrand) and set off on our mission to give even the smallest charities, the confidence and digital strategy needed to rocket online fundraising and engagement.
             </div>
             <div className="image-cover giving-web-image"> 
               <img src={"https://n6-img-fp.akamaized.net/free-vector/startup-rocket-launch_23-2147504814.jpg?size=338&ext=jpg&ve=1"} alt=""/>
