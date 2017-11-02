@@ -2,7 +2,7 @@
 const defaultState = {
   members: [],
   membersToShow: 6,
-  current_member: {
+  currentMember: {
     sponsors: [],
     donations: [],
     comments: [],
@@ -34,7 +34,7 @@ function helpSomeone(state = defaultState, action) {
     case 'GET_SINGLE_MEMBER_REJECTED':
       return {...state, fetching: true, error: action.payload}
     case 'GET_SINGLE_MEMBER_FULFILLED':
-      return {...state, fetching: true, fetched: true, current_member: action.payload.data}
+      return {...state, fetching: true, fetched: true, currentMember: action.payload.data}
 
     case 'SET_CURRENT_MEMBER':
       return {...state, current_member: action.member}

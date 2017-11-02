@@ -23,3 +23,15 @@ export function setCustomAmount(donationAmount) {
 		donationAmount
 	}
 }
+
+export function toggleSupport() {
+	return {
+		type: 'TOGGLE_DONATION_SUPPORT'
+	}
+}
+
+export function toggleAnonymous() {
+	return {
+		type: 'TOGGLE_DONATION_ANONYMOUS'
+	}
+}

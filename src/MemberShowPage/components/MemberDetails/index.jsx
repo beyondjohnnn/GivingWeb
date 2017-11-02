@@ -56,24 +56,24 @@ class MemberDetails extends Component {
 	}
 
 	render() {
-		const { current_member } = this.props
+		const { currentMember } = this.props
 		const shareUrl = 'https://www.npmjs.com/package/react-share';
-		const title = `Help support ${current_member.name} reach their target`;
+		const title = `Help support ${currentMember.name} reach their target`;
 
 		return (
 			<div className="member-details">
 				<div className="member-image-basic-info">
-					<img src={current_member.url_image}/>
+					<img src={currentMember.url_image}/>
 					<div className="linear-gradient"></div>
 					<div className="member-photo-text-container">
-						<h3>{current_member.name}</h3>
+						<h3>{currentMember.name}</h3>
 						<p>
 							<i className="fa-icon fa fa-map-marker" aria-hidden="true"></i>
-							{current_member.location}
+							{currentMember.location}
 						</p>
 						<div className="member-tags">
 							<i className="fa-icon fa fa-tags" aria-hidden="true"></i>
-							{this.createTags(current_member)}
+							{this.createTags(currentMember)}
 						</div>
 					</div>
 				</div>
@@ -82,14 +82,14 @@ class MemberDetails extends Component {
 					<TwitterShareButton url={shareUrl} quote={title}> <button className="twitter"><i className="fa fa-twitter"></i>Tweet</button></TwitterShareButton>
 					<GooglePlusShareButton url={shareUrl} quote={title}> <button className="google-plus"><i className="fa fa-google-plus"></i>Share</button></GooglePlusShareButton>
 					<button className="widgets"><i className="fa fa-code" aria-hidden="true"></i>Widgets</button>
-					<input type="url" readOnly="true" value={`https://givingweb.io/${current_member.name}`}></input>
+					<input type="url" readOnly="true" value={`https://givingweb.io/${currentMember.name}`}></input>
 				</div>
 				<div className="share-message">
 					<h3>&#10551;</h3>
 					<p>Sharing my story lets my voice reach more people!</p>
 				</div>
 				<div className="loaded-story">
-					{ReactHtmlParser(current_member.info.replace('&#039;', '\''))}
+					{ReactHtmlParser(currentMember.info.replace('&#039;', '\''))}
 				</div>
 			</div>
 		)

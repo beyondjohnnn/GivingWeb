@@ -16,8 +16,26 @@ class PaymentPage extends Component {
 
 	}
 
+	calculateTotalPayment() {
+		const {donationAmount, supportChecked} = this.props
+		return supportChecked ? donationAmount + 3 : donationAmount
+	}
+
+	createSupportDonation() {
+		if (this.props.supportChecked) {
+			return (
+				<div className="givingweb-donation donation-item">
+					<img src="/images/favicon.png" alt=""/>
+					<h3>GivingWeb Support</h3>
+					<span>£3</span>
+				</div>
+			)
+		}
+	}
+
 	render() {
-		const member = { name: 'Bob', url_image: 'https://s3-eu-west-1.amazonaws.com/givingweb-storage/images/Mark_dcqcjm.jpg' }
+		const member = this.props.currentMember
+		const {donationAmount} = this.props
 
 		return (
 			<div className="payment-page">
@@ -56,7 +74,7 @@ class PaymentPage extends Component {
 									</div>
 									<div className="submit">
 										<input type="submit" value="Confirm Donation" />
-										<p className="button-message">Your kind donation will go directly to Natalie through Streetwork.</p>
+										<p className="button-message">Your kind donation will go directly to {member.name} through Streetwork.</p>
 									</div>
 								</div>
 							</form>
@@ -67,16 +85,12 @@ class PaymentPage extends Component {
 							<div className="main-donation donation-item">
 								<img src={member.url_image} alt=""/>
 								<h3>One-time donation to {member.name}</h3>
-								<span>£10</span>
+								<span>£{donationAmount}</span>
 							</div>
-							<div className="givingweb-donation donation-item">
-								<img src="/images/favicon.png" alt=""/>
-								<h3>GivingWeb Support</h3>
-								<span>£3</span>
-							</div>
+							{this.createSupportDonation()}
 							<div className="total">
 								<h2 className="title">Your Total Payment</h2>
-								<span>£13</span>
+								<span>£{this.calculateTotalPayment()}</span>
 							</div>
 						</div>
 					</div>
@@ -87,7 +101,7 @@ class PaymentPage extends Component {
 }
 
 function mapStateToProps(state, routing) {
-	return { ...state.donations, ...routing }
+	return { ...state.donations, ...state.helpSomeone, ...routing }
 }
 
 function mapDispatchToProps(dispatch) {

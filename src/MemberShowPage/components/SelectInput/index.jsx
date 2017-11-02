@@ -26,7 +26,8 @@ class SelectInput extends Component {
 	}
 
 	handleInputChange(e) {
-		this.props.setCustomAmount(e.value)
+		console.log(e.target.value)
+		this.props.setCustomAmount(Number(e.target.value))
 	}
 
 	handleSelectToggle(e) {

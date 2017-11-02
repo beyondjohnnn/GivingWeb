@@ -33,7 +33,7 @@ module.exports = merge(common, {
     }),
     new webpack.EnvironmentPlugin({
       NODE_ENV: 'development',
-      API_URL: 'https://localhost:3000'
+      API_URL: 'http://localhost:3000'
     })
   ]
 })

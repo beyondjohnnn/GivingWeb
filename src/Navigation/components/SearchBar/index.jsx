@@ -25,14 +25,16 @@ class SearchBar extends Component {
 	}
 
 	hideDropdownOnClick(e) {
-	  const inputBoundaries = this.refs.search.getBoundingClientRect()
-	  const dropdownBoundaries = document.querySelector('.search-dropdown').getBoundingClientRect()
-	  const outsideInput = (e.x < inputBoundaries.left || e.x > inputBoundaries.right || e.y < inputBoundaries.top || e.y > inputBoundaries.bottom)
-	  const outsideDropdown = (e.x < dropdownBoundaries.left || e.x > dropdownBoundaries.right || e.y < dropdownBoundaries.top || e.y > dropdownBoundaries.bottom)
+		if (this.props.searchResultsVisible) {
+		  const inputBoundaries = this.refs.search.getBoundingClientRect()
+		  const dropdownBoundaries = document.querySelector('.search-dropdown').getBoundingClientRect()
+		  const outsideInput = (e.x < inputBoundaries.left || e.x > inputBoundaries.right || e.y < inputBoundaries.top || e.y > inputBoundaries.bottom)
+		  const outsideDropdown = (e.x < dropdownBoundaries.left || e.x > dropdownBoundaries.right || e.y < dropdownBoundaries.top || e.y > dropdownBoundaries.bottom)
 
-	  if (outsideInput && outsideDropdown && this.props.searchResultsVisible) {
-	    this.props.toggleSearchResultsVisibility()
-	  }
+		  if (outsideInput && outsideDropdown) {
+		    this.props.toggleSearchResultsVisibility()
+		  }
+		}
 	}
 
 	componentWillUnmount() {

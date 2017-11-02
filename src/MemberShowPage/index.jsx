@@ -47,11 +47,11 @@ class MemberShowPage extends Component {
 	}
 
 	findMember(memberId, members){
-		const current_member = members.find((member) => {
+		const currentMember = members.find((member) => {
 			return member.id === memberId
 		})
-		this.props.setCurrentMember(current_member)
-		return current_member
+		this.props.setCurrentMember(currentMember)
+		return currentMember
 	}
 
 	renderMatchedCompany(member){
@@ -61,20 +61,21 @@ class MemberShowPage extends Component {
   }
 
 	render() {
-		const { current_member } = this.props
+		const { currentMember } = this.props
 		return (
 			<div className="member-show-page">
 				<div className="main-wrapper">
-					<Header snippet={current_member.snippet} />
+					<Header snippet={currentMember.snippet} />
 					<div className="left-section">
-						<MemberDetails current_member={current_member} />
-						<CommentSection comments={current_member.comments} />
+						<MemberDetails currentMember={currentMember} />
+						<CommentSection comments={currentMember.comments} />
 					</div>
 					<div className="right-section">
-						{this.renderMatchedCompany(current_member)}
+						{this.renderMatchedCompany(currentMember)}
 						<DonationSection
+							history={this.props.history}
 							donationProgressBar={this.donationProgressBar}
-							current_member={current_member} />
+							currentMember={currentMember} />
 					</div>
 				</div>
 			</div>
