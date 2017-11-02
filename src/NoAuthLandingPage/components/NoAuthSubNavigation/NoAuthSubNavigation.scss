@@ -32,6 +32,14 @@ $selected-tab-color: #666AF6;
 			align-items: center;
 			justify-content: center;
 			width: 200px;
+			border-bottom: 2.5px solid rgba(0,0,0,0);
+
+			&:hover {
+				color: $selected-tab-color;
+				// border-bottom: 2.5px solid lighten($selected-tab-color, 5);
+				font-weight: 300;
+
+			}
 		}
 
 		.selected-tab {

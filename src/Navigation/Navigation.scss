@@ -120,6 +120,11 @@ $nav-links-weight: 200;
 		color: $search-color;
 		cursor: pointer;
 
+		&:hover {
+		color: darken($search-color, 20);
+			
+		}
+
 		& .menu-burger {
 			padding-right: 6px;
 			font-size: 19px;
@@ -141,6 +146,6 @@ $nav-links-weight: 200;
 	}
 
 	.menu-open{
-		color: darken($search-color, 30);
+		color: darken($search-color, 20);
 	}
 }
