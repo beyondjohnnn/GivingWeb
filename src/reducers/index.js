@@ -13,7 +13,6 @@ import pricing from './pricing'
 import newMemberProcess from './newMemberProcess'
 import charityPage from './charityPage'
 import dashboard from './dashboard'
-import stripe from './stripe'
 import donations from './donations'
 import charityDashboardContent from './charityDashboardContent'
 import comments from './comments'
@@ -31,7 +30,6 @@ const rootReducer = combineReducers({
   newMemberProcess,
 	charityPage,
 	dashboard,
-	stripe,
 	donations,
 	charityDashboardContent,
 	comments,

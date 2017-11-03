@@ -22,6 +22,12 @@ function donations(state=defaultState, action) {
 			return { ...state, donationAmount: 0, selectOpen: !state.selectOpen, customAmount: true }
 		case 'SET_CUSTOM_AMOUNT':
 			return { ...state, donationAmount: action.donationAmount, selectOpen: !state.selectOpen }
+		case 'SUBMIT_PAYMENT_PENDING':
+      return {...state, fetching: true}
+  	case 'SUBMIT_PAYMENT_REJECTED':
+     return {...state, fetching: true, error: action.payload}
+  	case 'SUBMIT_PAYMENT_FULFILLED':
+      return {...state, fetching: false, fetched: true, payment: action.payload.data}
 		default:
 			return state
 	}

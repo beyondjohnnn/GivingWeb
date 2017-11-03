@@ -24,15 +24,13 @@ import TermsAndPrivacyPage from './Shared/containers/TermsAndPrivacyPage'
 import ContactUs from './ContactUs'
 import PartnersPage from './Shared/containers/PartnersPage'
 import AboutUsPage from './AboutUsPage'
-import StripePayment from './Shared/containers/StripePayment'
-import UnderConstruction from './Shared/containers/UnderConstruction'
 import SearchPage from './Shared/containers/SearchPage'
 
 // import components
 import Navigation from './Navigation'
 import FeaturedMembers from './Shared/components/FeaturedMembers'
 import Footer from './Shared/components/Footer'
-import PaymentPage from './MemberShowPage/components/PaymentPage'
+import StripeDonation from './MemberShowPage/components/StripeDonation'
 
 // import react router dependencies
 import { Router, Route } from 'react-router'
@@ -67,8 +65,7 @@ const router = (
 				<Route path="/contact-us" component={ContactUs} />
 				<Route path="/partners" component={PartnersPage} />
 				<Route path="/about-us" component={AboutUsPage} />
-				<Route path="/payment" component={PaymentPage} />
-				<Route path="/under-construction" component={UnderConstruction} />
+				<Route path="/payment" component={StripeDonation} />
 				<Route path="/search" component={SearchPage} />
 				<Footer />
 			</div>

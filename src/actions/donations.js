@@ -1,3 +1,5 @@
+import axios from 'axios'
+
 export function toggleSelect() {
 	return {
 		type: 'TOGGLE_DONATION_SELECT'
@@ -33,5 +35,19 @@ export function toggleSupport() {
 export function toggleAnonymous() {
 	return {
 		type: 'TOGGLE_DONATION_ANONYMOUS'
+	}
+}
+
+export function payWithToken(token, email, amount) {
+	return {
+		type: 'SUBMIT_PAYMENT',
+		payload: axios.post(
+			`${process.env.API_URL}/donations`, 
+			{
+				token: token, 
+				email: email,
+				donation_amount: amount * 100
+			}
+		)
 	}
 }

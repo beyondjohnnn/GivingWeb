@@ -37,7 +37,7 @@ function helpSomeone(state = defaultState, action) {
       return {...state, fetching: true, fetched: true, currentMember: action.payload.data}
 
     case 'SET_CURRENT_MEMBER':
-      return {...state, current_member: action.member}
+      return {...state, currentMember: action.member}
 
     default:
 			return state
