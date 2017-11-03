@@ -57,7 +57,7 @@ form.search-bar {
 	  	border-top: $search-border;
 	  	border-right: $search-border;
 	  	border-bottom: $search-border;
-		  transition: all .55s ease;
+		  transition: all .25s ease;
 		  outline: none;
 		  cursor: pointer;
 
@@ -65,6 +65,48 @@ form.search-bar {
 		  	background-color: #f4f4f4;
 		  	color: #5a5a5a;
 		  }		
+		}
+	}
+
+	@media screen and (max-width: 1005px) {
+		order: 3;
+		width: 100%;
+
+		.searchbar-container {
+			width: 100%;
+			justify-content: center;
+
+			input {
+				width: 60%;
+			}
+
+			.search-icon {
+				width: 10%;
+			}
+		}
+	}
+
+	@media screen and (max-width: 800px) {
+		.searchbar-container {
+			input {
+				width: 70%;
+
+				&:hover {
+					width: 90%;
+				}
+			}
+
+			.search-icon {
+				width: 10%;
+			}
+		}
+	}
+
+	@media screen and (max-width: 565px) {
+		.searchbar-container {
+			input {
+				width: 90%;
+			}
 		}
 	}
 

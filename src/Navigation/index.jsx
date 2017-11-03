@@ -23,11 +23,11 @@ class Navigation extends React.Component {
 	renderMenuButton() {
 		if (this.props.dropdownVisible) {
 			return <button className="menu-button menu-open" onClick={this.props.toggleDropdown}>
-							<i className="fa fa-bars menu-burger" aria-hidden="true"></i>Menu<i className="fa fa-sort-asc arrow up-arrow" aria-hidden="true"></i>
+							<i className="fa fa-bars menu-burger" aria-hidden="true"></i><span>Menu</span><i className="fa fa-sort-asc arrow up-arrow" aria-hidden="true"></i>
 						</button>
 		} else {
 			return <button className="menu-button" onClick={this.props.toggleDropdown}>
-							<i className="fa fa-bars menu-burger" aria-hidden="true"></i>Menu<i className="fa fa-sort-desc arrow down-arrow" aria-hidden="true"></i>
+							<i className="fa fa-bars menu-burger" aria-hidden="true"></i><span>Menu</span><i className="fa fa-sort-desc arrow down-arrow" aria-hidden="true"></i>
 						</button>
 		}
 	}
@@ -66,8 +66,8 @@ class Navigation extends React.Component {
 									<p className="web-text">Web</p>
 								</div>
 							</Link>
-							<SearchBar history={this.props.history}/>
 						</div>
+						<SearchBar history={this.props.history}/>
 						<nav>
 							{this.renderNavLinks()}
 							{this.renderMenuButton()}

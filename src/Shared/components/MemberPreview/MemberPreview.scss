@@ -30,15 +30,12 @@ $button-color: #666AF6;
 		border-top-right-radius: 7px;
 		overflow: hidden;
 
-
-
-
-			img{
-				width: 65px;
-				height: 65px;
-				border-top-left-radius: 7px;
-				border-top-right-radius: 7px;
-			}
+		img{
+			width: 65px;
+			height: 65px;
+			border-top-left-radius: 7px;
+			border-top-right-radius: 7px;
+		}
 
 		.overflow-container{
 			overflow: hidden;
@@ -82,21 +79,18 @@ $button-color: #666AF6;
 	}
 
 	.member-link {
+		color: #333333;
+	}
 
-			color: #333333;
-		}
 	.member-name {
-
 		text-decoration: none;
 		margin-bottom: 5px;
 		font-weight: 400;
 		font-size: 20px;
 
-
-			&:hover {
-				text-decoration: underline;
-			}
-
+		&:hover {
+			text-decoration: underline;
+		}
 	}
 
 	.member-location {
@@ -122,9 +116,7 @@ $button-color: #666AF6;
 	}
 
 	.member-verification {
-		// margin-bottom: 5px;
 		font-size: 0.7em;
-		// margin-bottom: 5px;
 		text-transform: italic;
 		font-size: 0.8em;
 		font-weight: 300;
@@ -134,9 +126,9 @@ $button-color: #666AF6;
 			color: #999;
 			text-decoration: underline;
 
-				&:hover {
-					color: #57B3F4;
-				}
+			&:hover {
+				color: #57B3F4;
+			}
 		}
 
 		i {
@@ -147,7 +139,6 @@ $button-color: #666AF6;
 
 	.donation-details {
 		padding-top: 20px;
-		// border-top: 1px solid $text-color;
 		display: flex;
 		justify-content: space-between;
 		flex-flow: row wrap;
@@ -157,13 +148,10 @@ $button-color: #666AF6;
 		.progress-details {
 			display: flex;
 			font-weight: 300;
-			// width: 40%;
 
 			.member-progress {
-				// border-right: 1px solid $text-color;
 				width: 50%;
 				padding-right: 25px;
-
 
 				.progress-percentage {
 					// color: darken(gold, 10);
@@ -222,7 +210,6 @@ $button-color: #666AF6;
 	}
 
 	.member-images {
-
 		padding-top: 7px;
 		display: flex;
 		align-items: center;
@@ -236,8 +223,6 @@ $button-color: #666AF6;
 			font-size: 1em;
 			font-weight: 300;
 			color: #686868;
-
-
 		}
 	}
 }
