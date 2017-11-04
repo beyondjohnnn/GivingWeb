@@ -6,6 +6,8 @@ $button-color: #666AF6;
 	background-color: #fff;
 	border-radius: 7px;
 	position: relative;
+	display: flex;
+	flex-direction: column;
 
 	.matched-icon{
 		position: absolute;
@@ -183,7 +185,7 @@ $button-color: #666AF6;
 
 		.donate-button {
 			background-color: #fff;
-			width: 30%;
+			width: 40%;
 			border: 1.25px solid $button-color;
 			color: $button-color;
 			font-size: 0.8em;
@@ -225,6 +227,33 @@ $button-color: #666AF6;
 			color: #686868;
 		}
 	}
+
+	@media (max-width: 900px) {
+		.member-information {
+			padding: 10px;
+		}
+	}
+
+	@media (max-width: 800px) {
+		width: 33%;
+		.member-information {
+			padding: 5px;
+		}
+	}
+
+	@media (max-width: 720px) {
+		width: 50%;
+		margin-right: 0;
+		margin-bottom: 25px;
+	}
+
+	@media (max-width: 540px) {
+		width: 80%;
+	}
+
+	@media (max-width: 400px) {
+		width: 95%;
+	}
 }
 
 .member-previews-one-column{
@@ -235,6 +264,6 @@ $button-color: #666AF6;
 	width: 45%;
 }
 
-.member-previews-three-column{
-	width: 30%;
-}
+// .member-previews-three-column{
+// 	width: 30%;
+// }

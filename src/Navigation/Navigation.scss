@@ -142,11 +142,11 @@ $nav-links-weight: 200;
 				}
 			}
 
-			@media screen and (max-width: 1005px) {
+			@media (max-width: 1005px) {
 				flex-wrap: wrap;
 			}
 
-			@media screen and (max-width: 565px) {
+			@media (max-width: 565px) {
 				.logo-search-wrapper {
 					width: auto;
 				}
@@ -156,7 +156,7 @@ $nav-links-weight: 200;
 				}
 			}
 
-			@media screen and (max-width: 475px) {
+			@media (max-width: 475px) {
 				padding: 0 5px;
 
 				.logo-search-wrapper {

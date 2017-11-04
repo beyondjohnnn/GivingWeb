@@ -44,11 +44,11 @@
 		}
 	}
 
-	@media screen and (max-width: 1125px) {
+	@media (max-width: 1125px) {
     padding: 30px 10px;
   }
 
-  @media screen and (max-width: 860px) {
-    padding: 30px 10px;
+  @media (max-width: 860px) {
+    padding: 30px 5px;
   }
 }

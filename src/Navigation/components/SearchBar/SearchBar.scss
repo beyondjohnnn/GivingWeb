@@ -68,7 +68,7 @@ form.search-bar {
 		}
 	}
 
-	@media screen and (max-width: 1005px) {
+	@media (max-width: 1005px) {
 		order: 3;
 		width: 100%;
 
@@ -78,6 +78,10 @@ form.search-bar {
 
 			input {
 				width: 60%;
+
+				&:focus {
+					width: 80%;
+				}
 			}
 
 			.search-icon {
@@ -86,12 +90,12 @@ form.search-bar {
 		}
 	}
 
-	@media screen and (max-width: 800px) {
+	@media (max-width: 800px) {
 		.searchbar-container {
 			input {
 				width: 70%;
 
-				&:hover {
+				&:focus {
 					width: 90%;
 				}
 			}
@@ -102,10 +106,14 @@ form.search-bar {
 		}
 	}
 
-	@media screen and (max-width: 565px) {
+	@media (max-width: 565px) {
 		.searchbar-container {
 			input {
-				width: 90%;
+				width: 80%;
+
+				&:focus {
+					width: 85%;
+				}
 			}
 		}
 	}

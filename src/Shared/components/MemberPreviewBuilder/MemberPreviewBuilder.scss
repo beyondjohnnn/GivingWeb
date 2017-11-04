@@ -1,7 +1,14 @@
-.member-preview-builder{
-  .member-preview-row{
+.member-preview-builder {
+  .member-preview-row {
     display: flex;
     margin-bottom: 50px;
     justify-content: center;
+  }
+
+  @media (max-width: 720px) {
+  	.member-preview-row {
+			flex-direction: column;
+			align-items: center;
+  	}
   }
 }
