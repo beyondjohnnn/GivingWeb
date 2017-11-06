@@ -25,7 +25,7 @@ class HelpSomeonePage extends React.Component {
 		let row = [];
 		for(let index in members){
 			let previewStyle = null;
-			if(index % previewsPerLine !== previewsPerLine - 1) previewStyle = {"marginRight": "4.5%"}
+			// if(index % previewsPerLine !== previewsPerLine - 1) previewStyle = {"marginRight": "4.5%"}
 			row.push(<MemberPreview
 				key={index}
 				className={previewClassName}
