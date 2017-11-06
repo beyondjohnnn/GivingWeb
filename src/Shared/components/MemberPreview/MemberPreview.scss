@@ -8,7 +8,7 @@ $button-color: #666AF6;
 	position: relative;
 	display: flex;
 	flex-direction: column;
-	margin-right: 4.5%;
+	margin-right: 0;
 
 	&:last-child {
 		margin-right: 0;
@@ -233,21 +233,36 @@ $button-color: #666AF6;
 		}
 	}
 
-	@media (max-width: 900px) {
+	@media (max-width: 1180px) {
+		width: 35%;
+		margin-bottom: 25px;
 		.member-information {
-			padding: 10px;
+		}
+	}
+
+	@media (max-width: 1000px) {
+		width: 40%;
+
+		.member-information {
+		}
+	}
+
+	@media (max-width: 900px) {
+		width: 45%;
+
+		.member-information {
 		}
 	}
 
 	@media (max-width: 800px) {
-		width: 33%;
+		width: 55%;
+
 		.member-information {
-			padding: 5px;
 		}
 	}
 
 	@media (max-width: 720px) {
-		width: 50%;
+		width: 60%;
 		margin-right: 0;
 		margin-bottom: 25px;
 	}

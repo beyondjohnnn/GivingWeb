@@ -61,7 +61,7 @@ class Navigation extends React.Component {
 						<div className="logo-search-wrapper">
 							<Link to="/" className="logo-text">
 								<div className="logo-wrapper">
-									<img src="images/favicon.png" className="logo" />
+									<img src="images/streetchangelogopurpe.png" className="logo" />
 									<p className="giving-text">Giving</p>
 									<p className="web-text">Web</p>
 								</div>

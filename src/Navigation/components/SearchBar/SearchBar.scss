@@ -8,7 +8,7 @@ $nav-links-weight: 200;
 
 form.search-bar {
 	position: relative;
-	width: 50%;
+	width: 60%;
 
 	.searchbar-container {
 		width: 100%;
@@ -25,6 +25,7 @@ form.search-bar {
 			padding: 0 5px;
 	  	overflow: hidden;
 		  width: 320px;
+		  max-width: 470px;
 		  height: 30px;
 		  background-color: white;
 		  font-size: 0.8em;
@@ -41,7 +42,8 @@ form.search-bar {
 			}
 
 			&:focus {
-				width: 470px;
+				width: calc(100% - 60px);
+				max-width: 470px;
 				border: $search-border-focus;
 			}
 		}

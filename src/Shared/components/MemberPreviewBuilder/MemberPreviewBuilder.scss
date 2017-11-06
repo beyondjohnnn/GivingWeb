@@ -2,7 +2,31 @@
   .member-preview-row {
     display: flex;
     margin-bottom: 50px;
-    justify-content: center;
+    width: 1230px;
+    justify-content: space-between;
+  }
+
+  @media (max-width: 1250px) {
+    .member-preview-row {
+      width: 100%;
+      justify-content: space-evenly;
+    }
+  }
+
+  @media (max-width: 1180px) {
+    .member-preview-row {
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 0;
+    }
+  }
+
+  @media (max-width: 800px) {
+    .member-preview-row {
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 0;
+    }
   }
 
   @media (max-width: 720px) {

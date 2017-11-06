@@ -2,7 +2,7 @@ $giving-web-purple: #7267ee;
 
 .search-dropdown {
 	min-height: 60px;
-	width: 470px;
+	width: calc(100% - 60px);
 	background-color: lighten($giving-web-purple, 10);
 	position: absolute;
 	border-radius: 5px;
@@ -29,5 +29,20 @@ $giving-web-purple: #7267ee;
 
 	&.hidden {
 		visibility: hidden;
+	}
+
+	@media (max-width: 1005px) {
+		margin-left: 5%;
+		width: 80%;
+	}
+
+	@media (max-width: 800px) {
+		width: 90%;
+		margin-left: 0;
+	}
+
+	@media (max-width: 565px) {
+		margin-left: 2.5%;
+		width: 85%;
 	}
 }
