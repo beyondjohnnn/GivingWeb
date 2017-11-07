@@ -12,6 +12,36 @@ import SearchBar from './components/SearchBar'
 
 class Navigation extends React.Component {
 
+	constructor(props) {
+	  super(props)
+	  this.handleScroll = this.handleScroll.bind(this)
+	}
+
+	componentDidMount() {
+	  window.addEventListener('scroll', this.handleScroll)
+	}
+
+	componentWillUnmount() {
+	  window.removeEventListener('scroll', this.handleScroll)
+	}
+
+	  // if (window.scrollY > 326) {
+	handleScroll() {
+		 if ((window.scrollY > 350) && (window.scrollY - this.props.scrollPosition > 50)) {
+	   	this.props.updateScrollPosition(window.scrollY)
+	   	if (this.props.navigationStyling =="navigation nav-visible") {
+		 		this.props.updateNavigationStyling("navigation nav-hidden") 
+		 	}
+		 } else if(window.scrollY - this.props.scrollPosition < -50) {
+	   	this.props.updateScrollPosition(window.scrollY) 
+ 	   	if (this.props.navigationStyling =="navigation nav-hidden") {
+ 		 		this.props.updateNavigationStyling("navigation nav-visible") 
+ 		 	}
+		 }
+
+	   
+	}
+
 	renderDropdown() {
 		if (this.props.dropdownVisible) {
 			return <MenuDropdown styling="menu-dropdown-wrapper visible-dropdown" />
@@ -56,7 +86,7 @@ class Navigation extends React.Component {
 	render() {
 		return (
 			<div className="navigation-wrapper">
-				<div className="navigation">
+				<div className={this.props.navigationStyling}>
 					<div className="content-wrapper">
 						<div className="logo-search-wrapper">
 							<Link to="/" className="logo-text">

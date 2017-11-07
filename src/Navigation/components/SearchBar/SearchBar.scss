@@ -60,7 +60,7 @@ form.search-bar {
 	  	border-top: $search-border;
 	  	border-right: $search-border;
 	  	border-bottom: $search-border;
-		  transition: all .25s ease;
+		  transition: background-color .25s ease, color .25s ease;
 		  outline: none;
 		  cursor: pointer;
 

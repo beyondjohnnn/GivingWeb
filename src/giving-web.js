@@ -25,6 +25,7 @@ import ContactUs from './ContactUs'
 import PartnersPage from './Shared/containers/PartnersPage'
 import AboutUsPage from './AboutUsPage'
 import SearchPage from './Shared/containers/SearchPage'
+import UnderConstruction from './Shared/containers/UnderConstruction'
 
 // import components
 import Navigation from './Navigation'
@@ -67,6 +68,8 @@ const router = (
 				<Route path="/about-us" component={AboutUsPage} />
 				<Route path="/payment" component={StripeDonation} />
 				<Route path="/search" component={SearchPage} />
+				<Route path="/start-fundraising" component={UnderConstruction} />
+
 				<Footer />
 			</div>
 		</Router>

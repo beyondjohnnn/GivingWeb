@@ -32,8 +32,8 @@ class CharityPageInformation extends React.Component {
           <p className="charity-number">Registered charity number SC017802</p>
           <p className="amount-raised">£3,300</p>
           <p className="amount-raised-text">Total Raised</p>
-          <button className="donate-button">Make a Donation</button>
-          <button className="fundraise-button">Fundraise for Us</button>
+          <Link to="" className="button-link"><button className="donate-button">Make a Donation</button></Link>
+          <Link to="/start-fundraising" className="button-link"><button className="fundraise-button">Fundraise for Us</button></Link>
         </div>
 
         <div className="charity-description-wrapper">

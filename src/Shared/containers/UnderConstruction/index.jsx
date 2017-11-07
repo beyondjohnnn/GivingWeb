@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
-import StripeCheckout from 'react-stripe-checkout'
+// import StripeCheckout from 'react-stripe-checkout'	
 
-import * as actionCreators from '../../../actions/stripe'
+// import * as actionCreators from '../../../actions/stripe'
 
 import css from './UnderConstruction.scss'
 
