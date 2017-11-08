@@ -6,14 +6,14 @@ $border: 1px solid #eaeaea;
 	padding: 20px;
 	position: relative;
 
-	// ::before {
-	// 	position: absolute;
-	// 	top: -21px;
-	// 	left: 39px;
-	// 	content: '';
-	// 	height: 20px;
-	// 	border-right: 2px solid #888;
-	// }
+	::before {
+		position: absolute;
+		top: -21px;
+		left: 39px;
+		content: '';
+		height: 20px;
+		border-right: 2px solid #666AF6;
+	}
 
 	// ::after {
 	// 	position: absolute;

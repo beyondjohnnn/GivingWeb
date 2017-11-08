@@ -13,6 +13,17 @@
 	.group-date {
 		position: relative;
 
+		// ::first-child {
+	
+		// 		::before {
+		// 			position: absolute;
+		// 			top: -20px;
+		// 			left: 20px;
+		// 			content: '';
+		// 			height: 0px;
+		// 			border-right: 2px solid #666AF6;
+		// 		}
+		// }
 		::before {
 			position: absolute;
 			top: -20px;
@@ -22,13 +33,13 @@
 			border-right: 2px solid #666AF6;
 		}
 
-		::after {
-			position: absolute;
-			bottom: -20px;
-			left: 20px;
-			content: '';
-			height: 20px;
-			border-right: 2px solid #666AF6;
-		}
+		// ::after {
+		// 	position: absolute;
+		// 	bottom: -20px;
+		// 	left: 20px;
+		// 	content: '';
+		// 	height: 20px;
+		// 	border-right: 2px solid #666AF6;
+		// }
 	}
 }

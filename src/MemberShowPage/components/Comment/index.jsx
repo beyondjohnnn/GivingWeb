@@ -12,7 +12,7 @@ class Comment extends React.Component {
 		return (
 			<div className="comment">
 				<div className="comment-header">
-					<img src="https://placehold.it/50x50" />
+					<img src="./images/bear-blue.png" />
 					<div className="header-details">
 						<h4><span>{comment.comment_author}</span> {comment.donation_amount}</h4>
 						<p><Moment date={date} format="MMM DD, YYYY"/> at <Moment date={date} format="HH:mm"/></p>
