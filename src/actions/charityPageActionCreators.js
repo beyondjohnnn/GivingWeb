@@ -18,3 +18,10 @@ export function getCharityFeaturedMembers(charity_id) {
 		payload: axios.get(`${process.env.API_URL}/charity_featured_members/${charity_id}`)
 	}
 }
+
+export function toggleModal() {
+  return {
+    type: 'TOGGLE_MODAL'
+  }
+}
+

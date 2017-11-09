@@ -16,6 +16,7 @@ import dashboard from './dashboard'
 import donations from './donations'
 import charityDashboardContent from './charityDashboardContent'
 import comments from './comments'
+import fundraisingModal from './fundraisingModal'
 
 const rootReducer = combineReducers({
 	auth,
@@ -33,6 +34,7 @@ const rootReducer = combineReducers({
 	donations,
 	charityDashboardContent,
 	comments,
+  fundraisingModal,
 	routing: routerReducer
 })
 

@@ -22,6 +22,7 @@ class CharityPageInformation extends React.Component {
     return this.props.aboutUsVisible ? "Hide" : "Read More"
   }
 
+          // <Link to="/start-fundraising" className="button-link"></Link>
   render() {
     return (
 
@@ -33,7 +34,7 @@ class CharityPageInformation extends React.Component {
           <p className="amount-raised">£3,300</p>
           <p className="amount-raised-text">Total Raised</p>
           <Link to="" className="button-link"><button className="donate-button">Make a Donation</button></Link>
-          <Link to="/start-fundraising" className="button-link"><button className="fundraise-button">Fundraise for Us</button></Link>
+          <button className="fundraise-button" onClick={this.props.toggleModal}>Fundraise for Us</button>
         </div>
 
         <div className="charity-description-wrapper">
@@ -79,7 +80,7 @@ class CharityPageInformation extends React.Component {
 }
 
 function mapStateToProps(state, routing) {
-  return Object.assign({}, state.howItWorks, state.charityPage, routing)
+  return Object.assign({}, state.howItWorks, state.charityPage, state.fundraisingModal, routing)
 }
 
 // this is attaching our actions to the NoAuthLandingPage component
