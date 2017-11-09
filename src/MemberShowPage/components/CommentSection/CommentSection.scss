@@ -1,4 +1,6 @@
 $border: 1px solid #eaeaea;
+$giving-web-purple: #666AF6;
+
 
 @mixin flex-column {
 	display: flex;
@@ -10,6 +12,9 @@ $border: 1px solid #eaeaea;
 
 	h3 {
 		margin-bottom: 20px;
+		font-size: 1.4em;
+		font-weight: 400;
+
 	}
 
 	.make-comment {
@@ -24,18 +29,57 @@ $border: 1px solid #eaeaea;
 
 		label {
 			margin-bottom: 10px;
+			color: #686868;
 		}
 
 		textarea {
-			margin-bottom: 10px;
+			font-family: Montserrat, sans-serif;
 			height: 80px;
+			margin-bottom: 10px;
+			outline: none;
+			padding:9px;
+			font-size: 0.9em;
 			resize: none;
+			font-weight: 300;
+			background-color: #fcfcfc;
+			border: 1px solid #dbdbdb;
+			border-radius: 3px;
+
+				&:focus {
+					border-color: $giving-web-purple;
+
+				}
 		}
 
 		button {
-			height: 40px;
-			width: 80px;
-			margin-bottom: 50px;
+			width: 100px;
+			margin-bottom: 20px;
+			text-decoration: none;
+			color: #fff;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding: 8px 15px;
+			background-color: lighten($giving-web-purple,5);
+			// text-transform: uppercase;
+			font-weight: 300;
+			font-size: 1.1em; 
+			margin-bottom: 15px;
+			transition-duration: 0.2s;
+			// width: 100%;
+			border: none;
+			border-radius: 1px;
+			outline: none;
+			cursor: pointer;
+
+			&:hover {
+				background-color: $giving-web-purple;
+				color: #fff;
+			}
+		}
+
+		span {
+			color: #686868;
 		}
 	}
 

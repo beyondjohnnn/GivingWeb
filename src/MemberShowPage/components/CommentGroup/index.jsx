@@ -23,7 +23,7 @@ class CommentGroup extends Component {
 	render() {
 		return (
 			<div className="comment-group">
-				<h3 className="group-date"><Moment date={this.props.date} format="DD MMM, YY"/></h3>
+				<h3 className="group-date"><Moment date={this.props.date} format="DD, MMM"/></h3>
 				{this.createComments()}
 			</div>
 		)

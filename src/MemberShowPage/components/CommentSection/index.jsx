@@ -46,8 +46,9 @@ class CommentSection extends Component {
 				<div className="make-comment">
 					<h3>Post a comment</h3>
 					<label htmlFor="comment-box">Send a message</label>
-					<textarea id="comment-box" ref="comment_box" className="comment-box" maxLength="300" onChange={this.handleCommentChange} />
-					<button className="post-button">Post</button> <span className="comment-length">{300 - this.props.commentText.length} / 300 left</span>
+					<textarea id="comment-box" ref="comment_box" className="comment-box" maxLength="300" onChange={this.handleCommentChange} placeholder="Leave a comment..."/>
+					<button className="post-button">Post</button>
+					<span className="comment-length">{300 - this.props.commentText.length} / 300 left</span>
 				</div>
 				<div className="comment-list">
 					{this.createCommentGroups()}
