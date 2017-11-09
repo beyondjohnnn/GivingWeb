@@ -17,6 +17,7 @@ class SearchBar extends Component {
 		this.handleSubmit = this.handleSubmit.bind(this)
 		this.createFuzzyDropdown = this.createFuzzyDropdown.bind(this)
 	  this.hideDropdownOnClick = this.hideDropdownOnClick.bind(this)
+	  this.toggleSearchResultsVisibility = this.toggleSearchResultsVisibility.bind(this)
 	}
 
 
@@ -25,7 +26,7 @@ class SearchBar extends Component {
 	}
 
 	hideDropdownOnClick(e) {
-		if (this.props.searchResultsVisible) {
+		if (this.props.searchResultsVisible && this.props.searchResults) {
 		  const inputBoundaries = this.refs.search.getBoundingClientRect()
 		  const dropdownBoundaries = document.querySelector('.search-dropdown').getBoundingClientRect()
 		  const outsideInput = (e.x < inputBoundaries.left || e.x > inputBoundaries.right || e.y < inputBoundaries.top || e.y > inputBoundaries.bottom)
@@ -64,6 +65,12 @@ class SearchBar extends Component {
 		}
 	}
 
+	toggleSearchResultsVisibility() {
+		if (!this.props.searchResultsVisible) {
+			this.props.toggleSearchResultsVisibility()
+		}
+	}
+
 	render() {
 		return (
 			<form className="search-bar" onSubmit={this.handleSubmit}>
@@ -72,7 +79,7 @@ class SearchBar extends Component {
 			    	ref="search"
 			    	id="search"
 			    	onChange={this.handleChange}
-			    	onFocus={this.props.toggleSearchResultsVisibility}
+			    	onFocus={this.toggleSearchResultsVisibility}
 			    	placeholder="Search for a city, friend, non-profit or cause..."
 			    	autoComplete="off" />
 			    <button className="search-icon"><i className="fa fa-search"></i></button>

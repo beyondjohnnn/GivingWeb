@@ -3,6 +3,7 @@ $giving-web-purple: #7267ee;
 .search-dropdown {
 	min-height: 60px;
 	width: calc(100% - 60px);
+	max-width: 470px;
 	background-color: lighten($giving-web-purple, 10);
 	position: absolute;
 	border-radius: 5px;

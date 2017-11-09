@@ -45,6 +45,7 @@ form.search-bar {
 				width: calc(100% - 60px);
 				max-width: 470px;
 				border: $search-border-focus;
+				transition: width 0.4s ease-in-out;
 			}
 		}
 
@@ -84,6 +85,7 @@ form.search-bar {
 
 				&:focus {
 					width: 80%;
+					max-width: 100%;
 				}
 			}
 
