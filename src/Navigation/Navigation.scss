@@ -9,6 +9,7 @@ $nav-links-weight: 200;
 .navigation-wrapper { 
 	height:58px;
 
+	
 	.navigation {
 		width: 100%;
 		background-color: #ffffff;
@@ -22,7 +23,19 @@ $nav-links-weight: 200;
 		padding: 0;
 		box-sizing: border-box;
 		position: fixed;
-		top: 0;
+		-webkit-transition: top 0.4s ease-in;
+		transition: top 0.4s ease-in;
+
+			&.nav-hidden {
+				top: -58px;
+			}
+			&.nav-visible {
+				top: 0;
+			}
+		@media (max-width: 775px) {
+
+		}
+
 
 		.content-wrapper {
 			width: 100%;
@@ -162,6 +175,7 @@ $nav-links-weight: 200;
 			@media (max-width: 475px) {
 				padding: 0 5px;
 
+
 				.logo-search-wrapper {
 
 					.logo-text {
@@ -186,5 +200,6 @@ $nav-links-weight: 200;
 			}
 		}
 	}
+	
 }
 

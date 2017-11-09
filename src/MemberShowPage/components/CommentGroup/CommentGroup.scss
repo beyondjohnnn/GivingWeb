@@ -1,25 +1,45 @@
 .comment-group {
 	width: 100%;
 
+	h3 {
+		display: flex; 
+		align-items: center;
+		font-weight: 300;
+		margin-left: 20px;
+		font-size: 1em;
+		height: 2em;
+	}
+
 	.group-date {
 		position: relative;
 
+		// ::first-child {
+	
+		// 		::before {
+		// 			position: absolute;
+		// 			top: -20px;
+		// 			left: 20px;
+		// 			content: '';
+		// 			height: 0px;
+		// 			border-right: 2px solid #666AF6;
+		// 		}
+		// }
 		::before {
 			position: absolute;
-			top: -30px;
-			left: 40px;
-			content: '';
-			height: 30px;
-			border-right: 2px solid #888;
-		}
-
-		::after {
-			position: absolute;
-			bottom: -20px;
-			left: 40px;
+			top: -20px;
+			left: 20px;
 			content: '';
 			height: 20px;
-			border-right: 2px solid #888;
+			border-right: 2px solid #666AF6;
 		}
+
+		// ::after {
+		// 	position: absolute;
+		// 	bottom: -20px;
+		// 	left: 20px;
+		// 	content: '';
+		// 	height: 20px;
+		// 	border-right: 2px solid #666AF6;
+		// }
 	}
 }

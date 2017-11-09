@@ -5,7 +5,7 @@ class MatchedCompanySection extends Component {
 		return (
 			<div className="matched-section">
 				<div className="matched-by-image-container">
-					<img src="./images/matcher-x2-purple.png" />
+					<img src="./images/matched-x2-purple6.png" />
 				</div>
 				<div className="matched-by-text-container">
 					<p>Donations Matched By:</p>

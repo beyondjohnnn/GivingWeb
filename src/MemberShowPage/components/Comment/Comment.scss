@@ -1,7 +1,7 @@
 $border: 1px solid #eaeaea;
 
 .comment {
-	margin-bottom: 40px;
+	margin-bottom: 20px;
 	border: $border;
 	padding: 20px;
 	position: relative;
@@ -12,17 +12,17 @@ $border: 1px solid #eaeaea;
 		left: 39px;
 		content: '';
 		height: 20px;
-		border-right: 2px solid #888;
+		border-right: 2px solid #666AF6;
 	}
 
-	::after {
-		position: absolute;
-		bottom: -21px;
-		left: 39px;
-		content: '';
-		height: 20px;
-		border-right: 2px solid #888;
-	}
+	// ::after {
+	// 	position: absolute;
+	// 	bottom: -21px;
+	// 	left: 39px;
+	// 	content: '';
+	// 	height: 20px;
+	// 	border-right: 2px solid #888;
+	// }
 
 	.comment-header {
 		display: flex;

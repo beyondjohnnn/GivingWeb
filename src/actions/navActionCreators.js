@@ -24,3 +24,17 @@ export function toggleSearchResultsVisibility() {
 		type: 'TOGGLE_SEARCH_RESULTS_VISIBILITY'
 	}
 }
+
+export function updateScrollPosition(scrollY) {
+  return {
+    type: 'UPDATE_SCROLL_POSITION',
+    scrollPosition: scrollY
+  }
+}
+
+export function updateNavigationStyling(className) {
+  return {
+    type: 'UPDATE_NAVIGATION_STYLING',
+    navigationStyling: className
+  }
+}
