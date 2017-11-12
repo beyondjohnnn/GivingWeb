@@ -64,6 +64,43 @@ class MemberPreview extends React.Component {
 		return className
 	}
 
+	renderDonors() {
+		return (
+			<div 	className="member-images">
+			  <i className="fa fa-heart"></i> 
+				{this.renderBearImage()}
+				{this.renderExtraDonorCount()}
+			</div>
+			)
+	}
+
+
+	renderBearImage() {
+		const comments = this.props.member.comments
+		const maxFiveComments = comments.slice(0, 5)
+		return maxFiveComments.map((comment, id) => {
+			if (comment.comment_author[0] >= 'A' && comment.comment_author[0] <= 'G') {
+				return <img key={id} src="./images/bear-blue.png"></img>
+			} else if(comment.comment_author[0] >= 'H' && comment.comment_author[0] <= 'N') {
+				return <img key={id} src="./images/bear-yellow.png"></img>
+			} else if(comment.comment_author[0] >= 'O' && comment.comment_author[0] <= 'S') {
+				return <img key={id} src="./images/bear-red.png"></img>
+			} else {
+				<img key={id} src="./images/bear-green.png"></img>
+			}
+		})
+	}
+
+	renderExtraDonorCount() {
+		const comments = this.props.member.comments
+
+		if(comments.length > 5) {
+			return <p>+{comments.length - 5}</p> 
+		}
+	}
+
+
+
 	render() {
 		let previewStyle = this.props.style || {}
 		const {member} = this.props
@@ -106,14 +143,7 @@ class MemberPreview extends React.Component {
 						{this.donationProgressBar.render(hasSponsor)}
 					</div>
 					<div className="member-donations">Donations</div>
-						<div className="member-images">
-							<img src="images/bear-blue.png"></img>
-							<img src="images/bear-green.png"></img>
-							<img src="images/bear-red.png"></img>
-							<img src="images/bear-yellow.png"></img>
-							<img src="images/bear-green.png"></img>
-							<p>+3</p>
-						</div>
+					{this.renderDonors(member.comments)}
 				</div>
 			</div>
 		)

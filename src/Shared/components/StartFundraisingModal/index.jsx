@@ -16,6 +16,33 @@ class StartFundraisingModal extends React.Component {
     this.state = {
       email: ""
     }
+    this.closeModalOnClick = this.closeModalOnClick.bind(this)
+  }
+
+
+  componentDidMount() {
+    // window.addEventListener('click', this.closeModalOnClick)
+  }
+
+  closeModalOnClick(e) {
+    // const componentBoundaries = this.refs.container.getBoundingClientRect()
+
+    
+
+    if (this.props.fundraisingModalVisible) {
+      const mainAreaBoundaries = this.refs.fundraisingModal.getBoundingClientRect()
+      const outsideMainArea = (e.clientX < mainAreaBoundaries.left || e.clientX > mainAreaBoundaries.right || e.clientY < mainAreaBoundaries.top || e.clientY > mainAreaBoundaries.bottom)
+      if (outsideMainArea) {
+        console.log("hiiiiii")
+        this.props.toggleModal()
+        
+      }
+    }
+  }
+
+
+  componentWillUnmount() {
+    // window.removeEventListener('click', this.closeModalOnClick)
   }
 
   onTypeEmailBox(event){
@@ -31,10 +58,11 @@ class StartFundraisingModal extends React.Component {
     })
   }
 
+
   render(){
     return (
-      <div className="start-fundraising-container">
-        <section>
+      <div className="start-fundraising-container" onClick={this.closeModalOnClick}>
+        <section ref="fundraisingModal" className="modal-main-content">
           <i className="fa fa-times" aria-hidden="true" onClick={this.props.toggleModal}></i>
           <h2>Want to start fundraising?</h2>
           <i className="fa fa-child" aria-hidden="true"></i>

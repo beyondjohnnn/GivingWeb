@@ -36,8 +36,8 @@ class CharityPage extends React.Component {
 					<CharityPageInformation />
 					<CharityFeaturedMembers />
 
-				</div>
 					{this.renderModal()}
+				</div>
 			</div>
 
 		)

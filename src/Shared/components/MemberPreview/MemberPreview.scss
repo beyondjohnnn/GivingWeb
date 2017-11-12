@@ -214,8 +214,13 @@ $button-color: #666AF6;
 	}
 	.member-donations {
 		font-weight: 300;
+
 	}
 
+		.fa-heart {
+			padding: 0px 5px;
+			color: #7e6bd6;
+		}
 	.member-images {
 		padding-top: 7px;
 		display: flex;
