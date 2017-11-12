@@ -1,0 +1,80 @@
+.member-preview-donors-image {
+
+  position: relative; 
+  display: flex;
+  justify-content: center;
+  height: 22px;
+  width: 26px;
+  
+
+
+  img {
+    height: 22px;
+    padding-right: 2.5px;
+    padding-left: 2.5px;
+  }
+
+  p{
+    font-size: 1em;
+    font-weight: 300;
+    color: #686868;
+  }
+
+   .tooltip-component {
+    
+      position: absolute;
+      // margin-top: 67px;
+      transition: visibility 0s ease-in-out, margin-top 0.2s ease-in-out;
+      display: flex; 
+      justify-content: center;
+      // align-items: center;
+      white-space: nowrap;
+      top: 0;
+      // width: auto;
+      height: 50px;
+      margin-top: -53px;
+      visibility: hidden;
+      background: none;
+      box-shadow: none;
+      color: #fff;
+      // margin-bottom: 200px;
+
+      .tooltip-box {
+        color: #fff;
+        background-color: darken(#5e687c, 5);
+        // width: 75%;
+        box-shadow: 0 4px 12px 0 rgba(0,0,0,.06);
+        border-radius: 5px;
+
+        p {
+        margin: 6px;
+        z-index: 6;
+        font-size: 0.9em;
+        font-weight: 200;
+        text-align: center;
+        padding: 3px 5px;
+        color: #fff;
+      }
+    }
+    
+    
+   .tooltip-arrow {
+      height: 10px;
+      width: 10px;
+      transform: rotate(45deg); 
+      background-color: darken(#5e687c, 5);
+
+      position: absolute;
+      bottom: 0;
+      // left: 0;
+      margin-bottom: 2px;
+      // z-index: 5;
+
+    }
+  }
+
+  .tooltip-visible {
+    margin-top: -50px;
+    visibility: visible;
+  }
+}

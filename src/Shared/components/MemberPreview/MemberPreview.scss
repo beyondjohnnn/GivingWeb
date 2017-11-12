@@ -217,26 +217,7 @@ $button-color: #666AF6;
 
 	}
 
-		.fa-heart {
-			padding: 0px 5px;
-			color: #7e6bd6;
-		}
-	.member-images {
-		padding-top: 7px;
-		display: flex;
-		align-items: center;
 
-		img {
-			height: 22px;
-			padding-right: 5px;
-		}
-
-		p{
-			font-size: 1em;
-			font-weight: 300;
-			color: #686868;
-		}
-	}
 
 	@media (max-width: 1180px) {
 		width: 35%;

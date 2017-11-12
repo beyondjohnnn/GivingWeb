@@ -5,13 +5,14 @@ import { calcDonationPercentage, getDonationBarColour } from '../../utils/donati
 import css from './MemberPreview.scss'
 
 import DonationProgressBar from './../DonationProgressBar'
+import MemberPreviewDonors from '../MemberPreviewDonors'
 
 class MemberPreview extends React.Component {
 
-	constructor(props){
-		super(props)
-		this.donationProgressBar = new DonationProgressBar()
-	}
+		constructor(props){
+			super(props)
+			this.donationProgressBar = new DonationProgressBar()
+		}
 
 	componentWillMount(){
 		this.percentage = calcDonationPercentage(this.props.member)
@@ -45,10 +46,6 @@ class MemberPreview extends React.Component {
 		}
 	}
 
-	// generateRandomBear() {
-	// 	const bearImages = ["images/bear-blue.png", "images/bear-red.png", "images/bear-green.png", "images/bear-yellow.png"]
-	// 	console.log(bearImages[Math.floor(Math.random() * 4)]);
-	// }
 
 	renderMembersImage() {
 		if (this.props.member.url_image == undefined) {
@@ -62,41 +59,6 @@ class MemberPreview extends React.Component {
 		let className = "member-preview"
 		if(this.props.className) className += " " + this.props.className
 		return className
-	}
-
-	renderDonors() {
-		return (
-			<div 	className="member-images">
-			  <i className="fa fa-heart"></i> 
-				{this.renderBearImage()}
-				{this.renderExtraDonorCount()}
-			</div>
-			)
-	}
-
-
-	renderBearImage() {
-		const comments = this.props.member.comments
-		const maxFiveComments = comments.slice(0, 5)
-		return maxFiveComments.map((comment, id) => {
-			if (comment.comment_author[0] >= 'A' && comment.comment_author[0] <= 'G') {
-				return <img key={id} src="./images/bear-blue.png"></img>
-			} else if(comment.comment_author[0] >= 'H' && comment.comment_author[0] <= 'N') {
-				return <img key={id} src="./images/bear-yellow.png"></img>
-			} else if(comment.comment_author[0] >= 'O' && comment.comment_author[0] <= 'S') {
-				return <img key={id} src="./images/bear-red.png"></img>
-			} else {
-				<img key={id} src="./images/bear-green.png"></img>
-			}
-		})
-	}
-
-	renderExtraDonorCount() {
-		const comments = this.props.member.comments
-
-		if(comments.length > 5) {
-			return <p>+{comments.length - 5}</p> 
-		}
 	}
 
 
@@ -143,7 +105,7 @@ class MemberPreview extends React.Component {
 						{this.donationProgressBar.render(hasSponsor)}
 					</div>
 					<div className="member-donations">Donations</div>
-					{this.renderDonors(member.comments)}
+					<MemberPreviewDonors member={member}/>
 				</div>
 			</div>
 		)
