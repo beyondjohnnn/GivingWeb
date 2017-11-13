@@ -32,9 +32,11 @@ $footer-color: #848484;
 			.footer-link {
 				margin-top: 7px;
 				font-weight: 300;
+        font-size: 14px;
 				text-decoration: none;
 				color: #444444;
 				height: 20px;
+        cursor: pointer;
 				
 				&:hover {
 					color: #7663F6;

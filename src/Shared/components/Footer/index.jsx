@@ -1,11 +1,24 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+
+import * as actionCreators from '../../../actions/fundraisingModalActionCreators'
 
 import css from './Footer.scss'
+
+import StartFundraisingModal from '../StartFundraisingModal'
 
 
 
 class Footer extends React.Component {
+
+	renderModal() {
+		if(this.props.fundraisingModalVisible) {
+			return <StartFundraisingModal />
+		}
+	}
+
 	render() {
 		return (
 			<div className="footer">
@@ -23,7 +36,7 @@ class Footer extends React.Component {
 						<Link to="/" className="footer-link">How it works</Link>
 						<Link to="/help-someone" className="footer-link">Help Someone</Link>
 						<Link to="/" className="footer-link">Campaigns</Link>
-						<Link to="/start-fundraising" className="footer-link">Start Fundraising</Link>
+						<h2 className="footer-link" onClick={this.props.toggleModal}>Start Fundraising</h2>
 						<Link to="/" className="footer-link">Donate to GivingWeb</Link>
 					</div>
 					<div className="footer-text-column">
@@ -52,9 +65,19 @@ class Footer extends React.Component {
 						<a href="https://www.youtube.com/channel/UCt6GV2-HVPzhysqnHQVNYdA" target="_blank"><i className="fa fa-youtube"></i></a>
 					</div>
 				</div>
+				{this.renderModal()}
 			</div>
 		)
 	}
 }
 
-export default Footer
+function mapStateToProps(state, routing) {
+  return Object.assign({}, state.fundraisingModal, routing)
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators(actionCreators, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Footer)
+
