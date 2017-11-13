@@ -12,6 +12,11 @@
     height: 22px;
     padding-right: 2.5px;
     padding-left: 2.5px;
+
+    &:hover + .tooltip-component {
+      margin-top: -50px;
+      visibility: visible;
+    }
   }
 
   p{
@@ -32,12 +37,14 @@
       top: 0;
       // width: auto;
       height: 50px;
-      margin-top: -53px;
+      margin-top: -50px;
       visibility: hidden;
       background: none;
       box-shadow: none;
       color: #fff;
       // margin-bottom: 200px;
+
+      
 
       .tooltip-box {
         color: #fff;
@@ -73,8 +80,8 @@
     }
   }
 
-  .tooltip-visible {
-    margin-top: -50px;
-    visibility: visible;
-  }
+  // .tooltip-visible {
+  //   argin-top: -50px;
+  //   visibility: visible;
+  // }
 }

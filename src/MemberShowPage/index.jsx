@@ -28,6 +28,13 @@ class MemberShowPage extends Component {
 		}).catch((err) =>{console.log(err)})
 	}
 
+	// componentWillReceiveProps(nextProps) {
+	// 	this.getCurrentMember()
+	// 	.then((member) => {
+	// 		this.donationProgressBar.animateBar(calcDonationPercentage(member))
+	// 	}).catch((err) =>{console.log(err)})	
+	// }
+
 	getCurrentMember(){
 		const memberId = parseInt(this.props.location.search.split('=')[1])
 		const { members } = this.props

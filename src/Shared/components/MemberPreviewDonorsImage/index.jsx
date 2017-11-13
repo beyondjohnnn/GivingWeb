@@ -15,11 +15,11 @@ class MemberPreviewDonorsImage extends React.Component {
   }
 
   createTooltipStyle() {
-    if (this.props.donorTooltipSet == this.props.comment.comment_date ) {
+    // if (this.props.donorTooltipSet == this.props.comment.comment_date ) {
       return 'tooltip-component tooltip-visible'
-    } else {
-      return 'tooltip-component'
-    }
+  //   } else {
+  //     return 'tooltip-component'
+  //   }
   }
 
 
@@ -31,8 +31,8 @@ class MemberPreviewDonorsImage extends React.Component {
     return (
 
       <div className="member-preview-donors-image" >
-        <img  src={`./images/bear-${this.props.color}.png`} onMouseEnter={this.props.setDonorTooltipByDate.bind(this, this.props.comment.comment_date)} onMouseLeave={this.props.setDonorTooltipByDate.bind(this, "")}></img>
-        <div className={this.createTooltipStyle()}>
+        <img src={`./images/bear-${this.props.color}.png`} onMouseEnter={this.props.setDonorTooltipByDate.bind(this, this.props.comment.comment_date)} onMouseLeave={this.props.setDonorTooltipByDate.bind(this, "")}></img>
+        <div className="tooltip-component">
           <div className="tooltip-arrow"></div>
           <div className="tooltip-box"> 
             <p className="tooltip-text">{`${this.props.comment.comment_author} ${this.props.comment.donation_amount}`}</p>
