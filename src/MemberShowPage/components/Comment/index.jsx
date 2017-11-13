@@ -13,9 +13,9 @@ class Comment extends React.Component {
 		} else if(author[0] >= 'H' && author[0] <= 'N') {
 			return './images/bear-yellow.png'
 		} else if(author[0] >= 'O' && author[0] <= 'S') {
-			return './images/bear-red.png'
-		} else {
 			return './images/bear-green.png'
+		} else {
+			return './images/bear-red.png'
 		}
 	}
 	

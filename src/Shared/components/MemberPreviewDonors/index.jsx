@@ -34,6 +34,7 @@ class MemberPreviewDonors extends React.Component {
     const comments = this.props.member.comments
     const maxFiveComments = comments.slice(0, 4)
     return maxFiveComments.map((comment, id) => {
+      // console.log(comment)
       if (comment.comment_author[0] >= 'A' && comment.comment_author[0] <= 'G') {
         return <MemberPreviewDonorsImage key={id} color="blue" comment={comment}/>
       } else if(comment.comment_author[0] >= 'H' && comment.comment_author[0] <= 'N') {
@@ -41,7 +42,7 @@ class MemberPreviewDonors extends React.Component {
       } else if(comment.comment_author[0] >= 'O' && comment.comment_author[0] <= 'S') {
         return <MemberPreviewDonorsImage key={id} color="green" comment={comment}/>
       } else {
-        <MemberPreviewDonorsImage key={id} color="red" comment={comment}/>
+        return <MemberPreviewDonorsImage key={id} color="red" comment={comment}/>
       }
     })
   }

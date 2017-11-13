@@ -9,7 +9,9 @@ class Timeline extends React.Component {
   render() {
     return (
       <div className="timeline">
-        <div className="timeline-header"></div>
+        <div className="timeline-header">
+          <h2>Our Journey</h2>
+        </div>
         <div className="main-wrapper">
           <div className="timeline-block">
             <div className="shadow-today"></div>  
